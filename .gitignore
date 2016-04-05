@@ -1,0 +1,17 @@
+*.pyc
+*~
+.svn
+*.sqlite
+.idea
+.sass-cache
+*.swp
+media/uploads
+media/photologue
+media/cms_page_media
+media/bills/*
+media/cache/
+media/thumbnails/
+media/video
+config/00-local_settings.conf
+sync_media.sh
+.directory

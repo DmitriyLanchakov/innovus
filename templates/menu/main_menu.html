@@ -1,0 +1,17 @@
+{% load cache menu_tags %}
+<ul class="chapters">
+  {% for child in children %}
+    <li{% if child.selected or child.ancestor %} class="selected"{% endif %}>
+        <a class="{{ child.attr.reverse_id }}" href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="submenu">
+  {% for child in children %}
+    {% if child.children %}
+      {% show_menu from_level to_level extra_inactive extra_active "menu/main_menu_lvl1.html" "" "" child %}
+    {% endif %}
+  {% endfor %}
+</div>
+

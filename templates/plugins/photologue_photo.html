@@ -1,0 +1,8 @@
+
+    <div class="gallery-photo{% if css %} {{ css }}{% endif %}">
+    
+        <a href="{{ photo.image.url }}"><img src="{% ifequal is_thumb '1' %}{{ photo.get_thumbnail_url }}{% else %}{{ photo.get_display_url }}{% endifequal %}" alt="{% if photo.is_shown %}{{ photo.title }}{% endif %}"/></a>
+    
+        {% if photo.caption %}<p>{{ photo.caption }}</p>{% endif %}
+    
+    </div>

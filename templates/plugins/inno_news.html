@@ -1,0 +1,14 @@
+{% load cache cms_tags pytils_dt i18n %}
+{% if posts.count %}
+    <div id="innovation_news">
+        <span class="block_title">
+            <a href="{% page_id_url 'innonews' %}" title="{% page_attribute page_title innonews %}">{% page_attribute page_title innonews %}</a>
+             <a href="{% url periodics_rss sequence='inno' %}" id="innovation_news_rss" title="{% trans "Subscribe to innovatiove news" %}">RSS</a>
+        </span>
+        {% include "plugins/inno_news_ul.html" %}
+        {% if next %}
+            <a href="#" class="bottom_button" title="{% trans "More articles on page" %}">{% trans "Show more articles" %} &darr;</a>
+        {% endif %}
+    </div>
+{% endif %}
+

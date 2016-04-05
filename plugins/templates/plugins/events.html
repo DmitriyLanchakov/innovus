@@ -1,0 +1,49 @@
+{% load cache cms_tags pytils_dt media_tags thumbnail %}
+{% if posts.count %}
+    <div id="events">
+        <span class="block_title">
+            <a href="{% page_id_url 'events' %}">{% page_attribute page_title events %}</a>
+            <a href="{% url periodics_rss sequence='events' %}" id="events_rss">RSS</a>
+         </span>
+    {% with event as post %}
+         <div class="event_wrapper">
+            <div class="event_item">
+                <div class="event_v_c">
+                    <div class="event_video">
+                        <div>
+                            {# % include "plugins/events_inline_media.html" % #}
+                        </div>
+                    </div>
+                    <div id="events_carousel">
+                        <a class="prev" href="events.html#">prev</a>
+                        <div class="jcarousel">
+                        <ul>
+                           {% for e in posts %}
+                               <li id="event_{{ e.id }}"{% if forloop.first %} class="selected"{% endif %} title="{{ e.title|safe }}">
+                                    <a href="{{ e.get_absolute_url }}">
+                                         <span class="carousel_img">
+                                             {% thumbnail e.picture_src "51x44" crop="center" as thumb %}
+                                            <img src="{{ thumb.url }}"
+                                                 alt="{{ e.title|safe }}"
+                                                 width="{{ thumb.width }}"
+                                                 height="{{ thumb.height }}" />
+                                             {% endthumbnail %}
+                                         </span>
+                                    </a>
+                               </li>
+                           {% endfor %}
+                        </ul>
+                        </div>
+                        <a class="next" href="events.html#">next</a>
+                    </div>
+                </div>
+                <div class="item_info">
+                    {% include "plugins/events_inline_content.html" %}
+                </div>
+            </div>
+        </div>
+        <a href="{{ post.get_absolute_url }}#write" class="bottom_button" >{% trans 'Send Comment' %} ({{ post.comments.approved.count }})</a>
+    {% endwith %}
+    </div>
+{% endif %}
+

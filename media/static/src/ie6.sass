@@ -1,0 +1,90 @@
+/* для всех броузеров что понимают min-width */
+#min_width
+  min-width: 1000px
+
+/* для IE */
+* html #minwidth
+  border-left: 960px solid #fff
+  border-right: 40px solid #fff
+  position: relative
+  float: left
+  z-index: 1
+
+* html .container
+  margin-left: -960px
+  margin-right: -40px
+  position: relative
+  float: left
+  z-index: 2
+
+#fix_for_ie6
+  font-size: 0
+
+#header
+  .dashboard
+    .language
+      text-align: left
+      .ru
+        margin-left: 129px
+    .auth
+      text-align: left
+      .sign_up
+        margin-left: 10px
+
+
+#sign_container
+  .sign_up_block
+    clear: both
+
+@for $i from 1 through 10
+  h#{$i}
+    font-weight: normal
+
+#search
+  .search_form
+    form
+      .search_input_label
+        top: 7px
+        left: 7px
+      .search_submit
+        top: 7px
+
+#main_menu
+  .chapters
+    padding: 0
+    margin-left: 1.5%
+    li
+      a
+        position: relative
+        height: 15px
+        letter-spacing: 1px
+
+#programm_day_one,
+#programm_day_two,
+#programm_day_three
+  .day
+    padding-left: 90px
+
+#header,
+#search,
+#main_menu,
+#content,
+#programm_day_one,
+#programm_day_two,
+#programm_day_three,
+#programm_day_one_satellites,
+#programm_day_two_satellites,
+#programm_day_three_satellites,
+#events,
+#persons,
+#news,
+#promoters,
+#tags,
+#footer
+  width: expression(document.body.clientWidth > 1300? "1300px":"auto")
+
+#events h1 .rss,
+#persons h1 .rss,
+#news h1 .rss
+  margin-bottom: 7px
+

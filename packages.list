@@ -1,0 +1,21 @@
+Django==1.2.5
+PIL==1.1.7
+South==0.7.3
+-e hg+https://bitbucket.org/nim/django-annoying@a084262416c582336206bf1d3a2d882f11bf0d59#egg=django_annoying-tip
+django-debug-toolbar==0.8.4
+django-extensions==0.6
+django-haystack==1.1.0
+django-pagination==1.0.7
+django-rosetta==0.6.0
+django-staticfiles==1.0.1
+html5lib==0.90
+lxml==2.3
+-e git://git.openteam.ru/django-openteam/django_openteam.git@a14b96177921fc6bdb4241de15c9b7097d7e8dac#egg=openteam-0.1.0-py2.7-dev
+pisa==3.0.33
+psycopg2==2.4
+pysolr==2.0.13
+python-cjson==1.0.5
+-e git://github.com/nimnull/pytils.git@72ee3d77b0fa33cffffaa5dc22b0d8ba6c924f74#egg=pytils-0.2.4dev_20110506-py2.7-dev
+reportlab==2.5
+sorl-thumbnail==11.01
+gunicorn==0.12.2

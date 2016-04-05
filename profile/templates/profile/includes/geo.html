@@ -1,0 +1,205 @@
+{% load i18n %}
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.relatedselects.min.js"></script>
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.dynDateTime.min.js"></script>
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.dynDateTime.calendar.{{ LANGUAGE_CODE }}.js"></script>
+<script type="text/javascript">
+
+$(function() {
+
+  var val_of_state_part = $("#id_is_take_part").val();
+
+  /* убираем поле скрытое поле, если на редактировании */
+
+  $("#id_is_take_part[type='hidden']").hide();
+
+  /* смотрим на страну, если Россия, включаем зависимые селекты */
+
+  var isRelatedSelects = false;
+
+  if ($("#id_country").val() != "170") {
+    $("#id_region").val("").hide();
+    $("label[for=id_region]").hide();
+    $("#id_city").val("").hide();
+    $("label[for=id_city]").hide();
+  } else {
+    if (!isRelatedSelects) {
+      isRelatedSelects = true;
+      $("#id_country").closest("form").relatedSelects({
+        onChangeLoad: "{% url profile_ajax_region_filter %}",
+        dataType: "html",
+        defaultOptionText: "{% trans 'Choose' %} &raquo;",
+        selects: ["country", "region", "city"]
+      });
+    };
+  };
+
+  /* изменение страны */
+
+  $("#id_country").change(function() {
+    if ($(this).val() == "170") {
+      $("#id_region").slideDown(200);
+      $("label[for=id_region]").slideDown(200);
+      $("#id_city").slideDown(200);
+      $("label[for=id_city]").slideDown(200);
+      if (!isRelatedSelects) {
+        isRelatedSelects = true;
+        $(this).closest("form").relatedSelects({
+          onChangeLoad: "{% url profile_ajax_region_filter %}",
+          dataType: "html",
+          defaultOptionText: "{% trans 'Choose' %} &raquo;",
+          selects: ["country", "region", "city"]
+        });
+      };
+    } else {
+      $("#id_region").val("").slideUp(200);
+      $("label[for=id_region]").slideUp(200);
+      $("#id_city").val("").slideUp(200);
+      $("label[for=id_city]").slideUp(200);
+      if (val_of_state_part == "1" || val_of_state_part == "3" || val_of_state_part == "4") {
+        $("#second_chapter").show();
+      };
+    };
+  });
+
+  /* изменение участия */
+
+  $("#id_is_take_part").change(function() {
+    if (($(this).val() == "1" || $(this).val() == "3") && $("#id_country").val() != "" && $("#id_region").val() != "70") {
+      $("#second_chapter").show();
+    } else {
+      $("#second_chapter").hide();
+    };
+  });
+
+  /* изменение региона */
+
+  $("#id_region").change(function() {
+    if (val_of_state_part == "1" || val_of_state_part == "3") {
+      if ($(this).val() == "70") {
+        $("#second_chapter").hide();
+      } else {
+        $("#second_chapter").show();
+      };
+    } else {
+      $("#second_chapter").hide();
+    };
+  });
+
+  /* календарь */
+
+  if ($("body").hasClass("en")) {
+    var datetime_format = "%m-%d-%Y %I:%M %p";
+    var timeFormat = "12";
+  } else {
+    var datetime_format = "%d.%m.%Y %H:%M";
+    var timeFormat = "24";
+  };
+
+  $("#id_arrival_date, #id_departure_date").attr("autocomplete", "off").dynDateTime({
+    showsTime: true,
+    ifFormat: datetime_format,
+    timeFormat: timeFormat
+  });
+
+  /* убираем инфу о прибытии/убытии/бронировании если не участвует или не пустая страна или выбрана Томская область */
+
+  if ((val_of_state_part != "1" && val_of_state_part != "3" && val_of_state_part != "4")
+      || $("#id_country").val() == "" || $("#id_region").val() == "70") {
+    $("#second_chapter").hide();
+  };
+
+  /* замуты с прибытием */
+
+  if ($("#id_arrival_want_charter").val() == "") {
+    $("#second_chapter .ar_charter_date").hide();
+    $("#second_chapter .ar_transport").hide();
+    $("#second_chapter .ar_date").hide();
+  };
+  if ($("#id_arrival_want_charter").val() == "0") {
+    $("#second_chapter .ar_charter_date").hide();
+    $("#second_chapter .ar_transport").show();
+    $("#second_chapter .ar_date").show();
+  };
+  if ($("#id_arrival_want_charter").val() == "1") {
+    $("#second_chapter .ar_charter_date").show();
+    $("#second_chapter .ar_transport").hide();
+    $("#second_chapter .ar_date").hide();
+  };
+
+  $("#id_arrival_want_charter").change(function() {
+    if ($("#id_arrival_want_charter").val() == "") {
+      $("#second_chapter .ar_charter_date").slideUP(200);
+      $("#second_chapter .ar_transport").slideUp(200);
+      $("#second_chapter .ar_date").slideUp(200);
+    };
+    if ($("#id_arrival_want_charter").val() == "0") {
+      $("#second_chapter .ar_charter_date").slideUp(200);
+      $("#second_chapter .ar_transport").slideDown(200);
+      $("#second_chapter .ar_date").slideDown(200);
+    };
+    if ($("#id_arrival_want_charter").val() == "1") {
+      $("#second_chapter .ar_charter_date").slideDown(200);
+      $("#second_chapter .ar_transport").slideUp(200);
+      $("#second_chapter .ar_date").slideUp(200);
+    };
+  });
+
+  /* замуты с убытием */
+  if ($("#id_departure_want_charter").val() == "") {
+    $("#second_chapter .dep_transport").hide();
+    $("#second_chapter .dep_date").hide();
+    $("#second_chapter .dep_charter_date").hide();
+  };
+  if ($("#id_departure_want_charter").val() == "0") {
+    $("#second_chapter .dep_transport").show();
+    $("#second_chapter .dep_date").show();
+    $("#second_chapter .dep_charter_date").hide();
+  };
+  if ($("#id_departure_want_charter").val() == "1") {
+    $("#second_chapter .dep_transport").hide();
+    $("#second_chapter .dep_date").hide();
+    $("#second_chapter .dep_charter_date").show();
+  };
+
+  $("#id_departure_want_charter").change(function() {
+    if ($("#id_departure_want_charter").val() == "") {
+      $("#second_chapter .dep_transport").slideUp(200);
+      $("#second_chapter .dep_date").slideUp(200);
+      $("#second_chapter .dep_charter_date").slideUp(200);
+    };
+    if ($("#id_departure_want_charter").val() == "0") {
+      $("#second_chapter .dep_transport").slideDown(200);
+      $("#second_chapter .dep_date").slideDown(200);
+      $("#second_chapter .dep_charter_date").slideUp(200);
+    };
+    if ($("#id_departure_want_charter").val() == "1") {
+      $("#second_chapter .dep_transport").slideUp(200);
+      $("#second_chapter .dep_date").slideUp(200);
+      $("#second_chapter .dep_charter_date").slideDown(200);
+    };
+  });
+
+
+  /* замуты с бронированием */
+
+  if ($("#id_need_hotel").val() == "1") {
+    $("#second_chapter #id_room_category").show();
+    $("#second_chapter label[for='id_room_category']").show();
+  } else {
+    $("#second_chapter #id_room_category").hide();
+    $("#second_chapter label[for='id_room_category']").hide();
+  };
+
+  $("#id_need_hotel").change(function() {
+    if ($(this).val() == "1") {
+      $("#second_chapter #id_room_category").slideDown(200);
+      $("#second_chapter label[for='id_room_category']").slideDown(200);
+    } else {
+      $("#second_chapter #id_room_category").slideUp(200);
+      $("#second_chapter label[for='id_room_category']").slideUp(200);
+    };
+  });
+
+});
+</script>
+

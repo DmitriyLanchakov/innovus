@@ -1,0 +1,43 @@
+{% if claim_form.last_name.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.last_name.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.last_name }}</p>
+  <div class="error_mess">{{ claim_form.last_name.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.last_name.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.last_name }}</p>
+{% endif%}
+
+{% if claim_form.first_name.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.first_name.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.first_name }}</p>
+  <div class="error_mess">{{ claim_form.first_name.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.first_name.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.first_name }}</p>
+{% endif %}
+
+{% if claim_form.middle_name.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.middle_name.label_tag }}</p>
+  <p class="input">{{ claim_form.middle_name }}</p>
+  <div class="error_mess">{{ claim_form.middle_name.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.middle_name.label_tag }}</p>
+  <p class="input">{{ claim_form.middle_name }}</p>
+{% endif %}
+
+{% if claim_form.gender.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.gender.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.gender }}</p>
+  <div class="error_mess">{{ claim_form.gender.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.gender.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{claim_form.gender}}</p>
+{% endif %}

@@ -1,0 +1,6 @@
+{% load cms_tags highlight pytils_typo %}
+<li>
+  <h2><a href="{{ text.page.get_absolute_url }}">{{ text.page.get_title|striptags|typografy|safe }}</a></h2>
+  <p>{{ text.body|truncatewords_html:50|typografy|striptags|safe }}</p>
+</li>
+

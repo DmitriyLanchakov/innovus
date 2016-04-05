@@ -1,0 +1,10 @@
+{% load cache cms_tags pytils_dt i18n %}
+        <ul>
+{% for post in posts %}
+            <li class="news-item {% if forloop.last %}last{% endif%}">
+                <span class="news-time">{{ post.date|distance_of_time }}</span>
+                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                <p>{{ post.annotation|safe|truncatewords:"30"|striptags }}</p>
+            </li>
+{% endfor %}
+        </ul>

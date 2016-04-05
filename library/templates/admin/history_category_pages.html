@@ -1,0 +1,5 @@
+<ul>
+  {% for page in pages %}
+    <li><a href="{% url admin:cms_page_change page.publisher_draft.id %}">{{ page.get_title }}</a></li>
+  {% endfor %}
+</ul>

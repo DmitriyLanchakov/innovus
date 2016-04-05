@@ -1,0 +1,75 @@
+{% load thumbnail comments_tags pytils_typo %}
+{% get_current_language as lang %}
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.colorbox.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+  var array = [];
+  $.each($("#content .show_person img"), function() {
+    if ($(this).parent().is("a")) {
+      $(this).parent().attr("rel", "gallery");
+      $(this).parent().attr("title", $(this).attr("title"));
+      array.push($(this).parent()[0]);
+    };
+  });
+  var current_text = "{current} of {total}";
+  if ($("#content .show_person").hasClass("ru")) {
+    current_text = "{current} из {total}";
+  };
+  $(array).colorbox({
+    maxHeight: 600,
+    opacity: 0.5,
+    current: current_text
+  });
+});
+//]]>
+</script>
+<div class="show_person {{ lang }}">
+  <div class="person_photo">
+    {% thumbnail person.photo "300" as thumb %}
+      <a href="{{ person.photo.url }}">
+      <img src="{{ thumb.url }}"
+        alt="{{ person.name }}"
+        title="{{ person.name }}"
+        width="{{ thumb.width }}"
+        height="{{ thumb.height }}" />
+      </a>
+    {% endthumbnail %}
+  </div>
+  <div class="person_info">
+    <h1>{{ person.name|striptags|typografy|safe }}</h1>
+    <p class="person_title">{{ person.position|striptags|typografy|safe }}</p>
+    {% if person.announce %}
+    <h2 class="speech">{{ person.announce|typografy|safe }}</h2>
+    {% endif %}
+  </div>
+  <div class="text">
+    {{ person.content|typografy|safe }}
+  </div>
+  {% if tags %}
+    <div class="taglist">
+      <ul>
+        {% for tag in tags %}
+          <li class="tag"><a href="{% url tags_list tag=tag %}">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  <ul class="social_links">
+    <li class="twitter">
+      <a rel="nofollow" title="Spread the word on Twitter!" href="http://twitter.com/home?status={{ person.name|striptags }}: {{ person.announce|safe|striptags }} (@Tomskforum) http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}">Retweet</a>
+    </li>
+    <li class="delicious">
+      <a rel="nofollow" title="Bookmark on Del.icio.us!" href="http://delicious.com/post?url=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;title={{ person.name|striptags }}: {{ person.announce|safe|striptags }}">Bookmark</a>
+    </li>
+    <li class="facebook">
+      <a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;t={{ person.name|striptags }}: {{ person.announce|safe|striptags }}">Share</a>
+    </li>
+    <li class="google">
+      <a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;title={{ person.name|striptags }}: {{ person.announce|safe|striptags }}" title="Закладки Google">Закладки Google</a>
+    </li>
+    <li class="yandex">
+      <a rel="nofollow" href="http://zakladki.yandex.ru/userarea/links/addfromfav.asp?bAddLink_x=1&amp;lurl=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;lname={{ person.name|striptags }}: {{ person.announce|safe|striptags }}" title="Яндекс.Закладки">Яндекс.Закладки</a></li>
+  </ul>
+</div>
+{% comments for person in category %}

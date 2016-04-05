@@ -1,0 +1,110 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_modify adminmedia comments_tags %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="../../../jsi18n/"></script>
+{{ media }}
+{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/forms.css" />{% endblock %}
+
+{% block coltype %}{% if ordered_objects %}colMS{% else %}colM{% endif %}{% endblock %}
+
+{% block bodyclass %}{{ opts.app_label }}-{{ opts.object_name.lower }} change-form{% endblock %}
+
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">
+     <a href="../../../">{% trans "Home" %}</a> &rsaquo;
+     <a href="../../">{{ app_label|capfirst|escape }}</a> &rsaquo;
+     {% if has_change_permission %}<a href="../">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %} &rsaquo;
+     {% if add %}{% trans "Add" %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+</div>
+{% endif %}{% endblock %}
+
+{% block content %}<div id="content-main">
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+  <ul class="object-tools"><li><a href="history/" class="historylink">{% trans "History" %}</a></li>
+  {% if has_absolute_url %}<li><a href="../../../r/{{ content_type_id }}/{{ object_id }}/" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif%}
+  </ul>
+{% endif %}{% endif %}
+{% endblock %}
+
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.module_name }}_form">
+    {% csrf_token %}
+    {% block form_top %}{% endblock %}
+<div>
+            <!--input -->
+<input id="id_object_id" type="hidden" name="object_id" value="{{ object_id }}" />
+<input type="hidden" name="content_type_id" value="{{ content_type_id }}" />
+
+{% if is_popup %}<input type="hidden" name="_popup" value="1" />{% endif %}
+{% if save_on_top %}{% submit_row %}{% endif %}
+{% if errors %}
+    <p class="errornote">
+    {% blocktrans count errors|length as counter %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktrans %}
+    </p>
+    <ul class="errorlist">{% for error in adminform.form.non_field_errors %}<li>{{ error }}</li>{% endfor %}</ul>
+{% endif %}
+
+<div class="two_columns">
+  <div class="left">
+        <div class="left-con">
+    {% for fieldset in adminform %}
+        {% include "admin/includes/fieldset.html" %}
+        {% ifequal forloop.counter 3 %}
+        </div>
+   </div>
+    <div class="right">
+        {% endifequal %}
+    {% endfor %}
+  
+    {% for inline_admin_formset in inline_admin_formsets %}
+        {% include inline_admin_formset.opts.template %}
+    {% endfor %} 
+  </div>
+</div>
+
+{% block after_field_sets %}{% endblock %}
+
+
+{% block after_related_objects %}{% endblock %}
+
+{% load publisher_admin_tags %}
+{% submit_post_row %}
+
+{# Comments #}
+<fieldset class="module aligned main collapse-closed">
+    {% admin_get_comments_list for original.publisher_public as comments %}
+    <h2>{% trans "Comments"%} ({{ comments.count }})</h2>
+    <div class="description">{% trans "Moderate comments to post inline" %}</div>
+    <div class="form-row">
+        <ul class="comments" id="comments">
+            {% for comment in comments %}
+                {% include "admin/periodics/post/comment_inline.html" %}
+            {% endfor %}
+        </ul>
+    </div>
+</fieldset>
+{# Save in iframe #}
+<script type="text/javascript">
+
+(function($){
+    PostAdmin().init({url: ''});
+    CommentsAdmin().init();
+    CategoryAdmin().init('{% url admin:periodics_category_addform %}');
+    Publisher('{% url admin:publish %}');
+})(jQuery.noConflict());
+
+</script>
+{% if adminform and add %}
+   <script type="text/javascript">document.getElementById("{{ adminform.first_field.auto_id }}").focus();</script>
+{% endif %}
+
+{# JavaScript for prepopulated fields #}
+{% prepopulated_fields_js %}
+
+</div>
+</form></div>
+{% endblock %}
+

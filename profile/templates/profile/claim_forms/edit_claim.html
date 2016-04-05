@@ -1,0 +1,75 @@
+{% extends "one-column-inner.html" %}
+{% load i18n %}
+
+{% block content_inner %}
+
+
+<div class="registration">
+
+  <h1>{% trans "Edit claim on forum participation" %}</h1>
+
+  <form method="post" action="{% url edit_participant %}">
+    {% csrf_token %}
+
+    <div class="personal_info">
+      <h3>{% trans "Personal info" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_personal.html' %}
+        {% if claim.is_take_part != 1 %}
+          {% if claim_form.is_take_part.errors %}
+          <div class="error">
+            <span>{{ claim_form.is_take_part.label_tag }}*</span>
+            <span class="error_mess">{{ claim_form.is_take_part.errors }}</span>
+            <select id="id_is_take_part" name="is_take_part">
+            <option value="2"{% if claim.is_take_part == 2%} selected="selected"{% endif %}>{% trans "Не принимаю участие в Форуме" %}</option>
+            <option value="3"{% if claim.is_take_part == 3%} selected="selected"{% endif %}>{% trans "Принимаю участие в Форуме" %}</option>
+            </select>
+          </div>
+          {% else %}
+            <span>{{ claim_form.is_take_part.label_tag }}*</span>
+            <select id="id_is_take_part" name="is_take_part">
+            <option value="2"{% if claim.is_take_part == 2%} selected="selected"{% endif %}>{% trans "Не принимаю участие в Форуме" %}</option>
+            <option value="3"{% if claim.is_take_part == 3%} selected="selected"{% endif %}>{% trans "Принимаю участие в Форуме" %}</option>
+            </select>
+          {% endif %}
+        {% else %}
+          <input type="hidden" id="id_is_take_part" name="is_take_part" value="1" />
+        {% endif %}
+      </div>
+      <div class="second_col">
+        {% include 'profile/includes/fields_geo.html' %}
+      </div>
+    </div>
+
+    <div class="firm_information">
+      <h3>{% trans "Organization info" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_organization.html' %}
+      </div>
+    </div>
+
+    <div class="contacts">
+      <h3>{% trans "Contacts" %}</h3>
+      {% include 'profile/includes/fields_contacts.html' %}
+    </div>
+
+    <div id="second_chapter">
+      <h2>{% trans "Arrival/departure info" %}</h2>
+      {% include 'profile/includes/fields_travel.html' %}
+    </div>
+
+    <div class="hotel">
+        <h2>{% trans "Hotel booking" %}</h2>
+        {% include "profile/includes/fields_hotel.html" %}
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="{% trans "Save" %}" />
+      <a href="{% url profile_view %}">{% trans "Cancel" %}</a>
+    </div>
+  </form>
+
+</div>
+{% include "profile/includes/geo.html" %}
+{% endblock content_inner %}
+

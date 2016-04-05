@@ -1,0 +1,38 @@
+{% load i18n cms_tags comments_tags %}
+<div class="comment_form">
+  {% if comments_allow %}
+    {% if ip_banned %}
+      <h2>{% trans "You are forbidden to comment" %}</h2>
+      <h3>{{ ip_banned.reason }}</h3>
+    {% else %}
+      <h2>{% trans "Write a comment" %}</h2>
+      <form method="post" id="post_comment_form" action="{% comments_form_action parent %}">
+        {% csrf_token %}
+        <ul id="comment-area">
+          {% for f in comment_form %}
+            {% if not f.is_hidden %}
+              <li class="field-{{ f.name }} {% if f.errors %}error{% endif %}">
+                {% if f.name != "content" %}
+                  {{ f.label_tag }}
+                {% endif %}
+                {{ f }}
+              </li>
+            {% else %}
+              <li class="hidden">
+                {{ f }}
+              </li>
+            {% endif %}
+          {% endfor %}
+          <li><p>{% trans "Characters left" %}: <strong class="comment_status"></strong></p></li>
+          <li><input type="submit" value="{% trans "send" %}" class="submit_comment" /></li>
+        </ul>
+      </form>
+      <script type="text/javascript" src="/media/static/js/lib/jquery.maxlength.js"></script>
+      <script type="text/javascript" src="/media/static/js/comments.js"></script>
+    {% endif %}
+
+  {% else %}
+    <h2>{% trans "Comments is disabled" %}</h2>
+  {% endif %}
+</div>
+

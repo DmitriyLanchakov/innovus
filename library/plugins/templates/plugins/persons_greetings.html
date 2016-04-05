@@ -1,0 +1,56 @@
+{% load thumbnail pytils_typo %}
+<div class="greeting">
+  <script type="text/javascript" src="{{ JS_URL }}lib/jquery.scrollTo-1.4.2.min.js"></script>
+  {% if object.block_title %}
+   <h2>{{ object.block_title }}</h2>
+  {% endif %}
+  <ul class="person">
+    {% for position in positions %}
+      <li class="toggler">
+        <div class="person_item" id="person_item_{{ position.person.id }}">
+          <div class="person_photo">
+          {% thumbnail position.person.photo "130" upscale="False" as thumb %}
+            <img src="{{ thumb.url }}" alt="{{ position.person.name }}" width="{{ thumb.width }}" height="{{ thumb.height }}" />
+          {% endthumbnail %}
+          </div>
+          <div class="person_info">
+            <h1 class="person_name">{{ position.person.name|striptags|typografy|safe }}</h1>
+            <p class="person_title">{{ position.person.position|striptags|typografy|safe }}</p>
+              {% if position.person.announce %}
+                <p class="speech">{{ position.person.announce|striptags|typografy|safe }}</p>
+              {% endif %}
+              {% if position.person.content %}
+                <p class="expander"><a href="#"><span>{% trans "expand" %}</span></a></p>
+                <p class="collapser"><a href="#"><span>{% trans "collapse" %}</span></a></p>
+                <div class="hidden">{{ position.person.content|safe }}</div>
+                <p class="collapser"><a href="#"><span>{% trans "collapse" %}</span></a></p>
+              {% endif %}
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.colorbox.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+  var array = [];
+  $.each($("#content .person_item .hidden img"), function() {
+    if ($(this).parent().is("a")) {
+      $(this).parent().attr("rel", $(this).closest(".person_item").attr("id"));
+      $(this).parent().attr("title", $(this).attr("title"));
+      array.push($(this).parent()[0]);
+    };
+  });
+  if ($(array).length) {
+    $(array).colorbox({
+      maxHeight: 600,
+      opacity: 0.5,
+      current: ""
+    });
+  };
+});
+//]]>
+</script>
+</div>
+

@@ -1,0 +1,178 @@
+body
+  #last_comments
+    overflow: hidden
+    h2
+      +italic_style(14px, #00566f)
+    ul
+      margin-bottom: 60px
+      li
+        list-style: none
+        margin: 0
+        margin-top: 25px
+        span
+          color: #75716b
+          font-size: 12px
+        p
+          color: #181818
+          font-size: 12px
+          line-height: 1.4em
+          margin-top: 5px
+    .show_comment
+      +italic_style(14px, #00566f)
+      border-bottom: 1px dotted #00566f
+      float: left
+      text-decoration: none
+    .add_comment
+      +italic_style(16px, #ff4e00)
+      border-bottom: 1px dotted #ff4e00
+      float: right
+      margin-right: 50px
+      text-decoration: none
+  #comments
+    margin-top: 10px
+    h2
+      +italic_style(16px, black)
+    ul
+      padding: 40px 20px 0 20px
+      li
+        list-style: none
+        margin-bottom: 15px
+        .comment
+          box-shadow: 0 2px 3px #e3d8cb
+          -moz-box-shadow: 0 2px 3px #e3d8cb
+          -webkit-box-shadow: 0 2px 3px #e3d8cb
+          background: #fffdf1
+          border: 1px solid #f5e9db
+          padding: 10px 20px
+          .details
+            .author-name
+              +italic_style(14px, #005770)
+            .date
+              color: #5b6674
+              font-size: 12px
+          .content
+            p
+              color: #302f2f
+              font-size: 12px
+              line-height: 18px
+          .replylink
+            overflow: hidden
+            .comment-reply
+              border-bottom: 1px dotted #006889
+              color: #006889
+              float: right
+              font-size: 12px
+              text-decoration: none
+      .level-0
+        margin-left: 0
+      .level-1
+        margin-left: 20px
+      .level-2
+        margin-left: 40px
+  #post-new-comment-container
+    overflow: hidden
+    #reply_box
+      margin-right: 45px
+      overflow: hidden
+      #write
+        +italic_style(16px, #006996)
+        border-bottom: 1px dotted #006996
+        float: right
+  #post-comment-form
+    background: #f3f6f9
+    border: 1px solid #b8babc
+    border-top: 1px dotted #b8babc
+    display: block
+    margin-top: 5px
+    margin-left: 20px
+    margin-right: 20px
+    overflow: hidden
+    padding: 10px 15px
+    .comment_title
+      +italic_style(14px, #0072ab)
+    .dynamic-block
+      .anonymous, .openid
+        border-bottom: 1px dotted #005d92
+        color: #005d92
+        font-size: 11px
+        margin-right: 10px
+        text-decoration: none
+      .act_login
+        border: none
+        color: black
+        cursor: default
+    #comment-area
+      position: relative
+    ul
+      overflow: hidden
+      padding: 0
+      li
+        list-style: none
+        margin: 5px 0px
+        overflow: hidden
+        label
+          color: #002837
+          display: block
+          font-size: 12px
+          width: 50px
+        input
+          border: 1px solid #969696
+          color: black
+          font-size: 12px
+          line-height: 24px
+          padding: 3px 9px
+          width: 230px
+      li.field-author_name, li.field-author_email
+        position: relative
+        .errorlist
+          float: right
+          height: 23px
+          position: static
+          li
+            color: #e3867e
+            font-size: 12px
+            position: absolute
+            left: 60px
+            top: 2px
+      ul.errorlist
+        height: 23px
+        position: absolute
+        top: 105px
+        li
+          color: #e3867e
+          font-size: 12px
+          margin: 0
+          padding: 0
+      .field-content
+        background-color: white
+        border: 1px solid #969696
+        margin-top: 20px
+        padding: 0 8px
+        textarea
+          border: none !important
+          color: black
+          font-size: 12px
+          display: block
+          height: 110px
+          padding: 7px 0
+          width: 100%
+      .comment-tracker
+        float: left
+        p
+          color: #002837
+          font-size: 12px
+          margin: 0
+      .submit-button
+        background: #fefefe
+        border: 1px solid #969696
+        float: right
+        height: 24px
+        input
+          background: #fefefe
+          border: none
+          color: black
+          font-size: 12px
+          line-height: 19px
+          height: 20px
+          padding: 1px 0 7px 0
+          width: 100px

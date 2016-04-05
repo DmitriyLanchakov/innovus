@@ -1,0 +1,36 @@
+Здравствуйте, {% if claim.delegation_manager %}{{ claim.delegation_manager.first_name }} {{ claim.delegation_manager.middle_name }} {{ claim.delegation_manager.last_name }}! {% else %}{{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}{% endif %}!
+
+При регистрации {% if claim.delegation_manager %}
+участника {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}
+{% else %}в качестве участника XIV Томского инновационного форума INNOVUS{% endif %} Вы подали заявку на чартерный рейс.
+Сообщаем, что Ваша заявка принята.
+ 
+Вам будет предоставлен чартер
+ 
+Для регистрации на чартерный рейс необходимо выслать паспортные данные (номер, серия, кем и когда выдан, место и дата рождения) {% if claim.delegation_manager %}для зарегистрированного вами участника ({{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}) {% endif %}на адрес электронной почты org@tomskforum.ru
+
+---
+С уважением,
+Организационный комитет
+XIV Томский инновационный форум INNOVUS
+
+________________________________________________________________________________
+
+Hello, {% if claim.delegation_manager %}{{ claim.delegation_manager.first_name }} {{ claim.delegation_manager.middle_name }} {{ claim.delegation_manager.last_name }}! {% else %}{{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}{% endif %}!
+
+While registering {% if claim.delegation_manager %}
+participation of {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}{% else %}
+for the participation in
+{% endif %}
+the XIVth INNOVUS Tomsk Innovation Forum, you have sent an application for a charter flight.
+
+Your application has been accepted.
+
+To provide you a charter flight, we need {% if not claim.delegation_manager %}your{% else %}a{% endif %} passport data (passport number, date of issue and issuing authority, date and place of birth) {% if not claim.delegation_manager %}of ({{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}'s) {% endif %}.
+So please, submit it to the our email address - org@tomskforum.ru
+
+---
+Sincerely yours,
+Organizing Committee,
+The INNOVUS XIVth Tomsk Innovation Forum
+

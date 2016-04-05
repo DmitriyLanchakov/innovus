@@ -1,0 +1,19 @@
+{% load i18n %}
+<li id="comment-{{ comment.id }}" class="comment level-{{ comment.level }}{% if not comment.is_approved %} blamed{% endif %}">
+    <div>
+        <b>{{ comment.author.name }}</b> | {{ comment.created_at }} |
+    </div>
+    <div>{{ comment.content|safe }}</div>
+    <div>
+        <p>
+            {% if comment.is_approved %}
+                <a href="{% url admin:periodics_comment_toggle comment_id=comment.id %}" class="comment-approve-button">{% trans "Blame" %}</a>
+            {% else %}
+                <a href="{% url admin:periodics_comment_toggle comment_id=comment.id %}" class="comment-approve-button">{% trans "Approve" %}</a>
+            {% endif %}
+            &bull;
+            <a href="{% url admin:periodics_ban_toggle comment.ip_address %}" class="ban-ip-button">{% trans "Ban author" %}</a>
+        </p>
+    </div>
+</li>
+

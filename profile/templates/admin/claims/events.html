@@ -1,0 +1,31 @@
+{% extends "admin/claims/base_claims.html" %}
+{% load i18n %}
+{% block extrastyle %}<link rel="stylesheet" type="text/css" href="{{ CSS_URL }}4admin.css" />{% endblock %}
+{% block content %}
+
+<div id="container" class="cabinet_view">
+  <div class="wrapper_cabinet">
+    <h1>Мероприятия</h1>
+    <table>
+        <tr>
+            <th>Событие</th>
+            <th>Тип</th>
+            <th>Начало</th>
+            <th>Конец</th>
+            <th>Кол-во</th>
+        </tr>
+        {% for e in events %}
+        <tr>
+            <td class="left"><a href="{% url manage_event id=e.id %}">{{ e.title }}</a></td>
+            <td>{{ e.get_event_type_display|default:"---" }}</td>
+            <td>{{ e.date_started|date:"d.m.Y H:i" }}</td>
+            <td>{{ e.date_finished|date:"d.m.Y H:i" }}</td>
+            <td>{{ e.count_claims|default:"0" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}
+

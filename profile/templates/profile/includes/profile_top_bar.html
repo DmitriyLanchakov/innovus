@@ -1,0 +1,30 @@
+{% load i18n %}
+<div class="top_bar">
+
+  <div class="change_password">
+    <p>{{ user.email }}</p>
+    <p><a href="{% url password_change %}">{% trans "Change my password" %}</a></p>
+  </div>
+
+  <h1>{% trans "Personal cabinet" %}</h1>
+
+  <ul class="menu">
+    <li><a href="{% url profile_view %}">{% trans "Profile" %}</a></li>
+    {% if user.get_profile.is_take_part == 1 %}
+      {% if user.get_profile.delegates.count %}
+        <li><a href="{% url list_delegate %}">{% trans "Participants" %}</a></li>
+      {% endif %}
+      {% if REG_START < NOW and NOW < REG_END or user.is_staff %}
+        <li><a href="{% url delegate_join_attention %}">{% trans "Add participant" %}</a></li>
+      {% endif %}
+    {% else %}
+      {% if user.get_profile.delegates.count %}
+        <li><a href="{% url list_delegate %}"{% if is_delegate_list %} class="active"{% endif %}>{% trans "Participants" %}</a></li>
+      {% endif %}
+      {% if REG_START < NOW and NOW < REG_END or user.is_staff %}
+        <li><a href="{% url add_delegate %}">{% trans "Add participant" %}</a></li>
+      {% endif %}
+    {% endif %}
+  </ul>
+</div>
+

@@ -1,0 +1,9 @@
+<h2 class="documents_header">{{ object.title }}</h2>
+<ul class="materials">
+  {% for document in resources %}
+    <li class="type_{{ document.extension }}">
+    	{% include 'partials/resources/document_li_content.html' %}
+  	</li>
+  {% endfor %}
+</ul>
+

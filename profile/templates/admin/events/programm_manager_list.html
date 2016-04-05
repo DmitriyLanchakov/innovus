@@ -1,0 +1,29 @@
+{% extends "admin/claims/base_claims.html" %}
+{% block extrastyle %}<link rel="stylesheet" type="text/css" href="{{ CSS_URL }}4admin.css" />{% endblock %}
+
+{% load i18n thumbnail pagination_tags %}
+{% block content %}
+
+
+<div id="container" class="cabinet_view">
+  <div class="delegate_list">
+      {% autopaginate claims 30 %}
+        <table>
+          <tr>
+            <th>Имя</th>
+            <th>Организация</th>
+            <th>Тип заявки</th>
+            <th>Статус заявки</th>
+            <th>Прибытие</th>
+            <th>Убытие</th>
+            <th>Гостиница</th>
+          </tr>
+          {% for d in claims %}
+            {% include "admin/events/list_item.html" %}
+          {% endfor %}
+        </table>
+        {% paginate %}
+    </div>
+  </div>
+{% endblock %}
+

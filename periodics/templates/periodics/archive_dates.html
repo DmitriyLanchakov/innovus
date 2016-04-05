@@ -1,0 +1,24 @@
+{% extends "base_general.html" %}
+{% load cache i18n cms_tags %}
+{% block content %}
+    {{ block.super }}
+    <h1>{% page_attribute title %}</h1>
+
+    {% for year in archive %}
+    <div class="archive-{% cycle 'left' 'right' %}">
+        <ul class="archive-year">
+            <li><a href="{{ current_page.get_absolute_url }}{{ year.0 }}/">{{ year.0 }}</a></li>
+            <li>
+                <ul class="archive-month">
+                {% for month in year.1 %}
+                    <li>
+                        <a href="{{ current_page.get_absolute_url }}{{ year.0 }}/{{ month.0 }}/">{% trans month.1 %}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+    {% endfor %}
+{% endblock %}
+

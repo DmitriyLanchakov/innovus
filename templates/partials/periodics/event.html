@@ -1,0 +1,53 @@
+{% extends "two-columns-right.html" %}
+{% load media_tags comments_tags indexer_tags url_tags %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.maxlength.js"></script>
+{% block main_content %}
+<div class="event">
+  <h1>{{ post.title|safe }}</h1>
+  <div class="media floatl forum_images">
+        {% multimedia for post with templates %}
+  </div>
+  <div class="event_date">
+  {{ post.date|date:"d M Y" }}
+  </div>
+  <div class="announce">
+  {{ post.annotation|safe }}
+  </div>
+  <div class="content">
+  {{ post.content|safe }}
+  </div>
+{% if tags %}
+  <div class="taglist">
+    <ul>
+      {% for tag in tags %}
+      <li class="tag"><a href="{% url tags_list tag=tag %}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+
+  <ul class="social_links">
+    <li class="twitter">
+      <a title="Spread the word on Twitter!" href="http://twitter.com/home?status={{ post.title }} (via @Tomskforum) http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}">Retweet</a>
+    </li>
+    <li class="delicious">
+      <a rel="nofollow" title="Bookmark on Del.icio.us!" href="http://delicious.com/post?url=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;title={{ post.title }}{% if post.annotation %}&amp;notes={{ post.annotation|safe|striptags|slice:'200' }}...{% endif %}">Bookmark</a>
+    </li>
+    <li class="facebook">
+      <a href="http://www.facebook.com/sharer.php?u=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;t={{ post.title }}">Share</a>
+    </li>
+    <li class="google">
+      <a href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;title={{ post.title }}{% if post.annotation %}&amp;annotation={{ post.annotation|safe|striptags|slice:'200' }}...{% endif %}" title="Закладки Google">Закладки Google</a>
+    </li>
+    <li class="yandex">
+      <a href="http://zakladki.yandex.ru/userarea/links/addfromfav.asp?bAddLink_x=1&amp;lurl=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;lname={{ post.title }}" title="Яндекс.Закладки">Яндекс.Закладки</a>
+    </li>
+  </ul>
+
+</div>
+  {% comments for post in category %}
+{% endblock %}
+{% block column_content %}
+{% focused for post %}
+{% endblock %}
+

@@ -1,0 +1,56 @@
+{% load select_locale_tags %}
+
+{% if claim_form.country.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.country.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{% localize_select claim_form.country %}</p>
+  <div class="error_mess">{{ claim_form.country.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.country.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{% localize_select claim_form.country %}</p>
+{% endif %}
+
+{% if claim_form.region.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.region.label_tag }}</p>
+  <p class="input">{{ claim_form.region }}</p>
+  <div class="error_mess">{{claim_form.region.errors}}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.region.label_tag }}</p>
+  <p class="input">{{ claim_form.region }}</p>
+{% endif %}
+
+{% if claim_form.city.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.city.label_tag }}</p>
+  <p class="input">{{ claim_form.city }}</p>
+  <div class="error_mess">{{ claim_form.city.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.city.label_tag }}</p>
+  <p class="input">{{ claim_form.city }}</p>
+{% endif %}
+
+{% if claim_form.citizenship.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.citizenship.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.citizenship }}</p>
+  <div class="error_mess">{{ claim_form.citizenship.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.citizenship.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.citizenship }}</p>
+{% endif %}
+
+{% if claim_form.programm_type.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.programm_type.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.programm_type }}</p>
+  <div class="error_mess">{{ claim_form.programm_type.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.programm_type.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.programm_type }}</p>
+{% endif %}

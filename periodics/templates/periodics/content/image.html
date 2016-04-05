@@ -1,0 +1,10 @@
+{% load cache cms_tags thumbnail %}
+<a class="lightbox" href="{{ post.get_absolute_url }}">
+{% thumbnail item "276x221" as thumb %}
+    <img src="{{ thumb.url }}"
+        alt="{{ post.picture_alt }}"
+        title="{{ post.picture_title }}"
+        width="{{ thumb.width }}"
+        height="{{ thumb.height }}" />
+    {% endthumbnail %}
+</a>

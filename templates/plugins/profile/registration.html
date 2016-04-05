@@ -1,0 +1,46 @@
+{% load i18n %}
+<h2>{{ object.title }}</h2>
+    <form method="post" action="{% url profile_registration%}" id="registration-form">
+        {% csrf_token %}
+        <ul>
+            {{ form.as_ul }}
+            <li class="submit-row">
+                <input type="submit" value="{% trans "Continue" %}" />
+            </li>
+        </ul>        
+    </form>
+    {% include "profile/includes/geo.html" %}
+    <script type="text/javascript">
+var EmailChecker = function(id, url) {
+    $(function(){
+        var emailField = $('#' + id);
+
+        $(emailField).blur(function(e){
+            if (! $(emailField).val()) {
+                return;
+            }
+            $.get(
+                url, {email: $(this).val()},
+                function(json){
+                    /**
+                     * Оставляю рефакторинг этого кода на откуп гуишникам.
+                     * 
+                     * У json есть следующие свойства:
+                     * 
+                     *   free     bool    свободен email (true) или уже используется (false)
+                     *   email    string  проверяемый  email, совпадает с emailField.val()
+                     *   message  string  сформированное текстовое сообщение от сервера     
+                     */
+                    $('#email-indicator').remove();
+                    if (json.free) {
+                        $(emailField).after('<span id="email-indicator" style="color:green">'+json.message+'</span>')                
+                    } else {
+                        $(emailField).after('<span id="email-indicator" style="color:red">'+json.message+'</span>')                        
+                    }
+                }, 'json'
+            );            
+        });
+    });
+}
+EmailChecker('id_email', '{% url profile_ajax_check_email %}');
+</script>

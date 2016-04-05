@@ -1,0 +1,47 @@
+{% load i18n %}
+<h3>{% blocktrans with title as filter_title %} By {{ filter_title }} {% endblocktrans %}</h3>
+<ul>
+{% for choice in choices %}
+    <li{% if choice.selected %} class="selected"{% endif %}>
+    <a href="{{ choice.query_string|iriencode }}">{{ choice.display }}</a> </li>
+
+
+    {% if forloop.last %}
+        {% ifequal filter "public_from" %}
+            <li id="filter-range">
+            <form method="get" action=".">
+                <h2>{% trans "By date range" %}</h2>
+                <label><span>{% trans "From" %}</span><input type="text" name="public_from__gte" id="filter-range-datapicker1" value="{{ request.GET.public_from__gte }}" /></label>
+                <label><span>{% trans "To" %}</span><input type="text" name="public_from__lte" id="filter-range-datapicker2" value="{{ request.GET.public_from__lte }}" /></label>
+                <input type="submit" value="{% trans "Filter" %}" />
+            </form>
+
+            <form method="get" action="." id="filter-day-form">
+                <h2>{% trans "By given date" %}</h2>
+                <input type="text" id="filter-range-datapicker3" value="{{ request.GET.public_from__eq }}" />
+                <input type="submit" value="{% trans "Filter" %}" />
+            </form>
+            <script type="text/javascript">
+                $('#filter-day-form').submit(function(e){
+                    var form = $(this);
+                    var day = $('#filter-range-datapicker3').val();                    
+                    if (day) {
+                        var regex = /^(\d{4})-(\d{2})-(\d{2})$/;
+                        var match = day.match(regex);
+
+                        if (match) {
+                            form
+                                .append('<input type="hidden" name="public_from__day" value="'+match[3]+'" />') 
+                                .append('<input type="hidden" name="public_from__year" value="'+match[1]+'" />')
+                                .append('<input type="hidden" name="public_from__month" value="'+match[2]+'" />')
+                            ;                           
+                        }
+                    }
+                })
+            </script>
+            </li>
+        {% endifequal %}
+    {% endif %}
+{% endfor %}
+</ul>
+

@@ -1,0 +1,63 @@
+{% extends "one-column-inner.html" %}
+
+{% block content_inner %}
+<div class="registration">
+
+  <h1>{% trans "Application form for participation in the XIV Innovation Forum" %}</h1>
+
+  <form method="post" action="{% url join_participant %}">
+    {% csrf_token %}
+
+    <h2>{% trans "Information about participant" %}</h2>
+
+    <div class="account">
+      <h3>{% trans "Account" %}</h3>
+      {% include 'profile/includes/fields_account.html' %}
+    </div>
+
+    <div class="personal_info">
+    <h3>{% trans "Personal details" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_personal.html' %}
+        <input type="hidden" id="id_is_take_part" name="is_take_part" value="1" />
+      </div>
+      <div class="second_col">
+        {% include 'profile/includes/fields_geo.html' %}
+      </div>
+    </div>
+
+    <div class="firm_information">
+    <h3>{% trans "Organization info" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_organization.html' %}
+      </div>
+      <div class="second_col">
+
+      </div>
+    </div>
+
+    <div class="contacts">
+      <h3>{% trans "Contacts" %}</h3>
+      {% include 'profile/includes/fields_contacts.html' %}
+    </div>
+
+    <div id="second_chapter">
+      <h2>{% trans "Information about arrival/departure" %}</h2>
+      {% include 'profile/includes/fields_travel.html' %}
+    </div>
+
+    <div class="hotel">
+        <h2>{% trans "Hotel booking" %}</h2>
+        {% include "profile/includes/fields_hotel.html" %}
+    </div>
+    <div class="submit">
+      <input type="submit" value="{% if is_delegation %}{% trans "Add more participants" %}{% else %}{% trans "Send" %}{% endif %}" />
+    </div>
+  </form>
+
+  {% include "profile/includes/geo.html" %}
+
+</div>
+
+{% endblock content_inner %}
+

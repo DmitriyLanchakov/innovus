@@ -1,0 +1,21 @@
+#tags
+  padding-top: 20px
+  padding-bottom: 30px
+  h1
+    color: #a0cad9
+    font-size: 28px
+    margin: 0 2% 10px 2%
+  ul
+    text-align: center
+    margin: 0 2%
+    li
+      +inline-block
+      white-space: nowrap
+      margin: 0 10px
+      a
+        color: #007497
+
+    @for $i from 1 through 10
+      .weight#{$i}
+        font-size: 8px + ($i - 1) * 3
+

@@ -1,0 +1,62 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}print.css" />
+  <title>Список заявок версия для печати | Томский инновационный форум</title>
+</head>
+<body>
+
+<div id="container" class="claim_list">
+{% if foreigners.count %}
+<h3>Иностранные участники:</h3>
+<table>
+    <thead>
+      <tr>
+        <th>Ф. И. О.</th>
+        <th>Тип участника</th>
+        <th colspan="2">для пометок</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for claim in foreigners %}
+        <tr>
+            <td>{{ claim.last_name }} {{ claim.first_name }} {{ claim.middle_name }}</td>
+            <td>{{ claim.get_claim_type_display }}</td>
+            <td>{% if claim.is_registered %}зарегистрирован{% endif %}</td>
+            <td>{% if claim.is_invited %}приглашен{% endif %}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+<h3>Российские участники:</h3>
+{% for l, claims in russians %}
+    {% if claims.count %}
+<table>
+    <thead>
+     <tr><th colspan="4">{{ l }}</th></tr>
+      <tr>
+        <th>Ф. И. О.</th>
+        <th>Тип участника</th>
+        <th colspan="2">для пометок</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for claim in claims %}
+        <tr>
+            <td>{{ claim.last_name }} {{ claim.first_name }} {{ claim.middle_name }}</td>
+            <td>{{ claim.get_claim_type_display }}</td>
+            <td>{% if claim.is_registered %}зарегистрирован{% endif %}</td>
+            <td>{% if claim.is_invited %}приглашен{% endif %}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    {% endif %}
+{% endfor %}
+</div>
+</body>
+</html>
+

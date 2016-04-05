@@ -1,0 +1,43 @@
+{% extends "one-column.html" %}
+{% load i18n thumbnail %}
+{% block content %}
+<h1>{% trans "Profile" %} {{ profile }}</h1>
+<div>
+    {% if profile.photo %}
+        <img src="{% thumbnail profile.photo 160x220 crop %}" alt="{{ profile }}" />
+    {% else %}
+        [{% trans "No photo" %}]
+    {% endif %}
+    </div>
+    <form method="post" action="{% url profile_edit %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <ul>
+            {{ form.as_ul }}
+            <li><input type="submit" value="{% trans "Edit" %}" /></li>
+        </ul>
+    </form>
+    {% include "profile/includes/geo.html" %}
+    <hr />
+    <h1>{{ profile }}</h1>
+    <h2>{% trans "Short" %}</h2>
+    <div>
+        {% if profile.photo %}
+            <img src="{% thumbnail profile.photo 160x220 crop %}" alt="{{ profile }}" />
+        {% else %}
+            [{% trans "No photo" %}]
+        {% endif %}
+    </div>
+    <ul>
+        <li>{% trans "First name" %}: <b>{{ profile.first_name }}</b></li>
+        <li>{% trans "Last name" %}: <b>{{ profile.last_name }}</b></li>
+        <li>{% trans "From" %}: <b>
+            {{ profile.country }}{% if profile.region%}, {{ profile.region }}{% endif %}{% if profile.city %}, {{ profile.city }}{% endif %}</b>
+        </li>
+    </ul>
+    <h2>{% trans "About" %}</h2>
+    <div>{{ profile.about }}</div>
+    <h2>{% trans "My comments" %} ({{ comments.approved.count }})</h2>
+    {{ comments }}
+
+{% endblock %}
+

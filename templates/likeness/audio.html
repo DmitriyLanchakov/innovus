@@ -1,0 +1,17 @@
+{% load pytils_typo %}
+<li>
+  <h2>{{ audio.title|striptags|typografy|safe }}</h2>
+  <div>
+    <object width="276" height="100">
+        <param name="allowFullScreen" value="true" />
+        <param name="allowScriptAccess" value="always" />
+        <param name="wmode" value="transparent" />
+        <param name="movie" value="{{ MEDIA_URL }}static/flash/player.swf" />
+        <param name="flashvars" value="&amp;st={{ CSS_URL }}audio-ru.txt&amp;file={{ audio.file.url }}" />
+        <embed src="{{ MEDIA_URL }}static/flash/player.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" flashvars="st=/media/static/css/audio-ru.txt&amp;file={{ audio.file.url }}" width="276" height="100">
+        </embed>
+    </object>
+  </div>
+	<p>{{ audio.description|striptags|typografy|safe }}</p>
+</li>
+

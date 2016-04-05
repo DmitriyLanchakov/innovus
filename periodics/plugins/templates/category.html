@@ -1,0 +1,20 @@
+{% load i18n cms_tags thumbnail pagination_tags %}
+{% autopaginate posts object.per_page %}
+<div class="news-list {{category}}">
+  <ul>
+{% for post in posts %}
+    <li>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        <span>{{ post.date|date:"d M Y" }}</span>
+        <p>
+          {% if post.picture_src %}
+          <img src="{% thumbnail post.picture_src 200x600 %}" alt="{{ post.picture_alt|default:post.title }}" title="{{ post.picture_title|default:post.title }}" />
+          {% endif %}
+          {{ post.annotation|safe|striptags}}
+        </p>
+    </li>
+{% endfor %}
+</ul>
+{% paginate %}
+</div>
+

@@ -1,0 +1,13 @@
+{% load cache cms_tags i18n js media_tags %}
+<div id="videoblog">
+    <div id="video">
+    {% render_video_preview for post %}
+    </div>
+    <div id="videonews">
+      <h1>{{ object.category.title }}</h1>
+      <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+	{{ description|safe }}
+      <h4><a href="{{ post.get_absolute_url }}../../">{% trans "Go to category" %}</a></h4>
+    </div>
+</div>
+

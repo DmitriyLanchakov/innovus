@@ -1,0 +1,70 @@
+{% load cache pagination_tags %}
+{% for key, values in response %}
+    {% if key == selected %}
+        {% if key == 'periodics_post' %}
+            {% autopaginate values 10 %}
+            <ul class="news-list">
+            {% for post in values %}
+                {% include 'partials/periodics/post_li_main_content.html' %}
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if key == 'persons_person' %}
+           {% autopaginate values 10 %}
+           <ul>
+            {% for person in values %}
+                    {% include "likeness/person.html" %}
+            {% endfor %}
+           </ul>
+        {% endif %}
+
+        {% if key == 'history_picture' %}
+            {% autopaginate values 12 %}
+           <ul class="forum_images">
+            {% for image in values %}
+                {% include 'partials/resources/image_li.html' %}
+            {% endfor %}
+           </ul>
+        {% endif %}
+
+        {% if key == 'history_audio' %}
+           {% autopaginate values 10 %}
+           <ul>
+            {% for audio in values %}
+                {% include "likeness/audio.html" %}
+            {% endfor %}
+           </ul>
+        {% endif %}
+
+        {% if key == 'history_video' %}
+           <ul>
+            {% with values as resources %}
+                {% include 'partials/resources/video_carousel_full.html' %}
+            {% endwith %}
+           </ul>
+        {% endif %}
+
+        {% if key == 'history_document' %}
+           {% autopaginate values 15 %}
+           <ul class="forum_materials">
+            {% for document in values %}
+                {% include 'partials/resources/document_li_content.html' %}
+            {% endfor %}
+           </ul>
+        {% endif %}
+
+        {% if key == 'text_text' %}
+           {% autopaginate values 15 %}
+           <ul>
+            {% for text in values %}
+                {% include 'likeness/text.html' %}
+            {% endfor %}
+           </ul>
+        {% endif %}
+
+     {% paginate %}
+
+    {% endif %}
+{% endfor %}
+

@@ -1,0 +1,12 @@
+{% load thumbnail pytils_typo %}
+<li>
+    <a href="{{ image.file.url }}" rel="gallery" title='{{ image.title|typografy|safe }}' >
+        {% thumbnail image.file "200x150" crop="center" upscale="False" as thumb %}
+        <img src="{{ thumb.url }}"
+             alt="{{ image.title }}"
+             width="{{ thumb.width }}"
+             height="{{ thumb.height }}"/>
+        {% endthumbnail %}
+    </a>
+</li>
+

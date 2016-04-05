@@ -1,0 +1,31 @@
+#content
+  .materials
+    li
+      +clearfix
+      list-style: none
+      margin: 0 0 15px 0
+      img
+        float: right
+        margin-left: 15px
+      h2
+        +georgia_font_stack
+        background-color: transparent
+        background-repeat: no-repeat
+        background-position: left 7px
+        padding-left: 25px
+        margin: 0
+        a
+          color: #004d9f
+      p
+        margin: 5px 0 0 0
+      &.type_djvu h2
+        background-image: url("../img/type_djvu.png")
+      &.type_doc h2
+        background-image: url("../img/type_doc.png")
+      &.type_pdf h2
+        background-image: url("../img/type_pdf.png")
+      &.type_ppt h2
+        background-image: url("../img/type_ppt.png")
+      &.type_swf h2
+        background-image: url("../img/type_swf.png")
+

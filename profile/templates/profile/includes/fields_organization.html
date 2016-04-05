@@ -1,0 +1,35 @@
+{% load i18n select_locale_tags %}
+
+{% if claim_form.industry.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.industry.label_tag }}</p>
+  <p class="input">{% localize_select claim_form.industry %}</p>
+  <div class="error_mess">{{ claim_form.industry.errors }}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.industry.label_tag }}</p>
+  <p class="input">{% localize_select claim_form.industry %}</p>
+{% endif %}
+
+{% if claim_form.organization.errors %}
+<div class="error">
+  <p class="label">{{claim_form.organization.label_tag}}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.organization }}</p>
+  <div class="error_mess">{{claim_form.organization.errors}}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.organization.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.organization }}</p>
+{% endif %}
+
+{% if claim_form.position.errors %}
+<div class="error">
+  <p class="label">{{ claim_form.position.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.position }}</p>
+  <div class="error_mess">{{claim_form.position.errors}}</div>
+</div>
+{% else %}
+  <p class="label">{{ claim_form.position.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+  <p class="input">{{ claim_form.position }}</p>
+{% endif %}
+

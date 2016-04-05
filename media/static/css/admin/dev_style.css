@@ -1,0 +1,17 @@
+.left .left-con .main .content div label, .left .left-con .main .annotation div label { float: none; }
+.left .left-con .main .content div #id_content_parent, .left .left-con .main .content div #id_annotation_parent, .left .left-con .main .annotation div #id_content_parent, .left .left-con .main .annotation div #id_annotation_parent { overflow: hidden; display: block; }
+.left .left-con .main .content div #id_content_parent #id_content_tbl, .left .left-con .main .content div #id_content_parent #id_annotation_tbl, .left .left-con .main .content div #id_annotation_parent #id_content_tbl, .left .left-con .main .content div #id_annotation_parent #id_annotation_tbl, .left .left-con .main .annotation div #id_content_parent #id_content_tbl, .left .left-con .main .annotation div #id_content_parent #id_annotation_tbl, .left .left-con .main .annotation div #id_annotation_parent #id_content_tbl, .left .left-con .main .annotation div #id_annotation_parent #id_annotation_tbl { height: auto !important; width: 100% !important; }
+.left .left-con .main .content div #id_content_parent #id_content_tbl tbody tr td #id_content_ifr, .left .left-con .main .content div #id_content_parent #id_content_tbl tbody tr td #id_annotation_ifr, .left .left-con .main .content div #id_content_parent #id_annotation_tbl tbody tr td #id_content_ifr, .left .left-con .main .content div #id_content_parent #id_annotation_tbl tbody tr td #id_annotation_ifr, .left .left-con .main .content div #id_annotation_parent #id_content_tbl tbody tr td #id_content_ifr, .left .left-con .main .content div #id_annotation_parent #id_content_tbl tbody tr td #id_annotation_ifr, .left .left-con .main .content div #id_annotation_parent #id_annotation_tbl tbody tr td #id_content_ifr, .left .left-con .main .content div #id_annotation_parent #id_annotation_tbl tbody tr td #id_annotation_ifr, .left .left-con .main .annotation div #id_content_parent #id_content_tbl tbody tr td #id_content_ifr, .left .left-con .main .annotation div #id_content_parent #id_content_tbl tbody tr td #id_annotation_ifr, .left .left-con .main .annotation div #id_content_parent #id_annotation_tbl tbody tr td #id_content_ifr, .left .left-con .main .annotation div #id_content_parent #id_annotation_tbl tbody tr td #id_annotation_ifr, .left .left-con .main .annotation div #id_annotation_parent #id_content_tbl tbody tr td #id_content_ifr, .left .left-con .main .annotation div #id_annotation_parent #id_content_tbl tbody tr td #id_annotation_ifr, .left .left-con .main .annotation div #id_annotation_parent #id_annotation_tbl tbody tr td #id_content_ifr, .left .left-con .main .annotation div #id_annotation_parent #id_annotation_tbl tbody tr td #id_annotation_ifr { min-height: 300px; }
+
+#id_publish_container { height: 25px; width: 80px; padding-left: 15px; overflow: hidden; }
+
+.progress { background: transparent url(/media/static/img/ajax-loader.gif) no-repeat 0% 20%; }
+
+#filter-range form h2 { background: #efefef url(''); border: none; color: #666; font-size: 12px; font-weight: bold; }
+#filter-range form label { display: block; height: 22px; line-height: 22px; }
+#filter-range form label input { float: right; width: 100px; padding: 0; }
+#filter-range form input[type = "submit"] { width: 142px !important; padding: 0; }
+#filter-range #filter-day-form input { display: block; width: 100px; padding: 0; margin: 5px auto; }
+
+#changelist-filter { z-index: 0; }
+

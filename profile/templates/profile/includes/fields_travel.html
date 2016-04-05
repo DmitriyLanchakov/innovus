@@ -1,0 +1,124 @@
+{% load i18n %}
+  <div class="arrival">
+    <h3>{% trans "Do you want to use a charter race" %} {% trans "Moscow" %}&rarr;{% trans "Tomsk" %}?<abbr title="{% trans 'Обязательное поле' %}">*</abbr></h3>
+    <div class="first_col">
+      {% if claim_form.arrival_want_charter.errors %}
+      <div class="error">
+        <p class="input">{{ claim_form.arrival_want_charter }}</p>
+        <div class="error_mess">{{ claim_form.arrival_want_charter.errors }}</div>
+      </div>
+      {% else %}
+        <p class="input">{{ claim_form.arrival_want_charter }}</p>
+      {% endif %}
+    </div>
+    <div class="second_col">
+      <p>
+        {% blocktrans %}
+        If you want to request a charter flight, you'll need to provide additional personal info. Further instructions will be sent to the email box, listed during registration.
+        {% endblocktrans %}
+      </p>
+    </div>
+  </div>
+
+  <div class="arrival ar_charter_date">
+      <h3>{% trans "Please, select arrival charter date and time" %}</h3>
+      <div class="first_col">
+          {% if claim_form.arrival_charter_date.errors %}
+          <div class="error">
+            <p class="input">{{ claim_form.arrival_charter_date }}</p>
+            <div class="error_mess">{{ claim_form.arrival_charter_date.errors }}</div>
+          </div>
+          {% else %}
+            <p class="input">{{ claim_form.arrival_charter_date }}</p>
+          {% endif %}
+    </div>
+  </div>
+
+  <div class="ar_transport">
+    <h3>{% trans "What transport type will you arrive to Tomsk with?" %}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></h3>
+    <div class="first_col">
+      {% if claim_form.arrival_transport_type.errors %}
+      <div class="error">
+        <p class="input">{{ claim_form.arrival_transport_type }}</p>
+        <div class="error_mess">{{ claim_form.arrival_transport_type.errors }}</div>
+      </div>
+      {% else %}
+        <p class="input">{{ claim_form.arrival_transport_type }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ar_date">
+    <h3>{% trans "When do you arrive to Tomsk?" %}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></h3>
+    <div class="first_col">
+      {% if claim_form.arrival_date.errors %}
+      <div class="error">
+        <p class="input">{{ claim_form.arrival_date }}</p>
+        <div class="error_mess">{{ claim_form.arrival_date.errors }}</div>
+      </div>
+      {% else %}
+        <p class="input">{{ claim_form.arrival_date }}</p>
+      {% endif %}
+    </div>
+    <div class="second_col">
+      <p>
+        {% blocktrans %}
+        При указании даты/времени прибытия используйте формат ДД.ММ.ГГГГ ЧЧ:мм
+        {% endblocktrans %}
+      </p>
+    </div>
+  </div>
+
+  <div class="departure">
+    <h3>{% trans "Do you want to use a charter flight" %} {% trans "Tomsk" %}&rarr;{% trans "Moscow" %}?<abbr title="{% trans 'Обязательное поле' %}">*</abbr></h3>
+    <div class="first_col">
+      {% if claim_form.departure_want_charter.errors %}
+      <div class="error">
+        <p class="input">{{ claim_form.departure_want_charter }}</p>
+        <div class="error_mess">{{ claim_form.departure_want_charter.errors }}</div>
+      </div>
+      {% else %}
+        <p class="input">{{ claim_form.departure_want_charter }}</p>
+      {% endif %}
+    </div>
+    <div class="second_col">
+      <p>{% trans "Charter flight for depart from Tomsk will be at May 27" %}</p>
+    </div>
+  </div>
+
+  <div class="dep_transport">
+    <h3>{% trans "What transport type will you depart from Tomsk with?" %}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></h3>
+    <div class="first_col">
+      {% if claim_form.departure_transport_type.errors %}
+      <div class="error">
+        <p class="input">{{ claim_form.departure_transport_type }}</p>
+        <div class="error_mess">{{claim_form.departure_transport_type.errors}}</div>
+      </div>
+      {% else %}
+        <p class="input">{{ claim_form.departure_transport_type }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="dep_date">
+    <h3>{% trans "When you will departure from Tomsk?" %}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></h3>
+    <div class="first_col">
+      {% if claim_form.departure_date.errors %}
+      <div class="error">
+        <p class="input">{{ claim_form.departure_date }}</p>
+        <div class="error_mess">{{claim_form.departure_date.errors}}</div>
+      </div>
+      {% else%}
+        <p class="input">{{ claim_form.departure_date }}</p>
+      {% endif%}
+    </div>
+    <div class="second_col">
+      <p>
+        {% blocktrans %}
+        При указании даты/времени отбытия используйте формат ДД.ММ.ГГГГ ЧЧ:мм
+        {% endblocktrans %}
+      </p>
+    </div>
+  </div>
+
+

@@ -1,0 +1,31 @@
+{% load cache i18n cms_tags %}
+{% if comment.is_approved %}
+  <li class="level_{{ comment.level }}" id="comment_{{ comment.id }}">
+    <div class="details">
+      <span class="author_name">
+        {% if comment.user %}
+          {{ comment.user.get_full_name }}
+        {% else %}
+          {{ comment.author_name }}
+        {% endif %}
+      </span>
+      <span class="date">{{ comment.created_at|date:"d.m.Y" }} {% trans "at" %} {{ comment.created_at|date:"H:i" }}</span>
+      <span class="permalink" title="Ссылка на комментарий"><a href="#comment-{{ comment.id }}" name="comment-{{ comment.id }}" title="Ссылка на комментарий">#</a></span>
+    </div>
+    <div class="content">
+      {{ comment.content|safe|striptags }}
+    </div>
+    {% if comment.level < 4 %}
+      <div class="replylink">
+        <a href="{% url comment-reply parent_id=comment.id %}" class="comment_reply">{% trans "Reply" %}</a>
+      </div>
+    {% endif %}
+  </li>
+{% else %}
+  {% ifnotequal comment.get_children.count 0 %}
+    <li class="level_{{ comment.level }} deleted">
+      {% trans "This comment has been deleted" %}
+    </li>
+  {% endifnotequal %}
+{% endif %}
+

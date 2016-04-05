@@ -1,0 +1,16 @@
+{% load i18n %}
+<h1>{% trans "manage delegation" %}</h1>
+<ul>
+    {% for d in delegates %}
+        <li>
+            {{ d }}
+            [<a href="{% url profile_delegation_manage_edit delegate_id=d.id%}">{% trans "Edit" %}</a>]
+            [<a href="{% url profile_delegation_manage_delete delegate_id=d.id %}">{% trans "Delete" %}</a>]
+        </li>
+    {% endfor %}
+</ul>
+
+<p>
+    <a href="{% url profile_delegation_manage_add %}">{% trans "Add" %}</a>
+</p>
+

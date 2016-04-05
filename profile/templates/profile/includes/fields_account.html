@@ -1,0 +1,48 @@
+{% load cache %}
+<div class="first_col">
+
+  {% if claim_form.email.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.email.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.email }}</p>
+    <div class="error_mess">{{ claim_form.email.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.email.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.email }}</p>
+  {% endif %}
+
+  {% if claim_form.password.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.password.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.password }}</p>
+    <div class="error_mess">{{ claim_form.password.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.password.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.password }}</p>
+  {% endif %}
+
+  {% if claim_form.confirm.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.confirm.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.confirm }}</p>
+    <div class="error_mess">{{ claim_form.confirm.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.confirm.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.confirm }}</p>
+  {% endif %}
+
+</div>
+
+<div class="second_col">
+<p>
+{% blocktrans %}
+  Email address will be used as your site login.<br />
+  Please, specify a difficult password for site signing in.<br />
+  With the difficult password your personal data would be much more safer.
+{% endblocktrans %}
+</p>
+</div>
+

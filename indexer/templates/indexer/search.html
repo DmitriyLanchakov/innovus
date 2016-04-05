@@ -1,0 +1,157 @@
+{% extends "two-columns-right.html" %}
+{% load cache indexer_tags pagination_tags %}
+
+{% block main_content %}
+<h1>{{ view_title|safe }}</h1>
+  {% if form %}
+    <div class="search_form">
+      <form method="get" action="{% url haystack_search %}" >
+        <p class="search_wrapper">
+          {{ form.q }}
+          <input class="submit" type="submit" value="{% trans "Search" %}" />
+        </p>
+      </form>
+    </div>
+  {% endif %}
+
+  <div class="search_results">
+    {% if not response.count %}
+      <p>{% trans "Sorry, but no results were found." %}</p>
+    {% endif %}
+
+    {% autopaginate response 10 %}
+
+    {% if selected == 'library.video' %}
+      <script type="text/javascript" src="{{ JS_URL }}lib/jquery-ui-1.8.11.custom.min.js"></script>
+      <script type="text/javascript">
+      //<![CDATA[
+      $(function() {
+        if (!$("#videoplayer_full").length) {
+          $("<div id='videoplayer_dialog'><div id='videoplayer_full'></div></div>").appendTo("body");
+        };
+        $("#content .search_results .video li a").click(function() {
+          var title = $(this).html();
+          if ($(this).children().length) {
+            title = $(this).children().attr("alt");
+          };
+          var url = $(this).attr("href");
+          var flashvars = {
+            "uid": "videoplayer_full",
+            "comment": title,
+            "st": "{{ CSS_URL }}video-ru-full.txt",
+            "file": url
+          };
+          var params = {
+            id: "videoplayer_full",
+            allowFullScreen: "true",
+            allowScriptAccess: "always",
+            wmode: "transparent"
+          };
+          $("#videoplayer_dialog").dialog({
+            width: 650,
+            height: 470,
+            modal: true,
+            title: title,
+            resizable: false,
+            open: function() {
+              new swfobject.embedSWF("/media/static/flash/player.swf", "videoplayer_full", "510", "410", "9.0.115", false, flashvars, params);
+            }
+          });
+          return false;
+        });
+      });
+      //]]>
+      </script>
+      <ul class="video">
+      {% for search_result in response %}
+        {% with search_result.object as video %}
+          {% include 'indexer/video.html' %}
+        {% endwith %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if selected == 'library.person' %}
+      <ul class="interviews">
+      {% for search_result in response %}
+        {% with search_result.object as person %}
+          {% include "likeness/person.html" %}
+        {% endwith %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if selected == 'text.text' %}
+      <ul class="pages">
+      {% for search_result in response %}
+        {% with search_result.object as text %}
+          {% include 'likeness/text.html' %}
+        {% endwith %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if selected == 'periodics.post' %}
+      <ul class="news">
+      {% for search_result in response %}
+        {% with search_result.object as post %}
+          {% include 'likeness/post.html' %}
+        {% endwith %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if selected == 'library.audio' %}
+      <ul class="audio">
+      {% for search_result in response %}
+        {% with search_result.object as audio %}
+          {% include "likeness/audio.html" %}
+        {% endwith %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if selected == 'library.document' %}
+      <ul class="materials">
+      {% for search_result in response %}
+        {% with search_result.object as document %}
+          {% include 'likeness/material.html' %}
+        {% endwith %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if selected == 'library.picture' %}
+      <script type="text/javascript" src="{{ JS_URL }}lib/jquery.colorbox.min.js"></script>
+      <script type="text/javascript">
+      //<![CDATA[
+      $(function() {
+        var current_text = "{current} of {total}";
+        if ($("#content .search_results .pictures").hasClass("ru")) {
+          current_text = "{current} из {total}";
+        };
+        $("#content .search_results .pictures a").colorbox({
+          maxHeight: 600,
+          opacity: 0.5,
+          current: current_text
+        });
+      });
+      //]]>
+      </script>
+      <ul class="pictures {{ LANGUAGE_CODE }}">
+      {% for search_result in response %}
+        {% with search_result.object as image  %}
+          {% include 'likeness/picture.html' %}
+        {% endwith %}
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+  </div>
+  {% paginate %}
+{% endblock %}
+
+{% block column_content %}
+  {% include "indexer/ct_selector.html" %}
+{% endblock %}
+

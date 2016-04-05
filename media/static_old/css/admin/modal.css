@@ -1,0 +1,108 @@
+body .ui-dialog {
+  margin: 0;
+  padding: 0;
+  font: normal normal 12px Arial, sans-serif;
+}
+body .ui-dialog .ui-dialog-titlebar {
+  background: #417690;
+  color: #F4E07D;
+  height: 25px;
+}
+body .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+  padding-left: 10px;
+  line-height: 25px;
+}
+body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+  background: url('../images/close_butt.png') no-repeat;
+  color: #F4E07D;
+  float: right;
+  height: 10px;
+  margin: 7px 5px 0 0;
+  width: 10px;
+}
+body .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close span {
+  display: none;
+}
+body .ui-dialog #category-wrap {
+  border: 1px solid #417690;
+}
+body .ui-dialog #category-wrap #category-addform {
+  display: block;
+  overflow: hidden;
+}
+body .ui-dialog #category-wrap #category-addform ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+}
+body .ui-dialog #category-wrap #category-addform ul li {
+  list-style: none;
+  display: block;
+  height: 35px;
+  float: left;
+  padding-left: 30px;
+}
+body .ui-dialog #category-wrap #category-addform ul li #id_title {
+  width: 175px;
+}
+body .ui-dialog #category-wrap #category-addform ul li #id_per_page {
+  width: 20px;
+}
+body .ui-dialog #category-wrap #category-addform ul li .errorlist {
+  float: left;
+  display: block;
+  clear: right;
+  overflow: hidden;
+  width: 300px;
+}
+body .ui-dialog #category-wrap #category-addform ul li .errorlist li {
+  background: #fff;
+  border: none;
+  color: red;
+  font-size: 10px !important;
+  height: 10px;
+  line-height: 10px;
+  margin: 0;
+  padding: 0 0 0 45px;
+}
+body .ui-dialog #category-wrap #category-addform button {
+  display: block;
+  float: none;
+  margin: 0 auto;
+  width: 50px;
+}
+div.category div{
+    display:block;
+    overflow:hidden;
+}
+
+div.category div label.required{
+    display:none;
+}
+
+div.category div ul{
+    display:block;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+}
+
+div.category div ul li{
+    display:block;
+    overflow:hidden;
+}
+
+div.category div ul li label{
+    display:block;
+    overflow:hidden;
+    width: 100%;
+}
+
+div.category #qqqqq{
+    display: block;
+    margin-top: 10px;
+    width: 40px;
+    padding-left: 20px;
+}

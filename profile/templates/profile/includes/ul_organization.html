@@ -1,0 +1,24 @@
+{% load i18n %}
+{% if claim.industry or claim.organization or claim.position %}
+    <ul class="organization">
+      {% if claim.industry %}
+      <li>
+        <span class="label">{% trans "Industry" %}:</span>
+        <span class="value">{{ claim.industry }}</span>
+      </li>
+      {% endif %}
+      {% if claim.organization %}
+      <li>
+        <span class="label">{% trans "Organization" %}:</span>
+        <span class="value">{{ claim.organization }}</span>
+      </li>
+      {% endif %}
+      {% if claim.position %}
+      <li>
+        <span class="label">{% trans "Position" %}:</span>
+        <span class="value">{{ claim.position }}</span>
+      </li>
+      {% endif %}
+    </ul>
+{% endif %}
+

@@ -1,0 +1,59 @@
+<div class="submenu_admin">
+  {% if user.is_staff %}
+    <div class="subchapter">
+      <h1{% if manage_claim %} class="selected"{% endif %}>
+        <a href="{% url manage_claim_list %}">Список заявок</a>
+      </h1>
+    </div>
+    <div class="subchapter">
+      <h1{% if manage_hotel %} class="selected"{% endif %}>
+        <a href="{% url manage_hotel_list %}">Список гостиниц</a>
+      </h1>
+    </div>
+    <div class="subchapter">
+      <h1{% if manage_hotel %} class="selected"{% endif %}>
+          <a href="{% url manage_events %}">{% trans "Forum events stat" %}</a>
+      </h1>
+    </div>
+  {% endif %}
+  {% if user.is_authenticated %}
+    <div class="subchapter">
+       <h1><a href="{% url profile_view %}">{% trans "Personal cabinet" %}</a></h1>
+    </div>
+    {% if user.get_profile.is_take_part == 1 %}
+      {% if user.get_profile.delegates.count %}
+        <div class="subchapter">
+          <h1>
+            <a href="{% url list_delegate %}">{% trans "Participants" %}</a>
+          </h1>
+        </div>
+      {% endif %}
+      {% if REG_START < NOW and NOW < REG_END or user.is_staff %}
+        <div class="subchapter">
+          <h1>
+            <a href="{% url delegate_join_attention %}">{% trans "Add participant" %}</a>
+          </h1>
+        </div>
+        <div class="subchapter">
+          <h1><a href="{% url events_list %}">{% trans "Events schedule" %}</a></h1>
+        </div>
+      {% endif %}
+    {% else %}
+      {% if user.get_profile.delegates.count %}
+        <div class="subchapter">
+          <h1>
+            <a href="{% url list_delegate %}"{% if is_delegate_list %} class="active"{% endif %}>{% trans "Participants" %}</a>
+          </h1>
+        </div>
+      {% endif %}
+      {% if REG_START < NOW and NOW < REG_END or user.is_staff %}
+        <div class="subchapter">
+          <h1>
+            <a href="{% url add_delegate %}">{% trans "Add participant" %}</a>
+          </h1>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endif %}
+</div>
+

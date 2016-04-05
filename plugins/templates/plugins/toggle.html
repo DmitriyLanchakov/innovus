@@ -1,0 +1,12 @@
+{% load cache cms_tags i18n %}
+{% if not is_ajax %}
+<div class="toggler">
+  <h3>{{ object.title|safe }}</h3>
+  <a href="{% url load_hidden_text id=object.pk %}" class="expander">развернуть&darr;</a>
+  <a href="{% url load_hidden_text id=object.pk %}" class="collapser">свернуть&uarr;</a>
+  <div id="toggle_text_{{ object.pk }}" class="hidden"></div>
+</div>
+{% else %}
+{{ body|safe }}
+{% endif %}
+

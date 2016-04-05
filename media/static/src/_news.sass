@@ -1,0 +1,55 @@
+#content
+  .news_list
+    +clearfix
+    li
+      list-style: none
+      margin: 0 0 20px 0
+      h2
+        +georgia_font_stack
+        margin-bottom: 10px
+        a
+          color: #004d9f
+      .image
+        float: left
+        width: 154px
+        margin-right: 20px
+        img
+          border: 1px solid #888
+          padding: 1px
+      .description
+        +clearfix
+        .date
+          color: #333
+          +georgia_font_stack
+          font-size: 14px
+          font-style: italic
+          font-weight: normal
+          margin-bottom: 10px
+        .annotation
+          margin-bottom: 0
+      &.odd
+        float: left
+        clear: left
+        width: 49%
+        margin-right: 1%
+      &.even
+        float: left
+        width: 49%
+        margin-left: 1%
+  .article
+    .image
+      float: left
+      margin: 0 20px 20px 0
+      img
+        border: 1px solid #888
+        padding: 1px
+    .date
+      +georgia_font_stack
+      font-size: 14px
+      font-style: italic
+      margin-bottom: 15px
+    .content
+      img
+        border: 1px solid #888
+        padding: 1px
+

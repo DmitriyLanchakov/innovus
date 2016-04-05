@@ -1,0 +1,42 @@
+@import url("comment.css");
+@import url("modal.css");
+@import url("post_comments.css");
+@import url("attaches.css");
+@import url("dev_style.css");
+@import url("display_on_site.css");
+
+#languagechooser a { margin-left: 2px; }
+
+.clearfix { display:block; overflow:hidden; }
+
+.breadcrumbs { margin-bottom: 20px; }
+
+.breadcrumbs li {
+    float: left;
+    list-style: none;
+}
+#comments {
+    list-style: none;
+}
+
+#hidden-target {
+    display: none;
+}
+.green-note {
+   color: green;
+   border: 1px solid green;
+   background: #FFC url(/media/admin/img/admin/icon_success.gif) no-repeat 5px 0.3em;
+}
+
+.dynamic-inline,.dynamic-block{
+   display: none;
+}
+
+body.js .dynamic-inline{
+   display: inline;
+}
+
+body.js .dynamic-block{
+   display: block;
+}
+

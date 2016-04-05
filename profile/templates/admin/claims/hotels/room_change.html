@@ -1,0 +1,13 @@
+{% extends "one-column-inner.html" %}
+
+{% load i18n thumbnail pagination_tags %}
+{% block content_inner %}
+<form method="post" action="." class="hostel_form">
+  {% csrf_token %}
+  <ul>
+    {{ room_form.as_ul }}
+    <li><input type="submit" value="Добавить" class="submit" /></li>
+  </ul>
+</form>
+{% endblock content_inner %}
+

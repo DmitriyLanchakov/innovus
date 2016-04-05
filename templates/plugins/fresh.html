@@ -1,0 +1,14 @@
+{% load cache cms_tags i18n %}
+{% if posts.count %}
+    <div id="site_news">
+        <span class="block_title">
+            <h2>{% page_attribute page_title fresh %}</h2>
+            <a href="{% url periodics_rss sequence='site' %}" id="site_news_rss">RSS</a>
+        </span>
+        {% include "plugins/fresh_ul.html" %}
+        {% if next %}
+            <a href="#" class="bottom_button">Что еще нового &darr;</a>
+        {% endif %}
+    </div>
+{% endif %}
+

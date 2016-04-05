@@ -1,0 +1,13 @@
+{% load cache cms_tags menu_tags page_class %}
+{% if LANGUAGE_CODE == "ru" %}
+  <ul id="history_timeline">
+      {% for child in children %}
+        {% if child.visible %}
+      <li{% if child.selected %} class="active"{% endif %}{% if child.ancestor %} class="active"{% endif %}>
+        <a href="{{ child.get_absolute_url }}" title="{% get_title_by_pk child.id %}">{{ child.get_menu_title }}</a>
+        </li>
+        {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}
+

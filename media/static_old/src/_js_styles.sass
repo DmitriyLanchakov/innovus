@@ -1,0 +1,149 @@
+.ajaxIndicator
+  background: transparent url("../img/ajax_indicator_bg.png") top left no-repeat
+  height: 30px
+  position: absolute
+  width: 30px
+  z-index: 30000
+  img
+    display: block
+    margin: 7px 0 0 7px
+
+.ai_ie6
+  background-image: url("../img/ajax_indicator_bg.gif")
+
+=icon_helper($width, $height)
+  width: $width
+  height: $height
+  display: none
+  position: absolute
+
+#busy_indicator
+  +icon_helper(16px, 16px)
+
+.persons_button_prev
+  +icon_helper(22px, 22px)
+  cursor: default
+  background: transparent url("../img/button_prev.png") no-repeat 0 -22px
+  display: block
+  right: 116px
+  bottom: 20px
+  z-index: 1
+
+.persons_button_next
+  +icon_helper(22px, 22px)
+  cursor: pointer
+  background: transparent url("../img/button_next.png") no-repeat 0 0
+  display: block
+  right: 59px
+  bottom: 20px
+  z-index: 1
+  &.last
+    background-position: 0 -22px
+    cursor: default
+
+.persons_button_medium
+  +icon_helper(35px, 22px)
+  background: transparent url("../img/button_medium.png") no-repeat 0 0
+  display: block
+  right: 81px
+  bottom: 20px
+  z-index: 1
+
+.persons_main
+  .persons_wrap
+    +clearfix
+    height: 300px
+    position: relative
+    ul
+      float: left
+      position: absolute
+
+#events_carousel
+  .jcarousel
+    float: left
+  .prev,
+  .next
+    display: block
+    float: left
+    width: 22px
+    height: 48px
+    text-indent: -9999px
+  .prev
+    background: transparent url("../img/events_carousel_prev.png") no-repeat left center
+  .next
+    background: transparent url("../img/events_carousel_next.png") no-repeat right center
+
+=common_tooltip
+  display: block
+  position: absolute
+  width: 280px
+  z-index: 30001
+  .tooltip_top
+    display: block
+    height: 7px
+    position: relative
+    z-index: 30002
+  .tooltip_bottom
+    display: block
+    background: white
+    border: 1px solid #868889
+    position: relative
+    color: black
+    font: 12px Arial, sans-serif
+    top: -1px
+    padding: 8px
+    z-index: 30001
+
+#events_tooltip,
+#full_video_tooltip
+  +common_tooltip
+  .tooltip_top
+    background: transparent url("../img/top_triangle_tooltip_left.png") no-repeat left top
+
+#history_video_tooltip
+  +common_tooltip
+  .tooltip_top
+    background: transparent url("../img/top_triangle_tooltip_right.png") no-repeat right top
+
+#history_years_tooltip
+  +common_tooltip
+  width: 160px
+  .tooltip_top
+    background: transparent url("../img/top_triangle_tooltip_left.png") no-repeat left top
+
+#archive_years
+  +common_tooltip
+  width: 90%
+  margin: 0 5%
+  background-color: white
+  z-index: 10000
+  .tooltip_top
+    background: transparent url("../img/top_triangle_tooltip_left.png") no-repeat left top
+  .tooltip_bottom
+    +clearfix
+    position: relative
+    top: -1px
+    padding: 30px 0 30px 20px
+  li
+    color: #0073a8
+    float: left
+    font-family: "Trebuchet MS", Verdana, sans-serif
+    font-size: 14px
+    font-style: italic
+    list-style: none
+    margin: 0
+    width: 7.67%
+    a
+      border-bottom: 1px dotted #0073a8
+      color: #0073a8
+      text-decoration: none
+  .close_archive_years
+    position: absolute
+    top: 10px
+    right: 10px
+    width: 15px
+    height: 15px
+    display: block
+    text-indent: -999em
+    overflow: hidden
+    background: transparent url("../img/close_button.png") no-repeat

@@ -1,0 +1,12 @@
+{% load cache cms_tags i18n persons_tags %}
+{% if positions.count %}
+  <div class="persons_main">
+    {% include "plugins/persons/nav.html" %}
+      <span class="block_title">
+        <a href="{% page_id_url 'persons' %}">{{ object.block_title }}</a>
+        <a href="{% url persons_rss %}" class="persons_rss">RSS</a>
+      </span>
+    {% include "plugins/persons/ul.html" %}
+  </div>
+{% endif %}
+

@@ -1,0 +1,212 @@
+#content
+  .claim_list
+    .additional
+      +clearfix
+      li
+        float: left
+        font-size: 18px
+        list-style: none
+        margin: 0 20px 0 0
+    .filters
+      border: 1px solid #ccc
+      padding: 15px
+      margin-bottom: 15px
+      legend
+        font-size: 16px
+      ul
+        margin: 0
+        li
+          float: left
+          list-style: none
+          margin: 0 15px 10px 0
+          label
+            display: block
+            margin-bottom: 5px
+          #id_country,
+          #id_region,
+          #id_state,
+          #id_is_sync,
+          #id_charter_arrival,
+          #id_charter_departure,
+          #id_charter_arrival_date,
+          #id_departure_charter_date,
+          #id_industry,
+          #id_claim_type,
+          #id_is_registered,
+          #id_is_invited,
+          #id_programm_type
+            width: 200px
+            +input_style
+          #id_q,
+          #id_q2
+            width: 188px
+            +input_style
+            padding-top: 6px
+            padding-bottom: 6px
+          &.submit
+            clear: left
+            margin: 15px 0 0 0
+            input
+              +button_style
+              margin-right: 15px
+          &.print_version
+            font-size: 12px
+            line-height: 19.2px
+            margin: 18px 15px 0 0
+            a
+              color: #333
+              +button_style
+              cursor: default
+              text-decoration: none
+              padding: 5px 15px
+    .claims
+      width: 100%
+      td
+        font-size: 11px
+      .need_reservation
+        background-color: #e5ffd5
+      .already_reserved
+        background-color: #fff6d5
+      .state_4 td
+        background-color: #ffcccc
+    .mass_delivery
+      display: none
+      border: 1px solid #ccc
+      padding: 15px
+      margin-bottom: 15px
+      legend
+        font-size: 16px
+      ul
+        margin: 0
+        li
+          list-style: none
+          margin: 0 15px 10px 0
+          label
+            display: block
+            margin-bottom: 5px
+          #id_subject
+            width: 500px
+            +input_style
+          #id_body
+            width: 500px
+            height: 100px
+            +input_style
+          &.submit
+            margin-bottom: 0
+            input
+              +button_style
+              margin-right: 15px
+            .cancel
+              +button_style
+              cursor: default
+              text-decoration: none
+              padding: 5px 15px
+  .claim_show
+    .actions
+      +clearfix
+      li
+        float: left
+        list-style: none
+        margin: 0 15px 0 0
+        p
+          margin-bottom: 0
+        .submit
+          +button_style
+        a
+          +button_style
+          +inline-block
+          cursor: default
+          padding: 3px 12px 2px
+    .request_additional_info
+      .submit
+        +button_style
+    .info
+      border: 1px solid #ccc
+      padding: 15px 15px 0 15px
+      margin-bottom: 15px
+      legend
+        font-size: 16px
+      li
+        list-style: none
+        margin: 0 0 15px 0
+        .label
+          font-weight: bold
+      input.submit
+        +button_style
+      a.submit
+        +button_style
+        cursor: default
+        text-decoration: none
+        padding: 5px 15px
+      .margin_right
+        margin-right: 10px
+      #id_hotel,
+      #id_room_class,
+      #id_room_number
+        width: 300px
+        +input_style
+      #id_arrival_date,
+      #id_departure_date
+        width: 100px
+        +input_style
+    .state
+      font-size: 16px
+      margin-bottom: 15px
+    .change_claim
+      +button_style
+
+    .delegate_list
+      td
+        font-size: 11px
+        p
+          margin-bottom: 0
+    .change_password
+      float: right
+      color: #000
+      font-weight: bold
+      background-color: #d6e480
+      padding: 15px 15px 10px 15px
+      p
+        margin-bottom: 5px
+      a
+        color: #004d9f
+  .my_events
+    table
+      width: 100%
+      .checkbox
+        width: 21px
+      .time
+        width: 86px
+      .place
+        width: 200px
+    .submit
+      input
+        +button_style
+        margin-right: 10px
+      a
+        +button_style
+        padding: 5px 15px
+  .top_bar
+    .menu
+      +clearfix
+      li
+        float: left
+        font-size: 16px
+        list-style: none
+        margin: 0 15px 0 0
+        .selected
+          color: #004d9f
+  .payment
+    label
+      display: block
+      margin-bottom: 5px
+    #id_sum,
+    #id_date
+      +input_style
+    .submit
+      +button_style
+      margin-right: 10px
+    .cancel
+      +button_style
+      padding: 5px 15px
+

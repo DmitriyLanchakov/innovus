@@ -1,0 +1,21 @@
+{% load pytils_numeral pytils_typo %}
+{% if items.count %}
+    <h2 class="history_events_header">Мероприятия</h2>
+    <ul class="history_events">
+    {% for item in items %}
+        <li class="{{ item.event.title_color }}{% if request.current_page == item.cms_page %} selected{% endif %}">
+          <div class="programm_type_{{ item.event.programm_type }}">
+            {{ item.event.get_programm_type_display|first|lower }}
+          </div>
+          <div class="event_link">
+            <a href="{{ item.cms_page.get_absolute_url }}">{{ item.name|striptags|safe }}</a>
+          </div>
+        </li>
+    {% endfor %}
+    </ul>
+    <ul class="history_events_legend">
+    {% for class, name in program_types.items %}
+      <li class="programm_type_{{ class }}">{{ name|first|lower }} &mdash; {{ name }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,214 @@
+@import "compass/utilities"
+
+*
+  html
+    .min-width
+      +pie-clearfix
+      border-left: 980px solid white
+      float: left
+      margin: 0
+      padding: 0
+      position: relative
+      z-index: 1
+
+      .minwidth
+        +pie-clearfix
+        margin-left: -960px
+        position: relative
+        float: left
+        z-index: 2
+
+h1, h2, h3, h4, h5
+  font-weight: normal
+
+body
+  +pie-clearfix
+  font-family: Arial, sans-serif
+  padding-bottom: 0 !important
+  margin: 0
+
+  #header
+    +pie-clearfix
+
+    #header_top
+      height: 33px
+
+    #logo
+      a
+        font: 16px Arial, sans-serif
+
+    #right_top
+      width: 400px
+      #search
+        width: 400px
+        form
+          width: 400px
+          .search_wrapper
+            width: 355px
+            input
+              width: 340px
+  #timeline
+    +pie-clearfix
+    h1
+      span
+        font-weight: normal
+        white-space: nowrap
+    #history_link
+      margin-right: 180px !important
+  #top_menu
+    +clearfix
+    #spotlight
+      margin: 40px 0 20px 0
+      overflow: hidden
+      a, h2
+        color: #e66100
+        float: left
+        font-weight: normal
+        margin: 0
+        text-decoration: none
+    #top_tabs
+      +pie-clearfix
+  #persons
+    +pie-clearfix
+    .block-title
+      height: 42px
+    ul
+      li
+        height: 230px
+        .person_photo
+          display: block
+          margin-right: 15px
+  #events
+    +pie-clearfix
+    padding-bottom: 20px
+    .block-title
+      height: 42px
+    .event_wrapper
+      .event_item
+        .event_v_c
+          overflow: hidden
+          width: 291px
+        .item_info
+          +pie-clearfix
+          display: block
+          width: 60%
+          .event_sight
+            +pie-clearfix
+  #innovation_news
+    +pie-clearfix
+    padding: 15px 5% 0px
+    .block-title
+      height: 34px
+    ul
+      width: 100%
+      .news-item
+        width: 29%
+  #site_news
+    +pie-clearfix
+    padding-bottom: 20px
+    .block-title
+      height: 34px
+    ul
+      width: 97%
+  #tags
+    +pie-clearfix
+    .block-title
+      line-height: 30px
+      height: 24px
+  #sponsors
+    +pie-clearfix
+    #organaizer
+      width: 100%
+      a
+        width: 49%
+    #gen-sponsors
+      +pie-clearfix
+      ul
+        +pie-clearfix
+  #footer
+    +pie-clearfix
+    overflow: hidden
+    #contacts, #hall-of-fame, #social_wrapper
+      white-space: nowrap
+      width: 33%
+  #container
+    padding-bottom: 0
+  #container_r
+    +pie-clearfix
+    width: 68%
+    #container_wrapper
+      +pie-clearfix
+    #column
+      +pie-clearfix
+  #container_r.search
+    .event_v_c
+      width: 520px
+  .paginator
+    ul
+      li
+        display: inline
+  #timeline
+    #timeline_bottom
+      li
+        display: inline
+  #column
+    .forum_media
+      .event_v_c
+        width: 280px
+        #history_carousel
+          ul
+            li
+              height: 48px
+              width: 55px
+              a
+                display: block
+                span
+                  display: block
+                  img
+                    display: block
+  #container.persons
+    .person
+      li
+        width: 49% !important
+  #container.join
+    form
+      div.second_col
+        width: 49%
+  #container
+    #events,
+    #persons
+      .block_title
+        width: 100%
+    .personal_info,
+    .firm_information,
+    .contacts,
+    .account,
+    .arrival,
+    .ar_transport,
+    .ar_date,
+    .departure,
+    .dep_transport,
+    .dep_date,
+    .hotel
+      +pie-clearfix
+  #registration
+    position: absolute
+    right: 0
+    top: expression(eval(document.documentElement.scrollTop)+150)
+    .form
+      display: none
+      .for_login
+        white-space: nowrap
+  .taglist
+    +clearfix
+    li
+      display: block
+      float: left
+      margin: 3px 5px !important
+      white-space: nowrap
+  .comment-form
+    #reply_box
+      +clearfix
+    #post-comment-form
+      #comment-area
+        +clearfix

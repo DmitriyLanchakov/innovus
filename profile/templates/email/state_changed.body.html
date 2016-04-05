@@ -1,0 +1,92 @@
+Здравствуйте! Вы подали заявку на участие в XIV Томском инновационном форуме INNOVUS.
+{% url profile_bill id=claim.id as bill_link %}
+{% if claim.claim_state == 2 %}
+    {% if claim.delegation_manager %}
+Сообщаем, что заявка участника {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }} принята и участнику необходимо оплатить организационный взнос.
+
+Организационный взнос составляет 10 000 рублей за 1 человека.
+
+Счет для оплаты участника доступен в вашем Личном Кабинете на сайте форума по ссылке: http://tomskforum.ru{{ bill_link }}
+    {% else %}
+Сообщаем, что Ваша заявка принята и Вам необходимо оплатить организационный взнос.
+
+Организационный взнос составляет 10 000 рублей за 1 человека.
+
+Счет для оплаты доступен в вашем Личном Кабинете на сайте форума по ссылке: http://tomskforum.ru{{ bill_link }}
+    {% endif %}
+{% endif %}
+{% if claim.claim_state == 3 %}
+    {% if claim.delegation_manager %}
+Сообщаем, что заявка участника {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }} принята.
+
+Участник относится к категории, которой не нужно оплачивать организационный взнос.
+    {% else %}
+Сообщаем, что Ваша заявка принята. Вы относитесь к категории участников, которым не нужно оплачивать организационный взнос.
+    {% endif %}
+{% endif %}
+{% if claim.claim_state == 4 %}
+Вы отменили заявку на участие в XIV Томском инновационном форуме INNOVUS.
+    {% if claim.delegation_manager %}
+Участник {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}.
+    {% endif %}
+{% endif %}
+{% if claim.claim_state == 5 %}
+    {% if claim.delegation_manager %}
+С сожалением сообщаем, что заявка участника {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }} отклонена в связи с превышением лимита зарегистрированных участников. Надеемся на участие в Томском инновационном форуме в будущем.
+    {% else %}
+С сожалением сообщаем, что Ваша заявка отклонена в связи с превышением лимита зарегистрированных участников. Надеемся на Ваше участие в Томском инновационном форуме в будущем.
+    {% endif %}
+{% endif %}
+---
+С уважением,
+Организационный комитет
+XIV Томский инновационный форум INNOVUS
+
+________________________________________________________________________________
+
+Hello!
+You have applied for the participation in the XIVth INNOVUS Tomsk Innovation Forum.
+{% url profile_bill id=claim.id as bill_link %}
+{% if claim.claim_state == 2 %}
+    {% if claim.delegation_manager %}
+The application of {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }} has been accepted. Now you need to pay a registration fee.
+
+The registration fee is 10000 rubles per participant.
+
+The invoice is available in your private area for printing by the link: http://tomskforum.ru{{ bill_link }}
+    {% else %}
+Your application has been accepted. Now you need to pay a registration fee.
+
+The registration fee is 10000 rubles per participant.
+
+The invoice is available in your private area for printing by the link: http://tomskforum.ru{{ bill_link }}
+    {% endif %}
+{% endif %}
+{% if claim.claim_state == 3 %}
+    {% if claim.delegation_manager %}
+The application of {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }} has been accepted.
+
+This participant is among those who do not need to pay a registration fee.
+    {% else %}
+Your application has been accepted. You are among those participants who do not need to pay a registration fee.
+    {% endif %}
+{% endif %}
+{% if claim.claim_state == 4 %}
+    {% if claim.delegation_manager %}
+You have declined application of XIV Tomsk Innovation Forum participation for {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}.
+    {% else %}
+You have declined your application of XIV Tomsk Innovation Forum participation.
+    {% endif %}
+{% endif %}
+{% if claim.claim_state == 5 %}
+    {% if claim.delegation_manager %}
+Unfortunately, the application of {{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }} has been rejected because of exceeding number of registered participants. We hope that you will participate in Tomsk Innovation Forums in the future.
+    {% else %}
+Unfortunately, your application has been rejected because of exceeding number of registered participants. We hope that you will participate in Tomsk Innovation Forums in the future.
+    {% endif %}
+{% endif %}
+---
+Sincerely yours,
+Organizing Committee,
+The INNOVUS XIVth Tomsk Innovation Forum
+

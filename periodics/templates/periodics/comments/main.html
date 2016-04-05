@@ -1,0 +1,21 @@
+{% load i18n comments_tags %}
+
+<div class="comments">
+  {# Comments #}
+  {% get_comments_count for post in category as comments_count %}
+  {% get_comments_list for post in category as comments %}
+  <h2>{% trans "Comments" %}</h2>
+  {% if comments %}
+    <ul>
+      {% for comment in comments %}
+        {% include "periodics/comments/item.html" %}
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Пока комментариев нет</p>
+  {% endif %}
+</div>
+{# Comment form #}
+
+{% comments_form for post in category %}
+

@@ -1,0 +1,18 @@
+{% load i18n %}
+<div id="news-album">
+
+    <h2>{{ title }}</h2>
+
+    <table><tbody><tr>
+        {% for photo in gallery.sample|slice:":3" %}
+	<td class="lightbox">
+
+            <a href="{{ photo.get_display_url }}" title="{% if photo.is_shown %}{% if photo.caption %}{{ photo.caption }}{% else %}{{ photo.title }}{% endif %}{% endif %}" rel="lightbox[{{ gallery.id }}]"><img src="{{ photo.get_thumbnail_url }}" alt="{% if photo.is_shown %}{{ photo.title }}{% endif %}" /></a> 
+	</td>
+        {% endfor %}
+    </tr></tbody></table>
+
+{% if link %}
+    <h4><a href="/{{lang}}/{{link}}/">{% trans "View all photos" %}</a></h4>
+{% endif %}
+</div>

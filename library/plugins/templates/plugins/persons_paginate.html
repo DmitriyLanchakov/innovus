@@ -1,0 +1,5 @@
+{% load pagination_tags %}
+  {% autopaginate positions object.per_page %}
+    {% include "plugins/persons/ul.html" %}
+  {% paginate %}
+

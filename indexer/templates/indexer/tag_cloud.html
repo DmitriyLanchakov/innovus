@@ -1,0 +1,17 @@
+{% load indexer_tags %}
+{% through_tag_cloud as tag_cloud with steps=6 min_count=8 distribution=log %}
+<div id="tags">
+  <h1>{% trans "Метки" %}</h1>
+  {% if tag_cloud %}
+  <ul>
+    {% for tag in tag_cloud %}
+      {% if tag.tag %}
+        <li class="weight{{ tag.font_size }}">
+          <a href="{% url tags_list tag=tag.tag %}">{{ tag.tag|safe }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+

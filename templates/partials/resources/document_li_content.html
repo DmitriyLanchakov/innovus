@@ -1,0 +1,12 @@
+{% load thumbnail pytils_typo %}
+
+{% if document.snapshot %}
+  {% thumbnail document.snapshot "100" as thumb %}
+    <img src="{{ thumb.url }}" alt="{{ document.title }}" />
+  {% endthumbnail %}
+{% endif %}
+<h2><a href="{{ document.file.url }}">{{ document|typografy|safe }}</a></h2>
+{% if document.description %}
+  <p class="description">{{ document.description|striptags|typografy|safe }}</p>
+{% endif %}
+

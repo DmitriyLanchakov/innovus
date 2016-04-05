@@ -1,0 +1,77 @@
+/* Welcome to Compass. Use this file to alert IE use users.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if lte IE 7]>
+ *   <%= stylesheet_link_tag "compiled/ie6stop.css", :media => "screen, projection" %>
+ *   <%= javascript_include_tag 'ie6stop.js' %>
+ * <![endif]--> */
+
+body
+  padding: 137px 0 0 0
+
+#ie6stop
+  height: 130px
+  left: 0
+  width: 100%
+  color: black
+  display: block !important
+  font-size: 12px
+  font-family: Arial, Verdana, sans-serif
+  border-bottom: 1px solid #f7941d
+  background-color: #feefda
+  padding: 0 0 5px 0
+  margin: 0
+  z-index: 999999
+  position: absolute
+  top: expression(eval(document.documentElement.scrollTop))
+  div, p
+    margin-bottom: 0
+  .browsers p
+    line-height: 22px
+  .browsers div
+    font-size: 11px
+    line-height: 16px
+  b
+    font-weight: bold
+  .cornerx
+    float: right
+    display: block
+    width: 16px
+    height: 16px
+    text-indent: -99px
+    overflow: hidden
+    background: url("../img/ie6stop/cornerx.png") no-repeat
+    margin: 5px 5px 0 0
+  .browsers
+    width: 900px
+    height: 90px
+    margin: 0 auto
+    p
+      float: left
+      width: 520px
+      font-family: Arial, Verdana, sans-serif
+      background: url("../img/ie6stop/warning.png") no-repeat left
+      padding-left: 70px
+      margin: 10px 10px 0 0
+    .firefox, .safari, .chrome, .ie8, .opera
+      float: left
+      display: block
+      width: 49px
+      height: 73px
+      text-indent: -9999em
+      overflow: hidden
+      margin-right: 10px
+  .firefox
+    background: url("../img/ie6stop/firefox.png")
+  .safari
+    background: url("../img/ie6stop/safari.png")
+  .chrome
+    background: url("../img/ie6stop/chrome.png")
+  .ie8
+    background: url("../img/ie6stop/ie8.png")
+  .opera
+    background: url("../img/ie6stop/opera.png") no-repeat
+    height: 49px
+  .browsers div
+    font-family: Arial, Verdana, sans-serif
+    padding-right: 6px
+

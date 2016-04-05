@@ -1,0 +1,37 @@
+{% extends "two-columns-right.html" %}
+{% load comments_tags thumbnail %}
+{% block main_content %}
+        <div class="person">
+            <div class="person_photo">
+                {% thumbnail person.photo "180" as thumb %}
+                <img src="{{ thumb.url }}" alt="{{ person.name }}" width="{{ thumb.width }}" height="{{ thumb.height }}" />
+                {% endthumbnail %}
+            </div>
+            <div class="person_info">
+                <h1 class="person_name">{{ person.name|striptags }}</h1>
+                <span class="person_title">{{ person.position|safe|striptags }}</span>
+                {% if person.announce %}
+                <h2 class="speech">{{ person.announce|safe|striptags }}</h2>
+                {% endif %}
+            </div>
+            <div class="text">{{ person.content|safe }}</div>
+        </div>
+        {% comments for person in category %}
+{% endblock %}
+{% block column_content %}
+{% if persons_with_current.count %}
+    <ul class="extra-navigation">
+    {% for person_li in persons_with_current %}
+        <li {% if person_li.pk == person.pk %}class="selected"{% endif %}>
+            {% if person_li.pk == person.pk %}
+            <h2>{{ person_li.name|safe }}</h2>
+            {% else %}
+            <a href="{{ person_li.get_absolute_url }}" title="{{ person_li.title|safe }}">{{ person_li.name|safe }}</a>
+            {% endif %}
+            <span class="person-position">{{ person_li.position|safe|striptags }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
+

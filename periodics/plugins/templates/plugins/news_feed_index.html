@@ -1,0 +1,56 @@
+{% load pytils_dt cms_tags %}
+<div id="news_container" class="container">
+  <div id="news">
+    <h1>
+      <a href="{% page_id_url 'news' %}">{% page_attribute page_title news %}</a>
+      <a class="rss" href="{% url periodics_rss 'inno' %}">RSS {% page_attribute page_title news %}</a>
+    </h1>
+    <div class="line">
+      <div class="news-item">
+          <h1>{% trans "In world" %}</h1>
+        {% for post in world %}
+        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+        <p class="text">{{ post.annotation|striptags|safe }}</p>
+        <p class="date">
+            {% if LANGUAGE_CODE == 'ru' %}
+              {{ post.date|ru_strftime_inflected:"%d %B %Y" }}
+            {% else %}
+              {{ post.date|date:"F d, Y" }}
+            {% endif %}
+        </p>
+        {% endfor %}
+      </div>
+      <div class="news-item">
+          <h1>{% trans "In Russia" %}</h1>
+        {% for post in russia %}
+        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+        <p class="text">{{ post.annotation|striptags|safe }}</p>
+        <p class="date">
+            {% if LANGUAGE_CODE == 'ru' %}
+              {{ post.date|ru_strftime_inflected:"%d %B %Y" }}
+            {% else %}
+              {{ post.date|date:"F d, Y" }}
+            {% endif %}
+        </p>
+        {% endfor %}
+      </div>
+      <div class="news-item">
+          <h1>{% trans "In Tomsk" %}</h1>
+        {% for post in tomsk %}
+        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+        <p class="text">{{ post.annotation|striptags|safe }}</p>
+        <p class="date">
+            {% if LANGUAGE_CODE == 'ru' %}
+              {{ post.date|ru_strftime_inflected:"%d %B %Y" }}
+            {% else %}
+              {{ post.date|date:"F d, Y" }}
+            {% endif %}
+        </p>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="more">
+        <a href="{% page_id_url 'news' %}">{% trans "Other news" %}</a>
+    </div>
+  </div>
+</div>

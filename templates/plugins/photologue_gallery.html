@@ -1,0 +1,33 @@
+{% load i18n splitlist %}
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.colorbox.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+  $("#content .forum_images ul li a").colorbox({
+    maxHeight: 600,
+    opacity: 0.5,
+    current: "{current} / {total}",
+    title: function() {
+      return $(".hidden", $(this).parent()).html();
+    }
+  });
+});
+//]]>
+</script>
+<div class="forum_images">
+  <h2>{{ object.title }}</h2>
+  <ul>
+    {% for image in gallery.photos.all %}
+      <li>
+        <a href="{{ image.get_display_url }}" target="_blank" rel="gallery_{{ gallery.id }}">
+          <img src="{{ image.get_large_thumbnail_url }}" alt="{{ image.title }}" />
+        </a>
+        <div class="hidden">
+          <p>{{ image.title|safe }}</p>
+          <p><small>{{ image.caption }}</small></p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+

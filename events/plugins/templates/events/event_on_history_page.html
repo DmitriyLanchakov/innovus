@@ -1,0 +1,31 @@
+{% load cache pytils_dt pytils_numeral pytils_typo thumbnail %}
+<div class="history_event_moderators">
+  {% if event.moderators.persons.public.count %}
+  <p class="block_name">
+    {% if event.leader_name %}
+      {{ event.moderators.persons.public.count|choose_plural:event.leader_name }}:
+    {% else %}
+      {{ event.moderators.persons.public.count|choose_plural:_('Moderator, Moderators, Moderators') }}:
+    {% endif %}
+  </p>
+    {% for container in moderators %}
+      <div class="moderator">
+        {% thumbnail container.person.photo "100" as thumb %}
+          <img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ person.name }}"/>
+        {% endthumbnail %}
+        <p class="name">{{ container.person.name|safe }}</p>
+        <p class="post">{{ container.person.position|striptags|safe }}{% if not forloop.last %},{% endif %}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+<div class="history_event_date">
+  {{ event.event.starts_on|ru_strftime:"%d %B %Yг. (%A)" }}
+</div>
+<div class="history_event_time">
+  {{ event.event.starts_on|date:"H:i" }} &mdash; {{ event.event.ends_on|date:"H:i" }}
+</div>
+<div class="history_event_place">
+  {{ event.place|typografy|safe }}
+</div>
+

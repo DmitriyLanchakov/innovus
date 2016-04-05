@@ -1,0 +1,19 @@
+На сайте Инновационного Форума был опубликован новый комментарий.
+
+Время создания: {{ comment.created_at|date:"d.m.Y H:i" }}
+Статья: {{ comment.commentable }}
+
+Автор комментария: {{ comment.author_name }}
+Электронная почта: {{ comment.author_email }}
+IP адрес: {{ comment.ip_address }}
+
+Текст комментария:
+
+{{ text|truncatewords:"70" }}
+
+Управление комментарием: http://tomskforum.ru/ru/admin/periodics/comment/{{ comment.pk }}/
+
+
+--
+Сообщение отправлено автоматической системой уведомлений Томского Инновационного Форума
+

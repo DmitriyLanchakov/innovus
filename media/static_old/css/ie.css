@@ -1,0 +1,90 @@
+* html .min-width { *zoom: 1; border-left: 980px solid white; float: left; margin: 0; padding: 0; position: relative; z-index: 1; }
+* html .min-width:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+* html .min-width .minwidth { *zoom: 1; margin-left: -960px; position: relative; float: left; z-index: 2; }
+* html .min-width .minwidth:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+
+h1, h2, h3, h4, h5 { font-weight: normal; }
+
+body { *zoom: 1; font-family: Arial, sans-serif; padding-bottom: 0 !important; margin: 0; }
+body:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #header { *zoom: 1; }
+body #header:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #header #header_top { height: 33px; }
+body #header #logo a { font: 16px Arial, sans-serif; }
+body #header #right_top { width: 400px; }
+body #header #right_top #search { width: 400px; }
+body #header #right_top #search form { width: 400px; }
+body #header #right_top #search form .search_wrapper { width: 355px; }
+body #header #right_top #search form .search_wrapper input { width: 340px; }
+body #timeline { *zoom: 1; }
+body #timeline:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #timeline h1 span { font-weight: normal; white-space: nowrap; }
+body #timeline #history_link { margin-right: 180px !important; }
+body #top_menu { overflow: hidden; *zoom: 1; }
+body #top_menu #spotlight { margin: 40px 0 20px 0; overflow: hidden; }
+body #top_menu #spotlight a, body #top_menu #spotlight h2 { color: #e66100; float: left; font-weight: normal; margin: 0; text-decoration: none; }
+body #top_menu #top_tabs { *zoom: 1; }
+body #top_menu #top_tabs:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #persons { *zoom: 1; }
+body #persons:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #persons .block-title { height: 42px; }
+body #persons ul li { height: 230px; }
+body #persons ul li .person_photo { display: block; margin-right: 15px; }
+body #events { *zoom: 1; padding-bottom: 20px; }
+body #events:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #events .block-title { height: 42px; }
+body #events .event_wrapper .event_item .event_v_c { overflow: hidden; width: 291px; }
+body #events .event_wrapper .event_item .item_info { *zoom: 1; display: block; width: 60%; }
+body #events .event_wrapper .event_item .item_info:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #events .event_wrapper .event_item .item_info .event_sight { *zoom: 1; }
+body #events .event_wrapper .event_item .item_info .event_sight:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #innovation_news { *zoom: 1; padding: 15px 5% 0px; }
+body #innovation_news:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #innovation_news .block-title { height: 34px; }
+body #innovation_news ul { width: 100%; }
+body #innovation_news ul .news-item { width: 29%; }
+body #site_news { *zoom: 1; padding-bottom: 20px; }
+body #site_news:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #site_news .block-title { height: 34px; }
+body #site_news ul { width: 97%; }
+body #tags { *zoom: 1; }
+body #tags:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #tags .block-title { line-height: 30px; height: 24px; }
+body #sponsors { *zoom: 1; }
+body #sponsors:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #sponsors #organaizer { width: 100%; }
+body #sponsors #organaizer a { width: 49%; }
+body #sponsors #gen-sponsors { *zoom: 1; }
+body #sponsors #gen-sponsors:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #sponsors #gen-sponsors ul { *zoom: 1; }
+body #sponsors #gen-sponsors ul:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #footer { *zoom: 1; overflow: hidden; }
+body #footer:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #footer #contacts, body #footer #hall-of-fame, body #footer #social_wrapper { white-space: nowrap; width: 33%; }
+body #container { padding-bottom: 0; }
+body #container_r { *zoom: 1; width: 68%; }
+body #container_r:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #container_r #container_wrapper { *zoom: 1; }
+body #container_r #container_wrapper:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #container_r #column { *zoom: 1; }
+body #container_r #column:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #container_r.search .event_v_c { width: 520px; }
+body .paginator ul li { display: inline; }
+body #timeline #timeline_bottom li { display: inline; }
+body #column .forum_media .event_v_c { width: 280px; }
+body #column .forum_media .event_v_c #history_carousel ul li { height: 48px; width: 55px; }
+body #column .forum_media .event_v_c #history_carousel ul li a { display: block; }
+body #column .forum_media .event_v_c #history_carousel ul li a span { display: block; }
+body #column .forum_media .event_v_c #history_carousel ul li a span img { display: block; }
+body #container.persons .person li { width: 49% !important; }
+body #container.join form div.second_col { width: 49%; }
+body #container #events .block_title, body #container #persons .block_title { width: 100%; }
+body #container .personal_info, body #container .firm_information, body #container .contacts, body #container .account, body #container .arrival, body #container .ar_transport, body #container .ar_date, body #container .departure, body #container .dep_transport, body #container .dep_date, body #container .hotel { *zoom: 1; }
+body #container .personal_info:after, body #container .firm_information:after, body #container .contacts:after, body #container .account:after, body #container .arrival:after, body #container .ar_transport:after, body #container .ar_date:after, body #container .departure:after, body #container .dep_transport:after, body #container .dep_date:after, body #container .hotel:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #registration { position: absolute; right: 0; top: expression(eval(document.documentElement.scrollTop)+150); }
+body #registration .form { display: none; }
+body #registration .form .for_login { white-space: nowrap; }
+body .taglist { overflow: hidden; *zoom: 1; }
+body .taglist li { display: block; float: left; margin: 3px 5px !important; white-space: nowrap; }
+body .comment-form #reply_box { overflow: hidden; *zoom: 1; }
+body .comment-form #post-comment-form #comment-area { overflow: hidden; *zoom: 1; }

@@ -1,0 +1,98 @@
+{% extends "one-column-inner.html" %}
+{% load i18n thumbnail %}
+{% block content_inner %}
+
+
+<div class="claim_show">
+
+  <div class="change_password">
+    <p>{{ user.email }}</p>
+    <p><a href="{% url password_change %}">{% trans "Change my password" %}</a></p>
+  </div>
+
+  <div class="state">
+    <strong>{% trans "State of claim is: " %}</strong> {{ claim.get_claim_state_display }}
+  </div>
+
+  <ul class="actions">
+    <li>
+      <a href="{% url edit_participant %}">{% trans "Edit claim"%}</a>
+    </li>
+    <li>
+      <a href="{% url cancel_claim %}">{% trans "Cancel claim"%}</a>
+    </li>
+    {% if claim.claim_state == 2 %}
+    <li>
+      <a href="{% url profile_bill id=claim.id %}">{% trans "Счёт на оплату" %}</a>
+    </li>
+    {% endif %}
+  </ul>
+  <p></p>
+
+  <fieldset class="info">
+    <legend>{% trans "Personal info" %}</legend>
+    {% include "profile/includes/ul_personal_info.html" %}
+  </fieldset>
+
+  <fieldset class="info">
+    <legend>{% trans "Contacts" %}</legend>
+    {% include "profile/includes/ul_contacts.html" %}
+  </fieldset>
+
+  <fieldset class="info">
+    <legend>{% trans "Organization info" %}</legend>
+     {% include "profile/includes/ul_organization.html" %}
+  </fieldset>
+
+  {% if claim.is_travel %}
+    <fieldset class="info">
+      <legend>{% trans "Information about travel" %}</legend>
+      {% include "profile/includes/ul_travel.html" %}
+    </fieldset>
+  {% endif %}
+
+  {% if claim.need_hotel %}
+    <fieldset class="info">
+        <legend>{% trans "Hotel booking info" %}</legend>
+      {% if claim.hotel_reserves.count %}
+        <ul>
+          {% for info in claim.hotel_reserves.all %}
+            <li>
+            <span class="label">{% trans "Hotel" %}:</span>
+              <span class="value">{{ info.room.hotel }}</span>
+            </li>
+            <li>
+            <span class="label">{% trans "Room class" %}:</span>
+              <span class="value">{{ info.room }}</span>
+            </li>
+            {% if info.room.is_real_room %}
+            <li>
+            <span class="label">{% trans "Room number" %}:</span>
+              <span class="value">{{ info.room.room_number }}</span>
+            </li>
+            {% endif %}
+            <li>
+            <span class="label">{% trans "Price" %}:</span>
+              <span class="value">{{ info.room.price }} руб.</span>
+            </li>
+            <li>
+            <span class="label">{% trans "Arrival" %}:</span>
+              <span class="value">{{ info.arrival_date|date:"d M. Y, H:i" }}</span>
+            </li>
+            <li>
+            <span class="label">{% trans "Departure" %}:</span>
+              <span class="value">{{ info.departure_date|date:"d M. Y, H:i" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <ul>
+            <li>{% trans "Hotel booking in progress" %}</li>
+        </ul>
+      {% endif %}
+    </fieldset>
+  {% endif %}
+</div>
+
+{% endblock content_inner %}
+

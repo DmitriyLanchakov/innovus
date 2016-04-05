@@ -1,0 +1,2 @@
+{% load i18n %}
+<a href="{{ post.get_absolute_url }}#write" class="bottom_button" >{% trans 'Send Comment' %} ({{ post.comments.approved.count }})</a>

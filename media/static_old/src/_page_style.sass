@@ -1,0 +1,1655 @@
+//Общий стиль для страниц
+body
+  min-width: 980px
+  width: 100%
+
+//Стили для компоновки страниц
+
+//    Без колонок
+body
+  #container
+    +pie-clearfix
+    padding: 0 0 25px 0
+    width: 100%
+
+//    Одна справа
+$width_right_col: 385px
+$padding_right_col: 25px
+
+=r_background_and_border($back_l, $back_r, $col_border)
+  background-color: $back_l
+  border-right: $width_right_col solid $back_r
+  border-top: 1px solid $col_border
+  #container_wrapper
+    border-right: 1px dotted $col_border
+
+//      Верстка
+body
+  #container_r
+    +pie-clearfix
+    padding: 0px 0 25px 5%
+    #container_wrapper
+      float: left
+      margin-right: -100%
+      overflow: hidden
+      padding-right: 5%
+      width: 95%
+    #column
+      float: right
+      margin-right: -$width_right_col
+      padding: $padding_right_col
+      position: relative
+      width: $width_right_col - 2 * $padding_right_col
+      .extra-navigation
+        .selected
+          h3
+            margin: 0
+            color: black
+        li
+          list-style: none
+          margin: 0 0 16px 0
+          a
+            border-bottom: 1px dotted #408cab
+            font: 16px Verdana, sans-serif
+            color: #408cab
+            text-decoration: none
+
+//    Одна слева
+$width_left_col: 385px
+$padding_left_col: 25px
+
+=l_background_and_border($back_l, $back_r, $col_border)
+  background-color: $back_r
+  border-left: $width_right_col solid $back_l
+  border-top: 1px solid $col_border
+  #container_wrapper
+    border-left: 1px dotted $col_border
+
+//      Верстка
+body
+  #container_l
+    +pie-clearfix
+    padding: 0 5% 25px 5%
+    #container_wrapper
+      float: right
+      margin-left: -100%
+      overflow: hidden
+      padding-left: 5%
+      width: 90%
+    #column
+      float: left
+      margin-left: -$width_left_col
+      padding: $padding_left_col
+      position: relative
+      width: $width_left_col - 2 * $padding_left_col
+      .extra-navigation
+        .selected
+          h3
+            margin: 0
+            color: black
+        li
+          list-style: none
+          margin: 0 0 16px 0
+          a
+            border-bottom: 1px dotted #408cab
+            font: 16px Verdana, sans-serif
+            color: #408cab
+            text-decoration: none
+
+//Стили для видеовещания событий
+body
+  #container
+    div#broadcast
+      background-color: #ebfbd6
+      border-top: 1px dashed #c0eaef
+      color: black
+      padding-bottom: 15px
+      span.block_title
+        h2
+          color: #34827f !important
+          margin: 0
+      div.broadcast_item
+        padding: 0 10px
+        p, strong, ul, li, h3, h4
+          font-size: 12px
+          font-family: Georgia, serif
+          color: black
+        .has-broadcast
+          font-size: 24px
+          color: #e66100
+          margin-top: 10px
+        .sponsor_broadcast
+          text-align: center
+          font-style: italic
+        strong
+          display: block
+        ul
+          li
+            list-style: none
+        ul.wrapper
+          padding: 10px 0 0
+        .time
+          font-size: 18px
+          display: inline
+        .title
+          font-size: 18px
+          display: inline
+        .videoplayer_broadcast
+          display: block
+          margin: 0 auto
+        .more
+          +clearfix
+
+//Стили для различных страниц
+//Просмотр персоны
+body
+  #container_r.persons
+    +r_background_and_border(#f6fbff, #f7fcfe, #c3cedb)
+    #container_wrapper
+      padding-top: 25px
+      .person
+        overflow: hidden
+        padding-right: 20px
+        .person_photo
+          border: 1px solid #868889
+          display: block
+          float: left
+          margin-right: 15px
+          overflow: hidden
+          img
+            border: 1px solid white
+            display: block
+        .person_info
+          display: block
+          overflow: hidden
+          .person_name
+            color: #005274
+            font-size: 18px
+          .person_title
+            color: black
+            display: block
+            font-size: 12px
+            margin-top: 10px
+          .speech
+            +italic_style(14px, #33534c)
+            display: block
+            margin-top: 10px
+        .text
+          margin-bottom: 30px
+          font-size: 14px
+          line-height: 1.4em
+      .taglist
+        margin: 35px 0 20px 0
+        overflow: hidden
+        li
+          background: #f47b00
+          display: inline-block
+          height: 14px
+          list-style: none
+          margin: 0
+          padding: 2px 0px
+          a
+            color: white
+            display: block
+            font-size: 11px
+            line-height: 12px
+            padding: 1px 5px
+            text-decoration: none
+      .materials
+        overflow: hidden
+        .submenu
+          overflow: hidden
+          padding-top: 10px
+          li
+            display: inline-block
+            height: 19px
+            list-style: none
+            margin: 0
+            padding: 3px 15px
+            a
+              +italic_style(16px, #698700)
+              border-bottom: 1px dotted #698700
+              text-decoration: none
+          .active
+            background: #698700
+            a
+              color: white
+        .material_items
+          li
+            list-style: none
+            margin-top: 60px
+            a
+              color: #005e81
+              font-size: 16px
+              text-decoration: underline
+            span
+              color: black
+              display: block
+              font-size: 12px
+              margin-top: 25px
+    #column
+      padding: 35px
+      a
+        color: #004d75
+        font-size: 14px
+      #up_arrow
+        background: url("../img/up_arrow.png") no-repeat
+        display: block
+        height: 19px
+        margin: 13px auto
+        width: 65px
+      #down_arrow
+        background: url("../img/down_arrow.png") no-repeat
+        display: block
+        height: 19px
+        margin: 13px auto
+        width: 65px
+      ul
+        li
+          font-family: Verdana, sans-serif
+          list-style: none
+          margin-bottom: 30px
+          text-align: center
+          .person_photo
+            border: 1px solid #868889
+            display: inline-block
+            margin-bottom: 10px
+            img
+              border: 1px solid white
+              height: 100px
+              display: block
+          .person_info
+            .person_name
+              +italic_style(14px, #005176)
+            .person_title
+              color: black
+              display: block
+              font-size: 11px
+              line-height: 20px
+              margin-top: 5px
+      .forum_materials
+        margin: 0 25px 70px
+        h2
+          +italic_style(16px, #163f52)
+          text-align: left
+        ul
+          margin: 15px 0 0 0
+          li
+            font-family: Verdana, sans-serif
+            line-height: 20px
+            list-style: none
+            text-align: left
+            a
+              color: #004d75
+              font-size: 14px
+              text-decoration: underline
+      .forum_media
+        margin: 0 25px 70px
+        h2
+          color: #cc3a00
+          font-size: 18px
+          text-align: left
+        .event_v_c
+          margin: 15px 0 0 0
+      .materials
+        h2
+          margin-left: 25px
+        div
+          border-bottom: 1px dashed #e7caa5
+          overflow: hidden
+          padding: 25px 0
+          a
+            margin-left: 25px
+          p
+            font-size: 12px
+            line-height: 18px
+            margin-left: 25px
+          .event_video
+            margin: 0 auto
+            margin-top: 25px
+
+//Список персон
+body
+  #container.persons
+    background: #f6fbff
+    border-top: 1px solid #b8c4d4
+    padding: 0 0 25px 0
+    width: 100%
+    .person
+      overflow: hidden
+      padding: 0
+      li
+        font-family: Verdana, sans-serif
+        float: left
+        list-style: none
+        margin: 0
+        overflow: hidden
+        width: 50%
+        .person_item
+          border-right: 1px dashed #dbe7f0
+          border-bottom: 1px dashed #dbe7f0
+          height: 180px
+          overflow: hidden
+          padding: 50px 25px 40px 10%
+          .person_photo
+            border: 1px solid #868889
+            display: block
+            float: left
+            margin-right: 15px
+            overflow: hidden
+            img
+              border: 1px solid white
+              display: block
+          .person_info
+            .person_name
+              color: #005274
+              font-size: 18px
+            .person_title
+              color: black
+              display: block
+              font-size: 12px
+              margin-top: 10px
+            .speech
+              +italic_style(14px, #33534c)
+              display: block
+              margin-top: 10px
+
+body
+  #container.participants
+    background: #f6fbff
+    border-top: 1px solid #b8c4d4
+    padding: 0 0 25px 0
+    width: 100%
+    .participant_list
+      overflow: hidden
+      padding: 25px 5% 0
+      li
+        font-family: Verdana, sans-serif
+        float: left
+        list-style: none
+        margin: 0
+        overflow: hidden
+        width: 33%
+        .person_item
+          height: 90px
+          h1
+            color: #005274
+            font-size: 16px
+            margin-bottom: 10px
+            font-weight: bold
+          span
+            display: block
+            margin-left: 20px
+            font-size: 12px
+
+//Просмотр новости
+body
+  #top_menu.innonews
+    #top_tabs
+      ul
+        li.tab_active
+          background: url("../img/top_tab_active_fff3e4.png") bottom no-repeat
+
+body
+  #container_r.innonews
+    +r_background_and_border(#fff3e4, #fff8f1, #c3cedb)
+    #container_wrapper
+      .article
+        +clearfix
+        .announce
+          font-weight: bold
+      .date
+        +italic_style(12px, #8a4949)
+        display: block
+        margin: 15px 0 10px 0
+      .news_block
+        padding: 0 20px 25px 0
+        h2
+          color: #a94400
+          font-size: 20px
+        span
+          color: #75716b
+          display: block
+          font-size: 14px
+          margin: 10px 0
+      .taglist
+        margin: 35px 0 20px 0
+        overflow: hidden
+        li
+          background: #f47b00
+          display: inline-block
+          height: 14px
+          list-style: none
+          margin: 0
+          padding: 2px 0px
+          a
+            color: white
+            display: block
+            font-size: 11px
+            line-height: 12px
+            padding: 1px 5px
+            text-decoration: none
+    #column.innonews
+      padding: 25px 0
+      width: 385px
+      h2
+        margin-top: 0
+        margin-left: 25px
+      div
+        border-bottom: 1px dashed #e7caa5
+        overflow: hidden
+        padding: 25px 25px 0 25px
+        h3
+          margin-top: 0
+        a
+          color: #004d75
+          display: block
+          font-size: 14px
+          margin-bottom: 15px
+        span.title
+          color: #004d75
+          display: block
+          font-size: 14px
+          margin-bottom: 15px
+        span.date
+          +italic_style(12px, #8a4949)
+          display: block
+          margin: 15px 0 10px
+        span.annotation, span.announce
+          display: block
+          font-size: 12px
+          line-height: 18px
+        .description
+          margin-bottom: 15px
+        span.more
+          +italic_style(12px, #a23d00)
+          display: block
+          float: right
+          margin: 15px 0 10px
+        span.position
+          font-size: 12px
+        ul
+          padding: 0 15px
+          li
+            background-position: left 5px
+            font-family: Verdana, sans-serif
+            font-size: 12px
+            list-style: none
+            margin: 0
+        div.person_info
+          border: none
+          margin: 0 0 15px 0
+          padding: 0
+          img
+            float: left
+            margin-right: 15px
+      .forum_images
+        img
+          display: block
+          margin: 0 auto
+
+//Список новостей
+body
+  #container.innonews
+    background: #fff3e4
+    border-top: 1px solid #afbdd4
+    overflow: hidden
+    padding: 0
+    width: 100%
+    ul
+      margin-bottom: 25px
+      li
+        font-family: Verdana, sans-serif
+        border-bottom: 1px dashed #ead9c4
+        list-style: none
+        margin: 0
+        overflow: hidden
+        padding: 25px 5%
+        a
+          color: #0077a3
+          font-size: 18px
+        .news-photo
+          float: left
+          margin: 10px
+        .annotation
+          .more
+            +italic_style(12px, #a23d00)
+            margin-left: 10px
+        span, .date
+          +italic_style(12px, #8a4949)
+          display: block
+          margin: 15px 0 10px 0
+        .today
+          color: #f14400
+        p
+          color: black
+          font-size: 12px
+          line-height: 22px
+          img
+            float: left
+            margin-right: 15px
+            width: 120px
+          .more
+            +italic_style(12px, #a23d00)
+            margin-left: 10px
+
+//Архив в две колонки
+body
+  #top_menu.history
+    #top_tabs
+      ul
+        li.tab_active
+          background: url("../img/top_tab_active_ffffff.png") bottom no-repeat
+  #container_r.history, #container_r.forum
+    +r_background_and_border(white, white, #b8c4d4)
+    #container_wrapper
+      .greeting
+        .person
+          overflow: hidden
+          li
+            list-style: none
+            margin: 10px 0 0 0
+            overflow: hidden
+            .person_item
+              height: auto
+              overflow: hidden
+              padding: 20px 0px 10px 0
+              .person_photo
+                border: 1px solid #868889
+                display: block
+                float: left
+                margin-left: 20px
+                margin-right: 15px
+                overflow: hidden
+                img
+                  border: 1px solid white
+                  display: block
+              .person_info
+                .person_name
+                  color: #005274
+                  font-size: 18px
+                  margin: 0
+                .person_title
+                  color: black
+                  display: block
+                  font-size: 12px
+                  margin-top: 10px
+                .speech
+                  +italic_style(14px, #33534c)
+                  display: block
+                  margin-top: 10px
+                .hidden_content
+                  padding: 5px
+      .forum_audio
+        .item
+          +clearfix
+          border-left: 300px
+          margin-bottom: 20px
+          .video
+            float: left
+            width: 300px
+            position: relative
+          .description
+            float: left
+            width: 100%
+            margin-right: -100%
+            overflow: hidden
+            p
+              margin: 0
+              margin-right: 300px
+              text-align: left
+      .links
+        margin-left: 20px
+        li
+          list-style: none
+          margin: 0
+          margin-top: 25px
+          a
+            +italic_style(14px, #21789c)
+            text-decoration: underline
+    #column
+      padding-top: 0
+      .type_pdf, .type_doc
+        background-position: left 5px
+      .forum_materials
+        margin: 0 25px 50px
+        h2
+          +italic_style(16px, #163f52)
+          text-align: left
+      ul
+        margin: 15px 0 0 0
+        li
+          font-family: Verdana, sans-serif
+          line-height: 20px
+          list-style: none
+          margin: 0
+          margin-bottom: 15px
+          text-align: left
+          a
+            color: #004d75
+            font-size: 14px
+            text-decoration: underline
+            img
+              display: block
+              margin: 0 auto
+      .forum_media
+        margin: 0 25px 50px
+        overflow: hidden
+        h2
+          color: #cc3a00
+          font-size: 18px
+          text-align: left
+        .event_v_c
+          margin: 0
+
+body
+  .forum_images
+    ul
+      overflow: hidden
+      li
+        float: left
+        height: 300px
+        margin: 0
+        width: 33%
+        font-family: Verdana, sans-serif
+        line-height: 20px
+        list-style: none
+        overflow: hidden
+        text-align: left
+        img
+          border: 1px solid #ababac
+          float: left
+          padding: 1px
+        p
+          text-align: left
+          width: 60%
+
+//Архив
+body
+  #container.history
+    border-top: 1px solid #b8c4d4
+    padding: 70px 5% 20px
+    width: 90%
+    .forum_materials, .forum_images, .forum_audio
+      margin: 0 25px 70px
+      h2
+        +italic_style(16px, #163f52)
+        text-align: left
+      ul
+        margin: 15px 0 0 0
+        .type_doc, .type_pdf, .type_ppt
+          background-position: left 5px !important
+        li
+          font-family: Verdana, sans-serif
+          line-height: 20px
+          list-style: none
+          overflow: hidden
+          text-align: left
+          a
+            color: #004d75
+            font-size: 14px
+            text-decoration: underline
+          img
+            float: left
+    .forum_images
+      ul
+        overflow: hidden
+        li
+          float: left
+          height: 300px
+          margin: 0
+          width: 20%
+          img
+            border: 1px solid #ababac
+            float: left
+            padding: 1px
+          p
+            text-align: left
+            width: 60%
+    .forum_audio
+      .item
+        +clearfix
+        border-left: 300px
+        margin-bottom: 20px
+        .video
+          float: left
+          width: 300px
+          position: relative
+        .description
+          float: left
+          width: 100%
+          margin-right: -100%
+          overflow: hidden
+          p
+            margin: 0
+            margin-right: 300px
+            text-align: left
+
+//Результаты поиска
+body
+  #container_r.search
+    #container_wrapper
+      overflow: visible
+      .forum_materials
+        li
+          img
+            float: right !important
+            margin-left: 15px
+    form
+      overflow: hidden
+      .search_wrapper
+        border: 1px solid #cad0d2
+        float: left
+        margin: 0
+        overflow: hidden
+        width: 50%
+        input
+          +italic_style(16px, #638599)
+          border: none
+          border-top: 6px solid #f9f9f9
+          height: 20px
+          padding: 0px 5px 5px 8px
+          width: 100%
+      .search_submit
+        display: block
+        height: 17px
+        margin: 0
+        overflow: hidden
+        padding: 8px 0 0 6px
+        width: 17px
+    h3
+      +italic_style(16px, #6d6d6d)
+      margin: 30px 0 0 0
+      span
+        font-weight: bold
+    ul
+      padding: 15px 0
+      li
+        font-family: Verdana, sans-serif
+        list-style: none
+        margin: 14px 0
+        a
+          font-size: 16px
+          color: #005a9f
+          text-decoration: underline
+        p
+          font-size: 14px
+          color: #383838
+          margin: 5px 0
+    #full_video_carousel
+      ul
+        padding: 0
+
+//Complete
+body
+  #container.join_complete
+    padding: 0 5%
+
+//Личный кабинет
+body
+  #container.cabinet_view
+    border-top: 1px solid #b8c4d4
+    padding: 25px 0
+    width: 100%
+    div.information
+      div.action
+        a
+          margin: 0 20px 0 0
+    input.save_events
+      display: block
+      margin: 0 auto
+      width: 100px
+    table
+      width: 100%
+      tr
+        td
+          text-align: center
+    div#container_delegate
+      div#second_chapter
+        div.hotel
+          padding: 0
+          div.first_col, div.second_col
+            margin: 0
+    #top_bar
+      +clearfix
+      background: #f8fff0
+      //height: 75px
+      margin-bottom: 30px
+      width: 100%
+      .wrapper
+        height: 45px
+        padding: 15px 5%
+        h1
+          color: #2d3a3b
+          display: inline
+          margin: 0
+        h3
+          +italic_style(16px, #1f617d)
+          display: block
+          margin: 0
+        p
+          font-family: Verdana, sans-serif
+          margin: 0
+        a
+          border-bottom: 1px dotted #6e7b82
+          color: #6e7b82
+          display: inline
+          font-size: 18px
+          margin-left: 40px
+          text-decoration: none
+          &.change_password
+            display: block
+            font-size: 14px
+            margin: 0 0 10px 0
+        .state
+          +pie-clearfix
+          float: right
+        .active
+          border: none
+          color: #4a9bb6
+    .my_comments
+      padding: 0 5%
+      ul
+        li
+          list-style: none
+    .information, .service, .hotel
+      overflow: hidden
+      padding: 0 5%
+      h1
+        margin-bottom: 0
+      .state,
+      .action
+        margin-bottom: 20px
+        ul
+          +clearfix
+          li
+            float: left
+            margin-right: 20px
+      fieldset
+        border: 1px solid #cccccc
+        margin: 20px 5%
+        padding: 20px
+        legend
+          color: #757575
+          font-size: 16px
+          padding: 0 3px
+        table
+          margin: 0
+        a.edit_info, a.form_cancel
+          font-size: 12px
+          float: right
+        a
+          color: #21789c
+          font-family: "Trebuchet MS", Verdana, sans-serif
+          font-size: 14px
+          font-style: italic
+          text-decoration: underline
+        form
+          overflow: hidden
+          .buttons
+            margin: 15px 0 0 0
+          ul.errorlist
+            display: bloсk
+            margin: 5px 0
+            position: relative
+            overflow: visible
+            li
+              +italic_style(14px, #e3867e)
+              display: block
+              left: 150px
+              overflow: hidden
+              position: absolute
+              top: -3px
+          li
+            list-style: none
+            margin: 0
+            label
+              +italic_style(14px, #3c5d6e)
+              display: block
+              margin: 5px 0
+            input, select
+              background-color: #f2f8e1
+              border: 1px solid #cad0d2
+              font-family: Verdana, sans-serif
+              margin: 3px 0 3px 15px
+              width: 87%
+          .submit
+            margin: 20px auto 0
+            text-align: center
+            input
+              margin: 3px 15px
+              width: auto
+      span
+        font-size: 14px
+      .first_col
+        float: left
+        width: 50%
+      .second_col
+        float: left
+        width: 50%
+      .first_col, .second_col
+        margin-top: 20px
+      ul
+        display: block
+        overflow: hidden
+        .photo
+          margin-right: 15px
+        li
+          list-style: none
+          margin: 0
+          .label
+            +italic_style(14px, #3c5d6e)
+            display: block
+          .value
+            font-family: Verdana, sans-serif
+            margin-left: 15px
+    .service, .delegates, .hotel
+      form
+        ul.errorlist
+          li
+            left: 280px !important
+      fieldset
+        margin: 20px 2%
+        margin-top: 20px
+        form
+          li
+            input, select
+              width: 25%
+    div.submit
+      text-align: center
+      padding: 0 5%
+      margin: 20px 0
+    .delegate_list
+      overflow: hidden
+      padding: 0 5%
+      table
+        margin-left: 0
+        margin-right: 0
+        td
+          vertical-align: top
+          a
+            display: block
+            white-space: nowrap
+            margin-bottom: 10px
+          p
+            text-align: left
+            font-size: 12px !important
+            margin: 0
+
+//Архив в одну колонку
+body
+  #container.history
+    padding: 0 5% 20px
+    width: 90%
+    .links
+      margin-left: 20px
+      li
+        list-style: none
+        margin: 0
+        margin-top: 25px
+        a
+          +italic_style(14px, #21789c)
+          text-decoration: underline
+    .greeting
+      margin-bottom: 25px
+      .person
+        overflow: hidden
+        li
+          list-style: none
+          margin: 10px 0 0 0
+          overflow: hidden
+          .person_item
+            height: auto
+            overflow: hidden
+            padding: 20px 25px 30px 0
+            .person_photo
+              border: 1px solid #868889
+              display: block
+              float: left
+              margin-left: 20px
+              margin-right: 15px
+              overflow: hidden
+              img
+                border: 1px solid white
+                display: block
+            .person_info
+              .person_name
+                color: #005274
+                font-size: 18px
+                margin: 0
+              .person_title
+                color: black
+                display: block
+                font-size: 12px
+                margin-top: 10px
+              .speech
+                +italic_style(14px, #33534c)
+                display: block
+                margin-top: 10px
+              .hidden_content
+                padding: 5px
+
+//Программы
+body
+  #top_menu.programm
+    #top_tabs
+      ul
+        li.tab_active
+          background: url("../img/top_tab_active_ffffff.png") bottom no-repeat
+
+body
+  #container.programm
+    border-top: 1px solid #b8c4d4
+    padding: 0 5%
+    width: 90%
+  #container.sitemap
+    padding: 0 5%
+    width: 90%
+    ul
+      list-style: none
+      @for $i from 0 through 5
+        .level-#{$i}
+          font-size: 25px - 2px * $i
+          margin-left: 1em * $i
+
+//События в одну колонку
+body
+  #top_menu.events
+    #top_tabs
+      ul
+        li.tab_active
+          background: url("../img/top_tab_active_f7fff6.png") bottom no-repeat
+
+body
+  #container.events
+    background-color: #f7fff6
+    border-top: 1px solid #b8c4d4
+    width: 100%
+    ul
+      margin-bottom: 25px
+      li
+        font-family: Verdana, sans-serif
+        border-bottom: 1px dashed #ead9c4
+        list-style: none
+        margin: 0
+        overflow: hidden
+        padding: 25px 5%
+      .news-photo
+        float: left
+        margin-right: 20px
+      span
+        +italic_style(12px, #8a4949)
+        display: block
+        margin: 15px 0 10px 0
+      a
+        color: #0077a3
+        font-size: 18px
+      p
+        img
+          margin-right: 15px
+          float: left
+        .more
+          +italic_style(12px, #a23d00)
+          margin-left: 10px
+
+//Просмотр события
+body
+  #container_r.events
+    +r_background_and_border(#f7fff6, #f7fffa, #b8c4d4)
+    #container_wrapper
+      div.event
+        +clearfix
+        .announce
+          font-weight: bold
+
+      .media
+        float: left
+        margin-right: 15px
+      .event_date
+        color: #8a4949
+        display: block
+        font-family: "Trebuchet MS", Verdana, sans-serif
+        font-size: 12px
+        font-style: italic
+        margin: 15px 0 10px
+      .taglist
+        margin: 35px 0 20px 0
+        overflow: hidden
+        li
+          background: #f47b00
+          display: inline-block
+          height: 14px
+          list-style: none
+          margin: 0
+          padding: 2px 0px
+          a
+            color: white
+            display: block
+            font-size: 11px
+            line-height: 12px
+            padding: 1px 5px
+            text-decoration: none
+    #column
+      padding: 25px 0
+      width: 385px
+      h2
+        margin-top: 0
+        margin-left: 25px
+      div
+        border-bottom: 1px dashed #e7caa5
+        overflow: hidden
+        padding: 25px 25px 0 25px
+        h3
+          margin-top: 0
+        a
+          color: #004d75
+          display: block
+          font-size: 14px
+          margin-bottom: 15px
+        span.title
+          color: #004d75
+          display: block
+          font-size: 14px
+          margin-bottom: 15px
+        span.date
+          +italic_style(12px, #8a4949)
+          display: block
+          margin: 15px 0 10px
+        span.annotation, span.announce
+          display: block
+          font-size: 12px
+          line-height: 18px
+        span.more
+          +italic_style(12px, #a23d00)
+          display: block
+          float: right
+          margin: 15px 0 10px
+        span.position
+          font-size: 12px
+        ul
+          padding: 0 15px
+          li
+            background-position: left 5px
+            font-family: Verdana, sans-serif
+            font-size: 12px
+            list-style: none
+            margin: 0
+        div.person_info
+          border: none
+          margin: 0 0 15px 0
+          padding: 0
+          img
+            float: left
+            margin-right: 15px
+      .interviews
+        a.photo
+          display: inline
+        span.announce
+          +italic_style(14px, #33534c)
+      .videos
+        div
+          border: none
+      .audios
+        div
+          border: none
+      .forum_images
+        img
+          display: block
+          margin: 0 auto
+
+//Круглые столы
+body
+  #top_menu.roundtables
+    #top_tabs
+      ul
+        li.tab_active
+          background: url("../img/top_tab_active_ffffff.png") bottom no-repeat
+
+body
+  #container_r.roundtables
+    +r_background_and_border(white, white, #b8c4d4)
+    .greeting
+      .person
+        overflow: hidden
+        li
+          list-style: none
+          margin: 10px 0 0 0
+          overflow: hidden
+          .person_item
+            height: auto
+            overflow: hidden
+            padding: 20px 0px 10px 0
+            .person_photo
+              border: 1px solid #868889
+              display: block
+              float: left
+              margin-left: 20px
+              margin-right: 15px
+              overflow: hidden
+              img
+                border: 1px solid white
+                display: block
+            .person_info
+              .person_name
+                color: #005274
+                font-size: 18px
+                margin: 0
+              .person_title
+                color: black
+                display: block
+                font-size: 12px
+                margin-top: 10px
+              .speech
+                +italic_style(14px, #33534c)
+                display: block
+                margin-top: 10px
+              .hidden_content
+                padding: 5px
+    .forum_materials
+      margin: 0 25px 70px
+      h2
+        +italic_style(16px, #163f52)
+        text-align: left
+      ul
+        margin: 15px 0 0 0
+        li
+          font-family: Verdana, sans-serif
+          line-height: 20px
+          list-style: none
+          text-align: left
+          a
+            color: #004d75
+            font-size: 14px
+            text-decoration: underline
+        .type_doc, .type_pdf
+          background-position: left 5px
+
+//Форум 2010
+body
+  #top_menu.forum
+    #top_tabs
+      ul
+        li.tab_active
+          background: url("../img/top_tab_active_ffffff.png") bottom no-repeat
+
+body
+  #container_r.forum
+    +r_background_and_border(white, white, #b8c4d4)
+    #column
+      padding-top: 0
+      p.lang
+        img
+          float: left
+          margin: 5px
+        span
+          display: block
+          font-size: 10px
+          line-height: 1.3em
+          margin-left: 5px
+          text-align: left
+          width: 190px
+      ul
+        li
+          list-style: none
+          margin: 0
+          a
+            color: #0077a3
+
+//Пресс-центр
+body
+  #container_r.press
+    +r_background_and_border(white, white, #b8c4d4)
+    #column
+      padding-top: 0
+      .forum_materials
+        margin: 0 25px 70px
+        h2
+          +italic_style(16px, #163f52)
+          text-align: left
+        ul
+          margin: 15px 0 0 0
+          li
+            font-family: Verdana, sans-serif
+            line-height: 20px
+            list-style: none
+            text-align: left
+            a
+              color: #004d75
+              font-size: 14px
+              text-decoration: underline
+
+//Выставки
+body
+  #top_menu.exhibition
+    #top_tabs
+      ul
+        li.tab_active
+          background: url("../img/top_tab_active_ffffff.png") bottom no-repeat
+
+body
+  #container_r.exhibition,
+  #container_r.programm
+    +r_background_and_border(white, white, #b8c4d4)
+
+body
+  a.print_version
+    float: right
+    margin-top: 28px
+  #container_r.programm,
+  #container_r.history
+    ul.programm_list
+      li.item
+        list-style: none
+        margin: 20px 0
+        ul.toggler
+          padding: 0 20px 10px
+          li
+            +clearfix
+          li.time
+            font-size: 20px
+            float: left
+            line-height: 30px
+            list-style: none
+            margin-right: 10px
+            margin-left: 0px
+            width: 130px
+          li.title
+            color: #005274
+            font: 18px Verdana, sans-serif
+            line-height: 30px
+            list-style: none
+            margin-left: 0
+          li.annotation
+            color: #757575
+            list-style: none
+            margin: 3px 0
+            text-align: left
+            h4
+              color: #757575
+            p
+              color: #757575
+              margin: 5px 15px
+              strong, em
+                color: #757575
+                display: block
+            ul
+              li
+                font-family: Georgia, serif
+                font-size: 14px
+                line-height: 1.7em
+                list-style: none
+                margin: 5px 0 5px 25px
+                overflow: overflow
+                strong, em
+                  color: #757575
+                em
+                  display: block
+          li.description
+            +clearfix
+            list-style: none
+            ul
+              +clearfix
+              li
+                +clearfix
+                display: list-item !important
+                list-style: disc inside
+                margin: 15px 10px
+                overflow: visible
+                em
+                  display: block
+          li.more
+            list-style: none
+    #column
+      padding: 25px 25px 25px 0
+
+//Новое на сайте
+body
+  #container.fresh
+    border-top: 1px solid #b8c4d4
+    overflow: hidden
+    padding: 0
+    width: 100%
+    ul
+      margin-bottom: 25px
+      li
+        font-family: Verdana, sans-serif
+        border-bottom: 1px dashed #ead9c4
+        list-style: none
+        margin: 0
+        overflow: hidden
+        padding: 25px 5%
+        a
+          color: #0077a3
+          display: block
+          font-size: 18px
+        span
+          +italic_style(12px, #8a4949)
+          display: block
+          margin: 15px 0 10px 0
+      .more
+        +italic_style(12px, #a23d00)
+        display: block
+        float: right
+        margin: 15px 0 10px
+
+body
+  #container.tomsk, #container.ino
+    background-color: #f7fff6
+    border-top: 1px solid #b8c4d4
+    overflow: hidden
+    padding: 0 5%
+    width: 90%
+
+body
+  #top_menu.tomsk, #top_menu.ino
+    .tab_active
+      background: transparent url("../img/top_tab_active.png") no-repeat center bottom
+  #container_r.tomsk, #container_r.ino
+    +r_background_and_border(#f7fff6, #f7fff6, #b8c4d4)
+
+//Инновационный паспорт
+body
+  #container_r.innovation_passport
+    +r_background_and_border(white, white, #b8c4d4)
+
+//Список по тегам
+body
+  #container_r.tags
+    +r_background_and_border(white, white, #b8c4d4)
+
+//Поиск материала по теме
+body
+  #container_r.search, #container_r.tags
+    +r_background_and_border(white, white, #b8c4d4)
+    #container_wrapper
+      ul.forum_images
+        overflow: hidden
+        li
+          float: left
+          overflow: hidden
+          list-style: none
+          height: 300px
+          margin: 0
+          width: 33%
+          img
+            border: 1px solid #ababac
+            padding: 1px
+            float: left
+          p
+            font-size: 11px
+            text-align: left
+            width: 60%
+      ul.news-list
+        margin-bottom: 25px
+        li
+          font-family: Verdana, sans-serif
+          border-bottom: 1px dashed #ead9c4
+          list-style: none
+          margin: 0
+          overflow: hidden
+          padding: 25px 5% 25px 0
+          img
+            float: left
+            margin-right: 15px
+          a
+            color: #0077a3
+            font-size: 18px
+          .news-photo
+            float: left
+            margin: 10px
+          span
+            +italic_style(12px, #8a4949)
+            display: block
+            margin: 15px 0 10px 0
+          .more
+            +italic_style(12px, #8a4949)
+            display: block
+            float: right
+            margin: 0 0 10px 0
+      ul.forum_materials
+        .type_pdf, .type_doc, .type_ppt
+          background-position: left 5px
+          left: -20px
+        li
+          list-style: none
+          img
+            float: left
+    #column
+      .tagged-items
+        li
+          font-family: Verdana, sans-serif
+          font-size: 14px
+          list-style: none
+          a
+            font-family: Verdana, sans-serif
+            font-size: 16px
+
+//База знаний
+body
+  #container_r.knowledge_base
+    +r_background_and_border(white, white, #b8c4d4)
+    div
+      ul
+        .type_doc, .type_pdf, .type_ppt
+          background-position: left 5px
+        li
+          list-style: none
+          img
+            float: right
+            margin-left: 15px
+          a
+            +italic_style(16px, #0077a3)
+            border-bottom: 1px dotted #0077a3
+            text-decoration: none
+
+body
+  #container.knowledge_base
+    border-top: 1px solid #b8c4d4
+    overflow: hidden
+    padding: 0 5%
+    width: 90%
+    div
+      ul
+        .type_doc, .type_pdf
+          background-position: left 5px
+        li
+          list-style: none
+          img
+            float: right
+            margin-left: 15px
+          a
+            +italic_style(16px, #0077a3)
+            border-bottom: 1px dotted #0077a3
+            text-decoration: none
+
+.none_material
+  margin: 25px
+
+#write
+  cursor: pointer
+
+#container.index
+  padding: 0
+  .twtr-widget
+    padding: 0 5%
+    .twtr-doc
+      margin: 20px auto
+
+body
+  #container_r.reset_pass_form,
+  #container_r.change_pass_form
+    +r_background_and_border(white, white, #b8c4d4)
+    #container_wrapper
+      label
+        font: 16px Verdana, sans-serif
+        margin: 5px 0 5px
+      input
+        border: 1px solid #cad0d2
+        margin: 5px 0 5px 40px
+        padding: 3px 5px
+        width: 170px
+      .errorlist
+        li
+          list-style: none
+          color: red
+  #container_r.change_pass_form
+    #container_wrapper
+      label
+        display: block
+      input
+        margin-left: 0
+
+body
+  #container_r.reset_pass_done
+    +r_background_and_border(white, white, #b8c4d4)
+    #container_wrapper
+      .login_form
+        border: 1px solid #cad0d2
+        display: block
+        margin: 15px auto
+        overflow: hidden
+        padding: 15px
+        width: 400px
+        .errorlist
+          margin-bottom: 20px
+          li
+            list-style: none
+            color: #8a4949
+            font-family: "Trebuchet MS", Verdana, sans-serif
+            font-size: 16px
+            font-style: italic
+            margin: 0 20px 0 0
+        div
+          font-family: Verdana, sans-serif
+          list-style: none
+          margin: 0 0 10px
+          overflow: hidden
+        label
+          float: left
+          margin: 5px 0 5px
+        input
+          border: 1px solid #cad0d2
+          float: right
+          margin: 5px 0 5px 40px
+          padding: 3px 5px
+          width: 170px
+        .submit
+          text-align: center
+          margin: 20px 0 0
+          input
+            float: left
+            width: 107px
+            margin: 0
+          a
+            float: right
+            font-family: "Trebuchet MS", Verdana, sans-serif
+            font-size: 14px
+            font-style: italic
+    #column
+      padding-top: 0
+
+body
+  #container.join_complete
+    margin: 0 0 25px 0
+    width: 90%
+

@@ -1,0 +1,56 @@
+{% load i18n %}
+<ul class="contacts second">
+  <li>
+    <span class="label">{% trans "Mobile phone" %}:</span>
+    <span class="value">{{ claim.phone }}</span>
+  </li>
+  {% if claim.phone_extra %}
+  <li>
+    <span class="label">{% trans "Work phone" %}:</span>
+    <span class="value">{{ claim.phone_extra }}</span>
+  </li>
+  {% endif %}
+  {% if claim.fax %}
+  <li>
+    <span class="label">{% trans "Fax" %}:</span>
+    <span class="value">{{ claim.fax }}</span>
+  </li>
+  {% endif %}
+  {% if claim.address %}
+  <li>
+    <span class="label">{% trans "Address" %}:</span>
+    <span class="value">{{ claim.address }}</span>
+  </li>
+  {% endif %}
+  {% if claim.icq %}
+  <li>
+    <span class="label">{% trans "ICQ" %}:</span>
+    <span class="value">{{ claim.icq }}</span>
+  </li>
+  {% endif %}
+  {% if claim.skype %}
+  <li>
+    <span class="label">{% trans "Skype" %}:</span>
+    <span class="value">{{ claim.skype }}</span>
+  </li>
+  {% endif %}
+  {% if claim.twitter %}
+  <li>
+    <span class="label">{% trans "Twitter" %}:</span>
+    <span class="value">{{ claim.twitter }}</span>
+  </li>
+  {% endif %}
+  {% if claim.site %}
+  <li>
+    <span class="label">{% trans "Site" %}:</span>
+    <span class="value"><a href="{{ claim.site }}">{{ claim.site }}</a></span>
+  </li>
+  {% endif %}
+  {% if claim.blog %}
+  <li>
+    <span class="label">{% trans "Blog" %}:</span>
+    <span class="value">{{ claim.blog }}</span>
+  </li>
+  {% endif %}
+</ul>
+

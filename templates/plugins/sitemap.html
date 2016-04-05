@@ -1,0 +1,6 @@
+{% load mptt_tags %}
+<ul>
+{% for page in pages %}
+<li class='level-{{ page.level }}'><a href="{{ page.get_absolute_url }}">{{ page.get_menu_title }}</a></li>
+{% endfor %}
+</ul>

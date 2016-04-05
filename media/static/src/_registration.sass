@@ -1,0 +1,95 @@
+#content
+  .registration
+
+    .account,
+    .personal_info,
+    .firm_information,
+    .contacts,
+    .arrival,
+    .ar_transport,
+    .ar_date,
+    .departure,
+    .departure_charter_date,
+    .dep_transport,
+    .dep_date,
+    .auth_info
+      +clearfix
+      border-bottom: 1px dashed #ccc
+      margin-bottom: 15px
+      abbr
+        color: #990000
+        cursor: help
+        margin-left: 3px
+      .first_col
+        float: left
+        width: 49%
+        margin-right: 1%
+      .second_col
+        float: left
+        width: 49%
+        margin-left: 1%
+      .label
+        margin-bottom: 5px
+      .input
+        input,
+        select
+          width: 50%
+          +input_style
+        select
+          width: 52%
+    .hotel
+      +clearfix
+      border-bottom: 1px dashed #ccc
+      margin-bottom: 15px
+      abbr
+        color: #990000
+        cursor: help
+        margin-left: 3px
+      .input
+        width: auto
+        +inline-block
+      .first_col
+        float: left
+        width: 49%
+        margin-right: 1%
+      .second_col
+        float: left
+        width: 49%
+        margin-left: 1%
+    .error
+      .input
+        margin-bottom: 0
+        input,
+        select
+          border-color: #880000
+      .error_mess
+        li
+          color: #880000
+          font-size: 11px
+          list-style: none
+          margin: 0 0 15px 0
+    .submit
+      input
+        +button_style
+        margin-right: 10px
+      a
+        +button_style
+        padding: 5px 15px
+  .sign_up_block
+    +clearfix
+    div
+      float: left
+    .left
+      width: 49%
+      margin-right: 1%
+    .right
+      width: 49%
+      margin-left: 1%
+
+  .activation_form
+    .code
+      width: 300px
+      +input_style
+    .submit
+      +button_style
+

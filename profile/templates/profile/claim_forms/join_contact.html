@@ -1,0 +1,77 @@
+{% extends "one-column-inner.html" %}
+
+{% block content_inner %}
+  <div class="registration">
+    <h1>{% trans "Join contact person of delegation" %}</h1>
+      <form method="post" action="{% url join_contact %}">
+        {% csrf_token %}
+
+        <h2>{% trans "Information about participant" %}</h2>
+
+        <div class="account">
+          <h3>{% trans "Account" %}</h3>
+          {% include 'profile/includes/fields_account.html' %}
+        </div>
+
+        <div class="personal_info">
+        <h3>{% trans "Personal details" %}</h3>
+          <div class="first_col">
+            {% include 'profile/includes/fields_personal.html' %}
+          </div>
+          <div class="second_col">
+            {% include 'profile/includes/fields_geo.html' %}
+
+            {% if claim_form.is_take_part.errors %}
+            <div class="error">
+              <p class="label">{{ claim_form.is_take_part.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+              <p class="input">
+                <select id="id_is_take_part" name="is_take_part">
+                  <option value="2">{% trans "Не принимаю участие в Форуме" %}</option>
+                  <option value="3">{% trans "Принимаю участие в Форуме" %}</option>
+                </select>
+              </p>
+              <p class="error_mess">{{ claim_form.is_take_part.errors }}</p>
+            </div>
+            {% else %}
+              <p class="label">{{ claim_form.is_take_part.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+              <p class="input">
+                <select id="id_is_take_part" name="is_take_part">
+                  <option value="2">{% trans "Не принимаю участие в Форуме" %}</option>
+                  <option value="3">{% trans "Принимаю участие в Форуме" %}</option>
+                </select>
+              </p>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="firm_information">
+        <h3>{% trans "Organization info" %}</h3>
+          <div class="first_col">
+            {% include 'profile/includes/fields_organization.html' %}
+          </div>
+        </div>
+
+        <div class="contacts">
+          <h3>{% trans "Contacts" %}</h3>
+          {% include 'profile/includes/fields_contacts.html' %}
+        </div>
+
+        <div id="second_chapter">
+          <h2>{% trans "Information about arrival/departure" %}</h2>
+          {% include 'profile/includes/fields_travel.html' %}
+        </div>
+
+    <div class="hotel">
+        <h2>{% trans "Hotel booking" %}</h2>
+        {% include "profile/includes/fields_hotel.html" %}
+    </div>
+        <div class="submit">
+          <input type="submit" value="{% if is_delegation %}{% trans "Add more participants" %}{% else %}{% trans "Send" %}{% endif %}" />
+        </div>
+      </form>
+
+{% include "profile/includes/geo.html" %}
+
+    </div>
+{% endblock content_inner %}
+

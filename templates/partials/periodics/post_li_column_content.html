@@ -1,0 +1,4 @@
+<a href="{{ post.get_absolute_url }}">{{ post.title|safe }}</a>
+<span class="date">{{ post.date|date:" d.m.Y" }}</span>
+<span class="annotation">{{ post.annotation|safe|striptags|truncatewords_html:10 }}</span>
+

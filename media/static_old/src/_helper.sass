@@ -1,0 +1,83 @@
+//Вспомогательные классы
+=italic_style($f_size, $f_color)
+  color: $f_color
+  font-family: "Trebuchet MS", Verdana, sans-serif
+  font-size: $f_size
+  font-style: italic
+
+.hide
+  display: none
+
+.error
+  label
+    color: #e3867e !important
+  input, textarea
+    border: 1px solid #e3867e !important
+
+.floatl
+  float: left
+  margin-right: 15px
+
+.floatr
+  float: right
+  margin-left: 15px
+
+.type_pdf
+  background: url("../img/type_pdf.png") left top no-repeat
+
+.type_doc
+  background: url("../img/type_doc.png") left top no-repeat
+
+.type_ppt
+  background: url("../img/type_ppt.png") left top no-repeat
+
+.type_pdf, .type_doc, .type_ppt
+  background-position: left 15px
+  left: -27px
+  overflow: hidden
+  padding-left: 27px
+  position: relative
+
+.expander,
+.collapser
+  border-bottom: 1px dotted #005274
+  color: #005274
+  float: right
+  font: 12px Verdana, sans-serif
+  margin-top: 10px
+  text-decoration: none
+
+.collapser
+  display: none
+
+.hidden
+  display: none
+
+.toggler
+  background: #f6fbff
+  border: 1px dashed #dbe7f0
+  margin-top: 20px
+  padding: 0 10px 10px
+  overflow: hidden
+  h3
+    color: #21789c
+    margin: 0
+    margin-top: 25px
+
+em.highlighted
+  background: #fffaa8
+  display: inline-block
+
+ul.message
+  +clearfix
+  border-bottom: 1px solid #26be00
+  background-color: #33aa33
+  width: 100%
+  position: absolute
+  top: 0
+  li
+    color: white
+    list-style: none
+    font: 18px Verdana, sans-serif
+    line-height: 45px
+    text-align: center

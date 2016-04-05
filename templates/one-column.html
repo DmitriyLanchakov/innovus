@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+{% load cache cms_tags menu_tags page_class url_tags %}
+{% get_current_language as l %}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>{% block title %}
+      {% if current_page.reverse_id != "index" or not view_title %}
+        {% page_attribute page_title %} |
+      {% endif %}
+      {% if view_title %}
+        {{ view_title|safe }} |
+      {% endif %}
+      {% endblock %}
+      {% trans "Tomsk innovation forum" %} INNOVUS
+    </title>
+    <meta name="title" content="{% page_attribute page_title %}" />
+    <meta name="description" content="{% page_attribute meta_description %}" />
+    <meta name="keywords" content="{% page_attribute meta_keywords %}" />
+    <meta name="google-site-verification" content="W2cIthqaC84zC2FVR6EeU5gSjGaTIkRVscmL721UtyQ" />
+    <meta name="google-site-verification" content="OYKycz5QflDkrT3bb1-PT5AUO-77CgsNROTDP4EVWOQ" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ IMG_URL }}favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}screen.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}print.css" media="print" />
+    <script type="text/javascript" src="{{ JS_URL }}lib/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}lib/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}lib/jquery.tipsy.min.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}lib/jquery.scrollTo-1.4.2.min.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}lib/swfobject.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}application.js"></script>
+    <!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}ie6.css" media="all" />
+    <script type="text/javascript" src="{{ JS_URL }}min_width.js"></script>
+    <![endif]-->
+    <!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}ie7.css" media="all" />
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}ie6stop.css" media="all" />
+    <script type="text/javascript" src="{{ JS_URL }}ie6stop.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}ie.js"></script>
+    <![endif]-->
+    {% block extrastyle %}{% endblock %}
+  </head>
+  <body>
+    <!--[if IE 6]>
+    <div id="fix_for_ie6">&nbsp;</div>
+    <![endif]-->
+    {% if messages %}
+    <div id="flash_notice">
+      {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <!-- header -->
+      <div id="header_container" class="container">
+        <div id="header">
+          <div class="dashboard">
+            <div class="language">{% language_chooser %}</div>
+            <div class="social">
+              <ul>
+                <li class="flickr"><a title="Flickr" href="http://www.flickr.com/photos/tomskforum/">Flickr</a></li>
+                <li class="youtube"><a title="YouTube" href="http://www.youtube.com/user/Tomskforum">YouTube</a></li>
+                <li class="facebook"><a title="Facebook" href="http://www.facebook.com/pages/Innovus/137889519609179">Facebook</a></li>
+                <li class="twitter"><a title="Twitter" href="http://twitter.com/Tomskforum">Twitter</a></li>
+                <li class="design"><a title="Надень идею на себя" href="http://design.innovus.biz/">{% trans "Надень идею на себя" %}</a></li>
+              </ul>
+            </div>
+            <div class="auth">
+              {% if user.is_staff %}
+                <div><a href="{% url manage_claim_list %}" class="manage">{% trans "Управление" %}</a></div>
+              {% endif %}
+              {% if not user.is_authenticated %}
+                <a class="sign_up" href="{% page_id_url 'proceed_registration' %}" title="{% trans "Регистрация участников форума" %}" rel="tipsy">
+                  {% trans "Регистрация" %}
+                </a> |
+                <a class="sign_in" href="{% url profile_login %}" title="{% trans "Вход в личный кабинет" %}" rel="tipsy">
+                  {% trans "Вход" %}
+                </a>
+              {% else %}
+                <a class="profile" href="{% url profile_view %}">{% trans "Личный кабинет" %}</a> |
+                <a class="sign_out" href="{% url profile_logout %}">{% trans "Выход" %}</a>
+              {% endif %}
+            </div>
+        </div>
+          <div class="logotype {{ l }}">
+            <a href="/">{% trans "Томский инновационный форум" %} INNOVUS</a>
+          </div>
+          <div class="site_name">
+            <p class="name">{% trans "Цикл инновационных форумов" %}</p>
+            <p class="title">
+              {% blocktrans %}«Инновационная Россия – 2020»{% endblocktrans %}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- end header -->
+      <!-- sign up, sign in, sign out popup -->
+
+      <div id="sign_container" class="container">
+        <div class="sign_up_block">
+          <div class="triangle">&nbsp;</div>
+          <div class="left">
+              <h1>{% trans "Зарегистрироваться в качестве участника Форума" %}</h1>
+              <p>{% trans "При предварительной регистрации на Форуме Вы имеете возможность подать заявку на бронирование места в гостинице. Реквизиты для оплаты организационного взноса будут высланы позже." %}</p>
+              <p><a href="{% url join_participant %}">{% trans "продолжить..." %}</a></p>
+          </div>
+          <div class="right">
+              <a class="close" href="#">{% trans "закрыть" %}</a>
+              <h1>{% trans "Зарегистрировать делегацию для участия в Форуме" %}</h1>
+              <p>{% trans "Обратите внимание, что перед добавлением делегации Вам необходимо будет подтвердить собственную регистрацию." %}</p>
+              <p>{% trans "Вы будете являться контактным лицом для всех участников Форума, добавленных Вами из своего личного кабинета. По всем вопросам оргкомитет Форума будет связываться именно с Вами." %}</p>
+              <p><a href="{% url join_contact %}">{% trans "продолжить..." %}</a></p>
+          </div>
+        </div>
+        <div class="sign_in_block">
+          <div class="triangle">&nbsp;</div>
+          <a class="close" href="#">{% trans "закрыть" %}</a>
+          <h1>{% trans "Вход в личный кабинет" %}</h1>
+          <form class="sign_in_form" action="{% url profile_login %}" method="post">
+            {% csrf_token %}
+            <div>
+                <label for="header_id_username">{% trans "Имя пользователя" %}</label>
+              <input id="header_id_username" type="text" name="username" />
+            </div>
+            <div>
+                <label for="header_id_password">{% trans "Пароль" %}</label>
+              <input id="header_id_password" type="password" name="password" />
+            </div>
+            <div class="submit">
+                <input type="submit" value="{% trans "Продолжить" %}" />
+                <p><a href="{% url password_reset_form %}">{% trans "Забыли пароль?" %}</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- end sign up, sign in, sign out popup -->
+      <div id="search_container" class="container">
+        <div id="search">
+          <div class="search_form">
+            <form action="{% page_id_url 'search' %}" method="get">
+              <p class="search_input_label">
+              <label for="search_input">{% trans "Поиск" %}</label>
+              </p>
+              <p class="search_wrapper">
+                <input id="search_input" type="text" class="search_input" name="q" />
+              </p>
+              <p class="search_submit">
+              <input type="image" alt="{% trans "Поиск" %}" src="{{ IMG_URL }}search_button.png" />
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="main_menu_container" class="container">
+        <div id="main_menu">
+            {% show_menu 0 100 0 100 "menu/main_menu.html" '' 'index' %}
+            {% if request.current_page.reverse_id == 'profile' %}
+                {% include "menu/management_menu.html" %}
+            {% endif %}
+        </div>
+      </div>
+
+      {% block content %}
+        {% placeholder "content" %}
+      {% endblock content %}
+
+      <div id="promoters_container" class="container">
+        <div id="promoters">
+          <div class="organizators">
+              <h1>{% trans "Организаторы форума" %}</h1>
+            <ul>
+              <li class="president odd">
+              <a href="{% if l == 'ru' %}http://state.kremlin.ru/{% else %}http://eng.state.kremlin.ru/{% endif %}" rel="nofollow">{% trans "Администрация Президента РФ" %}</a>
+              </li>
+              <li class="president even">
+              <a href="http://www.economy.gov.ru/" rel="nofollow">{% trans "Министерство экономического развития РФ" %}</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="ato odd">
+              <a href="{% if l == 'ru' %}http://tomsk.gov.ru/{% else %}http://tomsk.gov.ru/en/{% endif %}" rel="nofollow">{% trans "Администрация Томской области" %}</a>
+              </li>
+              <li class="ranhigs even">
+              <a href="{% if l == 'ru' %}http://www.ane.ru/{% else %}http://www.ane.ru/homepage.html{% endif %}" rel="nofollow">{% trans "Российская академия народного хозяйства и государственной службы при Президенте РФ" %}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="partners">
+              <h1>{% trans "Генеральные партнёры" %}</h1>
+            <ul>
+              <li class="sibur_{{ l }}">
+                <a href="{% if l == 'ru' %}http://www.sibur.ru/{% else %}http://www.sibur.ru/en/{% endif %}" rel="nofollow">{% trans "Компания Сибур" %}</a>
+              </li>
+              <li class="sibmost_{{ l }}">
+                <a href="{% if l == 'ru' %}http://www.sibmost.ru/{% else %}http://www.sibmost.ru/{% endif %}" rel="nofollow">{% trans "ОАО &laquo;Сибмост&raquo;" %}</a>
+              </li>
+              <li class="russneft_{{ l }}">
+                <a href="{% if l == 'ru' %}http://www.russneft.ru/{% else %}http://eng.russneft.ru/{% endif %}" rel="nofollow">{% trans "ОАО НК &laquo;РуссНефть&raquo;" %}</a>
+              </li>
+              <li class="tomskneft_{{ l }}">
+                <a 
+                    href="
+                    {% if l == 'ru' %}
+                        http://www.tomskneft.ru/
+                    {% else %}
+                        http://www.rosneft.com/Upstream/ProductionAndDevelopment/western_siberia/tomskneft/
+                    {% endif %}" rel="nofollow">
+                        {% trans "ОАО &laquo;Томскнефть&raquo; ВНК" %}
+                    </a>
+              </li>
+            </ul>
+            <h1>{% trans "Генеральные информационные спонсоры" %}</h1>
+            <ul>
+              <li class="interfax_{{ l }}">
+                <a href="{% if l == 'ru' %}http://www.interfax.ru/{% else %}http://www.interfax.com/{% endif %}" rel="nofollow">{% trans "Информагенство &laquo;Интерфакс&raquo;" %}</a>
+              </li>
+              <li class="rossiyskaja_gazeta_{{ l }}">
+                <a href="{% if l == 'ru' %}http://www.rg.ru/{% else %}http://rbth.ru/{% endif %}" rel="nofollow">{% trans "&laquo;Российская газета&raquo;" %}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="tags_container" class="container">
+        {% include "indexer/tag_cloud.html" %}
+      </div>
+
+      {% if not debug %}
+      <!-- Piwik -->
+      <script type="text/javascript">
+        var pkBaseURL = (("https:" == document.location.protocol) ? "https://stat.openteam.ru/" : "http://stat.openteam.ru/");
+        document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+        try {
+          var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 6);
+          piwikTracker.trackPageView();
+          piwikTracker.enableLinkTracking();
+        } catch( err ) {}
+      </script>
+      <noscript><p><img src="http://stat.openteam.ru/piwik.php?idsite=6" style="border:0" alt="" /></p></noscript>
+      <!-- End Piwik Tracking Code -->
+      {% endif %}
+
+      <div id="footer_container" class="container">
+        <div id="footer">
+          <div class="left">
+              <p>&copy; {% trans "Томский инновационный форум" %} INNOVUS, 2011</p>
+              <p>{% trans "Контакт-центр" %}: 8-800-200-6559</p>
+            <p>Email: <a href="mailto:org@tomskforum.ru">org@tomskforum.ru</a></p>
+          </div>
+          <div class="center">
+            <p><a href="/{{ l }}/forum-2011/about/participation/">{% trans "Условия участия" %}</a></p>
+            <p><a href="/{{ l }}/forum-2011/about/">{% trans "Контактная информация" %}</a></p>
+          </div>
+          <div class="right">
+              <p>{% trans "Концепт и разработка" %} &mdash; <a href="http://openteam.ru/" title="{% trans "Центр веб-технологий и информационных ресурсов Томского государственного университета систем управления и радиоэлектроники" %}">OpenTeam</a></p>
+              <p>{% trans "Концепт и структура" %} &mdash; <a href="http://www.tusur.ru/ru/centers/ckr/" title="{% trans "Центра корпоративного развития Томского государственного университета систем управления и радиоэлектроники" %}">{% trans "ЦКР" %}</a></p>
+              <p>{% trans "Дизайн" %} &mdash; <a href="http://hellodrw.ru/">7OnOff</a> {% trans "и" %} <a href="http://kutanaga.ru/">Kutanaga.ru</a></p>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
+

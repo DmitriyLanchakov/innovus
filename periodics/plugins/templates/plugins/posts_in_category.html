@@ -1,0 +1,11 @@
+{% load pagination_tags %}
+{% autopaginate posts object.per_page %}
+<ul class="news_list">
+{% for post in posts %}
+	<li class="{% cycle 'odd' 'even' %}">
+	  {% include 'periodics/post_content.html' %}
+	 </li>
+{% endfor %}
+</ul>
+{% paginate %}
+

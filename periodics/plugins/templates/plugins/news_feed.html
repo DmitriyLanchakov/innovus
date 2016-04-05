@@ -1,0 +1,18 @@
+{% load pytils_dt pagination_tags %}<!-- same as inno_news_ul.html -->
+{% autopaginate posts object.per_page %}
+<ul>
+
+  {% for post in posts %}
+    <li class="news-item {% if forloop.last %}last{% endif%}">
+      <span class="news-time">
+        {% if LANGUAGE_CODE == 'ru' %}
+              {{ post.date|ru_strftime_inflected:"%d %B %Y" }}
+            {% else %}
+              {{ post.date|date:"F d, Y" }}
+        {% endif %}
+      </span>
+      <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+      <p>{{ post.annotation|safe|truncatewords:"30"|striptags }}</p>
+    </li>
+  {% endfor %}
+</ul>

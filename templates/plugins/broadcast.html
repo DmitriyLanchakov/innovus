@@ -1,0 +1,35 @@
+{% load cache cms_tags i18n %}
+{% if events.count %}
+    <div id="broadcast">
+        <span class="block_title">
+            <h2>{{ object.title }} </h2>
+        </span>
+{% for event in events %}
+        <div class="broadcast_item toggler">
+          <ul class="wrapper">
+            <li  class="time">{{ event.date_started|date:"H:i" }} - {{ event.date_finished|date:"H:i" }}</li>
+            <li class="title">{% if LANGUAGE_CODE == 'en'%}{{ event.title_en }}{% else %}{{ event.title }}{% endif %}</li>
+            {% if event.broadcast_url %}<li class="has-broadcast">On-line трансляция</li>{% endif %}
+        {% if event.broadcast_url %}
+            <li class="more"><a href="#" class="expander">{% trans "expand" %} &darr;</a></li>
+            <li class="more"><a href="#" class="collapser">{% trans "collapse" %} &uarr;</a></li>
+            <li class="description hidden">
+                  <object class="videoplayer_broadcast" width="512" height="410">
+                      <param name="allowFullScreen" value="true" />
+                      <param name="allowScriptAccess" value="always" />
+                      <param name="wmode" value="transparent" />
+                      <param name="movie" value="/media/static/flash/player.swf" />
+                      <param name="flashvars" value="comment={{ event.title }}&amp;st=/media/static/css/video-stream.txt&amp;file={{ event.broadcast_url }}" />
+                      <embed src="/media/static/flash/player.swf" type="application/x-shockwave-flash" allowscriptaccess="always"
+                          allowfullscreen="true" wmode="transparent"
+                          flashvars="comment={{ event.title }}&amp;st=/media/static/css/video-stream.txt&amp;file={{ event.broadcast_url }}"
+                          width="512" height="410"></embed>
+                  </object>
+            </li>
+        {% endif %}
+          </ul>
+        </div>
+{% endfor %}
+    </div>
+{% endif %}
+

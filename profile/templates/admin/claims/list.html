@@ -1,0 +1,102 @@
+{% extends "one-column-inner.html" %}
+
+{% load i18n thumbnail pagination_tags %}
+{% block content_inner %}
+
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.scrollTo-1.4.2.min.js"></script>
+<script charset="utf-8" type="text/javascript">
+$(document).ready(function() {
+  $("#form_filter_reset").click(function() {
+    $(".form_filter input[type=text]").val("");
+    $(".form_filter input[type=checkbox]").removeAttr("checked");
+    $(".form_filter select option").removeAttr("selected");
+  });
+  $(".mass_delivery_toggler").click(function() {
+    $(".mass_delivery").slideToggle(300, function() {
+      if ($(this).is(":visible"))
+        $.scrollTo(".mass_delivery", 500, {
+          offset: {top: -50 },
+          onAfter: function() {
+            $("#id_subject").focus();
+          }
+        });
+    });
+    return false
+  });
+  $(".mass_delivery .cancel").click(function() {
+    $(".mass_delivery").slideToggle(300);
+    $.scrollTo(".mass_delivery_toggler", 500);
+    return false;
+  });
+});
+</script>
+
+<div class="claim_list">
+
+  <ul class="additional">
+    <li><a class="by_countries" href="{% url claims_by_countries %}">статистика по странам</a></li>
+    <li><a class="by_regions" href="{% url claims_by_regions %}">статистика по регионам</a></li>
+    <li><a class="by_regions" href="{% url statistics_registered %}">статистика по регистрациям</a></li>
+    <li><a class="settlers_list" href="{% url manage_settlers_list %}">список расселенных</a></li>
+    <li><a class="mass_delivery_toggler" href="#mass-delivery">создать рассылку</a></li>
+  </ul>
+
+  <fieldset class="filters">
+    <legend>Набор фильтров</legend>
+    <form method="POST" action="." class="form_filter">
+      {% csrf_token %}
+      <ul>
+        {{ filter_form.as_ul }}
+        <li class="submit">
+          <input type="submit" value="отфильтровать" />
+          <input type="button" value="очистить" id="form_filter_reset"/>
+        </li>
+        <li class="print_version"><a href="{% url manage_claim_list_print %}">версия для печати</a></li>
+        <li class="print_version"><a href="{% url manage_claim_list_badge %}">версия для бэйджиков</a></li>
+        <li class="print_version"><a href="{% url manage_claim_list_alpha %}">алфавитный список</a></li>
+      </ul>
+    </form>
+  </fieldset>
+
+
+  <fieldset class="mass_delivery">
+    <legend>Массовая рассылка</legend>
+    <form method="post" action="{% url actions_email_mass_send %}" class="mailer">
+      {% csrf_token %}
+      <ul>
+        {{ message_form.as_ul }}
+        <li class="submit">
+          <input type="submit" value="Отправить"/>
+          <a class="cancel" href="#">Отмена</a>
+        </li>
+      </ul>
+    </form>
+  </fieldset>
+
+  <h2>Найдено: {{ claims.count }}</h2>
+
+  {% autopaginate claims 30 %}
+
+  <table class="claims">
+    <tr>
+      <th><a href="{{ ordering.0 }}">Имя</a></th>
+      <th><a href="{{ ordering.1 }}">Дата регистрации</a></th>
+      <th>{% trans "Organization" %}</th>
+      <th>Тип участника</th>
+      <th>{% trans "State of claim" %}</th>
+      <th>{% trans "Incoming" %}</th>
+      <th>Дата чартера прибытия</th>
+      <th>{% trans "Outcoming" %}</th>
+      <th>{% trans "Hotel" %}</th>
+    </tr>
+    {% for d in claims %}
+      {% include "admin/claims/list_item.html" %}
+    {% endfor %}
+  </table>
+
+  {% paginate %}
+
+</div>
+
+{% endblock content_inner %}
+

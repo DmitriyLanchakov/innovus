@@ -1,0 +1,78 @@
+{% extends "one-column.html" %}
+{% load cache i18n comments_tags cms_tags media_tags thumbnail %}
+
+{% block script %}
+{{ block.super }}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.maxlength.js"></script>
+{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{{MEDIA_URL}}css/comment.css" type="text/css" media="screen" />
+{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs clearfix">
+    <ul>
+
+    </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<h1>{{ post.title }}</h1>
+<div class="t-wrap">
+    {% if post.picture_show %}
+    <div class="in-photo" style="width: 285px !important">
+    <a class="lightbox" href="{% thumbnail post.picture_src 640x640 %}">
+    <img src="{% thumbnail post.picture_src 270x270 %}"  />
+    </a>
+    </div>
+    {% endif %}
+    {% if post.annotation %}<strong>{{ post.annotation|safe }}</strong>{% endif %}
+    {{ post.content|safe }}
+
+{% if post.gallery %}
+    <h2>{% trans "Photos" %}:</h2>
+    {% with post.gallery as gallery %}
+	{% include "periodics/photologue_gallery.html" %}
+    {% endwith %}
+{% endif %}
+
+{% ifnotequal post.attachments.count 0 %}
+    <h3>{% trans "Attachments" %}</h3>
+    <ul>
+        {% for a in post.attachments.all %}
+        <li><a href="{{ a.file.url }}">{{ a }}</a></li>
+        {% endfor %}
+    </ul>
+{% endifnotequal %}
+    <div style="clear:both"></div>
+</div>
+  {% comments for post in category %}
+{% endblock %}
+
+
+<!--
+    <div class="post">
+        <h2>{{ post.title }}</h2>
+        {% if post.annotation %}<p class="annotation">{{ post.annotation|safe }}</p>{% endif %}
+        <p clas="content">{{ post.content|safe }}</p>
+        {% if post.picture_src %}
+            <img src="{{ post.picture_src.url }}" />
+        {% endif %}
+        {% ifnotequal post.attachments.count 0 %}
+            <h3>{% trans "Attachments" %}</h3>
+            <ul>
+                {% for a in post.attachments.all %}
+                <li><a href="{{ a.file.url }}">{{ a }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endifnotequal %}
+    </div>
+{{ test|safe }}
+    <hr />
+    {# Add comments for *this* post in *this* category #}
+    {% comments for post in category %}
+-->
+

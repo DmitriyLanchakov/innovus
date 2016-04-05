@@ -1,0 +1,47 @@
+{% load i18n %}
+  <ul>
+    {% if claim.arrival_want_charter %}
+        <li>{% trans "Charter flight Moscow &rarr; Tomsk" %}</li>
+        <li>
+            {% trans "Charter date and time:" %}
+            {{ claim.get_arrival_charter_date_display }}
+        </li>
+    {% else %}
+      <li>
+          {% trans "Tomsk arrival transport type" %}: {{ claim.get_arrival_transport_type_display }}
+      </li>
+      <li>
+          {% trans "Tomsk arrival date and time" %}: {{ claim.arrival_date|date:"d.m.Y H:i" }}
+      </li>
+    {% endif %}
+    {% if claim.departure_want_charter %}
+      <li>{% trans "Charter flight Tomsk &rarr; Moscow" %}</li>
+      {% if claim.arrival_want_charter %}
+       <li>
+        {% trans "Charter date and time:" %}
+        {% if claim.arrival_charter_date == 1 %}
+            {% trans "May 27, 2011 on 10pm" %}
+        {% endif %}
+        {% if claim.arrival_charter_date == 2 %}
+            {% trans "May 27, 2011 on 11pm" %}
+        {% endif %}
+        </li>
+      {% endif %}
+    {% else %}
+      <li>
+        {% trans "Tomsk departure transport type" %}: {{ claim.get_departure_transport_type_display }}
+      </li>
+      <li>
+        {% trans "Tomsk departure date and time" %}: {{ claim.departure_date|date:"d.m.Y H:i" }}
+      </li>
+    {% endif %}
+  </ul>
+
+  <ul>
+    {% if claim.need_hotel %}
+      <li>{% trans "You have requested a hotel room reservation" %}</li>
+    {% else %}
+      <li>{% trans "You have not requested a hotel room reservation" %}</li>
+    {% endif %}
+  </ul>
+

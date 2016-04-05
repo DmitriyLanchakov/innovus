@@ -1,0 +1,25 @@
+{% extends "one-column-inner.html" %}
+{% load i18n select_locale_tags pagination_tags %}
+
+{% block content_inner %}
+<div class="payment">
+  <p>Оплата: {{ claim }}</p>
+  <p>Счет №1/Ф-{{claim.id}} от {{ claim.bill_date|date:"d.m.Y" }} на сумму {{ sum }}</p>
+  <form method="post" action=".">
+    {% csrf_token %}
+    <p>
+      <label for="id_sum">Сумма: </label>
+      {{ form.sum }}
+    </p>
+    <p>
+      <label for="id_date">Дата: </label>
+      {{ form.date }}
+    </p>
+    <p>
+      <input type="submit" value="Оплата" class="submit" />
+      <a class="cancel" href="{% url manage_claim_show id=claim.id %}">Отмена</a>
+    </p>
+  </form>
+</div>
+{% endblock content_inner %}
+

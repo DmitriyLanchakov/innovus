@@ -1,0 +1,42 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}print.css" />
+  <title>{% trans "Schedule" %} | {% trans "Tomsk Innovation Forum" %}</title>
+</head>
+<body>
+
+  <div id="container" class="programm_list">
+    <h1>{% trans "Schedule" %}</h1>
+    <h3>{% trans "First day" %} {{ events.0.date_started|date:"d.m.Y" }}</h3>
+    <table>
+    {% for e in events %}
+        {% ifchanged e.date_started|date:"dm" %}
+            {%if not forloop.first %}
+                </table><br />
+                <h3>{% trans "Second day" %} {{e.date_started|date:"d.m.Y"}}</h3>
+                <table>
+            {%endif %}
+        {% endifchanged %}
+        <tr>
+            <td style="width: 120px;">
+                <div>{{ e.date_started|date:"H:i" }} - {{ e.date_finished|date:"H:i" }}</div>
+            </td>
+            <td style="text-align: left;">
+                {% if LANGUAGE_CODE == 'en' %}{{ e.title_en }}{% else %}{{ e.title }}{% endif %}
+                <div>{% if LANGUAGE_CODE == 'en' %}{{ e.announce_en }}{% else %}{{ e.announce }}{% endif %}</div>
+                <div style="font-style:italic;">{% if LANGUAGE_CODE == 'en' %}{{ e.place_en|safe }}{% else %}{{ e.place|safe }}{% endif %}</div>
+            </td>
+        </tr>
+        {% empty %}
+            <tr><td colspan="2">{% trans "No events" %}</td></tr>
+        {% endfor %}
+    </table>
+
+  </div>
+
+</body>
+</html>
+

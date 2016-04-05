@@ -1,0 +1,9 @@
+<div class="forum_images">
+  {% if object.title %}<h2>{{ object.title }}</h2>{% endif %}
+  <ul>
+    {% for image in resources %}
+      {% include 'partials/resources/image_li.html' %}
+    {% endfor %}
+  </ul>
+</div>
+

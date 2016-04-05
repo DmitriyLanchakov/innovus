@@ -1,0 +1,789 @@
+//Стили блоков страницы
+
+//    Стиль заголовка блока
+=block_title($col_block, $f_size)
+  .block_title
+    color: $col_block
+    display: block
+    font-size: $f_size
+    margin: 0
+    overflow: hidden
+    a
+      color: $col_block
+      float: left
+      font-size: $f_size
+      text-decoration: underline
+
+//    Стиль нижней кнопки блока
+=bottom_button($button_col, $border_style)
+  .bottom_button
+    +italic_style(14px, $button_col)
+    border-bottom: 1px $border_style $button_col
+    float: right
+    line-height: 16px
+    text-decoration: none
+
+body
+  #header
+    overflow: hidden
+    padding: 0px 5% 20px
+    #header_top
+      overflow: hidden
+      #head_menu
+        display: block
+        float: left
+        overflow: hidden
+        li
+          float: left
+          list-style: none
+          margin: 0 0 0 16px
+          padding: 0 1px
+          a
+            +italic_style(14px, #3b3b3b)
+      #press_center_button
+        +italic_style(16px, #fffefe)
+        background: url("../img/press_center.png") no-repeat
+        float: left
+        display: block
+        height: 31px
+        margin-left: 5%
+        padding-top: 2px
+        text-align: center
+        text-decoration: none
+        width: 132px
+      #sign_in
+        float: right
+        +italic_style(14px, #fffefe)
+        margin: 2px 20px 0
+      #language_toggle
+        float: right
+        li
+          float: left
+          list-style: none
+          margin: 0 0 0 10px
+          a
+            +italic_style(12px, #9dad00)
+        #active
+          a
+            color: #c2c2c2
+            text-decoration: none
+    #logo
+      float: left
+      margin: 15px 0 0 0
+      h1
+        margin: 0
+      a
+        display: block
+        width: 219px
+        height: 90px
+        overflow: hidden
+        text-indent: -9999em
+        background: transparent url("../img/logo.png") no-repeat
+        &.ru
+          background-image: url("../img/logo_ru.png")
+        &.en
+          background-image: url("../img/logo_en.png")
+    #social
+      float: right
+      margin: 45px 30px 0 30px
+      a
+        display: block
+        width: 32px
+        height: 32px
+        overflow: hidden
+        text-indent: -999em
+      .twitter
+        float: left
+        background: url("../img/twitter_.png") no-repeat
+        margin-right: 10px
+      .facebook
+        float: left
+        background: url("../img/facebook_.png") no-repeat
+        margin-right: 10px
+      .youtube
+        float: left
+        background: url("../img/youtube_.png") no-repeat
+        margin-right: 10px
+      .flickr
+        float: left
+        background: url("../img/flickr_.png") no-repeat
+    #right_top
+      float: right
+      margin-top: 40px
+      overflow: hidden
+      width: 350px
+      #panel-info
+        background-color: #fdfbea
+        margin-right: 23px
+        overflow: hidden
+        padding: 5px 8px
+        width: 300px
+        .photo
+          display: block
+          float: left
+          overflow: hidden
+          img
+            margin-right: 10px
+        span
+          +italic_style(14px, #754200)
+          display: block
+          margin-right: 20px
+        a.cabinet
+          +italic_style(16px, #34827f)
+          display: block
+          font-weight: bold
+          padding: 0px 3px 3px
+          margin: 5px 0
+        a.logout
+          +italic_style(14px, #747474)
+      #search
+        margin-top: 5px
+        width: 340px
+        form
+          overflow: hidden
+          .search_wrapper
+            border: 1px solid #cad0d2
+            float: left
+            margin: 0
+            input
+              +italic_style(16px, #638599)
+              border: none
+              border-top: 6px solid #f9f9f9
+              height: 20px
+              padding: 0px 5px 5px 8px
+              width: 302px
+          .search_submit
+            display: block
+            height: 17px
+            margin: 0
+            overflow: hidden
+            padding: 8px 0 0 6px
+            width: 17px
+      #sitemap
+        margin-top: 10px
+        text-align: right
+        a
+          +italic_style(14px, #0073a8)
+          margin-right: 35px
+
+  #timeline
+    #timeline_top
+      background: url("../img/timeline_top_background.png") no-repeat bottom left
+      height: 30px
+      padding: 0 5%
+      li
+        list-style: none
+        margin: 0
+        display: block
+      #history_link
+        float: left
+        margin: 0 210px 0 0
+        h2
+          +italic_style(16px, #d1322b)
+          margin: 0
+          text-decoration: none
+        a
+          +italic_style(16px, #d1322b)
+          border-bottom: 1px dotted #d1322b
+          text-decoration: none
+      #name_current_forum
+        h1, a
+          +italic_style(18px, #26be00)
+          display: block
+          margin: 0
+          text-decoration: none
+          .date, .year
+            line-height: 26px
+          .date
+            float: left
+            margin-right: 2%
+          .name
+            font-size: 1.3em
+            float: left
+            margin-right: 13%
+    #timeline_bottom
+      margin-top: 50px
+      padding: 0 5%
+      li
+        +italic_style(14px, #0073a8)
+        display: inline-block
+        list-style: none
+        margin: 0
+        width: 6.57%
+        a
+          +italic_style(14px, #0073a8)
+          border-bottom: 1px dotted #0073a8
+          text-decoration: none
+      .active
+        a, h2
+          border: none
+          color: #26be00
+          font-size: 18px
+          margin: 0
+      .current
+        a, h2
+          border-bottom: 1px solid #ff7800
+          color: #ff7800
+          font-size: 20px
+          margin: 0
+  #top_menu
+    overflow: hidden
+    padding: 10px 5% 0 5%
+    position: relative
+    top: 1px
+    z-index: 9999
+    #menu
+      display: block
+      margin-bottom: 10px
+      overflow: hidden
+      width: 100%
+      li
+        font-family: Verdana, sans-serif
+        float: left
+        list-style: none
+        height: 33px
+        line-height: 30px
+        margin: 0
+        text-align: center
+        padding-right: 9%
+        a
+          color: #408cab
+          font-size: 26px
+          text-decoration: underline
+      .selected
+        a, h2
+          color: #26be00
+          font-size: 30px
+          margin: 0
+          text-decoration: none
+      .menu_first
+        text-align: left
+      .menu_last
+        text-align: right
+        padding-right: 0
+    #spotlight
+      margin: 15px 0 20px
+      overflow: hidden
+      a, h2
+        color: #e66100
+        float: left
+        font-size: 35px
+        margin: 0
+        text-decoration: none
+      #spotlight_rss
+        background: url("../img/spotlight_rss.png") no-repeat
+        display: block
+        height: 29px
+        margin-top: 12px
+        margin-left: 18px
+        overflow: hidden
+        text-indent: -9999px
+        width: 27px
+    #forum_name
+      display: inline-block
+      margin-top: 30px
+      margin-bottom: 20px
+      h1
+        color: #a13303
+        font-size: 20px
+        margin: 0
+      h3
+        +italic_style(16px, #4a1f0c)
+        float: right
+        margin: 0
+        padding-top: 10px
+    #breadcrumbs
+      margin-top: 50px
+      overflow: hidden
+      ul
+        li
+          +italic_style(14px, #66b6d1)
+          float: left
+          list-style: none
+          margin: 0
+          a
+            color: #66b6d1
+        .breadcrumbs_last
+          color: #ff7a00
+    #top_tabs
+      margin-top: 10px
+      overflow: hidden
+      ul
+        overflow: hidden
+        li
+          font-family: Verdana, sans-serif
+          float: left
+          list-style: none
+          margin: 0 9% 0 0
+          padding-bottom: 20px
+          a
+            color: #4facb3
+            border-bottom: 1px dotted #4facb3
+            font-size: 20px
+            line-height: 36px
+            text-decoration: none
+          h2
+            line-height: 36px
+            margin: 0
+          h2
+            color: black
+          a
+            border-bottom: 1px dotted #4facb3
+          a, h2
+            border-bottom: none
+            font-size: 20px
+          h2
+            color: black
+          a
+            border-bottom: 1px dotted #4facb3
+        .tab_active
+          background: url("../img/top_tab_active.png") bottom center no-repeat
+          a, h2
+            border-bottom: none
+            font-size: 20px
+          h2
+            color: black
+          a
+            border-bottom: 1px dotted #4facb3
+  #broadcast
+    overflow: hidden
+    padding: 15px 5% 0 5%
+    position: relative
+    .block_title
+      h2
+        color: #bedf8f
+        font-size: 35px
+  .persons_main
+    +pie-clearfix
+    +block_title(#b1dde2, 35px)
+    background: #f9fdff url("../img/person_background.png") bottom repeat-x
+    border-top: 1px dashed #def2fc
+    overflow: hidden
+    padding: 15px 5% 0 5%
+    position: relative
+    .persons_rss
+      background: url("../img/persons_rss.png") no-repeat
+      display: block
+      height: 29px
+      margin-top: 12px
+      margin-left: 18px
+      overflow: hidden
+      text-indent: -9999px
+      width: 27px
+    ul
+      margin: 20px 0 0 3%
+      overflow: hidden
+      width: 100%
+      li
+        display: block
+        font-family: Verdana, sans-serif
+        float: left
+        list-style: none
+        margin: 0
+        margin-bottom: 30px
+        margin-right: 1%
+        min-height: 300px
+        overflow: hidden
+        width: 48%
+        .person_photo
+          border: 1px solid #868889
+          float: left
+          overflow: hidden
+          img
+            display: block
+            border: 1px solid white
+        .person_info
+          padding-left: 15px
+          overflow: hidden
+          .person_name
+            color: #005274
+            font-size: 18px
+          .person_title
+            color: black
+            display: block
+            font-size: 12px
+            margin-top: 10px
+          .speech
+            +italic_style(14px, #33534c)
+            display: block
+            margin: 0
+            margin-top: 10px
+  #events
+    +block_title(#bedf8f, 35px)
+    +bottom_button(#08649f, solid)
+    background: #f7fff6 url("../img/events_background.png") bottom repeat-x
+    border-top: 1px dashed #c0eaef
+    overflow: hidden
+    padding: 15px 5% 20px
+    #events_rss
+      background: url("../img/events_rss.png") no-repeat
+      display: block
+      height: 29px
+      margin-left: 18px
+      margin-top: 10px
+      overflow: hidden
+      text-indent: -9999px
+      width: 27px
+    .event_wrapper
+      margin: 20px 0 0 3%
+      .event_item
+        overflow: hidden
+        .item_info
+          overflow: hidden
+          .event_title
+            color: #005274
+            font-size: 22px
+          .event_date
+            color: #8a4949
+            display: block
+            font-family: "Trebuchet MS", Verdana, sans-serif
+            font-size: 12px
+            font-style: italic
+            margin: 15px 0 10px
+          .event_description
+            color: black
+            font-size: 14px
+            line-height: 24px
+            margin-top: 10px
+            overflow: hidden
+          .event_sight
+            margin-top: 25px
+            overflow: hidden
+            .sight_title
+              +italic_style(16px, #3a5c0a)
+            ul
+              margin-top: 15px
+              li
+                font-family: Verdana, sans-serif
+                list-style: none
+                margin: 0 0 10px 0
+                a
+                  color: #2f81ab
+                  font-size: 14px
+                  line-height: 18px
+  .event_video
+    height: 221px !important
+    padding: 0 !important
+    text-align: center
+    div
+      padding: 0 !important
+      width: 276px !important
+      a
+        img
+          border: 1px solid #ababac
+          padding: 1px
+  .event_video_full
+    height: 410px !important
+    padding: 0 !important
+    text-align: center
+    div
+      padding: 0 !important
+      width: 512px !important
+      a
+        img
+          border: 1px solid #ababac
+          padding: 1px
+  .event_v_c
+    float: left
+    margin-right: 20px
+    #events_carousel, #history_carousel, #full_video_carousel
+      height: 50px
+      margin: 0 auto
+      margin-top: 20px
+      overflow: hidden
+      .jcarousel
+        float: left
+      .prev, .next
+        display: block
+        float: left
+        width: 22px
+        height: 48px
+        text-indent: -9999px
+      .prev
+        background: transparent url("../img/events_carousel_prev.png") no-repeat left center
+      .next
+        background: transparent url("../img/events_carousel_next.png") no-repeat right center
+      ul
+        overflow: hidden
+        margin-top: 0 !important
+        li
+          font-family: Verdana, sans-serif
+          float: left
+          list-style: none
+          margin: 2px 2px 0 2px !important
+          &.selected
+            margin-top: 0 !important
+          a
+            display: block
+            text-decoration: none
+            .carousel_img
+              border: 1px solid #868889
+              display: block
+              img
+                border: 1px solid white
+                display: block
+                height: 44px
+                width: 51px
+  #innovation_news
+    +block_title(#dd8700, 24px)
+    +bottom_button(#df8f11, dotted)
+    background: #fdf0df url("../img/innovation_background.png") bottom repeat-x
+    border-top: 1px dashed #c0eaef
+    overflow: hidden
+    padding: 15px 5% 20px
+    #innovation_news_rss
+      background: url("../img/innovation_news_rss.png") no-repeat
+      display: block
+      height: 29px
+      margin-left: 18px
+      overflow: hidden
+      text-indent: -9999px
+      width: 27px
+    ul
+      margin: 20px 0 25px
+      overflow: hidden
+      li
+        font-family: Verdana, sans-serif
+        list-style: none
+        margin: 0
+      .news-item
+        float: left
+        margin-right: 5%
+        width: 30%
+        .news-time
+          +italic_style(14px, #b5a074)
+          display: block
+          line-height: 18px
+          margin-bottom: 15px
+        a
+          color: #00709a
+          font-size: 16px
+        p
+          color: black
+          font-size: 12px
+          line-height: 20px
+          margin-top: 15px
+      .last
+        margin-right: 0
+  #site_news
+    +block_title(#156b93, 24px)
+    +bottom_button(#156b93, dotted)
+    border-top: 1px dashed #c0eaef
+    overflow: hidden
+    padding: 15px 5% 20px
+    span.block_title
+      h2
+        color: #156b93
+        float: left
+        font-size: 24px
+        margin: 0
+    #site_news_rss
+      background: url("../img/site_news_rss.png") no-repeat
+      display: block
+      height: 29px
+      margin-left: 18px
+      overflow: hidden
+      text-indent: -9999px
+      width: 27px
+    ul
+      li
+        font-family: Verdana, sans-serif
+        list-style: none
+        margin: 0
+      .site_news_item
+        margin-bottom: 10px
+        padding-left: 27px
+        overflow: hidden
+        position: relative
+        width: 100%
+        .description
+          float: left
+          margin-top: 15px
+          width: 100%
+          a
+            color: #027f9e
+            font-size: 16px
+          p
+            color: black
+            font-size: 12px
+            line-height: 20px
+        .site_news_icon
+          float: right
+          width: 15%
+          img
+            display: block
+            margin: 0 auto
+            width: 70px
+  .social_links
+    +clearfix
+    li
+      float: left
+      list-style: none
+      font-size: 18px
+      margin: 0 20px 0 0
+      &.twitter a
+        background: transparent url("../img/social_twitter.png") no-repeat 0 0
+      &.delicious a
+        background: transparent url("../img/social_delicious.png") no-repeat 0 0
+      &.facebook a
+        background: transparent url("../img/social_facebook.png") no-repeat 0 0
+      &.google a
+        background: transparent url("../img/social_google.png") no-repeat 0 0
+      &.yandex a
+        background: transparent url("../img/social_yandex.png") no-repeat 0 0
+      a
+        padding: 1px 0 1px 30px
+        &:hover
+          background-position: 0 -24px
+  #tags
+    +block_title(#cbe0eb, 35px)
+    background: #e8f3f7
+    border-top: 1px dotted #9cc8de
+    padding: 25px 5% 60px
+    #cloud
+      padding-top: 20px
+      margin: 0 auto
+      text-align: center
+      width: 100%
+      ul
+        display: inline
+        li
+          display: inline
+          font-family: Verdana, sans-serif
+          font-size: 12px
+          line-height: 34px
+          list-style: none
+          margin: 0
+          padding-right: 15px
+          a
+            color: #197394
+            text-decoration: none
+            white-space: nowrap
+            &:hover
+              color: #85a3c2
+        .weight2
+          font-size: 12px
+        .weight3
+          font-size: 16px
+        .weight4
+          font-size: 20px
+        .weight5
+          font-size: 24px
+        .weight6
+          font-size: 28px
+  #sponsors
+    background: #effcff
+    border-top: 1px dotted #9cc8de
+    overflow: hidden
+    padding: 40px 5%
+    text-align: center
+    h2
+      font-size: 18px
+      color: #4f5e67
+      margin: 0
+    #organaizer
+      width: 100%
+      a
+        overflow: hidden
+        color: #035c94
+        display: block
+        float: left
+        font-size: 18px
+        margin: 0 auto
+        margin-top: 30px
+        width: 50%
+      img
+        display: block
+        height: 182px
+        margin: 0 auto
+        margin-bottom: 20px
+        overflow: hidden
+        text-decoration: none
+    #gen-sponsors
+      margin: 45px 0 0 0
+      width: 100%
+      ul
+        background: white
+        margin-top: 30px
+        overflow: hidden
+        padding: 10px 20px 20px 20px
+        li
+          color: black
+          float: left
+          font-family: Verdana, sans-serif
+          font-size: 12px
+          list-style: none
+          height: auto
+          margin: 20px 1% 0 1%
+          width: 14%
+          span
+            color: black
+            display: block
+            font-size: 12px
+          a
+            display: block
+            color: #1b639f
+          img
+            display: block
+            margin: 0 auto
+          span
+            margin-top: 5px
+        #alexneftzavod_logo, #interfax_logo
+          width: 50%
+          a
+            padding-top: 0px
+        #interfax_logo
+          height: auto
+          span
+            padding: 0
+            position: relative
+            top: -40px
+          img
+            margin-bottom: 20px
+  #footer
+    background: #e4f6fa
+    border-top: 1px dotted #9cc8de
+    height: 78px
+    margin: 0 auto
+    padding: 25px 5%
+    #contacts, #hall-of-fame
+      color: #565f66
+      font-size: 12px
+      float: left
+      width: 35%
+      li
+        line-height: 28px
+        list-style: none
+        margin: 0
+        a
+          color: #565f66
+    #contacts
+      text-align: left
+    #social_wrapper
+      width: 30%
+      float: left
+      text-align: center
+      #social
+        +clearfix
+        width: 164px
+        margin: 0 auto 20px
+        a
+          display: block
+          width: 48px
+          height: 48px
+          overflow: hidden
+          text-indent: -999em
+        .twitter
+          float: left
+          background: url("../img/twitter_.png") no-repeat
+          margin-right: 10px
+        .youtube
+          float: left
+          background: url("../img/youtube_.png") no-repeat
+          margin-right: 10px
+        .flickr
+          float: left
+          background: url("../img/flickr_.png") no-repeat
+    #hall-of-fame
+      text-align: right
+

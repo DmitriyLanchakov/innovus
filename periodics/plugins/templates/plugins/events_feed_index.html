@@ -1,0 +1,55 @@
+{% load cache cms_tags pytils_dt media_tags thumbnail %}
+      <div id="events_container" class="container">
+        <div id="events">
+          <h1>
+            <a href="{% page_id_url 'events' %}">{% page_attribute page_title events %}</a>
+            <a class="rss" href="{% url periodics_rss sequence='events' %}">RSS {% page_attribute page_title events %}</a>
+          </h1>
+          <div class="actual">
+            <a href="{{ event.get_absolute_url }}">
+              {#% multimedia for post %#}
+              {% thumbnail event.picture_src "306" as thumb %}
+                <img src="{{ thumb.url }}" height="{{ thumb.height }}" width="{{ thumb.width }}" alt="{{ event.title }}" />
+              {% empty %}
+                <p>{{ event.picture_src }}</p>
+              {% endthumbnail %}
+            </a>
+          </div>
+          <div class="band">
+            <p class="date">
+              {% if LANGUAGE_CODE == 'ru' %}
+                {{ event.date|ru_strftime_inflected:"%d %B %Y" }}
+              {% else %}
+                {{ event.date|date:"F d, Y" }}
+              {% endif %}
+            </p>
+            <p class="title"><a href="{{ event.get_absolute_url }}">{{ event.title|safe }}</a></p>
+            <p class="annotation">{{ event.annotation|safe|striptags }}</p>
+            <p class="add_coment">
+              <a href="{{ event.get_absolute_url }}#to_comments">
+                  {% trans "Leave comment" %} ({{ event.comments.approved.count }})
+              </a>
+            </p>
+            <ul>
+              {% for post in posts %}
+                {% if not forloop.first %}
+                  <li>
+                    <p class="date">
+                      {% if LANGUAGE_CODE == 'ru' %}
+                        {{ post.date|ru_strftime_inflected:"%d %B %Y" }}
+                      {% else %}
+                        {{ post.date|date:"F d, Y" }}
+                      {% endif %}
+                    </p>
+                    <p class="title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            <p class="other">
+            <a href="{% page_id_url 'events' %}">{% trans "Other events" %}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+

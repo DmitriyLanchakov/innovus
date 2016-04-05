@@ -1,0 +1,17 @@
+    Здравствуйте, {% if claim.delegation_manager %}{{ claim.delegation_manager }}{% else %}{{ claim }}{% endif %}
+
+{% if changed %}Организационный комитет Форума изменил ваше заселение:
+{% if claim.delegation_manager %}Зарегистрированный вами делегат, {{ claim }}, заселён{% else %}Вас заселили{% endif %} в гостиницу "{{ reserve.room.hotel.name }}", номер класса "{{ reserve.room.get_room_category_display }}".
+
+{% else %}
+    {% if claim.delegation_manager %}Зарегистрированный вами делегат, {{ claim }}, заселён{% else %}Вас заселили{% endif %} в гостиницу "{{ reserve.room.hotel.name }}", номер класса "{{ reserve.room_display }}".
+
+{% endif %}
+
+
+---
+С уважением,
+Организационный комитет
+XIV Томский инновационный форум INNOVUS
+http://tomskforum.ru
+

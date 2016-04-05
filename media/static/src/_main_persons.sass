@@ -1,0 +1,77 @@
+#persons
+  h1
+    font-size: 28px
+    margin-bottom: 20px
+    a
+      color: #5ec7f2
+    .rss
+      +iconize_link("../img/rss_interviews.png", 30px, 30px)
+  .spikers
+    float: left
+    width: 310px
+    padding: 20px 0 30px 2%
+    ul
+      li
+        margin-bottom: 10px
+        .name
+          color: #004d9f
+          font-size: 14px
+          font-weight: bold
+    .other
+      text-align: right
+      margin-top: 20px
+      a
+        color: #5ec7f2
+        font-size: 14px
+        font-style: italic
+        font-weight: bold
+        +georgia_font_stack
+
+  .interviews
+    padding: 20px 2% 30px 370px
+    ul
+      +clearfix
+      margin-bottom: 20px
+      li
+        float: left
+        width: 48.5%
+        +clearfix
+        margin-bottom: 15px
+        &.odd
+          clear: left
+          padding-right: 1%
+        &.even
+          padding-left: 1%
+        .photo
+          float: left
+          width: 104px
+          img
+            border: 1px solid #888
+            padding: 1px
+        .description
+          padding-left: 120px
+          a
+            color: #004d9f
+          h1
+            font-size: 18px
+            margin-bottom: 0
+          .thesis
+            font-size: 14px
+            font-style: italic
+            +georgia_font_stack
+            margin: 10px 0
+          .date
+            color: #95959a
+            font-style: italic
+            font-weight: bold
+            +georgia_font_stack
+    .other
+      text-align: right
+      margin-top: 20px
+      a
+        color: #5ec7f2
+        font-size: 14px
+        font-style: italic
+        font-weight: bold
+        +georgia_font_stack
+

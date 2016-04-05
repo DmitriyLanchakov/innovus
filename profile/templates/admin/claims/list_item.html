@@ -1,0 +1,76 @@
+          <tr class="state_{{ d.claim_state }}">
+            <td>
+              <p><a href="{% url manage_claim_show id=d.pk %}">{{ d.last_name }} {{ d.first_name }} {{ d.middle_name }}</a>
+              </p>
+              <p>{{ d.country }}{% if d.region %}, {{ d.region }}{% endif %}</p>
+            </td>
+            <td>
+              <p>{{ d.creation_date|date:"d.m.Y" }}</p>
+            </td>
+            <td>
+              {% if d.industry %}<p>{{ d.industry }}</p>{% endif %}
+              <p>{% if d.organization %}{{ d.organization }}{% endif %}{% if d.position %}, {{ d.position }}{% endif %}</p>
+            </td>
+            <td>
+              <p>{{ d.get_claim_type_display }}</p>
+            </td>
+            <td>
+              <p>
+                {{ d.get_claim_state_display }}
+              </p>
+            </td>
+            <td>
+               {% if d.is_travel%}
+                {% if d.arrival_want_charter %}
+                <p>{% trans "Charter flight Moscow &rarr; Tomsk" %}</p> <!-- Чартерный авиарейс Москва &rarr; Томск -->
+                <p>{% trans "Charter date/time" %}: 
+                    {{ d.get_arrival_charter_date_display }}</p>
+                  <!-- <p>{% trans "Departure: 19th of May, tonight" %}</p> --><!-- Вылет 19 мая вечером -->
+                {% else %}
+                  <p>{% trans "Tomsk arrival transport type" %}: {{ d.get_arrival_transport_type_display }}</p>
+                  <p>{% trans "Tomsk arrival date and time" %}: {{ d.arrival_date|date:"d.m.Y H:i" }}</p>
+                {% endif %}
+              {% else %}
+                <p>{% trans "Для участников из Томской области информация не собирается" %}</p>
+              {% endif %}
+            </td>
+          <td>
+            {% if d.arrival_charter_date %}
+                {{ d.get_arrival_charter_date_display }}
+            {% endif %}
+          </td>
+            <td>
+              {% if d.is_travel%}
+                {% if d.departure_want_charter %}
+                  <p>{% trans "Charter flight Tomsk &rarr; Moscow" %}</p>
+                  <!-- <p>{% trans "Departure: 21th of May, tonight" %}</p> -->
+                {% else %}
+                  <p>{% trans "Tomsk departure transport type" %}: {{ d.get_departure_transport_type_display }}</p>
+                  <p>{% trans "Tomsk departure date and time" %}: {{ d.departure_date|date:"d.m.Y H:i" }}</p>
+                {% endif %}
+              {% else %}
+                <p>{% trans "Для участников из Томской области информация не собирается" %}</p>
+              {% endif %}
+          </td>
+
+          {% if d.need_hotel %}
+            {% if d.hotel_reserves.count %}
+              <td class="already_reserved">
+                {% with d.hotel_reserves.all.0.room as room %}
+                  <p>гостиница: {{ room.hotel }}</p>
+                  <p>класс: {{ room.get_room_category_display }}</p>
+                  <p>номер: {{ room.room_number }}</p>
+                {% endwith %}
+              </td>
+            {% else %}
+              <td class="need_reservation">
+                <p>Запрошено бронирование номера в гостинице: {{ d.get_room_category_display }}</p>
+              </td>
+            {% endif %}
+          {% else %}
+            <td>
+              <p>Бронирование не требуется</p>
+            </td>
+          {% endif %}
+          </tr>
+

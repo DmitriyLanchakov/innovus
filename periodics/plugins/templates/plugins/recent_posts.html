@@ -1,0 +1,10 @@
+<div id="b-news" class="r-b-padd">
+    <span class="b-title"><a href="recent_posts.html#">Новости, обзоры, аналитика</a><a href="recent_posts.html#"><img src="{{ IMG_URL }}rss_icon.png" alt="RSS"/></a></span>
+    {% for post in posts %}
+    <div>
+        <a href="recent_posts.html#">{{ post.title }}</a>
+        <p>{{ post.annotation|safe }}</p>
+    </div>
+    {% endfor %}
+</div>
+

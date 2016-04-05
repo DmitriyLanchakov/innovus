@@ -1,0 +1,34 @@
+{% load thumbnail %}
+<div class="event_v_c">
+    <div class="event_video_full">
+        {% with resources.0 as video %}
+            <div id="videoplayer_full">
+            </div>
+        {% endwith %}
+    </div>
+    <div id="full_video_carousel">
+        {% if resources.count > 0 %}
+            <a class="prev" href="#">prev</a>
+            <div class="jcarousel">
+                <ul>
+                  {% for r in resources %}
+                  <li {% if forloop.first %}class="selected" {% endif %}title="{{ r.title }}">
+                    <a href="{{ r.file.url }}">
+                        <span class="carousel_img">
+                            {% thumbnail r.snapshot "51x44" crop="center" as thumb %}
+                            <img src="{{ thumb.url }}"
+                                 alt="{{ r.title }}"
+                                 width="{{ thumb.width }}"
+                                 height="{{ thumb.height }}" />
+                            {% endthumbnail %}
+                        </span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+            </div>
+            <a class="next" href="#">next</a>
+        {% endif %}
+    </div>
+</div>
+

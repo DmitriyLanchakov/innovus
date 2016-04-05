@@ -1,0 +1,168 @@
+#comments {
+    list-style: none;
+}
+
+#comments li.comment { border-bottom: #ddd 1px dotted;}
+
+#comments li.level-0  { margin-left: 0; }
+#comments li.level-1  { margin-left: 30px;  }
+#comments li.level-2  { margin-left: 60px;  }
+#comments li.level-3  { margin-left: 90px;  }
+#comments li.level-4  { margin-left: 120px; }
+#comments li.level-5  { margin-left: 150px; }
+#comments li.level-6  { margin-left: 180px; }
+#comments li.level-7  { margin-left: 210px; }
+#comments li.level-8  { margin-left: 240px; }
+#comments li.level-9  { margin-left: 270px; }
+#comments li.level-10 { margin-left: 300px; }
+#comments li.level-11 { margin-left: 330px; }
+#comments li.level-12 { margin-left: 360px; }
+#comments li.level-13 { margin-left: 390px; }
+#comments li.level-14 { margin-left: 420px; }
+#comments li.level-15 { margin-left: 450px; }
+#comments li.level-16 { margin-left: 480px; }
+#comments li.level-17 { margin-left: 510px; }
+#comments li.level-18 { margin-left: 540px; }
+#comments li.level-19 { margin-left: 570px; }
+#comments li.level-20 { margin-left: 600px; }
+
+
+.hide {
+  display: none;
+}
+#post-new-comment-container {
+  padding: 0;
+  margin: 0;
+  width: 475px;
+}
+#post-new-comment-container h2 {
+  color: blue;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+#post-comment-form {
+  overflow: hidden;
+  display: inline-block;
+  width: 475px;
+  border: 1px dashed #BAD19F;
+  background: #DBECC7;
+}
+#post-comment-form {
+  display: block;
+}
+#post-comment-form #userinfo {
+    margin-left: 10px;
+}
+
+.progress #comment-area .submit-button {
+  background: transparent url(/media/images/ajax-loader.gif) no-repeat left 80%;
+  padding: 0 10px 0 20px;
+}
+#post-comment-form .dynamic-block {
+  margin: 10px 0;
+}
+#post-comment-form .dynamic-block .act_login {
+  cursor: default;
+  border-bottom: none;
+}
+#post-comment-form .dynamic-block a {
+  border-bottom: 1px dashed #2B5204;
+  color: #2B5204;
+  margin: 0 5px;
+  text-decoration: none;
+}
+#post-comment-form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#post-comment-form li {
+  padding: 0;
+  margin: 0;
+  line-height: 30px;
+  height: 30px;
+}
+#post-comment-form li input {
+  float: left;
+}
+#post-comment-form li label {
+  color: #2B5204;
+  padding-left: 10px;
+  float: left;
+  width: 80px;
+}
+#post-comment-form #anonymous, #post-comment-form #openid, #post-comment-form #comment-area {
+  padding-left: 10px;
+}
+#post-comment-form #anonymous, #post-comment-form #openid {
+  clear: right;
+  height: 90px;
+}
+#post-comment-form #anonymous .errorlist, #post-comment-form #openid .errorlist {
+  float: right;
+  width: 200px;
+}
+#post-comment-form #anonymous .errorlist li, #post-comment-form #openid .errorlist li {
+  color: red;
+  float: left;
+  line-height: 19px;
+}
+#post-comment-form #openid {
+  clear: right;
+}
+#post-comment-form #openid li {
+  position: relative;
+  top: 30%;
+}
+#post-comment-form #openid li #id_openid-openid {
+  background:#fff url('/media/images/openid-inputicon.gif') no-repeat left;
+  padding-left: 18px;
+}
+#post-comment-form #comment-area {
+  overflow: hidden;
+  display: inline-block;
+}
+#post-comment-form #comment-area {
+  display: block;
+}
+#post-comment-form #comment-area .field-content {
+/*  width: 450px;*/
+/*  height: 200px;*/
+}
+#post-comment-form #comment-area .field-content .errorlist li {
+  color: red;
+  line-height: 20px;
+}
+#post-comment-form #comment-area li {
+  height: auto;
+}
+#post-comment-form #comment-area li textarea {
+  width: 450px;
+}
+#post-comment-form #comment-area li label {
+  display: block;
+  float: left;
+}
+#post-comment-form #comment-area .comment-tracker {
+  color: #2B5204;
+  margin-top: 0;
+  float: left;
+}
+#post-comment-form #comment-area .submit-button {
+  float: right;
+  padding-right: 2px;
+  margin: 0;
+/*  padding-top: 10px;*/
+}
+#post-comment-form #comment-area .comment-tracker, #post-comment-form #comment-area .submit-button {
+  line-height: 10px;
+}
+
+#post-new-comment-container #write {
+    color: #2B5204; text-decoration: underline;
+}
+
+#post-new-comment-container #write:hover {
+    text-decoration: none;
+}
+

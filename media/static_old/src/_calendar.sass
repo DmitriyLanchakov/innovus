@@ -1,0 +1,168 @@
+div.calendar
+  position: relative
+  z-index: 999
+
+.calendar
+  border: 1px solid #555566
+  font-size: 11px
+  color: black
+  cursor: default
+  background: #eeeeff
+  font-family: tahoma, verdana, sans-serif
+  table
+    border: 1px solid #555566
+    font-size: 11px
+    color: black
+    cursor: default
+    background: #eeeeff
+    font-family: tahoma, verdana, sans-serif
+    margin: 0
+  .button
+    text-align: center
+    padding: 2px
+  .nav
+    background: #777788 url("../img/datetime/menuarrow.gif") no-repeat 100% 100%
+  thead
+    .title
+      font-weight: bold
+      text-align: center
+      background: white
+      color: black
+      padding: 2px
+    .headrow
+      background: #777788
+      color: white
+    .daynames
+      background: #bbddff
+    .name
+      border-bottom: 1px solid #555566
+      padding: 2px
+      text-align: center
+      color: black
+    .weekend
+      color: #aa6666
+    .hilite
+      background-color: #aaaaff
+      color: black
+      border: 1px solid #0044ff
+      padding: 1px
+    .active
+      background-color: #7777cc
+      padding: 2px 0px 0px 2px
+  tbody .day
+    width: 2em
+    color: #445566
+    text-align: right
+    padding: 2px 4px 2px 2px
+    &.othermonth
+      font-size: 80%
+      color: #bbbbbb
+      &.oweekend
+        color: #ffbbbb
+  table .wn
+    padding: 2px 3px 2px 2px
+    border-right: 1px solid black
+    background: #bbddff
+  tbody
+    .rowhilite td
+      background: #ddeeff
+      &.wn
+        background: #eeeeff
+    td
+      padding: 0
+      &.hilite
+        background: #ddeeff
+        padding: 1px 3px 1px 1px
+        border: 1px solid #bbbbbb
+      &.active
+        background: #ccddee
+        padding: 2px 2px 0px 2px
+      &.selected
+        font-weight: bold
+        border: 1px solid black
+        padding: 1px 3px 1px 1px
+        background: white
+        color: black
+      &.weekend
+        color: #aa6666
+      &.today
+        font-weight: bold
+        color: blue
+    .disabled
+      color: #999999
+    .emptycell
+      visibility: hidden
+    .emptyrow
+      display: none
+  tfoot
+    .footrow
+      text-align: center
+      background: #555566
+      color: white
+    .ttip
+      background: white
+      color: #444455
+      border-top: 1px solid #555566
+      padding: 1px
+    .hilite
+      background: #aaaaff
+      border: 1px solid #0044ff
+      color: black
+      padding: 1px
+    .active
+      background: #7777cc
+      padding: 2px 0px 0px 2px
+  .combo
+    position: absolute
+    display: none
+    top: 0px
+    left: 0px
+    width: 4em
+    cursor: default
+    border: 1px solid #665555
+    background: #ddeeff
+    color: black
+    font-size: 90%
+    z-index: 100
+    .label
+      text-align: center
+      padding: 1px
+    .label-IEfix
+      text-align: center
+      padding: 1px
+      width: 4em
+    .hilite
+      background: #aaccff
+    .active
+      border-top: 1px solid #4466aa
+      border-bottom: 1px solid #4466aa
+      background: #eeeeff
+      font-weight: bold
+  td.time
+    border-top: 1px solid black
+    padding: 1px 0px
+    text-align: center
+    background-color: #f4f0e8
+    .hour, .minute
+      padding: 0px 3px 0px 4px
+      border: 1px solid #888899
+      font-weight: bold
+      background-color: white
+    .ampm
+      padding: 0px 3px 0px 4px
+      border: 1px solid #888899
+      font-weight: bold
+      background-color: white
+      text-align: center
+    .colon
+      padding: 0px 2px 0px 3px
+      font-weight: bold
+    span
+      &.hilite
+        border-color: black
+        background-color: #666677
+        color: white
+      &.active
+        border-color: red
+        background-color: black
+        color: lime

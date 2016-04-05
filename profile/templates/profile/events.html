@@ -1,0 +1,45 @@
+{% load i18n %}
+<a class="print_version" href="{% url list_events_print %}">{% trans "print version" %}</a>
+<h1>{{ object.title }}</h1>
+
+<ul class="programm_list">
+{% for e in events %}
+  <li class="item">
+    <ul class="toggler">
+        <li class="time">{{ e.date_started|date:"H:i" }} - {{ e.date_finished|date:"H:i" }}</li>
+        <li class="title">
+            {% if LANGUAGE_CODE == 'en' %}
+                {{ e.title_en }}
+            {% else %}
+                {{ e.title }}
+            {% endif %}
+        </li>
+        <li class="annotation">
+            {% if LANGUAGE_CODE == 'en' %}
+                {{ e.annotation_en|safe }}
+            {% else %}
+                {{ e.annotation|safe }}
+            {% endif %}
+        </li>
+        {% if LANGUAGE_CODE == 'en' %}
+            {% if e.description_en %}
+                <li class="more"><a href="#" class="expander">{% trans "expand" %} &darr;</a></li>
+                <li class="more"><a href="#" class="collapser">{% trans "collapse" %} &uarr;</a></li>
+            {% endif %}
+        {% else %}
+            {% if e.description %}
+                <li class="more"><a href="#" class="expander">{% trans "expand" %} &darr;</a></li>
+                <li class="more"><a href="#" class="collapser">{% trans "collapse" %} &uarr;</a></li>
+            {% endif %}
+        {% endif %}
+        <li class="description hidden">
+            {% if LANGUAGE_CODE == 'en' %}
+                {{ e.description_en|safe }}
+            {% else %}
+                {{ e.description|safe }}
+            {% endif %}
+        </li>
+      </ul>
+  </li>
+{% endfor %}
+</ul>

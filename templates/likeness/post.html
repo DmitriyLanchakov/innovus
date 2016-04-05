@@ -1,0 +1,26 @@
+{% load thumbnail pytils_dt pytils_typo %}
+<li>
+  <h2><a href="{{ post.get_absolute_url }}">{{ post.title|typografy|safe }}</a></h2>
+  {% thumbnail post.picture_src "150" as thumb %}
+  <div class="image">
+    <a href="{{ post.get_absolute_url }}">
+      <img src="{{ thumb.url }}"
+           alt="{{ post.picture_alt|default:post.title }}"
+           title="{{ post.picture_title|default:post.title }}" />
+    </a>
+  </div>
+  {% endthumbnail %}
+  <div class="description">
+    <p class="date">
+      {% if LANGUAGE_CODE == 'ru' %}
+        {{ post.date|ru_strftime_inflected:"%d %B %Y" }}
+      {% else %}
+        {{ post.date|date:"F d, Y" }}
+      {% endif %}
+    </p>
+    <p class="annotation">
+      {{ post.annotation|striptags|typografy|safe }}
+    </p>
+  </div>
+</li>
+

@@ -1,0 +1,88 @@
+#sign_container
+  position: relative
+  .sign_up_block
+    display: none
+    position: absolute
+    width: 600px
+    top: 0
+    right: 2%
+    background-color: #ebf7fd
+    border: 1px solid #818181
+    padding: 30px
+    z-index: 9999
+    .triangle
+      right: 115px
+    .left,
+    .right
+      float: left
+    .left
+      width: 279px
+      padding-right: 20px
+    .right
+      width: 280px
+      border-left: 1px solid #ccc
+      padding-left: 20px
+    h1
+      +georgia_font_stack
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 20px
+    p
+      margin-bottom: 10px
+  .sign_in_block
+    display: none
+    position: absolute
+    width: 320px
+    top: 0
+    right: 2%
+    background-color: #ebf7fd
+    border: 1px solid #818181
+    padding: 30px
+    z-index: 9999
+    .triangle
+      right: 10px
+    h1
+      +georgia_font_stack
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 20px
+    div
+      margin-bottom: 10px
+      input
+        +arial_font_stack
+        font-size: 12px
+        border: 1px solid #888
+        background-color: #fff
+        padding: 5px
+        &:focus
+          background-color: #fff9e1
+    label
+      +inline-block
+      width: 130px
+    .submit
+      margin: 0 0 0 133px
+      p
+        margin-top: 10px
+      input
+        +arial_font_stack
+        background-color: #ddd
+        border-left: 1px solid #999
+        border-top: 1px solid #999
+        border-right: 1px solid #555
+        border-bottom: 1px solid #555
+        padding: 4px 10px
+  .triangle
+    top: -10px
+    position: absolute
+    width: 20px
+    height: 10px
+    background: transparent url("../img/sign_triangle.png") no-repeat
+  .close
+    display: block
+    width: 15px
+    height: 15px
+    float: right
+    background: transparent url("../img/sign_close_button.png") no-repeat
+    overflow: hidden
+    text-indent: -999em
+

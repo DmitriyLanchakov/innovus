@@ -1,0 +1,50 @@
+{% extends "one-column-inner.html" %}
+{% load pytils_dt pytils_typo %}
+{% block content_inner %}
+<div class="my_events">
+  {% if manager == claim %}
+    <h1>{% trans "Here you can note you wish to participate in some events." %}</h1>
+  {% else %}
+    <h1>{% blocktrans %}You are editing {{ claim }}'s  Forum schedule{% endblocktrans %}</h1>
+  {% endif %}
+  <form method="post" action=".">
+    {% csrf_token %}
+    {% for day, events in events_set %}
+      <h2>
+            {% if LANGUAGE_CODE == 'ru' %}
+              День {% cycle 'первый' 'второй' 'третий' %} &mdash; {{ day|ru_strftime:"%d %B %Yг. (%A)" }}
+            {% else %}
+              {% cycle 'First' 'Second' 'Third' %} day &mdash; {{ day|date:"F j, Y (l)" }}
+            {% endif %}
+      </h2>
+      <table>
+      <tr>
+        <th><input type="checkbox" class="trigger" title="as;glja;lfgjadgj" /></th>
+        <th>{% trans "Время" %}</th>
+        <th>{% trans "Место проведения" %}</th>
+        <th>{% trans "Название мероприятия" %}</th>
+      </tr>
+      {% for event in events %}
+      <tr>
+        <td class="checkbox"><input type="checkbox" name="event" value="{{ event.event.id }}" {% if event.event in claim.events.all %}checked="checked"{% endif %}/></td>
+        <td class="time">{{ event.event.starts_on|date:"H:i" }}&mdash;{{ event.event.ends_on|date:"H:i" }}</td>
+        <td class="place">{{ event.place|typografy|safe }}</td>
+        <td class="name">
+            {% if event.page %}
+                <a href="{{ event.page.get_absolute_url }}">{{ event.name|safe }}</a>   
+            {% else %}
+                {{ event.name|safe }}
+            {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+      </table>
+    {% endfor %}
+    <p class="submit">
+      <input type="submit" value="{% trans "Save" %}" />
+      <a href="{% if user.is_staff %}{% url manage_claim_show id=claim.id %}{% else %}{% url profile_view %}{% endif %}">{% trans "Cancel" %}</a>
+    </p>
+  </form>
+</div>
+{% endblock %}
+

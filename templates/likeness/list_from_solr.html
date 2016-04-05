@@ -1,0 +1,26 @@
+{% extends "two-columns-right.html" %}
+{% load cache i18n cms_tags indexer_tags %}
+
+{% block main_content %}
+<h1>{{ view_title|safe }}</h1>
+  {% include "likeness/render_solr.html" %}
+{% endblock %}
+
+{% block column_content %}
+<ul class="tagged-items">
+{% for key, values in response %}
+  {% if values.count %}
+    {% if key == selected %}
+       <li>{{ key|humanize_ct }} - {{ values.count }}</li>
+    {% else %}
+        {% if model_ct and model_id %}
+        <li><a href="{% url similar_materials ct=model_ct id=model_id similar_type=key  %}">{{ key|humanize_ct }}</a> - {{ values.count }}</li>
+        {% else %}
+        <li><a href="{% url tags_list_ct ct=key tag=tag %}">{{ key|humanize_ct }}</a> - {{ values.count }}</li>
+        {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}
+

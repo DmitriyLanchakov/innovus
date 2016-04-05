@@ -1,0 +1,95 @@
+#header
+  +clearfix
+  .dashboard
+    float: right
+    width: 240px
+    padding: 10px 2% 0 0
+    .language
+      font-size: 14px
+      text-transform: uppercase
+      +georgia_font_stack
+      margin-bottom: 10px
+      text-align: right
+      span
+        color: #c3c3c3
+        font-style: italic
+      a
+        color: #97af00
+        font-style: italic
+        text-decoration: none
+        border-bottom: 1px dotted #97af00
+        &:hover
+          border-bottom: 1px solid #fff
+      .ru
+        margin-right: 10px
+    .social ul
+      +clearfix
+      margin-bottom: 10px
+      li
+        display: inline
+        &.twitter
+          a
+            +iconize_link("../img/social_twitter.png", 32px, 32px)
+        &.facebook
+          a
+            +iconize_link("../img/social_facebook.png", 32px, 32px)
+        &.youtube
+          a
+            +iconize_link("../img/social_youtube.png", 32px, 32px)
+        &.flickr
+          a
+            +iconize_link("../img/social_flickr.png", 32px, 32px)
+        &.design
+          a
+            +iconize_link("../img/social_design.png", 32px, 32px)
+        a
+          display: block
+          float: right
+          margin-left: 10px
+
+    .auth
+      color: #c0c0c0
+      font-size: 18px
+      +georgia_font_stack
+      text-align: right
+      a
+        color: #e60005
+        font-style: italic
+        text-decoration: none
+        border-bottom: 1px dashed #e60005
+        &.sign_up,
+        &.profile
+          margin-right: 10px
+        &.sign_in,
+        &.sign_out
+          margin-left: 10px
+        &:hover
+          border: none
+  .logotype
+    float: left
+    width: 310px
+    padding: 10px 0 0 2%
+    +clearfix
+    a
+      float: left
+    &.ru a
+      +iconize_link("../img/logotype_ru.png", 270px, 111px)
+    &.en a
+      +iconize_link("../img/logotype_en.png", 270px, 111px)
+  .site_name
+    +georgia_font_stack
+    font-size: 18px
+    padding: 10px 280px 0 370px
+    margin-top: 30px
+    .date
+      color: #004d9f
+      line-height: 24px
+    .name
+      color: #004d9f
+      line-height: 24px
+      margin-bottom: 10px
+    .title
+      color: #4c4c4c
+      font-size: 22px
+      line-height: 24px
+

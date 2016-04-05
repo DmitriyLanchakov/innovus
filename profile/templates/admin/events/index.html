@@ -1,0 +1,27 @@
+{% extends "one-column-inner.html" %}
+{% load events_tags %}
+{% block content_inner %}
+<h1>{% trans "Forum events registered participants statistics" %}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Starts on" %}</th>
+            <th>{% trans "Ends on" %}</th>
+            <th>{% trans "Registered" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td><a href="{% url manage_event id=event.id %}">{% forum_event_attr name for event %}</a></td>
+            <td>{{ event.starts_on|date:"d.m.Y H:i" }}</td>
+            <td>{{ event.ends_on|date:"d.m.Y H:i" }}</td>
+            <td>{{ event.participants_count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content_inner %}
+
+

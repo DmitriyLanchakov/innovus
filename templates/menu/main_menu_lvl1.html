@@ -1,0 +1,18 @@
+{% for child in children %}
+<div class="subchapter">
+    <h1{% if child.selected or child.ancestor %} class="selected"{% endif %}>
+      <a href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+    </h1>
+        {% if child.children %}
+        <ul>
+          {% for extrachild in child.children %}
+            {% if extrachild.visible %}
+            <li{% if extrachild.selected or extrachild.ancestor %} class="selected"{% endif %}>
+              <a href="{{ extrachild.get_absolute_url }}">{{ extrachild.get_menu_title }}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        {% endif %}
+</div>
+{% endfor %}

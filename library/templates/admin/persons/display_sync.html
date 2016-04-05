@@ -1,0 +1,12 @@
+{% spaceless %}
+    {% load i18n %}
+    {% if object.publisher_public %}
+        {% if object.publisher_state == 1%}
+            <img src="/media/admin/img/admin/icon-no.gif" width="10" height="10" alt="{% trans "Published" %}" />
+        {% else %}
+            <img src="/media/admin/img/admin/icon-yes.gif" width="10" height="10" alt="{% trans "Not published" %}" />
+        {% endif %}
+    {% else%}
+        {% trans "No public copy" %}
+    {% endif %}
+{% endspaceless %}

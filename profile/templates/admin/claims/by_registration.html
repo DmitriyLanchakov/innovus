@@ -1,0 +1,77 @@
+{% extends "admin/claims/base_claims.html" %}
+{% block extrastyle %}<link rel="stylesheet" type="text/css" href="{{ CSS_URL }}4admin.css" />{% endblock %}
+{% block content %}
+
+  <div id="container" class="cabinet_view">
+
+    <div class="claims_by_regions">
+
+      <a class="claims_list" href="{% url manage_claim_list %}">список заявок</a>
+
+      <h2>Статистика неотклонённых заявок</h2>
+
+        <h3>Общая информация</h3>
+        <table>
+            <tr>
+                <th class="left"></th>
+                <th>Не отменено</th>
+                <th>Из них зарегистрированых</th>
+            </tr>
+          <tbody>
+            <tr>
+              <td class="left">Всего</td>
+              <td>{{ total.count }}</th>
+              <td>{{ total.registered.count }}</th>
+            </tr>
+            <tr>
+              <td class="left">Томская область</td>
+              <td>{{ total.tomsk.count }}</th>
+              <td>{{ total.tomsk.registered.count }}</th>
+            </tr>
+            <tr>
+              <td class="left">Не Томская область</td>
+              <td>{{ total.not_tomsk.count }}</th>
+              <td>{{ total.not_tomsk.registered.count }}</th>
+            </tr>
+          </tbody>
+        </table>
+        <h3>По странам</h3>
+        <table>
+            <tr>
+                <th class="left"></th>
+                <th>Не отменено</th>
+                <th>Из них зарегистрированых</th>
+            </tr>
+          <tbody>
+          {% for country in countries %}
+            <tr>
+              <td>{{ country.title }}</td>
+              <td>{{ country.claims.active.count }}</td>
+              <td>{{ country.claims.active.registered.count }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        <h3>По регионам</h3>
+        <table>
+            <tr>
+                <th class="left"></th>
+                <th>Не отменено</th>
+                <th>Из них зарегистрированых</th>
+            </tr>
+          <tbody>
+          {% for region in regions %}
+            <tr>
+              <td>{{ region.title }}</td>
+              <td>{{ region.claims.active.count }}</td>
+              <td>{{ region.claims.active.registered.count }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+  </div>
+
+{% endblock %}
+

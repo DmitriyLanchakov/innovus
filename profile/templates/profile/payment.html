@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>Счёт на оплату</title>
+<style type="text/css">
+
+@page {
+    size: a4 portrait;
+    top: 1cm;
+    left: 1.5cm;
+    right: 1cm;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd,
+ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead,
+tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+  font: normal 14pt Times, serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align:middle;
+}
+
+q, blockquote {
+  quotes: "" "";
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+a img {
+  border:none;
+}
+
+@font-face {
+  font-family: Times;
+  src: url("http://{{ request.META.HTTP_HOST }}{{ MEDIA_URL }}times.ttf");
+}
+
+@font-face {
+  font-family: TimesBold;
+  src: url("http://{{ request.META.HTTP_HOST }}{{ MEDIA_URL }}times_bold.ttf");
+}
+
+@font-face {
+  font-family: TimesItalic;
+  src: url("http://{{ request.META.HTTP_HOST }}{{ MEDIA_URL }}times_italic.ttf");
+}
+
+@font-face {
+  font-family: serif;
+  src: url("http://{{ request.META.HTTP_HOST }}{{ MEDIA_URL }}times_italic.ttf");
+  font-style: italic;
+}
+
+@font-face {
+    font-family: serif;
+    src: url("http://{{ request.META.HTTP_HOST }}{{ MEDIA_URL }}times.ttf");
+}
+
+@font-face {
+    font-family: serif;
+    src: url("http://{{ request.META.HTTP_HOST }}{{ MEDIA_URL }}times_bold.ttf");
+    font-weight: bold;
+}
+
+body, p {
+  font-family: normal 14pt Times, serif;
+  line-height: 1.3
+}
+
+.strong {
+  font-family: TimesBold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.italic {
+  font-family: TimesItalic;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
+}
+
+.small {
+  font-size: 13px;
+}
+
+.sample {
+  margin: 20px 0 10px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td, table th {
+  border: 1px solid #000;
+  padding: 5px 7px;
+}
+
+table th {
+  font-family: TimesBold;
+}
+
+.essential td {
+  vertical-align: bottom;
+}
+
+.bill {
+  font-size: 24px;
+  margin: 40px 0 20px;
+}
+
+.payer,
+.receiver {
+  margin-bottom: 20px;
+}
+
+.contribution td {
+  vertical-align: top;
+}
+
+.contribution th {
+  text-align: center;
+}
+
+.contribution .min_width {
+  width: 10px;
+}
+
+.contribution .no_border {
+  border: none;
+}
+
+.contribution .right {
+  text-align: right;
+}
+
+.with_stamp {
+  position: relative;
+  padding: 12px 0 40px;
+  margin-bottom: 20px;
+}
+
+.chief {
+  margin-bottom: 40px;
+}
+
+</style>
+</head>
+<body>
+  <p><span class="underline strong">ТНБФ &laquo;Томское созидание&raquo;</span></p>
+  <p>Адрес: г. Томск, пр. Ленина, 111</p>
+  <p class="sample center small"><span class="strong">Образец заполнения платёжного поручения</span></p>
+  <table class="essential">
+    <tr>
+      <td>ИНН 7017038830</td>
+      <td>КПП 701701001</td>
+      <td rowspan="2">Сч. №</td>
+      <td rowspan="2">40703810806290000113</td>
+    </tr>
+    <tr>
+      <td colspan="2">Получатель: ТНБФ &laquo;Томское созидание&raquo;</td>
+    </tr>
+    <tr>
+      <td rowspan="2" colspan="2">Банк получателя ОАО &laquo;Томскпромстройбанк&raquo; г. Томск</td>
+      <td>БИК</td>
+      <td>046902728</td>
+    </tr>
+    <tr>
+      <td>Сч. №</td>
+      <td>30101810500000000728</td>
+    </tr>
+  </table>
+  <p class="bill">Счёт № 1/Ф-{{ claim.id }} от {{ claim.creation_date|date:"d.m.Y" }} г.</p>
+  <p class="payer">
+    <span class="strong">Плательщик:</span>
+    <span class="underline">{{ claim.organization }}</span>
+  </p>
+  <p class="receiver">
+    <span class="strong">Грузополучатель:</span>
+    <span class="underline">{{ claim.organization }}</span>
+  </p>
+  <table class="contribution">
+    <tr>
+      <th style="width: 33px">№</th>
+      <th>Наименование товара</th>
+      <th style="width: 53px">Кол.</th>
+      <th style="width: 42px">Ед.</th>
+      <th style="width: 130px">Цена, руб.</th>
+      <th style="width: 130px">Сумма, руб.</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <p>Взнос за участие в XIV Томском  инновационном форуме 26-27.05.2011 за</p>
+        <p>{{ claim.last_name }} {{ claim.first_name }} {{ claim.middle_name }}</p>
+      </td>
+      <td>1</td>
+      <td>шт</td>
+      <td><span class="nobr">{{ cost_numeric }} 000.00</span></td>
+      <td><span class="nobr">{{ cost_numeric }} 000.00</span></td>
+    </tr>
+    <tr>
+      <td class="no_border"></td>
+      <td class="no_border"></td>
+      <td class="no_border"></td>
+      <td class="no_border"></td>
+      <td class="no_border right">Итого:</td>
+      <td class="no_border">{{ cost_numeric }} 000.00</td>
+    </tr>
+  </table>
+  <div class="with_stamp">
+    <p class="interpretation"><span class="underline italic">{{ cost_verbose }} тысяч рублей 00 копеек. Без НДС</span></p>
+    <img width="498" height="215" src="http://{{ request.META.HTTP_HOST }}{{ MEDIA_URL }}payment_stamp.jpg" alt="" />
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+  <ul>
+    {% if claim.need_hotel %}
+      <li>{% trans "You have requested a hotel room reservation" %}</li>
+    {% else %}
+      <li>{% trans "You have not requested a hotel room reservation" %}</li>
+    {% endif %}
+  </ul>

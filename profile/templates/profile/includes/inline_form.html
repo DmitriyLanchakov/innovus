@@ -1,0 +1,9 @@
+{% load i18n %}
+<form method="post" action="#" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <div class="buttons">
+        <input type="submit" value="{% trans "Save" %}" />
+        <a class="form_cancel" href="#">{% trans "Cancel" %}</a>
+    </div>
+</form>

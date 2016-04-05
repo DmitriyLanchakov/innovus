@@ -1,0 +1,4 @@
+FMT_VID = 0
+FMT_AUD = 1 
+FMT_IMG = 3
+FMT_DOC = 4

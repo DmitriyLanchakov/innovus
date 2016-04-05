@@ -1,0 +1,12 @@
+{% extends "one-column.html" %}{% load i18n %}
+{% block content %}
+
+<form name="claim" method="post" action=".">{% csrf_token %}
+    <ul>
+        {{ claim_form.as_ul }}
+        <li><input type="submit" value="{% trans "Send" %}" /></li>
+    </ul>
+</form>
+
+{% endblock %}
+

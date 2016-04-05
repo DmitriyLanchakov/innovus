@@ -1,0 +1,36 @@
+{% extends "one-column-inner.html" %}
+{% load events_tags %}
+{% block content_inner %}
+<span>&larr;<a href="{% url manage_events %}">{% trans "Back to events index" %}</a></span>
+<h1>{% forum_event_attr name for event %}</h1>
+<span>{{ event.starts_on|date:"d.m.Y H:i" }} &ndash; {{ event.ends_on|date:"d.m.Y H:i" }}</span>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>{% trans "Title" %}/{% trans "claim state" %}</th>
+            <th>{% trans "Organization" %}/{% trans "position" %}</th>
+            <th>{% trans "Country" %}/{% trans "region" %}</th>
+            <th>{% trans "City" %}</th>
+            <th>{% trans "Type" %}</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for delegate in event.participants %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+                <a href="{% url manage_claim_show id=delegate.id %}">
+                    {{ delegate }}
+                </a><br />
+                {{ delegate.get_claim_state_display }}
+            </td>
+            <td>{{ delegate.organization }}</br>{{ delegate.position }}</td>
+            <td>{{ delegate.country }}<br />{{ delegate.region|default:"-" }}</td>
+            <td>{{ delegate.city }}</td>
+            <td>{{ delegate.get_claim_type_display|default:"-" }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content_inner %}

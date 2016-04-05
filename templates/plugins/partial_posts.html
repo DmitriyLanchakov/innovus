@@ -1,0 +1,28 @@
+{% load thumbnail %}
+<script type="text/javascript">
+function toggle_ft(toggled) {
+    console.log(toggled);
+    $(toggled).slideToggle('slow');
+    return false;
+}
+</script>
+{% for post in posts %}
+<ul>
+  <li id="article_{{ post.pk }}"><strong>{{ post.title|safe }}</strong></li>
+  {% if post.picture_show %}
+    <li>
+        {% thumbnail post.picture_src "200" upscale="false" as thumb %}
+        <img src="{{ thumb.url }}"
+             width="{{ thumb.width }}"
+             height="{{ thumb.height }}"
+             alt="{{ post.title|safe }}" />
+        {% endthumbnail %}
+    </li>
+  {% endif %}
+  <li>{{ post.annotation|safe }}</li>
+  <li id="full_text_{{ post.pk }}" style="display:none;">{{ post.content|safe }}</li>
+  <li><a href="#" onclick="toggle_ft('#full_text_{{ post.id }}'); return false;">{% trans "View full article"%}</a></li>
+</ul>
+<hr />
+{% endfor %}
+

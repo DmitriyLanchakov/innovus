@@ -1,0 +1,14 @@
+{% load i18n months comments_tags %}
+{% ifnotequal comments.count 0 %}
+  <div id="recent_comments">
+    <h1>{% trans "Recent comments" %}</h1>
+{% for comment in comments %}
+    {{ comment.content|html2text|truncatewords:50 }}
+    <p class="gray">{{ comment.created_at|i18n_date }} {{ comment.created_at|date:"H:i" }}, {{ comment.author.name }} &rarr; <a href="{{ comment.commentable.get_absolute_url }}#comment-{{ comment.pk }}">{{ comment.commentable.title }}</a></p>
+	{% if not forloop.last %}
+	<hr />
+	{% endif %}
+{% endfor %}
+  </div>
+{% endifnotequal %}
+

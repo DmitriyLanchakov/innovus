@@ -1,0 +1,86 @@
+#content
+  .persons_list
+    +clearfix
+    margin: 20px 0 0 0
+    li
+      float: left
+      width: 49%
+      list-style: none
+      margin: 0 0 20px 0
+      &.odd
+        margin-right: 1%
+        clear: left
+      &.even
+        margin-left: 1%
+      p
+        margin: 0
+      .person_item
+        +clearfix
+        .person_photo
+          width: 110px
+          float: left
+          img
+            border: 1px solid #888
+            padding: 1px
+        .person_info
+          padding-left: 120px
+          h2
+            +georgia_font_stack
+            margin-bottom: 10px
+            a
+              color: #004d9f
+          .person_title
+            color: #333
+            font-style: italic
+            font-size: 14px
+            +georgia_font_stack
+            margin-bottom: 10px
+  .show_person
+    +clearfix
+    .person_photo
+      float: left
+      margin: 0 20px 20px 0
+      img
+        border: 1px solid #888
+        padding: 1px
+    .person_info
+      .person_title
+        color: #333
+        font-style: italic
+        font-size: 14px
+        +georgia_font_stack
+    .text
+      img
+        border: 1px solid #888
+        padding: 1px
+  .right_column_persons
+    text-align: center
+    .prev,
+    .next
+      +inline-block
+      width: 65px
+      height: 19px
+      overflow: hidden
+      text-indent: -9999em
+      background-color: transparent
+      background-repeat: no-repeat
+    .prev
+      background-image: url("../img/arrow_up.png")
+    .next
+      background-image: url("../img/arrow_down.png")
+    ul
+      margin: 20px 0 0 0
+      li
+        list-style: none
+        margin: 0 0 20px 0
+        .person_photo
+          margin-bottom: 5px
+          img
+            border: 1px solid #888
+            padding: 1px
+        .person_info
+          .person_name
+            margin-bottom: 0
+          .person_title
+            margin-bottom: 0
+

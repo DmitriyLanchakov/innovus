@@ -1,0 +1,14 @@
+<div class="speakers">
+    {% if object.block_title %}
+      <h2>{{ object.block_title }}</h2>
+    {% endif %}
+    <ul class="persons">
+        {% for position in positions %}
+        <li>
+        <span class="name">{{ position.related_model.name|safe|striptags }}</span><span class="hidden">,</span>
+        <span class="person_title">{{ position.related_model.position|safe|striptags }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+

@@ -1,0 +1,63 @@
+{% extends "one-column-inner.html" %}
+{% load i18n %}
+
+{% block content_inner %}
+
+
+<div class="registration">
+
+ <h1>{% trans "Registration form for a delegation participant" %}</h1>
+
+  <form method="post" action=".">
+    {% csrf_token %}
+
+    <div class="personal_info">
+    <h3>{% trans "Personal info" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_personal.html' %}
+        <input type="hidden" id="id_is_take_part" name="is_take_part" value="4" />
+      </div>
+      <div class="second_col">
+        {% include 'profile/includes/fields_geo.html' %}
+      </div>
+    </div>
+
+    <div class="firm_information">
+    <h3>{% trans "Organization info" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_organization.html' %}
+      </div>
+      <div class="second_col">
+
+      </div>
+    </div>
+
+    <div id="second_chapter">
+      <h2>{% trans "Arrival/departure info" %}</h2>
+      {% include 'profile/includes/fields_travel.html' %}
+    </div>
+    <div class="hotel">
+        <h2>{% trans "Hotel booking" %}</h2>
+        {% include "profile/includes/fields_hotel.html" %}
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="{% if is_delegation %}{% trans "Add more participants" %}{% else %}{% trans "Send" %}{% endif %}" />
+        {% if delegate %}
+            {% url show_delegate id=delegate.pk as back_url %}
+        {% else %}
+            {% if delegates.count %}
+                {% url list_delegate as back_url %}
+            {% else %}
+                {% url profile_view as back_url %}
+            {% endif %}
+        {% endif %}
+      <a href="{{ back_url }}">{% trans "Cancel" %}</a>
+    </div>
+  </form>
+
+</div>
+{% include "profile/includes/geo.html" %}
+
+{% endblock %}
+

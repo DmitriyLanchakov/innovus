@@ -1,0 +1,84 @@
+=partner_link($image, $width, $padding_top: 100px)
+  display: block
+  width: $width
+  padding-top: $padding_top
+  background: transparent url($image) no-repeat top
+
+#promoters
+  h1
+    color: #465e68
+    font-size: 20px
+  .organizators
+    float: left
+    width: 310px
+    text-align: center
+    padding: 20px 0 30px 2%
+    h1
+      margin-bottom: 10px
+    ul
+      +clearfix
+      li
+        float: left
+        width: 150px
+        margin-top: 20px
+        &.odd
+          margin-right: 5px
+        &.even
+          margin-left: 5px
+        &.president a
+          background: transparent url("../img/fake/president.png") no-repeat top
+        &.ato a
+          background: transparent url("../img/fake/ato.png") no-repeat top
+        &.ranhigs a
+          background: transparent url("../img/fake/ranhigs.png") no-repeat top
+        a
+          display: block
+          padding-top: 110px
+  .partners
+    text-align: center
+    padding: 20px 2% 30px 370px
+    h1
+      margin-bottom: 10px
+    ul
+      margin-bottom: 30px
+      li
+        +inline-block
+        margin: 0 15px
+        vertical-align: top
+        &.sibur_ru a
+          +partner_link(unquote("../img/fake/sibur_ru.png"), 110px)
+        &.sibur_en a
+          +partner_link(unquote("../img/fake/sibur_en.png"), 110px)
+        &.sibmost_ru a
+          +partner_link(unquote("../img/fake/sibmost_ru.png"), 175px)
+        &.sibmost_en a
+          +partner_link(unquote("../img/fake/sibmost_ru.png"), 175px)
+        &.russneft_ru a
+          +partner_link(unquote("../img/fake/russneft_ru.png"), 175px)
+        &.russneft_en a
+          +partner_link(unquote("../img/fake/russneft_en.png"), 175px)
+        &.tomskneft_ru a
+          +partner_link(unquote("../img/fake/tomskneft_ru.png"), 175px)
+        &.tomskneft_en a
+          +partner_link(unquote("../img/fake/tomskneft_en.png"), 175px)
+        &.nord a
+          +partner_link(unquote("../img/fake/nord.png"), 150px)
+        &.beeline a
+          +partner_link(unquote("../img/fake/beeline.png"), 130px)
+        &.tomskneft a
+          +partner_link(unquote("../img/fake/tomskneft.png"), 140px)
+        &.alexandrovo a
+          +partner_link(unquote("../img/fake/alexandrovo.png"), 180px)
+        &.interfax_ru a
+          +partner_link(unquote("../img/fake/interfax_ru.png"), 180px)
+        &.interfax_en a
+          +partner_link(unquote("../img/fake/interfax_en.png"), 250px)
+        &.federal_press a
+          +partner_link(unquote("../img/fake/federal_press.png"), 140px)
+        &.rossiyskaja_gazeta_ru a
+          +partner_link(unquote("../img/fake/rossiyskaja_gazeta_ru.png"), 140px)
+        &.rossiyskaja_gazeta_en a
+          +partner_link(unquote("../img/fake/rossiyskaja_gazeta_en.png"), 140px)
+        &.economika_i_zhizn a
+          +partner_link(unquote("../img/fake/economika_i_zhizn.png"), 150px)
+

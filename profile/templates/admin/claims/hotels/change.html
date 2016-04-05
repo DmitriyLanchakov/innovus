@@ -1,0 +1,83 @@
+{% extends "one-column-inner.html" %}
+
+{% load i18n thumbnail pagination_tags %}
+{% block content_inner %}
+
+<div class="hotel_view">
+
+  <form method="post" action="." class="hostel_form">
+    {% csrf_token %}
+    <ul>
+    {{ hotel_form.as_ul }}
+    <li><input type="submit" value="Сохранить" class="submit" /></li>
+    </ul>
+  </form>
+
+  <table>
+    <tr>
+      <th><a href="?filter={% if request.GET.filter == 'room_category' %}-{% endif %}room_category">Тип номера</a></th>
+      <th><a href="?filter={% if request.GET.filter == 'room_number' %}-{% endif %}room_number">Номер комнаты</a></th>
+      <th>Цена, руб. в день</th>
+      <th>Заселено</th>
+      <th>Заезд</th>
+      <th>Выезд</th>
+      <th>Управление</th>
+    </tr>
+    {% for r in rooms %}
+      {% if r.hotel_reserves.count %}
+        <tr class="already_reserved">
+      {% else %}
+        <tr class="need_reservation">
+      {% endif %}
+        <td>{{ r.get_room_category_display }}</td>
+        <td>{{ r.room_number }}</td>
+        <td>{{ r.price }}</td>
+        <td>
+          {% for reserve in r.hotel_reserves.all %}
+            <p><a href="{% url manage_reserv_add id=reserve.claim.id %}">{{ reserve.claim }}</a></p>
+          {% endfor %}
+        </td>
+        <td>
+          {% for reserve in r.hotel_reserves.all %}
+            <p>{{ reserve.arrival_date|date:"d.m.Y H:i" }}</p>
+          {% endfor %}
+        </td>
+        <td>
+          {% for reserve in r.hotel_reserves.all %}
+            <p>{{ reserve.departure_date|date:"d.m.Y H:i" }}</p>
+          {% endfor %}
+        </td>
+        <td>
+          <a href="{% url manage_room_change room_id=r.id %}">Изменить</a> /
+          <a href="{% url manage_room_delete room_id=r.id %}">Удалить</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <form method="post" action="{% url manage_room_add hotel_id=hotel.id %}" class="hostel_form">
+    {% csrf_token %}
+    <ul>
+      <li>
+        <label for="id_room_category">Тип номера</label>
+        {{ room_form.room_category }}
+      </li>
+      <li>
+        <label for="id_room_number">Номер комнаты</label>
+        {{ room_form.room_number }}
+      </li>
+      <li>
+        <label for="id_is_real_room">
+          {{ room_form.is_real_room }}
+          Это реальный номер комнаты
+        </label>
+      </li>
+      <li>
+        <label for="id_price">Цена, руб. в день</label>
+        {{ room_form.price }}
+      </li>
+      <li><input type="submit" value="Добавить" class="submit" /></li>
+    </ul>
+  </form>
+</div>
+{% endblock content_inner %}
+

@@ -1,0 +1,13 @@
+{% load thumbnail %}
+{% thumbnail item "640" upscale="False" as large %}
+    <a href="{{ large.url }}">
+{% endthumbnail %}
+{% thumbnail item "350" upscale="False" as thumb %}
+    <img
+	    src="{{ thumb.url }}"
+	    alt="{{ post.picture_alt }}"
+	    title="{{ post.picture_title }}"
+	    width="{{ thumb.width }}"
+	    height="{{ thumb.height }}" />
+{% endthumbnail %}
+</a>

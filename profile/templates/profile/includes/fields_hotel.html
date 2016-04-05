@@ -1,0 +1,32 @@
+    <div class="first_col">
+      {% if claim_form.need_hotel.errors %}
+      <div class="error">
+        <p class="input">
+          {{ claim_form.need_hotel }}
+          <label for="id_need_hotel">{% trans "Do you want to reserve a room in the hotel?" %}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></label>
+        </p>
+        <div class="error_mess">{{claim_form.need_hotel.errors}}</div>
+      </div>
+      {% else%}
+        <p class="input">
+          {{ claim_form.need_hotel }}
+          <label for="id_need_hotel">{% trans "Do you want to reserve a room in the hotel?" %}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></label>
+        </p>
+      {% endif %}
+      {% if claim_form.room_category.errors %}
+      <div class="error">
+        {{ claim_form.room_category.label_tag }}
+        {{ claim_form.room_category }}
+        <span class="error_mess">{{ claim_form.room_category.errors }}</span>
+      </div>
+      {% else%}
+        {{ claim_form.room_category.label_tag }}
+        {{ claim_form.room_category }}
+      {% endif %}
+    </div>
+    <div class="second_col">
+      <p>
+        {% trans "Information about your hotel and room reservation will be sent to the email box listed during registration." %}
+        <!-- Информация о Вашей гостинице и забронированном для Вас номере будет выслана в ближайшее время на указанный Вами e-mail. -->
+      </p>
+    </div>

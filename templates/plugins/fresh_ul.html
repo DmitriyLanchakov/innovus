@@ -1,0 +1,14 @@
+{% load cache cms_tags i18n %}
+        <ul>
+{% for post in posts %}
+            <li class="site_news_item">
+                <div class="description">
+                    {{ post.annotation|safe }}
+                </div>
+            </li>
+{% endfor %}
+        </ul>
+{% if is_last %}
+    <span class="last_news"></span>
+{% endif %}
+

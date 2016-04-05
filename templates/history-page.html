@@ -1,0 +1,24 @@
+{% extends "two-columns-left.html" %}
+{% load cms_tags menu_tags events_tags pytils_dt %}
+
+{% block history_menu %}
+  {% show_menu_below_id 'history' 0 100 0 100 "menu/archive_menu.html" %}
+  <h1 class="histroy_forum_name">{% forum_attribute name %}</h1>
+  {% forum_attribute starts_on as forum_start %}
+  {% forum_attribute ends_on as forum_end %}
+  <div class="histroy_forum_interval">{{ forum_start|date:"d" }} &ndash; {{ forum_end|ru_strftime:"%d %B %Y" }}</div>
+{% endblock history_menu %}
+
+{% block column_content %}
+  <ul class="history_menu">
+    {% show_menu 5 100 0 100 "menu/history_menu.html" %}
+ </ul>
+  {% forum_events %}
+  {#% placeholder "column" %#}
+{% endblock column_content %}
+
+{% block main_content %}
+  <h2>{% page_attribute page_title %}</h2>
+  {% placeholder "content" %}
+{% endblock main_content %}
+

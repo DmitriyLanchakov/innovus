@@ -1,0 +1,10 @@
+{% load media_tags thumbnail i18n %}
+{#% make_video for object as video %#}
+<object id="videoplayer59" width="512" height="410">
+    <param name="allowFullScreen" value="true" />
+    <param name="allowScriptAccess" value="always" />
+    <param name="wmode" value="transparent" />
+    <param name="movie" value="/media/static/flash/player.swf" />
+    <param name="flashvars" value="comment={% trans 'Videoblog' %}&amp;st=/media/static/css/video-ru-full.txt&amp;file={{ video.0.file.url }}" />
+    <embed src="/media/static/flash/player.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" flashvars="comment={% trans 'Videoblog' %}&amp;st=/media/static/css/video-ru-full.txt&amp;file={#{ video.0.file.url }#}" width="512" height="410"></embed>
+</object>

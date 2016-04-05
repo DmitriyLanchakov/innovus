@@ -1,0 +1,108 @@
+{% load cache i18n %}
+<div class="first_col">
+
+  {% if claim_form.phone.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.phone.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.phone }}</p>
+    <div class="error_mess">{{ claim_form.phone.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.phone.label_tag }}<abbr title="{% trans 'Обязательное поле' %}">*</abbr></p>
+    <p class="input">{{ claim_form.phone }}</p>
+  {% endif %}
+
+  {% if claim_form.phone_extra.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.phone_extra.label_tag }}</p>
+    <p class="input">{{ claim_form.phone_extra }}</p>
+    <div class="error_mess">{{ claim_form.phone_extra.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.phone_extra.label_tag }}</p>
+    <p class="input">{{ claim_form.phone_extra }}</p>
+  {% endif %}
+
+  {% if claim_form.fax.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.fax.label_tag }}</p>
+    <p class="input">{{ claim_form.fax }}</p>
+    <div class="error_mess">{{ claim_form.fax.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.fax.label_tag }}</p>
+    <p class="input">{{ claim_form.fax }}</p>
+  {% endif %}
+
+  {% if claim_form.address.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.address.label_tag }}</p>
+    <p class="input">{{ claim_form.address }}</p>
+    <div class="error_mess">{{ claim_form.address.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.address.label_tag }}</p>
+    <p class="input">{{ claim_form.address }}</p>
+  {% endif %}
+
+  {% if claim_form.skype.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.skype.label_tag }}</p>
+    <p class="input">{{ claim_form.skype }}</p>
+    <div class="error_mess">{{ claim_form.skype.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.skype.label_tag }}</p>
+    <p class="input">{{ claim_form.skype }}</p>
+  {% endif %}
+
+  {% if claim_form.icq.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.icq.label_tag }}</p>
+    <p class="input">{{ claim_form.icq }}</p>
+    <div class="error_mess">{{ claim_form.icq.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.icq.label_tag }}</p>
+    <p class="input">{{ claim_form.icq }}</p>
+  {% endif %}
+
+  {% if claim_form.twitter.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.twitter.label_tag }}</p>
+    <p class="input">{{ claim_form.twitter }}</p>
+    <div class="error_mess">{{ claim_form.twitter.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.twitter.label_tag }}</p>
+    <p class="input">{{ claim_form.twitter }}</p>
+  {% endif %}
+
+  {% if claim_form.site.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.site.label_tag }}</p>
+    <p class="input">{{ claim_form.site }}</p>
+    <div class="error_mess">{{ claim_form.site.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.site.label_tag }}</p>
+    <p class="input">{{ claim_form.site }}</p>
+  {% endif %}
+
+  {% if claim_form.blog.errors %}
+  <div class="error">
+    <p class="label">{{ claim_form.blog.label_tag }}</p>
+    <p class="input">{{ claim_form.blog }}</p>
+    <div class="error_mess">{{ claim_form.blog.errors }}</div>
+  </div>
+  {% else %}
+    <p class="label">{{ claim_form.blog.label_tag }}</p>
+    <p class="input">{{ claim_form.blog }}</p>
+  {% endif %}
+
+</div>
+
+<div class="second_col">
+  <p>{% blocktrans %}Please, provide your phone number in the international format: +# (###) ###-##-##{% endblocktrans %}</p>
+</div>
+

@@ -1,0 +1,22 @@
+{% load i18n comments_tags %}
+        <a href="{{ post.get_absolute_url }}" class="event_title">{{ post.title|safe }}</a>
+        <div class="event_date">
+        {{ post.date|date:"d M Y" }}
+        </div>
+        <p class="event_description">{{ post.annotation|safe|striptags }}</p>
+   {% if post.comments.approved.count %}
+        <div class="event_sight">
+            <span class="sight_title">{% trans "Last comments" %}:</span>
+
+            {% with post.comments.approved as comments %}
+                {% comments_last post.comments.approved as "last_comments" %}
+                <ul>
+                {% for comment in last_comments reversed %}
+                    <li>
+                        <a href="{{ post.get_absolute_url }}#comment-{{ comment.pk }}">{{ comment.content|safe|striptags|truncatewords:10 }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endwith %}
+        </div>
+    {% endif %}

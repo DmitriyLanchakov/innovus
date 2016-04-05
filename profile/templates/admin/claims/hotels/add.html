@@ -1,0 +1,64 @@
+{% extends "one-column-inner.html" %}
+
+{% load i18n thumbnail pagination_tags %}
+
+{% block content_inner %}
+
+{% if hotel_create %}
+  <h1>Добавление гостиницы</h1>
+  <form method="post" action="." class="hostel_form">
+    {% csrf_token %}
+    <ul>
+      {{ form.as_ul }}
+      <li><input type="submit" value="Изменить" class="submit" /></li>
+    </ul>
+  </form>
+{% else %}
+  <table>
+    <thead>
+      <tr>
+        <th>Тип номера</th>
+        <th>Номер комнаты</th>
+        <th>Цена, руб. в день</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <form method="post" action=".">
+          {% csrf_token %}
+            <td {% if form.room_category.errors %}class="error"{% endif %}>
+              {{ form.room_category }}
+              {% if form.room_category.errors %}
+                <span>{{form.room_category.errors}}</span>
+              {% endif %}
+            </td>
+
+            <td {% if form.room_number.errors or form.id_is_real_room.errors %}class="error"{% endif %}>
+              {{ form.room_number }}
+              {% if form.room_number.errors %}
+                <span>{{form.room_number.errors}}</span>
+              {% endif %}
+
+              <label for="id_is_real_room">Это реальный номер комнаты</label>
+              {{ form.is_real_room }}
+              {% if form.is_real_room.errors %}
+                <span>{{form.is_real_room.errors}}</span>
+              {% endif %}
+
+            </td>
+
+            <td {% if form.price.errors %}class="error"{% endif %}>
+              {{ form.price }}
+              {% if form.price.errors %}
+                <span>{{form.price.errors}}</span>
+              {% endif %}
+            </td>
+
+            <td><input class="submit_in_table" type="submit" value="Добавить" /></td>
+      </form>
+    </tbody>
+  </table>
+{% endif %}
+
+{% endblock content_inner %}
+

@@ -1,0 +1,30 @@
+{% load thumbnail %}
+<ul class="persons_list">
+  {% for position in positions %}
+    <li id="person_{{ position.person.id }}" class="{% cycle 'odd' 'even' %}">
+      <div class="person_item">
+        <div class="person_photo">
+          <a href="{{ position.person.get_absolute_url }}">
+            {% thumbnail position.person.photo "100" as thumb %}
+            <img src="{{ thumb.url }}"
+                 alt="{{ position.person.name }}"
+                 width="{{ thumb.width }}"
+                 height="{{ thumb.height }}" />
+            {% endthumbnail %}
+          </a>
+        </div>
+        <div class="person_info">
+          <h2>
+            <a href="{{ position.person.get_absolute_url }}" class="person_name"
+               title="{{ position.person.name }}">{{ position.person.name }}</a>
+          </h2>
+          <p class="person_title">{{ position.person.position|safe|striptags }}</p>
+          {% if position.person.announce %}
+          <p class="speech">{{ position.person.announce|safe|striptags }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+

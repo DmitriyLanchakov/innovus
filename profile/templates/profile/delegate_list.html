@@ -1,0 +1,85 @@
+{% extends "one-column-inner.html" %}
+{% load i18n thumbnail %}
+
+{% block content_inner %}
+
+
+<div class="claim_show">
+
+  <table class="delegate_list">
+    <tr>
+      <th>{% trans "Name" %}</th>
+      <th>{% trans "Organization" %}</th>
+      <th>{% trans "State of claim" %}</th>
+      <th>{% trans "Incoming" %}</th>
+      <th>{% trans "Outcoming" %}</th>
+      <th>{% trans "Hotel" %}</th>
+      <th>{% trans "Schedule of participation" %}</th>
+    </tr>
+    {% for d in delegates %}
+    <tr>
+      <td>
+        <p><a href="{% url show_delegate id=d.pk %}">{{ d.last_name }} {{ d.first_name }} {{ d.middle_name }}</a></p>
+        <p>{{ d.country }}{% if d.region %}, {{ d.region }}{% endif %}</p>
+      </td>
+      <td>
+        <p>{{ d.industry }}</p>
+        <p>{{ d.organization }}{% if d.position %}, {{ d.position }}{% endif %}</p>
+      </td>
+      <td>
+        <p>{{ d.get_claim_state_display }}
+    {% if d.claim_state == 2 %}
+    <br />
+    <a href="{% url profile_bill id=d.id %}">{% trans "Счёт на оплату" %}</a>
+    {% endif %}
+        </p>
+      </td>
+      <td>
+        {% if d.is_travel%}
+          {% if d.arrival_want_charter %}
+            <p>{% trans "Charter flight Moscow &rarr; Tomsk" %}</p> <!-- Чартерный авиарейс Москва &rarr; Томск -->
+          {% else %}
+            <p>{% trans "Tomsk arrival transport type" %}: {{ d.get_arrival_transport_type_display }}</p>
+            <p>{% trans "Tomsk arrival date and time" %}: {{ d.arrival_date|date:"d.m.Y H:i" }}</p>
+          {% endif %}
+        {% else %}
+          <p>{% trans "Для участников из Томской области информация не собирается" %}</p>
+        {% endif %}
+      </td>
+      <td>
+        {% if d.is_travel%}
+          {% if d.departure_want_charter %}
+            <p>{% trans "Charter flight Tomsk &rarr; Moscow" %}</p>
+          {% else %}
+            <p>{% trans "Tomsk departure transport type" %}: {{ claim.get_departure_transport_type_display }}</p>
+            <p>{% trans "Tomsk departure date and time" %}: {{ claim.departure_date|date:"d.m.Y H:i" }}</p>
+          {% endif %}
+        {% else %}
+          <p>{% trans "Для участников из Томской области информация не собирается" %}</p>
+        {% endif %}
+      </td>
+      <td>
+          {% if d.need_hotel %}
+            <p>{% trans "You have requested a hotel room reservation" %}</p>
+          {% else %}
+            <p>{% trans "You have not requested a hotel room reservation" %}</p>
+          {% endif %}
+      </td>
+      <td>
+        {{ d.get_programm_type_display }}<br/>
+          {% if d == claim %}
+            <a href="{% url events_list %}">{% trans "Delegate's programm" %}</a>
+          {% else %}
+            <a href="{% url events_list id=d.pk %}">{% trans "Delegate's programm" %}</a>
+          {% endif %}
+          {% with d.events.count as cnt %}
+            {% if cnt %}{% trans "Events:" %} {{ cnt }}{% else %}{% trans "Events not selected" %}{% endif %}
+          {% endwith %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</div>
+{% endblock content_inner %}
+

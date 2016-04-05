@@ -1,0 +1,142 @@
+{% extends "one-column-inner.html" %}
+
+{% block content_inner %}
+
+<h1>Размещение участника форума в гостинице</h1>
+
+<div class="claim_show">
+
+  <fieldset class="info">
+    <legend>Информация об участнике</legend>
+    <ul>
+      <li>
+        <span class="label">Ф. И. О.:</span>
+        <span class="value">{{ claim.first_name }} {{ claim.middle_name }} {{ claim.last_name }}</span>
+      </li>
+      <li>
+        <span class="label">Запрошенный номер в гостинице:</span>
+        <span class="value">{{ claim.get_room_category_display }}</span>
+      </li>
+      {% if claim.arrival_want_charter %}
+        <li>
+          <span class="label">Дата приезда:</span>
+          <span class="value">Прибывает чартерным рейсом</span>
+        </li>
+      {% else %}
+        <li>
+          <span class="label">Дата приезда:</span>
+          <span class="value">
+            {% if claim.arrival_date %}
+              {{ claim.arrival_date|date:"d.m.Y H:i"}}
+            {% else %}
+              не указано
+            {% endif %}
+          </span>
+        </li>
+      {% endif %}
+      {% if claim.departure_want_charter %}
+        <li>
+          <span class="label">Дата отъезда:</span>
+          <span class="value">Отбывает чартерным рейсом</span>
+        </li>
+      {% else %}
+        <li>
+          <span class="label">Дата отъезда:</span>
+          <span class="value">
+            {% if claim.departure_date %}
+              {{ claim.departure_date|date:"d.m.Y H:i" }}
+            {% else %}
+              не указано
+            {% endif %}
+          </span>
+        </li>
+      {% endif %}
+    </ul>
+  </fieldset>
+
+  {% if claim.room_category %}
+
+  <fieldset class="info">
+    <legend>Размещение в гостинице</legend>
+    <ul>
+      {% if claim.hotel_reserves.count %}
+        {% for info in claim.hotel_reserves.all %}
+          <li>
+            <span class="label">Гостиница:</span>
+            <span class="value">{{ info.room.hotel }}</span>
+          </li>
+          <li>
+            <span class="label">Класс:</span>
+            <span class="value">{{ info.room }}</span>
+          </li>
+          {% if info.room.is_real_room %}
+          <li>
+            <span class="label">Номер:</span>
+            <span class="value">{{ info.room.room_number }}</span>
+          </li>
+          {% endif %}
+          <li>
+            <span class="label">Цена:</span>
+            <span class="value">{{ info.room.price }} руб.</span>
+          </li>
+          <li>
+            <span class="label">Заезд:</span>
+            <span class="value">{{ info.arrival_date|date:"d M. Y, H:i" }}</span>
+          </li>
+          <li>
+            <span class="label">Выезд:</span>
+            <span class="value">{{ info.departure_date|date:"d M. Y, H:i" }}</span>
+          </li>
+        {% endfor %}
+      {% else %}
+        <li>Этот участник форума еще не размещен в гостининце.</li>
+      {% endif %}
+    </ul>
+  </fieldset>
+  {% endif %}
+
+  <fieldset class="info">
+    <legend>Разместить в гостинице</legend>
+    <script type="text/javascript" src="{{ JS_URL }}lib/jquery.dynDateTime.min.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}lib/jquery.dynDateTime.calendar.{{ LANGUAGE_CODE }}.js"></script>
+    <script type="text/javascript" src="{{ JS_URL }}hotel.js"></script>
+    <form method="post" action="." class="reserve_form">
+      {% csrf_token %}
+      <ul>
+        <li {% if reserve_form.hotel.errors %}class="error"{% endif %}>
+          {% if reserve_form.hotel.errors %}<span>{{ reserve_form.hotel.errors }}</span>{% endif %}
+          <span class="label">Гостиница:</span>
+          <span class="value">{{ reserve_form.hotel }}</span>
+        </li>
+        <li {% if reserve_form.room_class.errors %}class="error"{% endif %}>
+          {% if reserve_form.room_class.errors %}<span>{{ reserve_form.room_class.errors }}</span>{% endif %}
+          <span class="label">Класс:</span>
+          <span class="value">{{ reserve_form.room_class }}</span>
+        </li>
+        <li {% if reserve_form.room_number.errors %}class="error"{% endif %}>
+          {% if reserve_form.room_number.errors %}<span>{{ reserve_form.room_number.errors }}</span>{% endif %}
+          <span class="label">Номер:</span>
+          <span class="value">{{ reserve_form.room_number }}</span>
+        </li>
+        <li {% if reserve_form.arrival_date.errors %}class="error"{% endif %}>
+          {% if reserve_form.arrival_date.errors %}<span>{{ reserve_form.arrival_date.errors }}</span>{% endif %}
+          <span class="label">Заезд (дата/время):</span>
+          <span class="value">{{ reserve_form.arrival_date }}</span>
+        </li>
+        <li {% if reserve_form.departure_date.errors %}class="error"{% endif %}>
+          {% if reserve_form.departure_date.errors %}<span>{{ reserve_form.departure_date.errors }}</span>{% endif %}
+          <span class="label">Выезд (дата/время):</span>
+          <span class="value">{{ reserve_form.departure_date }}</span>
+        </li>
+        <li>
+          <input class="submit margin_right" type="submit" value="Сохранить" />
+          <a class="submit" href="{% url manage_claim_show id=claim.id %}">Отмена</a>
+        </li>
+      </ul>
+		</form>
+  </fieldset>
+
+</div>
+
+{% endblock content_inner %}
+

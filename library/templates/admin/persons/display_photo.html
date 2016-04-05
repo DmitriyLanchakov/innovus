@@ -1,0 +1,9 @@
+{% load thumbnail %}
+{% spaceless %}
+    {% thumbnail object.photo "64x64" crop="center" as thumb %}
+    <img src="{{ thumb.url }}"
+         alt="{{ object.name }}"
+         width="{{ thumb.width }}"
+         height="{{ thumb.height }}" />
+    {% endthumbnail %}
+{% endspaceless %}

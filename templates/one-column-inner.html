@@ -1,0 +1,16 @@
+{% extends "one-column.html" %}
+{% load cms_tags %}
+
+{% block content %}
+  <div id="content_container" class="container">
+    <div id="content">
+      <div class="additional_margin">
+        {% block content_inner %}
+          <h1>{% page_attribute page_title %}</h1>
+          {% placeholder "content" %}
+        {% endblock content_inner %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+

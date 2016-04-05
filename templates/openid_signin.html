@@ -1,0 +1,23 @@
+
+
+{% block title %}Sign in{% endblock %}
+
+{% block header %}
+<h1>Sign in with your OpenID</h1>
+{% endblock %}
+
+{% block content %}
+<form action="{% url openid-signin %}" method="post">
+  {% csrf_token %}
+  <fieldset id="signin">
+    <label for="openid_url">OpenID:</label>
+    <input type="text" name="openid_url" id="openid_url" /> 
+    <input type="submit" value="Sign in" />
+  </fieldset>
+
+  <p class="hints">
+    <a href="/auth/register">Register on Thiblo</a> | 
+    <a href="http://www.openidenabled.com/openid/about-openid">What is OpenID?</a>
+  </p>
+</form>
+{% endblock %}

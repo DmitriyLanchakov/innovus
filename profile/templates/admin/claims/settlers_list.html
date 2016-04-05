@@ -1,0 +1,68 @@
+{% extends "admin/claims/base_claims.html" %}
+{% block extrastyle %}<link rel="stylesheet" type="text/css" href="{{ CSS_URL }}4admin.css" />{% endblock %}
+{% block content %}
+
+  <div id="container" class="cabinet_view">
+
+    <div class="hotel_list">
+
+      <a class="claims_list" href="{% url manage_claim_list %}">список заявок</a>
+
+      <h2>Список рассленных участников</h2>
+
+        <table>
+            <tr>
+              <th>Название</th>
+              <th>Заселено/Всего номеров</th>
+              <th>Апартаментов</th>
+              <th>Люксов</th>
+              <th>Студий</th>
+              <th>1 мест., 1 кат.</th>
+              <th>2 мест., 1 кат.</th>
+              <th>1 мест., 2 кат.</th>
+              <th>2 мест., 2 кат.</th>
+            </tr>
+            <tbody>
+            {% for h in hotels %}
+            <tr>
+                <td>{{ h.name }}</td>
+                <td>{{ h.total_populated }}/{{ h.total }}</td>
+
+                <td><ul>{% for i in h.column_1 %}<li>
+                  <a href="{% url manage_claim_show id=i.claim.id %}">{{ i.claim }}</a> (к.&nbsp;{{ i.room.room_number }})
+                  </li>{% endfor %}</ul>
+                </td>
+                <td><ul>{% for i in h.column_2 %}<li>
+                  <a href="{% url manage_claim_show id=i.claim.id %}">{{ i.claim }}</a> (к.&nbsp;{{ i.room.room_number }})
+                  </li>{% endfor %}</ul>
+                </td>
+                <td><ul>{% for i in h.column_3 %}<li>
+                  <a href="{% url manage_claim_show id=i.claim.id %}">{{ i.claim }}</a> (к.&nbsp;{{ i.room.room_number }})
+                  </li>{% endfor %}</ul>
+                </td>
+                <td><ul>{% for i in h.column_4 %}<li>
+                  <a href="{% url manage_claim_show id=i.claim.id %}">{{ i.claim }}</a> (к.&nbsp;{{ i.room.room_number }})
+                  </li>{% endfor %}</ul>
+                </td>
+                <td><ul>{% for i in h.column_5 %}<li>
+                  <a href="{% url manage_claim_show id=i.claim.id %}">{{ i.claim }}</a> (к.&nbsp;{{ i.room.room_number }})
+                  </li>{% endfor %}</ul>
+                </td>
+                <td><ul>{% for i in h.column_6 %}<li>
+                  <a href="{% url manage_claim_show id=i.claim.id %}">{{ i.claim }}</a> (к.&nbsp;{{ i.room.room_number }})
+                  </li>{% endfor %}</ul>
+                </td>
+                <td><ul>{% for i in h.column_7 %}<li>
+                  <a href="{% url manage_claim_show id=i.claim.id %}">{{ i.claim }}</a> (к.&nbsp;{{ i.room.room_number }})
+                  </li>{% endfor %}</ul>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+  </div>
+
+{% endblock %}

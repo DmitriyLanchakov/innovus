@@ -1,0 +1,24 @@
+{% extends "one-column.html" %}
+
+{% block content %}
+  <div id="content_container" class="container">
+    <div id="content" class="with_right_column">
+      <div class="additional_margin">
+        <div class="right_column">
+          {% include "profile/includes/contact_info.html" %}
+        </div>
+        <div class="left_column">
+          <h1>{% trans "Enter the personal area" %}</h1>
+          <form method="post" action="{% url profile_login %}" class="login_form">
+            {% include "generic_form.html" %}
+            <div class="submit">
+              <input type="submit" value="{% trans "Continue" %}" />
+              <a href="{% url password_reset_form %}">Забыли пароль?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+

@@ -1,0 +1,41 @@
+{% extends "one-column-inner.html" %}
+
+{% load i18n thumbnail pagination_tags %}
+{% block content_inner %}
+
+<h1>Гостиницы</h1>
+
+<div class="hotel_list">
+  <h2><a href="{% url manage_hotel_add %}">Добавить гостиницу</a></h2>
+  <table>
+    <tr>
+      <th>Название</th>
+      <th>Всего номеров</th>
+      <th>Апартаментов</th>
+      <th>Люксов</th>
+      <th>Студий</th>
+      <th>1 мест., 1 кат.</th>
+      <th>2 мест., 1 кат.</th>
+      <th>1 мест., 2 кат.</th>
+      <th>2 мест., 2 кат.</th>
+      <th></th>
+    </tr>
+    {% for h in hotels %}
+    <tr>
+      <td><a href="{% url manage_hotel_change hotel_id=h.id %}">{{ h.name }}</a></td>
+      <td>{{ h.total }}</td>
+      <td>{% if h.column_1 %}<ul>{% for i in h.column_1 %}<li>{{ i.price }}/{{ i.count }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td>{% if h.column_2 %}<ul>{% for i in h.column_2 %}<li>{{ i.price }}/{{ i.count }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td>{% if h.column_3 %}<ul>{% for i in h.column_3 %}<li>{{ i.price }}/{{ i.count }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td>{% if h.column_4 %}<ul>{% for i in h.column_4 %}<li>{{ i.price }}/{{ i.count }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td>{% if h.column_5 %}<ul>{% for i in h.column_5 %}<li>{{ i.price }}/{{ i.count }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td>{% if h.column_6 %}<ul>{% for i in h.column_6 %}<li>{{ i.price }}/{{ i.count }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td>{% if h.column_7 %}<ul>{% for i in h.column_7 %}<li>{{ i.price }}/{{ i.count }}</li>{% endfor %}</ul>{% endif %}</td>
+      <td><a href="{% url manage_hotel_delete hotel_id=h.id %}">Удалить</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock content_inner %}
+

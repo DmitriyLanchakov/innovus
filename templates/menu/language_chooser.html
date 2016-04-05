@@ -1,0 +1,9 @@
+{% load menu_tags cache %}
+{% for language in languages reversed %}
+  {% if current_language == language.0 %}
+    <span class="{{ language.0 }}">{% trans language.1 %}</span>
+  {% else %}
+    <a class="{{ language.0 }}" href="{% page_language_url language.0 %}">{% trans language.1 %}</a>
+  {% endif %}
+{% endfor %}
+

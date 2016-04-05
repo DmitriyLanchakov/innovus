@@ -1,0 +1,86 @@
+=georgia_font_stack
+  font-family: Georgia, Constantia, Lucida, "Bitstream Vera Serif", "Liberation Serif", serif
+
+=verdana_font_stack
+  font-family: Verdana, "Lucida Grande", "Bitstream Vera Sans", "Liberation Sans", sans-serif
+
+=tahoma_font_stack
+  font-family: Tahoma, Verdana, "Lucida Grande", "Bitstream Vera Sans", "Liberation Sans", sans-serif
+
+=arial_font_stack
+  font-family: Arial, Verdana, "Lucida Grande", "Bitstream Vera Sans", "Liberation Sans", sans-serif
+
+=trebuchet_font_stack
+  font-family: "Trebuchet MS", "Lucida Grande", Verdana, sans-serif
+
+
+=input_style
+  +arial_font_stack
+  font-size: 12px
+  border: 1px solid #888
+  background-color: #fff
+  padding: 5px
+  &:focus
+    background-color: #fff9e1
+
+=button_style
+  +arial_font_stack
+  color: #333
+  text-decoration: none
+  cursor: default
+  background-color: #ddd
+  border-left: 1px solid #999
+  border-top: 1px solid #999
+  border-right: 1px solid #555
+  border-bottom: 1px solid #555
+  padding: 4px 10px
+  &:disabled
+    color: #999
+    background-color: #eee
+
+body
+  +verdana_font_stack
+  font-size: 12px
+  line-height: 1.6
+  color: #333
+  background-color: #fff
+
+a
+  color: #0094d8
+  &:hover
+    text-decoration: none
+
+=iconize_link($image, $width, $height)
+  width: $width
+  height: $height
+  +inline-block
+  background: transparent url($image) no-repeat
+  overflow: hidden
+  text-indent: -9999em
+
+em
+  font-style: italic
+
+strong
+  font-weight: bold
+
+small
+  font-size: 11px
+
+.nobr
+  white-space: nowrap
+
+.hidden
+  display: none
+
+.floatl
+  float: left
+  margin: 0 20px 20px 0
+
+.floatr
+  float: right
+  margin: 0 0 20px 20px
+
+.new_line
+  clear: left
+

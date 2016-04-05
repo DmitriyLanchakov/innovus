@@ -1,0 +1,3620 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-23 17:12+0700\n"
+"PO-Revision-Date: 2011-05-20 22:25\n"
+"Last-Translator:   <demo@demo.de>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.6.0\n"
+
+#: admin/admin.py:26
+msgid "Preferences"
+msgstr ""
+
+#: admin/admin.py:99 library/admin/persons.py:29
+msgid "Annotation"
+msgstr ""
+
+#: admin/admin.py:107 periodics/models/category.py:28
+msgid "Category"
+msgstr ""
+
+#: admin/admin.py:111
+msgid "Display on site"
+msgstr ""
+
+#: admin/admin.py:115 library/models/resources.py:16
+msgid "Picture"
+msgstr ""
+
+#: admin/admin.py:120
+msgid "Gallery"
+msgstr ""
+
+#: admin/admin.py:124 admin/templates/admin/periodics/post/change_form.html:79
+#: periodics/models/post.py:75
+#: periodics/templates/periodics/comments/main.html:7
+msgid "Comments"
+msgstr ""
+
+#: admin/admin.py:158 library/templates/admin/persons/display_published.html:6
+#: library/templates/admin/persons/display_sync.html:5
+msgid "Published"
+msgstr ""
+
+#: admin/admin.py:160
+msgid "Draft"
+msgstr ""
+
+#: admin/admin.py:206
+msgid "Author"
+msgstr ""
+
+#: admin/admin.py:212 admin/admin.py:281
+msgid "Approve selected comments"
+msgstr ""
+
+#: admin/admin.py:218
+msgid "Hide selected comments"
+msgstr ""
+
+#: admin/admin.py:223 admin/admin.py:244 admin/admin.py:290
+#: admin/templates/admin/periodics/post/comment_inline.html:12
+msgid "Approve"
+msgstr ""
+
+#: admin/admin.py:228
+msgid "Hide"
+msgstr ""
+
+#: admin/admin.py:244 admin/admin.py:290
+#: admin/templates/admin/periodics/post/comment_inline.html:10
+msgid "Blame"
+msgstr ""
+
+#: admin/admin.py:248
+msgid "Comment successfully approved"
+msgstr ""
+
+#: admin/admin.py:250
+msgid "Comment successfully blamed"
+msgstr ""
+
+#: admin/admin.py:282
+msgid "Blame selected comments"
+msgstr ""
+
+#: admin/admin.py:303
+msgid "Ban IP"
+msgstr ""
+
+#: admin/admin.py:328
+msgid "Toggle approvement"
+msgstr ""
+
+#: admin/admin.py:331
+#: admin/templates/admin/periodics/post/comment_inline.html:15
+msgid "Ban author"
+msgstr ""
+
+#: admin/admin.py:334
+msgid "Link to post"
+msgstr ""
+
+#: admin/admin.py:383
+#, python-format
+msgid "Ip address %s successfully banned"
+msgstr ""
+
+#: admin/admin.py:385
+#, python-format
+msgid "Ip address %s is already banned, not created"
+msgstr ""
+
+#: admin/templates/admin/base_site.html:4
+#: admin/templates/admin/base_site.html:7
+msgid "Tomsk Innovative Forum"
+msgstr ""
+
+#: admin/templates/admin/periodics/category/addform.html:6
+msgid "OK"
+msgstr ""
+
+#: admin/templates/admin/periodics/category/change_form.html:17
+#: admin/templates/admin/periodics/comment/change_list.html:25
+#: admin/templates/admin/periodics/post/change_form.html:17
+#: admin/templates/admin/periodics/post/change_list.html:25
+#: periodics/templates/admin/base.html:52
+#: periodics/templates/admin/periodics/base.html:52
+msgid "Home"
+msgstr ""
+
+#: admin/templates/admin/periodics/category/change_form.html:20
+#: admin/templates/admin/periodics/post/change_form.html:20
+#: profile/templates/profile/delegation_manage.html:14
+msgid "Add"
+msgstr ""
+
+#: admin/templates/admin/periodics/category/change_form.html:27
+#: admin/templates/admin/periodics/post/change_form.html:27
+#: profile/templates/admin/claims/show.html:57
+msgid "History"
+msgstr ""
+
+#: admin/templates/admin/periodics/category/change_form.html:28
+#: admin/templates/admin/periodics/post/change_form.html:28
+msgid "View on site"
+msgstr ""
+
+#: admin/templates/admin/periodics/category/change_form.html:38
+#: admin/templates/admin/periodics/comment/change_list.html:54
+#: admin/templates/admin/periodics/post/change_form.html:45
+#: admin/templates/admin/periodics/post/change_list.html:54
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/templates/admin/periodics/comment/change_list.html:46
+#: admin/templates/admin/periodics/post/change_list.html:46
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: admin/templates/admin/periodics/comment/change_list.html:65
+#: admin/templates/admin/periodics/post/change_list.html:65
+#: admin/templates/admin/periodics/post/filter.html:16
+#: admin/templates/admin/periodics/post/filter.html:22
+msgid "Filter"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/change_form.html:80
+msgid "Moderate comments to post inline"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/filter.html:2
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: admin/templates/admin/periodics/post/filter.html:13
+msgid "By date range"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/filter.html:14
+#: profile/templates/profile/edit.html:33
+msgid "From"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/filter.html:15
+msgid "To"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/filter.html:20
+msgid "By given date"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/submit_line.html:3
+#: profile/templates/admin/claims/claim_edit.html:108
+#: profile/templates/profile/claim_forms/edit_claim.html:67
+#: profile/templates/profile/events/list.html:44
+#: profile/templates/profile/includes/inline_form.html:6
+msgid "Save"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/submit_line.html:4
+#: profile/templates/profile/delegation_manage.html:8
+msgid "Delete"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/submit_line.html:7
+msgid "Publish"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/submit_line.html:10
+msgid "Save as new"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/submit_line.html:11
+msgid "Save and add another"
+msgstr ""
+
+#: admin/templates/admin/periodics/post/submit_line.html:12
+msgid "Save and continue editing"
+msgstr ""
+
+#: events/admin.py:15 events/plugins/models.py:7 events/plugins/models.py:13
+#: events/plugins/models.py:17
+msgid "forum"
+msgstr ""
+
+#: events/admin.py:16
+msgid "forums"
+msgstr ""
+
+#: events/admin.py:56
+msgid "no name"
+msgstr ""
+
+#: events/admin.py:57
+msgid "name"
+msgstr ""
+
+#: events/cms_app.py:8
+msgid "Forum events app"
+msgstr ""
+
+#: events/models.py:15
+msgid "is current?"
+msgstr ""
+
+#: events/models.py:18 events/models.py:43
+msgid "event starts on"
+msgstr ""
+
+#: events/models.py:19 events/models.py:44
+msgid "event ends on"
+msgstr ""
+
+#: events/models.py:29
+msgid "business"
+msgstr ""
+
+#: events/models.py:30
+msgid "youth"
+msgstr ""
+
+#: events/models.py:31
+msgid "cultural"
+msgstr ""
+
+#: events/models.py:32
+msgid "satellite"
+msgstr ""
+
+#: events/models.py:33
+msgid "master class"
+msgstr ""
+
+#: events/models.py:36
+msgid "forum connection"
+msgstr ""
+
+#: events/models.py:37 profile/forms.py:39 profile/models.py:127
+msgid "programm type"
+msgstr "To participate in"
+
+#: events/models.py:39
+msgid "title color"
+msgstr ""
+
+#: events/models.py:45
+msgid "can register youth"
+msgstr ""
+
+#: events/models.py:46
+msgid "can register business"
+msgstr ""
+
+#: events/models.py:47
+msgid "videostream URL"
+msgstr ""
+
+#: events/models.py:49
+msgid "broadcast start"
+msgstr ""
+
+#: events/models.py:51
+msgid "broadcast end"
+msgstr ""
+
+#: events/models.py:95
+msgid "display on site"
+msgstr ""
+
+#: events/models.py:96
+msgid "place"
+msgstr ""
+
+#: events/models.py:97
+msgid "leader name"
+msgstr ""
+
+#: events/models.py:99
+msgid "moderators"
+msgstr ""
+
+#: events/models.py:100
+msgid "cms page"
+msgstr ""
+
+#: events/settings.py:4
+msgid "cadmiumyellow"
+msgstr ""
+
+#: events/settings.py:5
+msgid "crimson"
+msgstr ""
+
+#: events/settings.py:6
+msgid "deepskyblue"
+msgstr ""
+
+#: events/settings.py:7
+msgid "olivedrab"
+msgstr ""
+
+#: events/settings.py:8
+msgid "black"
+msgstr ""
+
+#: events/settings.py:10 events/plugins/templates/events/programm.html:17
+msgid "first"
+msgstr ""
+
+#: events/settings.py:10 events/plugins/templates/events/programm.html:17
+msgid "second"
+msgstr ""
+
+#: events/settings.py:10 events/plugins/templates/events/programm.html:17
+msgid "third"
+msgstr ""
+
+#: events/plugins/cms_plugins.py:17
+msgid "forum programm"
+msgstr ""
+
+#: events/plugins/cms_plugins.py:42
+msgid "forum event on page"
+msgstr ""
+
+#: events/plugins/cms_plugins.py:78
+msgid "forum event on history page"
+msgstr ""
+
+#: events/plugins/cms_plugins.py:84
+msgid "comments for event on page"
+msgstr ""
+
+#: events/plugins/cms_plugins.py:94
+msgid "forum events history"
+msgstr ""
+
+#: events/plugins/cms_plugins.py:110
+msgid "Forum events broadcast"
+msgstr ""
+
+#: events/plugins/models.py:8
+msgid "program_type"
+msgstr ""
+
+#: events/plugins/models.py:18
+msgid "channel title"
+msgstr ""
+
+#: events/plugins/models.py:20
+msgid "channel stream"
+msgstr ""
+
+#: events/plugins/models.py:22
+msgid "append to playlist?"
+msgstr ""
+
+#: events/plugins/templates/events/event_broadcast.html:5
+#: events/plugins/templates/events/event_broadcast_on_page.html:2
+msgid "Video broadcast"
+msgstr ""
+
+#: events/plugins/templates/events/event_broadcast.html:25
+msgid "Broadcasting events"
+msgstr ""
+
+#: events/plugins/templates/events/event_broadcast.html:41
+#: events/plugins/templates/events/event_on_history_page.html:8
+#: events/plugins/templates/events/event_on_page.html:18
+#: events/plugins/templates/events/programm.html:58
+msgid "Moderator, Moderators, Moderators"
+msgstr ""
+
+#: events/plugins/templates/events/programm.html:6
+msgid "Print version"
+msgstr ""
+
+#: events/plugins/templates/events/programm.html:17
+msgid "Day"
+msgstr ""
+
+#: events/templatetags/events_tags.py:79
+msgid "forum attribute requires attribute name"
+msgstr ""
+
+#: indexer/cms_app.py:8
+msgid "Search app"
+msgstr ""
+
+#: indexer/models.py:8
+msgid "Tags"
+msgstr ""
+
+#: indexer/models.py:9
+msgid "List of all tags related to the item"
+msgstr ""
+
+#: indexer/utils.py:41
+#, python-format
+msgid "Invalid distribution algorithm specified: %s."
+msgstr ""
+
+#: indexer/views.py:121
+msgid "Search results"
+msgstr ""
+
+#: indexer/templates/indexer/ct_selector.html:3
+#: templates/likeness/similar.html:2
+msgid "Similar materials"
+msgstr ""
+
+#: indexer/templates/indexer/search.html:11
+#: library/templates/admin/library/resource/search_form.html:9
+msgid "Search"
+msgstr ""
+
+#: indexer/templates/indexer/search.html:19
+msgid "Sorry, but no results were found."
+msgstr ""
+
+#: indexer/templates/indexer/tag_cloud.html:4
+msgid "Метки"
+msgstr "Tags"
+
+#: indexer/templatetags/indexer_tags.py:43
+msgid "News & Events"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:44
+msgid "Interviews"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:45 templates/likeness/similar.html:91
+msgid "Images"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:46 library/models/resources.py:15
+#: templates/likeness/similar.html:69
+msgid "Audio"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:47 library/models/resources.py:14
+#: templates/likeness/similar.html:22
+msgid "Video"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:48 templates/likeness/similar.html:56
+msgid "Documents"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:49
+msgid "Pages"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:110
+#, python-format
+msgid "%s tag requires either two or between four and six arguments"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:113
+#, python-format
+msgid "first argument to %s tag must be 'as'"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:118
+#, python-format
+msgid "if given, third argument to %s tag must be 'with'"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:126
+#, python-format
+msgid "%(tag)s tag's '%(option)s' option was not a valid integer: '%(value)s'"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:135
+#, python-format
+msgid "%(tag)s tag's '%(option)s' option was not a valid choice: '%(value)s'"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:141
+#, python-format
+msgid "%(tag)s tag was given an invalid option: '%(option)s'"
+msgstr ""
+
+#: indexer/templatetags/indexer_tags.py:146
+#, python-format
+msgid "%(tag)s tag was given a badly formatted option: '%(option)s'"
+msgstr ""
+
+#: library/cms_app.py:7
+msgid "Persons app"
+msgstr ""
+
+#: library/feeds.py:19 periodics/feeds.py:21
+msgid "Tomsk forum of innovations"
+msgstr ""
+
+#: library/feeds.py:22
+msgid "Persons"
+msgstr ""
+
+#: library/admin/persons.py:37
+msgid "Tagging"
+msgstr ""
+
+#: library/admin/persons.py:41 library/admin/resources.py:30
+#: periodics/models/category.py:29
+msgid "Categories"
+msgstr ""
+
+#: library/admin/persons.py:45 library/admin/resources.py:102
+msgid "Comments settings"
+msgstr ""
+
+#: library/admin/persons.py:57
+#: profile/templates/profile/includes/ul_organization.html:18
+msgid "Position"
+msgstr ""
+
+#: library/admin/persons.py:63
+msgid "Photo"
+msgstr ""
+
+#: library/admin/resources.py:29
+msgid "Files"
+msgstr ""
+
+#: library/admin/resources.py:110
+msgid "Count"
+msgstr ""
+
+#: library/admin/resources.py:117
+msgid "Page"
+msgstr ""
+
+#: library/models/base.py:12
+msgid "render template"
+msgstr ""
+
+#: library/models/base.py:19
+msgid "category"
+msgstr ""
+
+#: library/models/base.py:20
+msgid "categories"
+msgstr ""
+
+#: library/models/persons.py:74
+msgid "person"
+msgstr ""
+
+#: library/models/persons.py:75
+msgid "persons"
+msgstr ""
+
+#: library/models/resources.py:17
+msgid "Document"
+msgstr ""
+
+#: library/models/resources.py:41
+msgid "Snapshot for resource, not required"
+msgstr ""
+
+#: library/models/resources.py:67
+msgid "resource"
+msgstr ""
+
+#: library/models/resources.py:68
+msgid "resources"
+msgstr ""
+
+#: library/models/resources.py:82
+msgid "video"
+msgstr ""
+
+#: library/models/resources.py:83
+msgid "videos"
+msgstr ""
+
+#: library/models/resources.py:95 library/models/resources.py:96
+msgid "audio"
+msgstr ""
+
+#: library/models/resources.py:108
+msgid "document"
+msgstr ""
+
+#: library/models/resources.py:109
+msgid "documents"
+msgstr ""
+
+#: library/models/resources.py:121
+msgid "picture"
+msgstr ""
+
+#: library/models/resources.py:122
+msgid "pictures"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:16
+msgid "Last resources from given category"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:44
+msgid "Last videos from given category"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:52
+msgid "Last audio from given category"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:60
+msgid "Last documents from given category"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:68
+msgid "Last pictures from given category"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:77
+msgid "Persons list"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:99
+msgid "Persons category on page"
+msgstr ""
+
+#: library/plugins/cms_plugins.py:120
+msgid "persons on index page"
+msgstr ""
+
+#: library/plugins/models.py:8
+msgid "alphabet"
+msgstr ""
+
+#: library/plugins/models.py:9
+msgid "preset"
+msgstr ""
+
+#: library/plugins/models.py:14 library/plugins/models.py:26
+msgid "block title"
+msgstr ""
+
+#: library/plugins/models.py:15 library/plugins/models.py:27
+#: library/plugins/models.py:39
+msgid "sorting"
+msgstr ""
+
+#: library/plugins/models.py:16 library/plugins/models.py:28
+msgid "persons count in list"
+msgstr ""
+
+#: library/plugins/models.py:17 library/plugins/models.py:30
+#: library/plugins/models.py:46
+msgid "persons list template"
+msgstr ""
+
+#: library/plugins/models.py:40
+msgid "speakers"
+msgstr ""
+
+#: library/plugins/models.py:41
+msgid "speakers in list"
+msgstr ""
+
+#: library/plugins/models.py:42
+msgid "interviews"
+msgstr ""
+
+#: library/plugins/models.py:43
+msgid "interviews in list"
+msgstr ""
+
+#: library/plugins/templates/plugins/persons_feed_index.html:5
+msgid "Speakers"
+msgstr ""
+
+#: library/plugins/templates/plugins/persons_feed_index.html:14
+msgid "Other speakers"
+msgstr ""
+
+#: library/plugins/templates/plugins/persons_feed_index.html:18
+#: library/plugins/templates/plugins/persons_feed_index.html:19
+#: templates/likeness/similar.html:35
+msgid "Interview"
+msgstr ""
+
+#: library/plugins/templates/plugins/persons_feed_index.html:51
+msgid "more"
+msgstr ""
+
+#: library/plugins/templates/plugins/persons_greetings.html:23
+#: profile/templates/profile/events.html:26
+#: profile/templates/profile/events.html:31
+#: templates/plugins/broadcast.html:14
+msgid "expand"
+msgstr "show more"
+
+#: library/plugins/templates/plugins/persons_greetings.html:24
+#: library/plugins/templates/plugins/persons_greetings.html:26
+#: profile/templates/profile/events.html:27
+#: profile/templates/profile/events.html:32
+#: templates/plugins/broadcast.html:15
+msgid "collapse"
+msgstr "hide"
+
+#: library/templates/admin/library/resource/search_form.html:11
+#, python-format
+msgid "1 result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: library/templates/admin/library/resource/search_form.html:11
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: library/templates/admin/persons/display_published.html:4
+#: library/templates/admin/persons/display_sync.html:7
+msgid "Not published"
+msgstr ""
+
+#: library/templates/admin/persons/display_sync.html:10
+msgid "No public copy"
+msgstr ""
+
+#: periodics/cms_app.py:8
+msgid "Periodics app"
+msgstr ""
+
+#: periodics/feeds.py:30
+msgid "Innovation news"
+msgstr ""
+
+#: periodics/feeds.py:32
+msgid "New on site"
+msgstr ""
+
+#: periodics/forms.py:10
+msgid "Post will be saved as draft if not checked"
+msgstr ""
+
+#: periodics/forms.py:34
+msgid "Message"
+msgstr ""
+
+#: periodics/forms.py:48 periodics/models/post.py:42
+#: profile/templates/admin/claims/events_edit.html:16
+#: profile/templates/admin/claims/events_edit_print.html:18
+#: profile/templates/admin/claims/list_badge.html:24
+#: profile/templates/admin/claims/list_badge.html:31
+#: profile/templates/admin/claims/list_print.html:24
+#: profile/templates/profile/delegate_list.html:11
+msgid "Name"
+msgstr ""
+
+#: periodics/forms.py:49
+msgid "E-mail "
+msgstr ""
+
+#: periodics/navigation.py:9
+msgid "Archive"
+msgstr ""
+
+#: periodics/models/attachment.py:21
+msgid "Attachment"
+msgstr ""
+
+#: periodics/models/attachment.py:22
+#: periodics/templates/periodics/post-single.html:43
+#: periodics/templates/periodics/post-single.html:65
+#: periodics/templates/periodics/videopost-single.html:50
+#: periodics/templates/periodics/comments/add.html:44
+#: periodics/templates/periodics/comments/add.html:72
+msgid "Attachments"
+msgstr ""
+
+#: periodics/models/banned.py:10
+msgid "Banned by"
+msgstr ""
+
+#: periodics/models/banned.py:11
+msgid "Ban date and time"
+msgstr ""
+
+#: periodics/models/banned.py:12 periodics/models/banned.py:20
+msgid "Banned IP address"
+msgstr ""
+
+#: periodics/models/banned.py:21
+msgid "Banned IP addresses"
+msgstr ""
+
+#: periodics/models/base.py:9
+msgid "Creator"
+msgstr ""
+
+#: periodics/models/base.py:10
+msgid "Modifier"
+msgstr ""
+
+#: periodics/models/base.py:11
+msgid "Created at"
+msgstr ""
+
+#: periodics/models/base.py:12
+msgid "Modified at"
+msgstr ""
+
+#: periodics/models/category.py:16 profile/templates/admin/events/show.html:11
+msgid "Title"
+msgstr ""
+
+#: periodics/models/category.py:17 periodics/plugins/models.py:16
+msgid "Commented?"
+msgstr ""
+
+#: periodics/models/category.py:18 periodics/plugins/models.py:17
+msgid "Moderated?"
+msgstr ""
+
+#: periodics/models/category.py:19 periodics/plugins/models.py:18
+msgid "Per page"
+msgstr ""
+
+#: periodics/models/category.py:20
+msgid "template for post"
+msgstr ""
+
+#: periodics/models/post.py:26 periodics/models/post.py:32
+msgid "Use category settings"
+msgstr ""
+
+#: periodics/models/post.py:27
+msgid "Allow"
+msgstr ""
+
+#: periodics/models/post.py:28
+msgid "Deny"
+msgstr ""
+
+#: periodics/models/post.py:33
+msgid "Enable"
+msgstr ""
+
+#: periodics/models/post.py:34
+msgid "Disable"
+msgstr ""
+
+#: periodics/models/post.py:43
+msgid "Email"
+msgstr ""
+
+#: periodics/models/post.py:47
+msgid "Content"
+msgstr ""
+
+#: periodics/models/post.py:48
+msgid "IP Address"
+msgstr ""
+
+#: periodics/models/post.py:74
+msgid "Comment"
+msgstr ""
+
+#: periodics/models/post.py:98
+msgid "SEO friendly post title"
+msgstr ""
+
+#: periodics/models/post.py:103
+msgid "Show on site"
+msgstr ""
+
+#: periodics/models/post.py:106
+msgid "Show picture on Post page"
+msgstr ""
+
+#: periodics/models/post.py:111
+msgid "Allow comments"
+msgstr ""
+
+#: periodics/models/post.py:111 periodics/models/post.py:112
+msgid "This Post settings overrides same Category settings"
+msgstr ""
+
+#: periodics/models/post.py:112
+msgid "Premoderate comments"
+msgstr ""
+
+#: periodics/models/post.py:186
+msgid "Expired date is less than published date"
+msgstr ""
+
+#: periodics/plugins/cms_plugins.py:15
+msgid "Category on page"
+msgstr ""
+
+#: periodics/plugins/cms_plugins.py:35
+msgid "Last posts from category"
+msgstr ""
+
+#: periodics/plugins/cms_plugins.py:59
+msgid "Latest comments feed"
+msgstr ""
+
+#: periodics/plugins/cms_plugins.py:76
+msgid "Latest video from post"
+msgstr ""
+
+#: periodics/plugins/cms_plugins.py:94
+msgid "Innonews"
+msgstr ""
+
+#: periodics/plugins/models.py:13
+msgid "Category to display on page"
+msgstr ""
+
+#: periodics/plugins/models.py:14 periodics/plugins/models.py:35
+msgid "Select the category or create the new one"
+msgstr ""
+
+#: periodics/plugins/models.py:34
+msgid "Category to get posts from"
+msgstr ""
+
+#: periodics/plugins/models.py:37
+msgid "Posts number to display"
+msgstr ""
+
+#: periodics/plugins/models.py:39 periodics/plugins/models.py:63
+#: profile/models.py:398 profile/models.py:403
+msgid "template"
+msgstr ""
+
+#: periodics/plugins/models.py:49
+msgid "Comments count to display"
+msgstr ""
+
+#: periodics/plugins/models.py:54
+msgid "Category with video"
+msgstr ""
+
+#: periodics/plugins/models.py:60
+msgid "category 'in world'"
+msgstr ""
+
+#: periodics/plugins/models.py:61
+msgid "category 'in russia'"
+msgstr ""
+
+#: periodics/plugins/models.py:62
+msgid "category 'in tomsk'"
+msgstr ""
+
+#: periodics/plugins/templates/recent_comments.html:4
+msgid "Recent comments"
+msgstr ""
+
+#: periodics/plugins/templates/recent_video.html:10
+msgid "Go to category"
+msgstr ""
+
+#: periodics/plugins/templates/plugins/events_feed_index.html:30
+msgid "Leave comment"
+msgstr ""
+
+#: periodics/plugins/templates/plugins/events_feed_index.html:50
+msgid "Other events"
+msgstr ""
+
+#: periodics/plugins/templates/plugins/news_feed_index.html:10
+msgid "In world"
+msgstr ""
+
+#: periodics/plugins/templates/plugins/news_feed_index.html:24
+msgid "In Russia"
+msgstr ""
+
+#: periodics/plugins/templates/plugins/news_feed_index.html:38
+msgid "In Tomsk"
+msgstr ""
+
+#: periodics/plugins/templates/plugins/news_feed_index.html:53
+msgid "Other news"
+msgstr ""
+
+#: periodics/templates/admin/base.html:25
+#: periodics/templates/admin/periodics/base.html:25
+msgid "Welcome,"
+msgstr ""
+
+#: periodics/templates/admin/base.html:30
+#: periodics/templates/admin/periodics/base.html:30
+msgid "Documentation"
+msgstr ""
+
+#: periodics/templates/admin/base.html:38
+#: periodics/templates/admin/periodics/base.html:38
+msgid "Change password"
+msgstr ""
+
+#: periodics/templates/admin/base.html:45
+#: periodics/templates/admin/periodics/base.html:45
+msgid "Log out"
+msgstr ""
+
+#: periodics/templates/periodics/photologue_gallery.html:12
+#: templates/plugins/photologue_preview.html:11
+msgid "Original Photo"
+msgstr ""
+
+#: periodics/templates/periodics/photologue_gallery.html:12
+#: templates/plugins/photologue_preview.html:11
+msgid "Original photo"
+msgstr ""
+
+#: periodics/templates/periodics/post-single.html:36
+#: periodics/templates/periodics/comments/add.html:37
+msgid "Photos"
+msgstr ""
+
+#: periodics/templates/periodics/comments/form.html:5
+msgid "You are forbidden to comment"
+msgstr ""
+
+#: periodics/templates/periodics/comments/form.html:8
+msgid "Write a comment"
+msgstr ""
+
+#: periodics/templates/periodics/comments/form.html:26
+msgid "Characters left"
+msgstr ""
+
+#: periodics/templates/periodics/comments/form.html:27
+msgid "send"
+msgstr ""
+
+#: periodics/templates/periodics/comments/form.html:35
+msgid "Comments is disabled"
+msgstr "Comments are disabled"
+
+#: periodics/templates/periodics/comments/item.html:12
+msgid "at"
+msgstr ""
+
+#: periodics/templates/periodics/comments/item.html:20
+msgid "Reply"
+msgstr ""
+
+#: periodics/templates/periodics/comments/item.html:27
+msgid "This comment has been deleted"
+msgstr ""
+
+#: periodics/templates/periodics/comments/show_later.html:2
+msgid "Comment will be visible after moderation"
+msgstr ""
+
+#: periodics/templates/periodics/templatetags/gallery.html:7
+msgid "Save original"
+msgstr ""
+
+#: periodics/templates/periodics/templatetags/video.html:8
+#: periodics/templates/periodics/templatetags/video.html:9
+#: periodics/templates/periodics/templatetags/video_full.html:8
+#: periodics/templates/periodics/templatetags/video_full.html:9
+#: periodics/templates/periodics/templatetags/video_preview.html:8
+#: periodics/templates/periodics/templatetags/video_preview.html:9
+msgid "Videoblog"
+msgstr ""
+
+#: periodics/views/posts.py:32
+msgid "You are behind django-cms"
+msgstr ""
+
+#: periodics/views/posts.py:41
+msgid "Category not found"
+msgstr ""
+
+#: periodics/views/posts.py:154
+msgid "God damn!"
+msgstr ""
+
+#: plugins/cms_plugins.py:11
+msgid "Toggle plugin"
+msgstr ""
+
+#: plugins/cms_plugins.py:19
+msgid "Sitemap"
+msgstr ""
+
+#: plugins/cms_plugins.py:35
+msgid "Menu plugin"
+msgstr ""
+
+#: plugins/models.py:7 profile/models.py:399 profile/models.py:404
+msgid "title"
+msgstr ""
+
+#: plugins/models.py:22
+msgid "starting level"
+msgstr ""
+
+#: plugins/models.py:23
+msgid "max level"
+msgstr ""
+
+#: plugins/models.py:25
+msgid "extra inactive"
+msgstr ""
+
+#: plugins/models.py:26
+msgid "how many levels should be rendered of the not active tree?"
+msgstr ""
+
+#: plugins/models.py:30
+msgid "extra active"
+msgstr ""
+
+#: plugins/models.py:31
+msgid "how deep should the children of the active node be rendered?"
+msgstr ""
+
+#: plugins/models.py:35
+msgid "root id"
+msgstr ""
+
+#: plugins/models.py:36
+msgid "reverse_id of the root page"
+msgstr ""
+
+#: plugins/models.py:42
+msgid "template to render menu with"
+msgstr ""
+
+#: plugins/models.py:50
+msgid "Template name"
+msgstr ""
+
+#: plugins/templates/plugins/events.html:45
+#: templates/plugins/events_inline_comments.html:2
+msgid "Send Comment"
+msgstr ""
+
+#: plugins/templatetags/page_class.py:18
+#, python-format
+msgid "Reverse ID not found on %(domain)s"
+msgstr ""
+
+#: plugins/templatetags/page_class.py:19
+#, python-format
+msgid ""
+"A page_id_url template tag didn't found a page with the reverse_id "
+"%(reverse_id)s\n"
+"The url of the page was: http://%(host)s%(path)s"
+msgstr ""
+
+#: profile/admin.py:48 templates/likeness/similar.html:13
+#: templates/likeness/similar.html.py:28 templates/likeness/similar.html:49
+#: templates/likeness/similar.html.py:61 templates/likeness/similar.html:83
+#: templates/likeness/similar.html.py:96
+msgid "All"
+msgstr ""
+
+#: profile/admin.py:49 profile/settings.py:49
+msgid "Yes"
+msgstr ""
+
+#: profile/admin.py:50 profile/settings.py:48
+msgid "No"
+msgstr ""
+
+#: profile/admin.py:57
+msgid "Need hotel"
+msgstr ""
+
+#: profile/admin.py:82 profile/templates/admin/claims/claim_edit.html:30
+#: profile/templates/profile/view.html:38
+#: profile/templates/profile/claim_forms/edit_claim.html:52
+#: profile/templates/profile/claim_forms/join.html:40
+#: profile/templates/profile/claim_forms/join_contact.html:55
+msgid "Contacts"
+msgstr ""
+
+#: profile/admin.py:84
+msgid "Geography"
+msgstr ""
+
+#: profile/admin.py:86 profile/templates/admin/claims/events_edit.html:17
+#: profile/templates/admin/claims/events_edit_print.html:19
+#: profile/templates/admin/claims/list.html:84
+#: profile/templates/admin/claims/list_badge.html:25
+#: profile/templates/admin/claims/list_badge.html:32
+#: profile/templates/admin/claims/list_print.html:25
+#: profile/templates/admin/events/show.html:12
+#: profile/templates/profile/delegate_list.html:12
+#: profile/templates/profile/includes/ul_organization.html:12
+msgid "Organization"
+msgstr ""
+
+#: profile/admin.py:88 profile/admin.py:178
+#: profile/templates/profile/delegate_show.html:67
+#: profile/templates/profile/view.html:79
+msgid "Arrival"
+msgstr ""
+
+#: profile/admin.py:90 profile/admin.py:183
+#: profile/templates/profile/delegate_show.html:71
+#: profile/templates/profile/view.html:83
+msgid "Departure"
+msgstr ""
+
+#: profile/admin.py:92
+msgid "Hotel information"
+msgstr ""
+
+#: profile/admin.py:94
+msgid "State"
+msgstr ""
+
+#: profile/admin.py:96
+msgid "Delegation settings"
+msgstr ""
+
+#: profile/admin.py:98
+msgid "Relations"
+msgstr ""
+
+#: profile/admin.py:156
+#, python-format
+msgid "Claim state was succesfully updated: %(state)s"
+msgstr ""
+
+#: profile/admin.py:164
+msgid "Claim state failed to update"
+msgstr ""
+
+#: profile/admin.py:171
+msgid "No need"
+msgstr "Not needed"
+
+#: profile/admin.py:173 profile/templates/admin/claims/events_edit.html:22
+#: profile/templates/admin/claims/events_edit_print.html:24
+#: profile/templates/admin/claims/list.html:90
+#: profile/templates/admin/claims/list_badge.html:37
+#: profile/templates/admin/claims/list_print.html:30
+#: profile/templates/profile/delegate_list.html:16
+#: profile/templates/profile/delegate_show.html:49
+#: profile/templates/profile/view.html:61
+msgid "Hotel"
+msgstr ""
+
+#: profile/admin.py:188
+msgid "Charter"
+msgstr ""
+
+#: profile/admin.py:190
+#, python-format
+msgid "%(date)s %(transport_type)s"
+msgstr ""
+
+#: profile/admin.py:230
+msgid "Luxes"
+msgstr "Deluxe"
+
+#: profile/admin.py:236
+msgid "Appartments"
+msgstr ""
+
+#: profile/admin.py:242
+msgid "Studios"
+msgstr ""
+
+#: profile/admin.py:248 profile/settings.py:81
+msgid "1 mest 1 kat"
+msgstr "single superior room"
+
+#: profile/admin.py:254 profile/settings.py:82
+msgid "2 mest 1 kat"
+msgstr "double superior room"
+
+#: profile/admin.py:260 profile/settings.py:83
+msgid "1 mest 2 kat"
+msgstr "Single standard room"
+
+#: profile/admin.py:266 profile/settings.py:84
+msgid "2 mest 2 kat"
+msgstr "double standard room"
+
+#: profile/cms_app.py:10
+msgid "Profile app"
+msgstr ""
+
+#: profile/cms_plugins.py:18
+msgid "Registration page"
+msgstr ""
+
+#: profile/cms_plugins.py:40
+msgid "Participants page"
+msgstr ""
+
+#: profile/forms.py:16 profile/forms.py:21
+msgid "---------"
+msgstr ""
+
+#: profile/forms.py:17
+msgid "no"
+msgstr ""
+
+#: profile/forms.py:18
+msgid "yes"
+msgstr ""
+
+#: profile/forms.py:33
+msgid "Set the password to be used for login to INNOVUS"
+msgstr ""
+
+#: profile/forms.py:35
+msgid "Enter the password again"
+msgstr ""
+
+#: profile/forms.py:125
+msgid "You must provide your email address"
+msgstr ""
+
+#: profile/forms.py:130
+#, python-format
+msgid "User with %(email)s already exists"
+msgstr ""
+
+#: profile/forms.py:142
+msgid "You should provide some strong password for registering"
+msgstr ""
+
+#: profile/forms.py:156
+msgid "You should provide password confirmation for registering"
+msgstr ""
+
+#: profile/forms.py:159
+msgid "Password does not match confirmation"
+msgstr ""
+
+#: profile/forms.py:171
+msgid "Please specify your phone number"
+msgstr ""
+
+#: profile/forms.py:179
+msgid "You did not provide your country name"
+msgstr ""
+
+#: profile/forms.py:189
+msgid "Please specify a region of Russian Federation"
+msgstr ""
+
+#: profile/forms.py:203
+msgid "Please specify a city of Russian Federation"
+msgstr ""
+
+#: profile/forms.py:211
+msgid "Please specify forum programm type"
+msgstr ""
+
+#: profile/forms.py:225
+msgid ""
+"Please, select available\n"
+"                arrival charter date"
+msgstr ""
+
+#: profile/forms.py:233
+msgid "Please, select available departure charter date"
+msgstr ""
+
+#: profile/forms.py:278
+msgid "Please specify want you to use charter"
+msgstr ""
+
+#: profile/forms.py:291
+#, python-format
+msgid "%(direction)s date is not set"
+msgstr ""
+
+#: profile/forms.py:305
+#, python-format
+msgid "%(direction)s transport type is not set"
+msgstr ""
+
+#: profile/forms.py:315
+msgid "Please specify if want you to take part in the Forum"
+msgstr ""
+
+#: profile/forms.py:385
+msgid "subject"
+msgstr ""
+
+#: profile/forms.py:386
+msgid "body"
+msgstr ""
+
+#: profile/forms.py:467
+msgid "Username"
+msgstr ""
+
+#: profile/models.py:23 profile/models.py:24
+#: profile/templates/admin/events/show.html:13
+#: profile/templates/profile/includes/ul_personal_info.html:26
+msgid "Country"
+msgstr ""
+
+#: profile/models.py:35 profile/models.py:88
+msgid "country"
+msgstr ""
+
+#: profile/models.py:36
+msgid "countries"
+msgstr ""
+
+#: profile/models.py:40
+#: profile/templates/profile/includes/ul_personal_info.html:31
+msgid "Region"
+msgstr ""
+
+#: profile/models.py:51 profile/models.py:90
+#: profile/templates/admin/events/show.html:13
+msgid "region"
+msgstr ""
+
+#: profile/models.py:52
+msgid "regions"
+msgstr ""
+
+#: profile/models.py:56 profile/templates/admin/events/show.html:14
+#: profile/templates/profile/includes/ul_personal_info.html:37
+msgid "City"
+msgstr ""
+
+#: profile/models.py:68 profile/models.py:92
+msgid "city"
+msgstr ""
+
+#: profile/models.py:69
+msgid "cities"
+msgstr ""
+
+#: profile/models.py:73
+msgid "title ru"
+msgstr ""
+
+#: profile/models.py:74
+msgid "title en"
+msgstr ""
+
+#: profile/models.py:75
+msgid "sort order"
+msgstr ""
+
+#: profile/models.py:83
+msgid "Industries"
+msgstr "Area of work"
+
+#: profile/models.py:98
+msgid "bill"
+msgstr ""
+
+#: profile/models.py:100
+msgid "citizenship"
+msgstr "nationality"
+
+#: profile/models.py:101
+msgid "request state"
+msgstr ""
+
+#: profile/models.py:104
+msgid "first name"
+msgstr ""
+
+#: profile/models.py:105
+msgid "gender"
+msgstr "sex"
+
+#: profile/models.py:107
+msgid "taking part?"
+msgstr "please specify if want you to take part in the Forum"
+
+#: profile/models.py:109
+msgid "last name"
+msgstr ""
+
+#: profile/models.py:110
+msgid "middle name"
+msgstr ""
+
+#: profile/models.py:112
+msgid "mobile phone"
+msgstr ""
+
+#: profile/models.py:114
+msgid "work phone"
+msgstr ""
+
+#: profile/models.py:115
+msgid "Your email"
+msgstr ""
+
+#: profile/models.py:117
+msgid "address"
+msgstr "postal address"
+
+#: profile/models.py:119
+msgid "fax"
+msgstr ""
+
+#: profile/models.py:123
+msgid "site"
+msgstr ""
+
+#: profile/models.py:125
+msgid "blog"
+msgstr ""
+
+#: profile/models.py:131
+msgid "need reservation"
+msgstr ""
+
+#: profile/models.py:137
+msgid "industry"
+msgstr "area of work"
+
+#: profile/models.py:138
+msgid "organization"
+msgstr ""
+
+#: profile/models.py:139 profile/templates/admin/events/show.html:12
+msgid "position"
+msgstr "occupation"
+
+#: profile/models.py:145
+msgid "charter for arrival"
+msgstr ""
+
+#: profile/models.py:147
+msgid "arrival charter date"
+msgstr ""
+
+#: profile/models.py:154
+msgid "arrival transport"
+msgstr ""
+
+#: profile/models.py:159
+msgid "arrival date"
+msgstr ""
+
+#: profile/models.py:166
+msgid "charter for departure"
+msgstr ""
+
+#: profile/models.py:168
+msgid "departure charter date"
+msgstr ""
+
+#: profile/models.py:171
+msgid "departure transport"
+msgstr ""
+
+#: profile/models.py:173
+msgid "departure date"
+msgstr ""
+
+#: profile/models.py:177
+msgid "Is syncronized?"
+msgstr ""
+
+#: profile/models.py:178
+msgid "request personal info"
+msgstr ""
+
+#: profile/models.py:294
+msgid "claim"
+msgstr ""
+
+#: profile/models.py:295
+msgid "claims"
+msgstr ""
+
+#: profile/models.py:314 profile/models.py:315
+msgid "(nothing)"
+msgstr ""
+
+#: profile/models.py:309
+#, python-format
+msgid ""
+"%(claim)s: %(field_name)s changed\n"
+"        from %(before)s to %(after)s on %(timestamp)s"
+msgstr ""
+
+#: profile/models.py:321
+msgid "claim change"
+msgstr ""
+
+#: profile/models.py:322
+msgid "claims change"
+msgstr ""
+
+#: profile/models.py:412
+msgid "Hotel name"
+msgstr ""
+
+#: profile/models.py:420 profile/models.py:425
+msgid "hotel"
+msgstr ""
+
+#: profile/models.py:421
+msgid "hotels"
+msgstr ""
+
+#: profile/models.py:426 profile/models.py:436
+msgid "room category"
+msgstr ""
+
+#: profile/models.py:427
+msgid "room number"
+msgstr ""
+
+#: profile/models.py:428
+msgid "price"
+msgstr ""
+
+#: profile/models.py:429
+msgid "Is real hotel room?"
+msgstr ""
+
+#: profile/models.py:429
+msgid "is real?"
+msgstr ""
+
+#: profile/models.py:437
+msgid "room categories"
+msgstr ""
+
+#: profile/models.py:450
+msgid "hotel room reserve"
+msgstr ""
+
+#: profile/models.py:451
+msgid "hotel room reserves"
+msgstr ""
+
+#: profile/settings.py:13
+msgid "Claim sent"
+msgstr ""
+
+#: profile/settings.py:14
+msgid "Waiting for approvement"
+msgstr ""
+
+#: profile/settings.py:15
+msgid "Waiting for payment"
+msgstr ""
+
+#: profile/settings.py:16
+msgid "Accepted"
+msgstr ""
+
+#: profile/settings.py:17
+msgid "Cancelled"
+msgstr ""
+
+#: profile/settings.py:18
+msgid "Rejected"
+msgstr ""
+
+#: profile/settings.py:31
+msgid "Panel discussions"
+msgstr ""
+
+#: profile/settings.py:32
+msgid "Debating club"
+msgstr ""
+
+#: profile/settings.py:33
+msgid "Round table"
+msgstr ""
+
+#: profile/settings.py:34
+msgid "Plenary"
+msgstr ""
+
+#: profile/settings.py:38
+msgid "Bus"
+msgstr ""
+
+#: profile/settings.py:39
+msgid "Train"
+msgstr ""
+
+#: profile/settings.py:40
+msgid "Aircraft"
+msgstr ""
+
+#: profile/settings.py:41
+msgid "Another transport"
+msgstr ""
+
+#: profile/settings.py:78
+msgid "Appartment"
+msgstr ""
+
+#: profile/settings.py:79
+msgid "Lux"
+msgstr "Deluxe"
+
+#: profile/settings.py:80
+msgid "Studio"
+msgstr ""
+
+#: profile/settings.py:90
+msgid "Male"
+msgstr ""
+
+#: profile/settings.py:91
+msgid "Female"
+msgstr ""
+
+#: profile/settings.py:100
+msgid "Participant"
+msgstr ""
+
+#: profile/settings.py:101
+msgid "Contact without participation"
+msgstr ""
+
+#: profile/settings.py:102
+msgid "Contact with participation"
+msgstr ""
+
+#: profile/settings.py:103
+msgid "Delegate"
+msgstr ""
+
+#: profile/settings.py:129
+#: profile/templates/profile/includes/ul_travel.html:23
+msgid "May 27, 2011 on 10pm"
+msgstr ""
+
+#: profile/settings.py:130
+#: profile/templates/profile/includes/ul_travel.html:26
+msgid "May 27, 2011 on 11pm"
+msgstr ""
+
+#: profile/settings.py:134
+msgid "May 25, 2011 on 6pm"
+msgstr ""
+
+#: profile/settings.py:135
+msgid "May 25, 2011 on 9pm"
+msgstr ""
+
+#: profile/settings.py:155
+msgid "programm youth"
+msgstr ""
+
+#: profile/settings.py:156
+msgid "programm general"
+msgstr ""
+
+#: profile/templates/admin/claims/claim_edit.html:10
+msgid "Participant information"
+msgstr ""
+
+#: profile/templates/admin/claims/claim_edit.html:13
+#: profile/templates/admin/claims/show.html:68
+#: profile/templates/profile/delegate_show.html:27
+#: profile/templates/profile/view.html:33
+#: profile/templates/profile/claim_forms/edit_claim.html:15
+#: profile/templates/profile/claim_forms/join_delegate.html:15
+msgid "Personal info"
+msgstr ""
+
+#: profile/templates/admin/claims/claim_edit.html:23
+#: profile/templates/admin/claims/show.html:74
+#: profile/templates/profile/delegate_show.html:32
+#: profile/templates/profile/view.html:43
+#: profile/templates/profile/claim_forms/edit_claim.html:45
+#: profile/templates/profile/claim_forms/join.html:30
+#: profile/templates/profile/claim_forms/join_contact.html:48
+#: profile/templates/profile/claim_forms/join_delegate.html:26
+msgid "Organization info"
+msgstr ""
+
+#: profile/templates/admin/claims/claim_edit.html:35
+#: profile/templates/profile/claim_forms/edit_claim.html:57
+#: profile/templates/profile/claim_forms/join_delegate.html:36
+msgid "Arrival/departure info"
+msgstr ""
+
+#: profile/templates/admin/claims/claim_edit.html:40
+#: profile/templates/profile/claim_forms/edit_claim.html:62
+#: profile/templates/profile/claim_forms/join.html:50
+#: profile/templates/profile/claim_forms/join_contact.html:65
+#: profile/templates/profile/claim_forms/join_delegate.html:40
+msgid "Hotel booking"
+msgstr ""
+
+#: profile/templates/admin/claims/claim_edit.html:109
+#: profile/templates/profile/claim_forms/claim_delete.html:18
+#: profile/templates/profile/claim_forms/edit_claim.html:68
+#: profile/templates/profile/claim_forms/join_delegate.html:55
+#: profile/templates/profile/events/list.html:45
+#: profile/templates/profile/includes/inline_form.html:7
+#: templates/registration/password_change_form.html:62
+msgid "Cancel"
+msgstr ""
+
+#: profile/templates/admin/claims/claim_history.html:11
+msgid "Back"
+msgstr ""
+
+#: profile/templates/admin/claims/events_edit.html:19
+#: profile/templates/admin/claims/events_edit_print.html:21
+#: profile/templates/admin/claims/list.html:86
+#: profile/templates/admin/claims/list_badge.html:34
+#: profile/templates/admin/claims/list_print.html:27
+#: profile/templates/profile/delegate_list.html:13
+msgid "State of claim"
+msgstr ""
+
+#: profile/templates/admin/claims/events_edit.html:20
+#: profile/templates/admin/claims/events_edit_print.html:22
+#: profile/templates/admin/claims/list.html:87
+#: profile/templates/admin/claims/list_badge.html:35
+#: profile/templates/admin/claims/list_print.html:28
+#: profile/templates/profile/delegate_list.html:14
+msgid "Incoming"
+msgstr ""
+
+#: profile/templates/admin/claims/events_edit.html:21
+#: profile/templates/admin/claims/events_edit_print.html:23
+#: profile/templates/admin/claims/list.html:89
+#: profile/templates/admin/claims/list_badge.html:36
+#: profile/templates/admin/claims/list_print.html:29
+#: profile/templates/profile/delegate_list.html:15
+msgid "Outcoming"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:33
+#: profile/templates/admin/claims/list_print.html:26
+msgid "Claim type"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:65
+#: profile/templates/admin/claims/list_item.html:25
+#: profile/templates/admin/claims/list_print.html:53
+#: profile/templates/admin/events/list_item.html:11
+#: profile/templates/profile/delegate_list.html:40
+#: profile/templates/profile/includes/ul_travel.html:4
+msgid "Charter flight Moscow &rarr; Tomsk"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:66
+#: profile/templates/admin/claims/list_item.html:28
+#: profile/templates/admin/claims/list_print.html:54
+#: profile/templates/admin/events/list_item.html:12
+msgid "Departure: 19th of May, tonight"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:68
+#: profile/templates/admin/claims/list_item.html:30
+#: profile/templates/admin/claims/list_print.html:56
+#: profile/templates/admin/events/list_item.html:14
+#: profile/templates/profile/delegate_list.html:42
+#: profile/templates/profile/includes/ul_travel.html:11
+msgid "Tomsk arrival transport type"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:69
+#: profile/templates/admin/claims/list_item.html:31
+#: profile/templates/admin/claims/list_print.html:57
+#: profile/templates/admin/events/list_item.html:15
+#: profile/templates/profile/delegate_list.html:43
+#: profile/templates/profile/includes/ul_travel.html:14
+msgid "Tomsk arrival date and time"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:72
+#: profile/templates/admin/claims/list_badge.html:85
+#: profile/templates/admin/claims/list_badge.html:110
+#: profile/templates/admin/claims/list_item.html:34
+#: profile/templates/admin/claims/list_item.html:52
+#: profile/templates/admin/claims/list_print.html:60
+#: profile/templates/admin/claims/list_print.html:73
+#: profile/templates/admin/claims/list_print.html:98
+#: profile/templates/admin/events/list_item.html:18
+#: profile/templates/admin/events/list_item.html:31
+#: profile/templates/admin/events/list_item.html:59
+#: profile/templates/profile/delegate_list.html:46
+#: profile/templates/profile/delegate_list.html:58
+msgid "Для участников из Томской области информация не собирается"
+msgstr "For participants from the Tomsk Oblast this information is useless"
+
+#: profile/templates/admin/claims/list_badge.html:78
+#: profile/templates/admin/claims/list_item.html:45
+#: profile/templates/admin/claims/list_print.html:66
+#: profile/templates/admin/events/list_item.html:24
+#: profile/templates/profile/delegate_list.html:52
+#: profile/templates/profile/includes/ul_travel.html:18
+msgid "Charter flight Tomsk &rarr; Moscow"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:79
+#: profile/templates/admin/claims/list_item.html:46
+#: profile/templates/admin/claims/list_print.html:67
+#: profile/templates/admin/events/list_item.html:25
+msgid "Departure: 21th of May, tonight"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:81
+#: profile/templates/admin/claims/list_item.html:48
+#: profile/templates/admin/claims/list_print.html:69
+#: profile/templates/admin/events/list_item.html:27
+#: profile/templates/profile/delegate_list.html:54
+#: profile/templates/profile/includes/ul_travel.html:32
+msgid "Tomsk departure transport type"
+msgstr ""
+
+#: profile/templates/admin/claims/list_badge.html:82
+#: profile/templates/admin/claims/list_item.html:49
+#: profile/templates/admin/claims/list_print.html:70
+#: profile/templates/admin/events/list_item.html:28
+#: profile/templates/profile/delegate_list.html:55
+#: profile/templates/profile/includes/ul_travel.html:35
+msgid "Tomsk departure date and time"
+msgstr ""
+
+#: profile/templates/admin/claims/list_item.html:26
+msgid "Charter date/time"
+msgstr ""
+
+#: profile/templates/admin/claims/show.html:6
+#: profile/templates/profile/delegate_show.html:11
+#: profile/templates/profile/view.html:14
+msgid "State of claim is: "
+msgstr ""
+
+#: profile/templates/admin/claims/show.html:56
+#: profile/templates/profile/delegate_show.html:15
+#: profile/templates/profile/view.html:19 profile/views/participant.py:24
+msgid "Edit claim"
+msgstr ""
+
+#: profile/templates/admin/claims/show.html:62
+#: profile/templates/profile/delegate_list.html:33
+#: profile/templates/profile/delegate_show.html:22
+#: profile/templates/profile/view.html:26
+msgid "Счёт на оплату"
+msgstr "Download invoice"
+
+#: profile/templates/admin/claims/show.html:161
+#: profile/templates/profile/delegate_show.html:38
+#: profile/templates/profile/view.html:49
+msgid "Information about travel"
+msgstr ""
+
+#: profile/templates/admin/events/index.html:4
+msgid "Forum events registered participants statistics"
+msgstr ""
+
+#: profile/templates/admin/events/index.html:8
+msgid "Event"
+msgstr ""
+
+#: profile/templates/admin/events/index.html:9
+msgid "Starts on"
+msgstr ""
+
+#: profile/templates/admin/events/index.html:10
+msgid "Ends on"
+msgstr ""
+
+#: profile/templates/admin/events/index.html:11
+msgid "Registered"
+msgstr ""
+
+#: profile/templates/admin/events/show.html:4
+msgid "Back to events index"
+msgstr ""
+
+#: profile/templates/admin/events/show.html:11
+msgid "claim state"
+msgstr ""
+
+#: profile/templates/admin/events/show.html:15
+msgid "Type"
+msgstr ""
+
+#: profile/templates/email/change_claim.subj.html:1
+msgid "Claim was changed"
+msgstr ""
+
+#: profile/templates/email/payment.subj.html:1
+msgid "Your claim successfully paid"
+msgstr ""
+
+#: profile/templates/email/registration.subj.html:1
+msgid "Registration completed, please activate your account"
+msgstr ""
+
+#: profile/templates/email/state_changed.subj.html:1
+msgid "The state of your participation claim was changed"
+msgstr ""
+
+#: profile/templates/profile/activation.html:5
+#: profile/templates/profile/edit.html:4
+#: profile/templates/profile/includes/profile_top_bar.html:12
+msgid "Profile"
+msgstr ""
+
+#: profile/templates/profile/activation.html:5
+msgid "was successfully activated"
+msgstr ""
+
+#: profile/templates/profile/activation.html:6
+msgid "управление заявкой доступно в личном кабинете"
+msgstr "claim management available at the site Personal Area"
+
+#: profile/templates/profile/activation.html:7
+msgid "Перейти в личный кабинет"
+msgstr "go to the Personal Area"
+
+#: profile/templates/profile/activation.html:9
+msgid "Profile activation"
+msgstr ""
+
+#: profile/templates/profile/activation.html:9
+msgid "failed"
+msgstr ""
+
+#: profile/templates/profile/activation.html:14
+#, python-format
+msgid ""
+"\n"
+"          Пожалуйста, <a href=\"%(activation_url)s\" title=\"Активация "
+"профиля\">попробуйте еще раз</a> или свяжитесь с администрацией сайта.\n"
+"        "
+msgstr ""
+"\n"
+"                Please, <a href=\"%(activation_url)s\" title=\"Claim "
+"activation\">try again</a> or contact service support team.\n"
+"            </p>\n"
+"            "
+
+#: profile/templates/profile/activation.html:19
+msgid ""
+"\n"
+"      <p>Notification letter with approvement link was sent to the email "
+"address, which was specified by you during the claim registration process. "
+"If you didn't recive a letter during the past 24 hours, please, proceed to "
+"the registration again or contact the call center by the phone number "
+"<strong>8-800-444-65-59</strong> (free service).</p>\n"
+"      "
+msgstr ""
+
+#: profile/templates/profile/activation.html:24
+msgid "Activate"
+msgstr ""
+
+#: profile/templates/profile/claim_preview.html:7
+#: profile/templates/profile/claim_forms/join.html:54
+#: profile/templates/profile/claim_forms/join_contact.html:69
+#: profile/templates/profile/claim_forms/join_delegate.html:45
+msgid "Send"
+msgstr ""
+
+#: profile/templates/profile/delegate_join_attention.html:7
+msgid ""
+"\n"
+"       <p>При регистрации участников только Вам будет доступно управление "
+"всеми заявками на участие в форуме, которые Вы оформили. В случае "
+"необходимости по вопросам, связанным с этими заявками Организационный "
+"комитет форума будет связываться с Вами.</p>\n"
+"      "
+msgstr ""
+"\n"
+"     <p>Note, that you will be a contact person for all contacts between the "
+"Forum administrations and participants were registered from your personal "
+"area</p>\n"
+"    "
+
+#: profile/templates/profile/delegate_list.html:17
+msgid "Schedule of participation"
+msgstr ""
+
+#: profile/templates/profile/delegate_list.html:63
+#: profile/templates/profile/includes/ul_hotel.html:3
+#: profile/templates/profile/includes/ul_travel.html:42
+msgid "You have requested a hotel room reservation"
+msgstr "ou have requested a hotel booking"
+
+#: profile/templates/profile/delegate_list.html:65
+#: profile/templates/profile/includes/ul_hotel.html:5
+#: profile/templates/profile/includes/ul_travel.html:44
+msgid "You have not requested a hotel room reservation"
+msgstr "You have not requested a hotel booking"
+
+#: profile/templates/profile/delegate_list.html:71
+#: profile/templates/profile/delegate_list.html:73
+msgid "Delegate's programm"
+msgstr ""
+
+#: profile/templates/profile/delegate_list.html:76
+msgid "Events:"
+msgstr ""
+
+#: profile/templates/profile/delegate_list.html:76
+msgid "Events not selected"
+msgstr ""
+
+#: profile/templates/profile/delegate_show.html:18
+#: profile/templates/profile/view.html:22
+msgid "Cancel claim"
+msgstr ""
+
+#: profile/templates/profile/delegate_show.html:44
+#: profile/templates/profile/view.html:56
+msgid "Hotel booking info"
+msgstr ""
+
+#: profile/templates/profile/delegate_show.html:53
+#: profile/templates/profile/view.html:65
+msgid "Room class"
+msgstr ""
+
+#: profile/templates/profile/delegate_show.html:58
+#: profile/templates/profile/view.html:70
+msgid "Room number"
+msgstr ""
+
+#: profile/templates/profile/delegate_show.html:63
+#: profile/templates/profile/view.html:75
+msgid "Price"
+msgstr ""
+
+#: profile/templates/profile/delegate_show.html:78
+#: profile/templates/profile/view.html:90
+msgid "Hotel booking in progress"
+msgstr ""
+
+#: profile/templates/profile/delegation_edit.html:7
+#: profile/templates/profile/delegation_manage.html:7
+#: profile/templates/profile/edit.html:16
+msgid "Edit"
+msgstr ""
+
+#: profile/templates/profile/delegation_manage.html:2
+msgid "manage delegation"
+msgstr ""
+
+#: profile/templates/profile/edit.html:9
+#: profile/templates/profile/edit.html:27
+msgid "No photo"
+msgstr ""
+
+#: profile/templates/profile/edit.html:22
+msgid "Short"
+msgstr ""
+
+#: profile/templates/profile/edit.html:31
+#: profile/templates/profile/includes/ul_personal_info.html:8
+msgid "First name"
+msgstr ""
+
+#: profile/templates/profile/edit.html:32
+#: profile/templates/profile/includes/ul_personal_info.html:4
+msgid "Last name"
+msgstr ""
+
+#: profile/templates/profile/edit.html:37
+msgid "About"
+msgstr ""
+
+#: profile/templates/profile/edit.html:39
+msgid "My comments"
+msgstr ""
+
+#: profile/templates/profile/events.html:2
+msgid "print version"
+msgstr ""
+
+#: profile/templates/profile/join_complete.html:5
+#: profile/templates/profile/join_contact_complete.html:4
+msgid "Your claim is accepted for further consideration"
+msgstr ""
+
+#: profile/templates/profile/join_complete.html:8
+msgid ""
+"\n"
+"    На указанный при регистрации адрес электронной почты отправлена ссылка "
+"для активации вашего профиля на сайте INNOVUS.\n"
+"    "
+msgstr ""
+"\n"
+"    Notification letter with approvement link was sent to the email address,"
+"which was specified by you during the claim registration process.\n"
+"    "
+
+#: profile/templates/profile/join_contact_complete.html:6
+msgid ""
+"You have sent a claim of participation in XIV Tomsk innovative forum INNOVUS"
+msgstr ""
+
+#: profile/templates/profile/join_contact_complete.html:8
+msgid ""
+"\n"
+"Вы оформили заявку на регистрацию контактного лица для регистрации делегации "
+"участников XIV Томского инновационного форума INNOVUS. На указанный Вами "
+"адрес электронной почты выслано уведомление со ссылкой для активации учетной "
+"записи. После активации учетной записи Вы сможете добавлять участников "
+"форума, использую личный кабинет сайта форума.\n"
+msgstr ""
+"\n"
+"You have submited a registration claim of delegations contact person. "
+"Notification letter with approvement link was sent to the email address, "
+"which was specified by you during the claim registration process. If you "
+"didn't recive a letter during the past 24 hours, please, proceed to the "
+"registration again or contact the call center by the phone number \n"
+
+#: profile/templates/profile/login.html:11
+msgid "Enter the personal area"
+msgstr "Proceed to the personal area"
+
+#: profile/templates/profile/login.html:15
+#: profile/templates/profile/registration.html:9
+#: templates/plugins/profile/registration.html:8
+msgid "Continue"
+msgstr ""
+
+#: profile/templates/profile/view.html:10
+#: profile/templates/profile/includes/profile_top_bar.html:6
+#: templates/registration/password_change_form.html:61
+#: templates/registration/password_reset_confirm.html:22
+msgid "Change my password"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/claim_delete.html:7
+msgid "You are going to cancel the claim. Are you sure?"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/claim_delete.html:9
+msgid "You are going to cancel the claim for"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/claim_delete.html:9
+msgid "Are you sure?"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/claim_delete.html:15
+#: profile/templates/profile/claim_forms/delegate_delete.html:9
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/delegate_delete.html:7
+msgid "You are supposed to delete a delegate. Are you sure?"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/edit_claim.html:9
+msgid "Edit claim on forum participation"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/edit_claim.html:24
+#: profile/templates/profile/claim_forms/edit_claim.html:31
+#: profile/templates/profile/claim_forms/join_contact.html:29
+#: profile/templates/profile/claim_forms/join_contact.html:39
+msgid "Не принимаю участие в Форуме"
+msgstr "I won't be a Forum participant"
+
+#: profile/templates/profile/claim_forms/edit_claim.html:25
+#: profile/templates/profile/claim_forms/edit_claim.html:32
+#: profile/templates/profile/claim_forms/join_contact.html:30
+#: profile/templates/profile/claim_forms/join_contact.html:40
+msgid "Принимаю участие в Форуме"
+msgstr "I will be a Forum participant"
+
+#: profile/templates/profile/claim_forms/join.html:6
+msgid "Application form for participation in the XIV Innovation Forum"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/join.html:11
+#: profile/templates/profile/claim_forms/join_contact.html:9
+msgid "Information about participant"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/join.html:14
+#: profile/templates/profile/claim_forms/join_contact.html:12
+msgid "Account"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/join.html:19
+#: profile/templates/profile/claim_forms/join_contact.html:17
+msgid "Personal details"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/join.html:45
+#: profile/templates/profile/claim_forms/join_contact.html:60
+msgid "Information about arrival/departure"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/join.html:54
+#: profile/templates/profile/claim_forms/join_contact.html:69
+#: profile/templates/profile/claim_forms/join_delegate.html:45
+msgid "Add more participants"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/join_contact.html:5
+msgid "Join contact person of delegation"
+msgstr ""
+
+#: profile/templates/profile/claim_forms/join_contact.html:26
+#: profile/templates/profile/claim_forms/join_contact.html:36
+#: profile/templates/profile/includes/fields_account.html:6
+#: profile/templates/profile/includes/fields_account.html:11
+#: profile/templates/profile/includes/fields_account.html:17
+#: profile/templates/profile/includes/fields_account.html:22
+#: profile/templates/profile/includes/fields_account.html:28
+#: profile/templates/profile/includes/fields_account.html:33
+#: profile/templates/profile/includes/fields_contacts.html:6
+#: profile/templates/profile/includes/fields_contacts.html:11
+#: profile/templates/profile/includes/fields_geo.html:5
+#: profile/templates/profile/includes/fields_geo.html:10
+#: profile/templates/profile/includes/fields_geo.html:38
+#: profile/templates/profile/includes/fields_geo.html:43
+#: profile/templates/profile/includes/fields_geo.html:49
+#: profile/templates/profile/includes/fields_geo.html:54
+#: profile/templates/profile/includes/fields_hotel.html:6
+#: profile/templates/profile/includes/fields_hotel.html:13
+#: profile/templates/profile/includes/fields_organization.html:16
+#: profile/templates/profile/includes/fields_organization.html:21
+#: profile/templates/profile/includes/fields_organization.html:27
+#: profile/templates/profile/includes/fields_organization.html:32
+#: profile/templates/profile/includes/fields_personal.html:3
+#: profile/templates/profile/includes/fields_personal.html:8
+#: profile/templates/profile/includes/fields_personal.html:14
+#: profile/templates/profile/includes/fields_personal.html:19
+#: profile/templates/profile/includes/fields_personal.html:36
+#: profile/templates/profile/includes/fields_personal.html:41
+#: profile/templates/profile/includes/fields_travel.html:3
+#: profile/templates/profile/includes/fields_travel.html:38
+#: profile/templates/profile/includes/fields_travel.html:52
+#: profile/templates/profile/includes/fields_travel.html:73
+#: profile/templates/profile/includes/fields_travel.html:90
+#: profile/templates/profile/includes/fields_travel.html:104
+#: templates/registration/password_change_form.html:18
+#: templates/registration/password_change_form.html:25
+#: templates/registration/password_change_form.html:33
+#: templates/registration/password_change_form.html:40
+#: templates/registration/password_change_form.html:48
+#: templates/registration/password_change_form.html:55
+msgid "Обязательное поле"
+msgstr "Required"
+
+#: profile/templates/profile/claim_forms/join_delegate.html:9
+msgid "Registration form for a delegation participant"
+msgstr ""
+
+#: profile/templates/profile/events/list.html:6
+msgid "Here you can note you wish to participate in some events."
+msgstr ""
+
+#: profile/templates/profile/events/list.html:8
+#, python-format
+msgid "You are editing %(claim)s's  Forum schedule"
+msgstr ""
+
+#: profile/templates/profile/events/list.html:23
+msgid "Время"
+msgstr ""
+
+#: profile/templates/profile/events/list.html:24
+msgid "Место проведения"
+msgstr ""
+
+#: profile/templates/profile/events/list.html:25
+msgid "Название мероприятия"
+msgstr ""
+
+#: profile/templates/profile/events/list_print.html:7
+#: profile/templates/profile/events/list_print.html:12
+msgid "Schedule"
+msgstr ""
+
+#: profile/templates/profile/events/list_print.html:7
+msgid "Tomsk Innovation Forum"
+msgstr ""
+
+#: profile/templates/profile/events/list_print.html:13
+msgid "First day"
+msgstr ""
+
+#: profile/templates/profile/events/list_print.html:19
+msgid "Second day"
+msgstr ""
+
+#: profile/templates/profile/events/list_print.html:34
+msgid "No events"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_account.html:41
+msgid ""
+"\n"
+"  Email address will be used as your site login.<br />\n"
+"  Please, specify a difficult password for site signing in.<br />\n"
+"  With the difficult password your personal data would be much more safer.\n"
+msgstr ""
+"\n"
+"  An email address will be used to login on the website.<br/>\n"
+"  To make your password more secure, please enter letters, numbers,<br />\n"
+"  and special characters. Mix lower and uppercase.\n"
+
+#: profile/templates/profile/includes/fields_contacts.html:106
+msgid ""
+"Please, provide your phone number in the international format: +# (###) ###-"
+"##-##"
+msgstr ""
+"Please enter your contact phone numbers in international format with country "
+"code and area/city code, e.g. +х (ххх) ххх-хх-хх "
+
+#: profile/templates/profile/includes/fields_hotel.html:6
+#: profile/templates/profile/includes/fields_hotel.html:13
+msgid "Do you want to reserve a room in the hotel?"
+msgstr "Do you need a hotel booking?"
+
+#: profile/templates/profile/includes/fields_hotel.html:29
+msgid ""
+"Information about your hotel and room reservation will be sent to the email "
+"box listed during registration."
+msgstr ""
+"After this application form has been filled in and sent, hotel and "
+"bookingdetails will be submitted to your email."
+
+#: profile/templates/profile/includes/fields_travel.html:3
+msgid "Do you want to use a charter race"
+msgstr "Do you want to use a charter flight?"
+
+#: profile/templates/profile/includes/fields_travel.html:3
+#: profile/templates/profile/includes/fields_travel.html:73
+msgid "Moscow"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:3
+#: profile/templates/profile/includes/fields_travel.html:73
+msgid "Tomsk"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:16
+msgid ""
+"\n"
+"        If you want to request a charter flight, you'll need to provide "
+"additional personal info. Further instructions will be sent to the email "
+"box, listed during registration.\n"
+"        "
+msgstr ""
+"\n"
+"        If you would like to get a ticket for a charter flight, you will "
+"need to submit additional personal details. Shortly after this application "
+"procedure, a manager from the organizing committee will contact you via "
+"indicated email for more detailed information and send you further "
+"instructions"
+
+#: profile/templates/profile/includes/fields_travel.html:24
+msgid "Please, select arrival charter date and time"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:38
+msgid "What transport type will you arrive to Tomsk with?"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:52
+msgid "When do you arrive to Tomsk?"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:65
+msgid ""
+"\n"
+"        При указании даты/времени прибытия используйте формат ДД.ММ.ГГГГ ЧЧ:"
+"мм\n"
+"        "
+msgstr ""
+"\n"
+"        Use date/time format DD.MM.YYYY HH:mm\n"
+"        "
+
+#: profile/templates/profile/includes/fields_travel.html:73
+msgid "Do you want to use a charter flight"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:85
+msgid "Charter flight for depart from Tomsk will be at May 27"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:90
+msgid "What transport type will you depart from Tomsk with?"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:104
+msgid "When you will departure from Tomsk?"
+msgstr ""
+
+#: profile/templates/profile/includes/fields_travel.html:117
+msgid ""
+"\n"
+"        При указании даты/времени отбытия используйте формат ДД.ММ.ГГГГ ЧЧ:"
+"мм\n"
+"        "
+msgstr ""
+"\n"
+"        Use date/time format DD.MM.YYYY HH:mm\n"
+"        "
+
+#: profile/templates/profile/includes/geo.html:30
+#: profile/templates/profile/includes/geo.html:49
+msgid "Choose"
+msgstr ""
+
+#: profile/templates/profile/includes/profile_top_bar.html:9
+#: templates/menu/management_menu.html:21
+msgid "Personal cabinet"
+msgstr ""
+
+#: profile/templates/profile/includes/profile_top_bar.html:15
+#: profile/templates/profile/includes/profile_top_bar.html:22
+#: templates/menu/management_menu.html:27
+#: templates/menu/management_menu.html:45
+msgid "Participants"
+msgstr ""
+
+#: profile/templates/profile/includes/profile_top_bar.html:18
+#: profile/templates/profile/includes/profile_top_bar.html:25
+#: templates/menu/management_menu.html:34
+#: templates/menu/management_menu.html:52
+msgid "Add participant"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_account.html:4
+msgid "Login"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:4
+msgid "Mobile phone"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:9
+msgid "Work phone"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:15
+msgid "Fax"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:21
+msgid "Address"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:27
+msgid "ICQ"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:33
+msgid "Skype"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:39
+msgid "Twitter"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:45
+msgid "Site"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_contacts.html:51
+msgid "Blog"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_organization.html:6
+msgid "Industry"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_personal_info.html:13
+msgid "Middle name"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_personal_info.html:18
+msgid "Gender"
+msgstr "Sex"
+
+#: profile/templates/profile/includes/ul_personal_info.html:22
+msgid "Date joined"
+msgstr ""
+
+#: profile/templates/profile/includes/ul_personal_info.html:42
+msgid "Citizenship"
+msgstr "Nationality"
+
+#: profile/templates/profile/includes/ul_travel.html:6
+#: profile/templates/profile/includes/ul_travel.html:21
+msgid "Charter date and time:"
+msgstr ""
+
+#: profile/views/account.py:31
+msgid "Activation code invalid."
+msgstr ""
+
+#: profile/views/account.py:34
+msgid "Claim has been already activated."
+msgstr ""
+
+#: profile/views/account.py:42
+msgid "Activation failed."
+msgstr ""
+
+#: profile/views/account.py:59
+msgid "Claim cancelled"
+msgstr ""
+
+#: profile/views/ajax.py:23
+#, python-format
+msgid "E-mail %s is available"
+msgstr ""
+
+#: profile/views/ajax.py:26
+#, python-format
+msgid "E-mail %s already used"
+msgstr ""
+
+#: profile/views/contact.py:27 profile/views/delegate.py:32
+msgid "Delegate succsessfully added"
+msgstr ""
+
+#: profile/views/delegate.py:37
+msgid "Delegate creation failed"
+msgstr ""
+
+#: profile/views/delegate.py:39
+msgid "Add new delegate"
+msgstr ""
+
+#: profile/views/delegate.py:59
+msgid "Delegate changed"
+msgstr ""
+
+#: profile/views/delegate.py:62
+msgid "Delegate edition failed"
+msgstr ""
+
+#: profile/views/delegate.py:65 profile/views/management/claims.py:112
+msgid "Delegation management"
+msgstr ""
+
+#: profile/views/delegate.py:125
+msgid "Delegate deleted"
+msgstr ""
+
+#: profile/views/events.py:33
+msgid "Events schedule was successfully updated"
+msgstr ""
+
+#: profile/views/participant.py:31
+msgid "Claim updated successfully"
+msgstr ""
+
+#: profile/views/participant.py:46
+msgid "View profile"
+msgstr ""
+
+#: templates/404.html:6
+msgid "Page not found"
+msgstr ""
+
+#: templates/404.html:6 templates/404.html.py:8 templates/500.html:6
+#: templates/500.html.py:8
+msgid "Tomsk innovative forum"
+msgstr ""
+
+#: templates/404.html:16 templates/500.html:16
+msgid "Innovative forum"
+msgstr ""
+
+#: templates/404.html:16 templates/500.html:8 templates/500.html.py:16
+msgid "of May"
+msgstr ""
+
+#: templates/404.html:16 templates/500.html:16
+msgid "Tomsk city"
+msgstr ""
+
+#: templates/404.html:17
+msgid "Requested page not found"
+msgstr ""
+
+#: templates/404.html:18
+msgid "Please, try to start from"
+msgstr ""
+
+#: templates/404.html:18
+msgid "index page"
+msgstr ""
+
+#: templates/500.html:6 templates/500.html.py:17
+msgid "Internal server error"
+msgstr ""
+
+#: templates/500.html:18
+msgid "Something misshappened"
+msgstr ""
+
+#: templates/500.html:18
+msgid ""
+"Don't be afraid, we've just got an error report. If this error will repeat "
+"again, please, contact the site support."
+msgstr ""
+
+#: templates/one-column.html:15
+msgid "Tomsk innovation forum"
+msgstr ""
+
+#: templates/one-column.html:67
+msgid "Надень идею на себя"
+msgstr ""
+
+#: templates/one-column.html:72
+msgid "Управление"
+msgstr "Manage"
+
+#: templates/one-column.html:75
+msgid "Регистрация участников форума"
+msgstr "Forum participants registration"
+
+#: templates/one-column.html:76
+msgid "Регистрация"
+msgstr "Register"
+
+#: templates/one-column.html:78 templates/one-column.html.py:120
+msgid "Вход в личный кабинет"
+msgstr "Sign in the personal area"
+
+#: templates/one-column.html:79
+msgid "Вход"
+msgstr "Sign in"
+
+#: templates/one-column.html:82
+msgid "Личный кабинет"
+msgstr "Personal Area"
+
+#: templates/one-column.html:83
+msgid "Выход"
+msgstr "Sign out"
+
+#: templates/one-column.html:88 templates/one-column.html.py:253
+msgid "Томский инновационный форум"
+msgstr "Tomsk innovation forum"
+
+#: templates/one-column.html:91
+msgid "Цикл инновационных форумов"
+msgstr "The annual innovation forum"
+
+#: templates/one-column.html:93
+msgid "«Инновационная Россия – 2020»"
+msgstr "«Innovative Russia — 2020»"
+
+#: templates/one-column.html:105
+msgid "Зарегистрироваться в качестве участника Форума"
+msgstr "Participant application"
+
+#: templates/one-column.html:106
+msgid ""
+"При предварительной регистрации на Форуме Вы имеете возможность подать "
+"заявку на бронирование места в гостинице. Реквизиты для оплаты "
+"организационного взноса будут высланы позже."
+msgstr ""
+"In the course of preliminary registration at the Forum you can apply for "
+"hotel reservation. Bank details for participation fee transfer will be sent "
+"to you later. "
+
+#: templates/one-column.html:107 templates/one-column.html.py:114
+msgid "продолжить..."
+msgstr "continue..."
+
+#: templates/one-column.html:110 templates/one-column.html.py:119
+msgid "закрыть"
+msgstr "close"
+
+#: templates/one-column.html:111
+msgid "Зарегистрировать делегацию для участия в Форуме"
+msgstr "Delegation application"
+
+#: templates/one-column.html:112
+msgid ""
+"Обратите внимание, что перед добавлением делегации Вам необходимо будет "
+"подтвердить собственную регистрацию."
+msgstr ""
+"Please, note that you need to confirm your own registration before adding a "
+"delegation."
+
+#: templates/one-column.html:113
+msgid ""
+"Вы будете являться контактным лицом для всех участников Форума, добавленных "
+"Вами из своего личного кабинета. По всем вопросам оргкомитет Форума будет "
+"связываться именно с Вами."
+msgstr ""
+"Forum administration will contact you about all organizational issues "
+"concerning participants registered from your personal area."
+
+#: templates/one-column.html:124
+msgid "Имя пользователя"
+msgstr "Login"
+
+#: templates/one-column.html:128
+msgid "Пароль"
+msgstr "Password"
+
+#: templates/one-column.html:132
+msgid "Продолжить"
+msgstr "Continue"
+
+#: templates/one-column.html:133
+msgid "Забыли пароль?"
+msgstr "Forgot password?"
+
+#: templates/one-column.html:145 templates/one-column.html.py:151
+msgid "Поиск"
+msgstr "Search"
+
+#: templates/one-column.html:174
+msgid "Организаторы форума"
+msgstr "Forum organizers"
+
+#: templates/one-column.html:177
+msgid "Администрация Президента РФ"
+msgstr "Presidential Executive Office of Russian Federation"
+
+#: templates/one-column.html:180
+msgid "Министерство экономического развития РФ"
+msgstr "Ministry of Economic Development of the Russian Federation"
+
+#: templates/one-column.html:185
+msgid "Администрация Томской области"
+msgstr "The Administration of Tomsk region"
+
+#: templates/one-column.html:188
+msgid ""
+"Российская академия народного хозяйства и государственной службы при "
+"Президенте РФ"
+msgstr "The Russian Academy of National Economy and Public Administration"
+
+#: templates/one-column.html:193
+msgid "Генеральные партнёры"
+msgstr "General partners"
+
+#: templates/one-column.html:196
+msgid "Компания Сибур"
+msgstr "Sibur company"
+
+#: templates/one-column.html:199
+msgid "ОАО &laquo;Сибмост&raquo;"
+msgstr "Sibmost company"
+
+#: templates/one-column.html:202
+msgid "ОАО НК &laquo;РуссНефть&raquo;"
+msgstr "RussNeft company"
+
+#: templates/one-column.html:212
+msgid "ОАО &laquo;Томскнефть&raquo; ВНК"
+msgstr "OJSC &laquo;Tomskneft&raquo;"
+
+#: templates/one-column.html:216
+msgid "Генеральные информационные спонсоры"
+msgstr "General media sponsors"
+
+#: templates/one-column.html:219
+msgid "Информагенство &laquo;Интерфакс&raquo;"
+msgstr "International information group &laquo;Interfax&raquo;"
+
+#: templates/one-column.html:222
+msgid "&laquo;Российская газета&raquo;"
+msgstr "&laquo;Rossiyskaya Gazeta&raquo;"
+
+#: templates/one-column.html:254
+msgid "Контакт-центр"
+msgstr "Contact center"
+
+#: templates/one-column.html:258
+msgid "Условия участия"
+msgstr "To participate"
+
+#: templates/one-column.html:259
+msgid "Контактная информация"
+msgstr "Contacts"
+
+#: templates/one-column.html:262
+msgid "Концепт и разработка"
+msgstr "Conception & development"
+
+#: templates/one-column.html:262
+msgid ""
+"Центр веб-технологий и информационных ресурсов Томского государственного "
+"университета систем управления и радиоэлектроники"
+msgstr "CWT&IR TSUCSR"
+
+#: templates/one-column.html:263
+msgid "Концепт и структура"
+msgstr "Conception & content"
+
+#: templates/one-column.html:263
+msgid ""
+"Центра корпоративного развития Томского государственного университета систем "
+"управления и радиоэлектроники"
+msgstr "Center of Corporate Development TSUCSR"
+
+#: templates/one-column.html:263
+msgid "ЦКР"
+msgstr "CCD"
+
+#: templates/one-column.html:264
+msgid "Дизайн"
+msgstr "Design"
+
+#: templates/one-column.html:264
+msgid "и"
+msgstr "&"
+
+#: templates/likeness/similar.html:6
+msgid "Publications"
+msgstr ""
+
+#: templates/likeness/similar.html:102
+msgid "Similar materials not found"
+msgstr ""
+
+#: templates/menu/management_menu.html:15
+msgid "Forum events stat"
+msgstr ""
+
+#: templates/menu/management_menu.html:38
+msgid "Events schedule"
+msgstr ""
+
+#: templates/plugins/events_inline_content.html:9
+msgid "Last comments"
+msgstr "Последние комментарии"
+
+#: templates/plugins/inno_news.html:6
+msgid "Subscribe to innovatiove news"
+msgstr ""
+
+#: templates/plugins/inno_news.html:10
+msgid "More articles on page"
+msgstr ""
+
+#: templates/plugins/inno_news.html:10
+msgid "Show more articles"
+msgstr ""
+
+#: templates/plugins/partial_posts.html:24
+msgid "View full article"
+msgstr ""
+
+#: templates/plugins/photologue_preview.html:18 templates/plugins/pp.html:16
+msgid "View all photos"
+msgstr ""
+
+#: templates/registration/password_change_done.html:3
+#: templates/registration/password_change_done.html:5
+msgid "Password change successful"
+msgstr ""
+
+#: templates/registration/password_change_done.html:6
+msgid "Your password was changed."
+msgstr ""
+
+#: templates/registration/password_change_form.html:3
+#: templates/registration/password_change_form.html:7
+msgid "Password change"
+msgstr ""
+
+#: templates/registration/password_change_form.html:9
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: templates/registration/password_change_form.html:18
+#: templates/registration/password_change_form.html:25
+msgid "Old password"
+msgstr ""
+
+#: templates/registration/password_change_form.html:33
+#: templates/registration/password_change_form.html:40
+msgid "New password"
+msgstr ""
+
+#: templates/registration/password_change_form.html:48
+#: templates/registration/password_change_form.html:55
+msgid "Password (again)"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:4
+#: templates/registration/password_reset_complete.html:11
+msgid "Password reset complete"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:12
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_form.html:4
+#: templates/registration/password_reset_form.html:14
+msgid "Password reset"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:13
+msgid "Enter new password"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:15
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:19
+msgid "New password:"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:21
+msgid "Confirm password:"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:26
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:27
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:4
+#: templates/registration/password_reset_done.html:11
+msgid "Password reset successful"
+msgstr ""
+
+#: templates/registration/password_reset_done.html:12
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+
+#: templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll e-mail "
+"instructions for setting a new one."
+msgstr ""
+
+#: templates/registration/password_reset_form.html:19
+msgid "E-mail address:"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:21
+msgid "Reset my password"
+msgstr ""
+
+#~ msgid "26-27 Мая 2011"
+#~ msgstr "May 26-27, 2011"
+
+#~ msgid "«Инновационная Россия – 2020:<br /> Как запустить экономику знаний?»"
+#~ msgstr ""
+#~ "\"Innovative Russia — 2020:<br /> How to Launch the Knowledge-Based "
+#~ "Economy?\""
+
+#~ msgid "первый"
+#~ msgstr "first"
+
+#~ msgid "второй"
+#~ msgstr "second"
+
+#~ msgid "третий"
+#~ msgstr "third"
+
+#~ msgid "Версия для печати"
+#~ msgstr "Print version"
+
+#~ msgid "Похожие материалы"
+#~ msgstr "Similar materials"
+
+#~ msgid "Спикеры"
+#~ msgstr "Speakers"
+
+#~ msgid "Другие спикеры"
+#~ msgstr "Other speakers"
+
+#~ msgid "Интервью к форуму"
+#~ msgstr "Interview"
+
+#~ msgid "Другие интервью"
+#~ msgstr "more"
+
+#~ msgid "Оставить комментарий"
+#~ msgstr "Leave comments"
+
+#~ msgid "Другие события"
+#~ msgstr "more"
+
+#~ msgid "В мире"
+#~ msgstr "World"
+
+#~ msgid "В России"
+#~ msgstr "Russia"
+
+#~ msgid "В Томске"
+#~ msgstr "Tomsk"
+
+#~ msgid "Другие новости"
+#~ msgstr "more"
+
+#~ msgid ""
+#~ "Спонсор интернет-трансляции <a href=\"http://www.tomsk.sibirtelecom.ru/"
+#~ "\">ОАО &laquo;Сибирьтелеком&raquo;</a>"
+#~ msgstr ""
+#~ "Internet broadcast sponsor <a href=\"http://www.tomsk.sibirtelecom.ru/"
+#~ "\">ОАО &laquo;Sibirtelecom&raquo;</a>"
+
+#~ msgid "Документы"
+#~ msgstr "Documents"
+
+#~ msgid "Томский инновационный форуТомский инновационный форум"
+#~ msgstr ""
+#~ "\n"
+#~ "---\n"
+#~ "Sincerely yours,\n"
+#~ "Organization Committee,\n"
+#~ "The INNOVUS XIIIth Tomsk Innovation Forum"
+
+#~ msgid "http://www.sibur.ru"
+#~ msgstr "http://www.sibur.ru/eng.shtml"
+
+#~ msgid "СИБУР"
+#~ msgstr "SIBUR"
+
+#~ msgid "http://www.russneft.ru"
+#~ msgstr "http://eng.russneft.ru/"
+
+#~ msgid "РуссНефть"
+#~ msgstr "RussNeft"
+
+#~ msgid "Томский некоммерческий благотворительный Фонд «Томское созидание»"
+#~ msgstr "Tomsk uncommercial charitable fund «Tomsk revival»"
+
+#~ msgid "Sign in to personal area"
+#~ msgstr "Proceed to the personal area"
+
+#~ msgid ""
+#~ "You can request for a hotel reservation and get a bill for organizational "
+#~ "payment if you'll register beforehand."
+#~ msgstr ""
+#~ "You can request for a hotel booking and get a bill for organizational "
+#~ "payment if you'll sign up beforehand."
+
+#~ msgid ""
+#~ "\n"
+#~ "            <p>Обратите внимание, что перед добавлением делегации Вам "
+#~ "необходимо будет подтвердить собственную регистрацию.</p>\n"
+#~ "            <p>Вы будете являться контактным лицом для всех участников "
+#~ "Форума, добавленных Вами из своего личного кабинета. По всем вопросам "
+#~ "оргкомитет Форума будет связываться именно с Вами.</p>\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "            <p>Attention, before you'll be abel to add any participant "
+#~ "you have to activate ypur own claim.</p>\n"
+#~ "            <p>Also, Forum administation will contact you about all "
+#~ "organiational questions concerning participants were registred from your "
+#~ "personal area.</p>\n"
+#~ "            "
+
+#~ msgid "English"
+#~ msgstr "ENG"
+
+#~ msgid ""
+#~ "\n"
+#~ "                При указании даты/времени прибытия используйте формат ДД."
+#~ "ММ.ГГГГ ЧЧ:мм\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "        Use date/time format DD.MM.YYYY HH:mm\n"
+#~ "        "
+
+#~ msgid ""
+#~ "\n"
+#~ "                При указании даты/времени отбытия используйте формат ДД."
+#~ "ММ.ГГГГ ЧЧ:мм\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "        Use date/time format DD.MM.YYYY HH:mm\n"
+#~ "        "
+
+#~ msgid "Your reserve"
+#~ msgstr "postal address"
+
+#~ msgid "T  a  k  e   p  a  r  t"
+#~ msgstr "P a r t i c i p a t e"
+
+#~ msgid "Application"
+#~ msgstr "occupation"
+
+#~ msgid "Copy permissions"
+#~ msgstr "occupation"
+
+#~ msgid "Navigation"
+#~ msgstr "occupation"
+
+#~ msgid "can publish"
+#~ msgstr "ENG"
+
+#~ msgid "publication date"
+#~ msgstr "occupation"
+
+#~ msgid "application"
+#~ msgstr "occupation"
+
+#~ msgid "description"
+#~ msgstr "occupation"
+
+#~ msgid "publish req."
+#~ msgstr "ENG"
+
+#~ msgid "unpublish req."
+#~ msgstr "ENG"
+
+#~ msgid "approved"
+#~ msgstr ""
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+
+#~ msgid "is published"
+#~ msgstr "ENG"
+
+#~ msgid "Your address"
+#~ msgstr "postal address"
+
+#~ msgid "long description"
+#~ msgstr "occupation"
+
+#~ msgid "Approve delete"
+#~ msgstr ""
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+
+#~ msgid "actions"
+#~ msgstr "occupation"
+
+#~ msgid "published"
+#~ msgstr "ENG"
+
+#~ msgid "end"
+#~ msgstr "sex"
+
+#~ msgid "add"
+#~ msgstr "postal address"
+
+#~ msgid "Unpublish"
+#~ msgstr "ENG"
+
+#~ msgid "Action"
+#~ msgstr "occupation"
+
+#~ msgid "Can publish"
+#~ msgstr "ENG"
+
+#~ msgid "Copy options"
+#~ msgstr "occupation"
+
+#~ msgid "Choose copy options"
+#~ msgstr "occupation"
+
+#~ msgid "Copy Plugins"
+#~ msgstr "occupation"
+
+#~ msgid "View History"
+#~ msgstr "area of work"
+
+#~ msgid "approve"
+#~ msgstr ""
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+
+#~ msgid "Location"
+#~ msgstr "occupation"
+
+#~ msgid "Function"
+#~ msgstr "occupation"
+
+#~ msgid "Danish"
+#~ msgstr "ENG"
+
+#~ msgid "British English"
+#~ msgstr "ENG"
+
+#~ msgid "Spanish"
+#~ msgstr "ENG"
+
+#~ msgid "Finnish"
+#~ msgstr "ENG"
+
+#~ msgid "Polish"
+#~ msgstr "ENG"
+
+#~ msgid "Action:"
+#~ msgstr "occupation"
+
+#~ msgid "and"
+#~ msgstr "sex"
+
+#~ msgid "My Actions"
+#~ msgstr "occupation"
+
+#~ msgid "E-mail"
+#~ msgstr "postal address"
+
+#~ msgid "e-mail address"
+#~ msgstr "postal address"
+
+#~ msgid "Enter a valid e-mail address."
+#~ msgstr "postal address"
+
+#~ msgid "removed"
+#~ msgid_plural "removed"
+#~ msgstr[0] ""
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ msgstr[1] ""
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+#~ "#-#-#-#-#  django.pot (PACKAGE VERSION)  #-#-#-#-#\n"
+
+#~ msgid "Email address"
+#~ msgstr "postal address"
+
+#~ msgid "user's email address"
+#~ msgstr "postal address"
+
+#~ msgid "IP address"
+#~ msgstr "postal address"
+
+#~ msgid "nd"
+#~ msgstr "sex"
+
+#~ msgid "one"
+#~ msgstr "Not needed"
+
+#~ msgid "Geneva"
+#~ msgstr "Sex"
+
+#~ msgid "Flevoland"
+#~ msgstr "Sex"
+
+#~ msgid "Gelderland"
+#~ msgstr "Sex"
+
+#~ msgid "Zeeland"
+#~ msgstr "Sex"
+
+#~ msgid "Lesser Poland"
+#~ msgstr "Sex"
+
+#~ msgid "Greater Poland"
+#~ msgstr "Sex"
+
+#~ msgid "Södermanland"
+#~ msgstr "Sex"
+
+#~ msgid "E-mail address"
+#~ msgstr "postal address"
+
+#~ msgid "Wed"
+#~ msgstr "sex"
+
+#~ msgid "Do you want to replace the file"
+#~ msgstr "Do you want to use a charter flight?"
+
+#~ msgid "Are you sure you want to delete this file?"
+#~ msgstr "Do you want to use a charter flight?"
+
+#~ msgid "Are you sure you want to delete this Folder?"
+#~ msgstr "Do you want to use a charter flight?"
+
+#~ msgid "date published"
+#~ msgstr "ENG"
+
+#~ msgid "caption"
+#~ msgstr "occupation"
+
+#~ msgid "sharpness"
+#~ msgstr "postal address"
+
+#~ msgid ""
+#~ "Здравствуйте! Вы подали заявку на участие в XIII Томском инновационном "
+#~ "форуме INNOVUS."
+#~ msgstr ""
+#~ "Hello!\n"
+#~ "You were applied for participation in the XIIIth INNOVUS Tomsk Innovation "
+#~ "Forum."
+
+#~ msgid ""
+#~ "\n"
+#~ "Сообщаем, что заявка участника %(claim.first_name)s %(claim.middle_name)s "
+#~ "%(claim.last_name)s принята и участнику необходимо оплатить "
+#~ "организационный взнос.\n"
+#~ "\n"
+#~ "Если Вы подали заявку на сайте в период с 19 апреля по 12 мая до 24-00 "
+#~ "местного времени, то организационный взнос составляет 7 000 рублей за 1 "
+#~ "человека.\n"
+#~ "\n"
+#~ "Если Вы подали заявку на сайте в период с 13 мая по 17 мая до 24-00 "
+#~ "местного времени, то организационный взнос составляет 10 000 рублей за 1 "
+#~ "человека.\n"
+#~ "\n"
+#~ "Счет для оплаты участника доступен в вашем Личном Кабинете на сайте "
+#~ "форума по ссылке: http://tomskforum.ru%(bill_link)s"
+#~ msgstr ""
+#~ "\n"
+#~ "The application of %(claim.first_name)s %(claim.middle_name)s %(claim."
+#~ "last_name)s has been accepted. Now you need to pay a registration fee.\n"
+#~ "\n"
+#~ "If you applied from April 19 to May 12, 2010 till 24:00 local time, the "
+#~ "registration fee is 7000 rubles per participant.\n"
+#~ "\n"
+#~ "If you applied from May 13 to May 17, 2010 till 24:00 local time, the "
+#~ "registration fee is 10000 rubles per participant.\n"
+#~ "\n"
+#~ "The invoice is available in your private area for printing by the link: "
+#~ "http://tomskforum.ru%(bill_link)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "Сообщаем, что Ваша заявка принята и Вам необходимо оплатить "
+#~ "организационный взнос.\n"
+#~ "\n"
+#~ "Если Вы подали заявку  на сайте в период с 19 апреля по 12 мая до 24-00 "
+#~ "местного времени, то организационный взнос составляет 7 000 рублей за 1 "
+#~ "человека.\n"
+#~ "\n"
+#~ "Если Вы подали заявку  на сайте в период с 13 мая по 17 мая до 24-00 "
+#~ "местного времени, то организационный взнос составляет 10 000 рублей за 1 "
+#~ "человека.\n"
+#~ "\n"
+#~ "Счет для оплаты доступен в вашем Личном Кабинете на сайте форума по "
+#~ "ссылке: http://tomskforum.ru%(bill_link)s"
+#~ msgstr ""
+#~ "\n"
+#~ "Your application has been accepted. Now you need to pay a registration "
+#~ "fee.\n"
+#~ "\n"
+#~ "If you applied from April 19 to May 12, 2010 till 24:00 local time, the "
+#~ "registration fee is 7000 rubles per participant.\n"
+#~ "\n"
+#~ "If you applied from May 13 to May 17, 2010 till 24:00 local time, the "
+#~ "registration fee is 10000 rubles per participant.\n"
+#~ "\n"
+#~ "The invoice is available in your private area for printing by the link: "
+#~ "http://tomskforum.ru%(bill_link)s"
+
+#~ msgid ""
+#~ "\n"
+#~ "Сообщаем, что заявка участника %(claim.first_name)s %(claim.middle_name)s "
+#~ "%(claim.last_name)s принята.\n"
+#~ "\n"
+#~ "Участник относится к категории, которой не нужно оплачивать "
+#~ "организационный взнос."
+#~ msgstr ""
+#~ "\n"
+#~ "The application of %(claim.first_name)s %(claim.middle_name)s %(claim."
+#~ "last_name)s has been accepted.\n"
+#~ "\n"
+#~ "This participant is among those who do not need to pay a registration fee."
+
+#~ msgid ""
+#~ "\n"
+#~ "Сообщаем, что Ваша заявка принята. Вы относитесь к категории участников, "
+#~ "которым не нужно оплачивать организационный взнос."
+#~ msgstr ""
+#~ "\n"
+#~ "Your application has been accepted. You are among those participants who "
+#~ "do not need to pay a registration fee."
+
+#~ msgid ""
+#~ "\n"
+#~ "С сожалением сообщаем, что заявка участника %(claim.first_name)s %(claim."
+#~ "middle_name)s %(claim.last_name)s отклонена в связи с превышением лимита "
+#~ "зарегистрированных участников. Надеемся на участие в Томском "
+#~ "инновационном форуме в будущем."
+#~ msgstr ""
+#~ "\n"
+#~ "Unfortunately, the application of %(claim.first_name)s %(claim."
+#~ "middle_name)s %(claim.last_name)s has been rejected because of exceeding "
+#~ "number of registered participants. We hope that you will participate in "
+#~ "Tomsk Innovation Forums in the future."
+
+#~ msgid ""
+#~ "\n"
+#~ "С сожалением сообщаем, что Ваша заявка отклонена в связи с превышением "
+#~ "лимита зарегистрированных участников. Надеемся на Ваше участие в Томском "
+#~ "инновационном форуме в будущем."
+#~ msgstr ""
+#~ "\n"
+#~ "Unfortunately, your application has been rejected because of exceeding "
+#~ "number of registered participants. We hope that you will participate in "
+#~ "Tomsk Innovation Forums in the future."
+
+#~ msgid ""
+#~ "\n"
+#~ "        Вами была оформлена заявка на участие в XIII Томском "
+#~ "инновационном\n"
+#~ "        форуме INNOVUS. Управление Вашей заявкой доступно на сайте форума "
+#~ "в\n"
+#~ "        разделе «Личный кабинет». Пожалуйста, <a href=\"%(activation_url)s"
+#~ "\">подтвердите вашу заявку</a> на участие в форуме.\n"
+#~ "      "
+#~ msgstr ""
+#~ "\n"
+#~ "        You have sent a XIII Tomsk Innovative forum participation claim\n"
+#~ "        INNOVUS. Claim management available on the site in the «Personal "
+#~ "Area».\n"
+#~ "        To approve your claim of participation, please <a href="
+#~ "\"%(activation_url)s\">follow the link</a>.\n"
+#~ "      "

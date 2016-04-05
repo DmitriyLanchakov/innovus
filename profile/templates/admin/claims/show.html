@@ -1,0 +1,169 @@
+{% extends "one-column-inner.html" %}
+
+{% block content_inner %}
+<div class="claim_show">
+
+  <h1>{% trans "State of claim is: " %} {{ claim.get_claim_state_display }}</h1>
+
+  <ul class="actions">
+    {% for title, form in actions %}
+    <li>
+      <form method="post" action="{% url manage_state_change id=claim.id %}">
+        {% csrf_token %}
+        <p class="hidden">{{ form.new_state }}</p>
+        <p><input class="submit" type="submit" value="{{ title }}"/></p>
+      </form>
+    </li>
+    {% endfor %}
+
+    {% if not claim.is_synchronized %}
+    <li>
+      <form method="post" action="{% url manage_synchronze id=claim.id %}">
+        {% csrf_token %}
+        <p><input class="submit" type="submit" value="Синхронизировать"/></p>
+      </form>
+    </li>
+    {% endif %}
+
+    <li>
+      <form method="post" action="{% url actions_invitation_process id=claim.id %}">
+        {% csrf_token %}
+        <p class="hidden">{{ invitation_form.form }}</p>
+        <p><input class="submit" type="submit" value="{{ invitation_form.title }}"/></p>
+      </form>
+    </li>
+    <li>
+      <form method="post" action="{% url actions_registration_process id=claim.id %}">
+        {% csrf_token %}
+        <p class="hidden">{{ registration_form.form }}</p>
+        <p><input class="submit" type="submit" value="{{ registration_form.title }}"/></p>
+      </form>
+    </li>
+  </ul>
+
+  {% if claim.arrival_want_charter or claim.departure_want_charter %}
+    <h2>Запрос дополнительной информации: {{ claim.get_additional_info_display }}</h2>
+    {% if request_action %}
+    <form method="post" action="{% url actions_request_process id=claim.id %}" class="request_additional_info">
+      {% csrf_token %}
+      <p class="hidden">{{ request_action.form }}</p>
+      <p><input class="submit" type="submit" value="{{ request_action.title }}"/></p>
+    </form>
+    {% endif %}
+  {% endif %}
+
+  <ul class="actions">
+    <li><a href="{% url claim_edit id=claim.pk  %}">{% trans "Edit claim"%}</a></li>
+    <li><a href="{% url manage_claim_history id=claim.pk  %}">{% trans "History"%}</a></li>
+    {% if claim.claim_state == 3 %}
+      <li><a href="{% url events_list id=claim.id %}">Программа участия</a></li>
+    {% endif %}
+    {#% if claim.is_waiting_payment or claim.payment_date %#}
+      <li><a href="{% url profile_bill id=claim.id %}">{% trans "Счёт на оплату" %}</a></li>
+      <li><a href="{% url manage_claim_payment id=claim.pk  %}">Оплата</a></li>
+    {#% endif %#}
+  </ul>
+
+  <fieldset class="info">
+    <legend>{% trans "Personal info" %}</legend>
+    {% include "profile/includes/ul_personal_info.html" %}
+  </fieldset>
+
+  {% if claim.industry or claim.organization or claim.position %}
+    <fieldset class="info">
+      <legend>{% trans "Organization info" %}</legend>
+       {% include "profile/includes/ul_organization.html" %}
+    </fieldset>
+  {% endif %}
+
+  <fieldset class="info">
+    <legend>Контактная информация</legend>
+    {% if claim.delegation_manager %}
+      <ul>
+        <li>
+          <span class="label">Участник был добавлен контактным лицом:</span>
+          <span class="value">
+            <a href="{% url manage_claim_show id=claim.delegation_manager.pk %}">{{ claim.delegation_manager.last_name }} {{ claim.delegation_manager.first_name }} {{ claim.delegation_manager.middle_name }}</a>
+          </span>
+        </li>
+        <li>
+          <span class="label">Email:</span>
+          <span class="value">{{ claim.delegation_manager.email }}</span>
+        </li>
+      </ul>
+      {% with claim.delegation_manager as claim %}
+        {% include "profile/includes/ul_contacts.html" %}
+      {% endwith %}
+    {% else %}
+      <ul>
+        <li>
+          <span class="label">Email:</span>
+          <span class="value"><a href="mailto:{{ claim.email }}">{{ claim.email }}</a></span>
+        </li>
+      </ul>
+      {% include "profile/includes/ul_contacts.html" %}
+    {% endif %}
+  </fieldset>
+
+  {% if claim.need_hotel %}
+    <fieldset class="info">
+      <legend>Размещение в гостинице</legend>
+      {% if claim.hotel_reserves.count %}
+        <ul>
+          {% for info in claim.hotel_reserves.all %}
+            <li>
+              <span class="label">Гостиница:</span>
+              <span class="value">{{ info.room.hotel }}</span>
+            </li>
+            <li>
+              <span class="label">Класс:</span>
+              <span class="value">{{ info.room }}</span>
+            </li>
+            {% if info.room.is_real_room %}
+            <li>
+              <span class="label">Номер:</span>
+              <span class="value">{{ info.room.room_number }}</span>
+            </li>
+            {% endif %}
+            <li>
+              <span class="label">Цена:</span>
+              <span class="value">{{ info.room.price }} руб.</span>
+            </li>
+            <li>
+              <span class="label">Заезд:</span>
+              <span class="value">{{ info.arrival_date|date:"d M. Y, H:i" }}</span>
+            </li>
+            <li>
+              <span class="label">Выезд:</span>
+              <span class="value">{{ info.departure_date|date:"d M. Y, H:i" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        <p><a href="{% url manage_reserv_add id=claim.id %}">Изменить</a></p>
+        <form method="post" action="{% url management_action_process %}">
+          {% csrf_token %}
+          <p class="hidden">{{ action_form.as_ul }}</p>
+          <p class="hidden"><input type="hidden" name="claim_id" value="{{ claim.id }}"/></p>
+          <p><input class="submit" type="submit" value="Уведомить участника"></p>
+        </form>
+        <p class="remove"><a href="{% url manage_reserve_remove id=claim.id %}">Удалить</a></p>
+      {% else %}
+        <ul>
+          <li>Этот участник форума еще не размещен в гостининце</li>
+          <li><a href="{% url manage_reserv_add id=claim.id %}">Разместить</a></li>
+        </ul>
+      {% endif %}
+    </fieldset>
+  {% endif %}
+
+  {% if claim.is_travel %}
+    <fieldset class="info">
+      <legend>{% trans "Information about travel" %}</legend>
+      {% include "profile/includes/ul_travel.html" %}
+    </fieldset>
+  {% endif %}
+
+</div>
+
+{% endblock content_inner %}
+

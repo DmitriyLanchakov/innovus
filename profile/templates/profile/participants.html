@@ -1,0 +1,30 @@
+{% load i18n pagination_tags pytils_typo %}
+{% autopaginate participants 50 %}
+
+<table class="participant_list">
+  <tr>
+    <th>ФИО</th>
+    <th>Организация</th>
+    <th>Должность</th>
+    <th>География</th>
+  </tr>
+  {% for p in participants %}
+    <tr>
+      <td class="name">
+        {{ p.last_name }} {{ p.first_name }}{% if p.middle_name %} {{ p.middle_name }}{% endif %}
+      </td>
+      <td>
+        {{ p.organization|typografy|safe }}
+      </td>
+      <td>
+        {{ p.position }}
+      </td>
+      <td class="country">
+        {% if LANGUAGE_CODE == 'en' %}{{ p.country.title_en }}{% else %}{{ p.country }}{% endif %}{% if p.region %}, {{ p.region }}{% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+
+{% paginate %}
+

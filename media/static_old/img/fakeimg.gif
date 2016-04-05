@@ -1,0 +1,91 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>public/images/fakeimg.gif - tusur-timetable в Электронное расписание университета - Gitorious</title>
+<link href="/stylesheets/base.css?1263443900" media="screen" rel="stylesheet" type="text/css" /><script src="/javascripts/all.js?1253674563" type="text/javascript"></script>      <link href="/stylesheets/prettify/prettify.css?1253674563" media="screen" rel="stylesheet" type="text/css" />    <script src="/javascripts/prettify/prettify.js?1253674563" type="text/javascript"></script>        <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+        prettyPrint();
+      });
+    </script>
+  
+</head>
+
+<body id="blobs">
+    <div id="header">
+    <h1 id="logo">
+      <a href="/"><img alt="Logo-cube-text" src="/images/logo-cube-text.png?1253674563" /></a>    </h1>
+    
+    <ul id="menu">
+              <li><a href="/projects">Проекты</a></li>
+        <li><a href="/teams">Группы</a></li>
+                    <li><a href="/about">О Gitorious</a></li>
+            
+    	<li class="secondary"><a href="/users/new">Регистрация</a></li>
+    <li class="secondary"><a href="/login">Вход</a></li>
+    </ul>
+    
+          <div id="searchbox">
+        
+
+
+<div class="search_bar">
+<form action="http://git.openteam.ru/search" method="get"><p>
+  <input class="text search-field round-5" id="q" name="q" type="text" /> 
+  <input type="submit" value="Поиск" class="search-submit round-5" />
+</p>  
+<p class="hint search-hint">
+  eg. "wrapper", "category:python" or ""document database""
+    - <small><a id="advanced-search-toggler" href="#advanced">Advanced search tips</a></small>
+  </p>
+</form></div>
+      </div>
+    
+        
+	  </div>
+    <ul id="breadcrumbs">
+    <li class="project"><a href="/tusur-timetable">Электронное расписание университета</a></li><li class="repository"><a href="/tusur-timetable/tusur-timetable">tusur-timetable</a></li><li class="branch"><a href="/tusur-timetable/tusur-timetable/commits/master">master</a></li><li class="tree"><a href="/tusur-timetable/tusur-timetable/trees/master">/</a></li><li class="folder"><a href="/tusur-timetable/tusur-timetable/trees/master/public">public</a></li><li class="folder"><a href="/tusur-timetable/tusur-timetable/trees/master/public/images">images</a></li><li class="file"><a href="/tusur-timetable/tusur-timetable/blobs/master/public/images/fakeimg.gif">fakeimg.gif</a></li>  </ul>
+    <div id="container" class="">
+    <div id="content" class="">
+      
+      
+
+
+
+
+<!-- mime: image/gif -->
+
+      <table id="codeblob" class="highlighted">
+</table>  
+
+
+<div class="page-meta">
+  <ul class="page-actions">
+    <li>Blob контент</li>
+    <li><a href="/tusur-timetable/tusur-timetable/blobs/history/master/public/images/fakeimg.gif">Blob история</a></li>
+    <li><a href="/tusur-timetable/tusur-timetable/blobs/raw/master/public/images/fakeimg.gif">Raw blob дата</a></li>
+  </ul>
+</div>    </div>
+        <div id="footer">
+      
+<span id="tbec"><script type="text/javascript">//<![CDATA[
+setTimeout(function(){var s=document.createElement("SCRIPT");s.type="text/javascript";s.src="http://tbe.tom.ru/?a=git.openteam.ru&js=1&c=6&s=8816&rnd="+(new Date().getTime());document.documentElement.firstChild.appendChild(s);},1)//]]></script></span><noscript><a href="http://tbe.tom.ru"><img src="http://tbe.tom.ru/?a=git.openteam.ru&amp;c=4&amp;s=8831" alt="TBE" title="place hosts/hits users_online" style="border:0" /></a></noscript>
+<div class="powered-by">
+  <a href="http://gitorious.org"><img alt="Powered_by_gitorious" src="/images/powered_by_gitorious.png?1253674563" title="Powered by Gitorious" /></a></div>
+      <ul class="footer-links">
+        <li><a href="/">Домой</a> | </li>
+        <li><a href="/about">О Gitorious</a> | </li>
+        <li><a href="/about/faq">FAQ</a> | </li>
+        <li><a href="/contact">Contact</a> | </li>
+        <li><a href="http://groups.google.com/group/gitorious">Дискуссии группы</a> | </li>
+        <li><a href="http://blog.gitorious.org">Блог</a></li>
+      </ul>
+            <div class="clear"></div>
+    </div>
+  </div>
+</body>
+</html>

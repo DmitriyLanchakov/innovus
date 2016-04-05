@@ -1,0 +1,82 @@
+{% extends "two-columns-right.html" %}
+{% load media_tags comments_tags indexer_tags url_tags pytils_dt pytils_typo %}
+{% block main_content %}
+<script type="text/javascript" src="{{ JS_URL }}lib/jquery.colorbox.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+  var array = [];
+  $.each($("#content .article img"), function() {
+    if ($(this).parent().is("a")) {
+      $(this).parent().attr("rel", "gallery");
+      $(this).parent().attr("title", $(this).attr("title"));
+      array.push($(this).parent()[0]);
+    };
+  });
+  var current_text = "{current} of {total}";
+  if ($("#content .article").hasClass("ru")) {
+    current_text = "{current} из {total}";
+  };
+  if ($(array).length) {
+    $(array).colorbox({
+      maxHeight: 600,
+      opacity: 0.5,
+      current: current_text
+    });
+  };
+});
+//]]>
+</script>
+<div class="article {{ LANGUAGE_CODE }}">
+  <h1>{{ post.title|typografy|safe }}</h1>
+  {% if post.picture_src %}
+  <div class="image">
+    {% multimedia for post with templates %}
+  </div>
+  {% endif %}
+  <div class="date">
+    {% if LANGUAGE_CODE == 'ru' %}
+      {{ post.date|ru_strftime_inflected:"%d %B %Y" }}
+    {% else %}
+      {{ post.date|date:"F d, Y" }}
+    {% endif %}
+  </div>
+  <div class="announce">
+    {{ post.annotation|typografy|safe }}
+  </div>
+  <div class="content">
+    {{ post.content|typografy|safe }}
+  </div>
+{% if tags %}
+  <div class="taglist">
+    <ul>
+      {% for tag in tags %}
+      <li class="tag"><a href="{% url tags_list tag=tag %}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+  <ul class="social_links">
+    <li class="twitter">
+      <a rel="nofollow" title="Spread the word on Twitter!" href="http://twitter.com/home?status={{ post.title }} (@Tomskforum) http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}">Retweet</a>
+    </li>
+    <li class="delicious">
+      <a rel="nofollow" title="Bookmark on Del.icio.us!" href="http://delicious.com/post?url=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;title={{ post.title }}{% if post.annotation %}&amp;notes={{ post.annotation|safe|striptags|slice:'200' }}...{% endif %}">Bookmark</a>
+    </li>
+    <li class="facebook">
+      <a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;t={{ post.title }}">Share</a>
+    </li>
+    <li class="google">
+      <a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;title={{ post.title }}{% if post.annotation %}&amp;annotation={{ post.annotation|safe|striptags|slice:'200' }}...{% endif %}" title="Закладки Google">Закладки Google</a>
+    </li>
+    <li class="yandex">
+      <a rel="nofollow" href="http://zakladki.yandex.ru/userarea/links/addfromfav.asp?bAddLink_x=1&amp;lurl=http://{{ request.META.HTTP_HOST }}{{ request.META.PATH_INFO }}&amp;lname={{ post.title }}" title="Яндекс.Закладки">Яндекс.Закладки</a>
+    </li>
+  </ul>
+  {% comments for post in category %}
+</div>
+{% endblock %}
+{% block column_content %}
+{% focused for post %}
+{% endblock %}
+

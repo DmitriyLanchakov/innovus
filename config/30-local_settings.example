@@ -1,0 +1,26 @@
+DEBUG = True
+
+SECRET_KEY = 'secret key here'
+DATE_X = datetime(2011, 5, 13, 0,0,0)
+
+REG_START = datetime(2011,1,1, 0,0,0)
+REG_END = datetime(2011,5,18, 0,0,0)
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'tomskforum',                      # Or path to database file if using sqlite3.
+        'USER': 'username',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
+
+
+#INTERNAL_IPS = ('127.0.0.1',)
+
+from django.template import add_to_builtins
+add_to_builtins('django.templatetags.i18n')
+

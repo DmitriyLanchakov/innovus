@@ -1,0 +1,15 @@
+{% extends "one-column-inner.html" %}
+
+{% load i18n thumbnail pagination_tags %}
+{% block content_inner %}
+
+<form method="post" action="." class="hostel_form">
+  {% csrf_token %}
+  <ul>
+    <li>Вы подтверждаете удаление?</li>
+    <li><input type="submit" value="Подтверждаю удаление" class="submit" /></li>
+  </ul>
+</form>
+
+{% endblock content_inner %}
+

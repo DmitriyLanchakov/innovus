@@ -1,0 +1,30 @@
+/* line 2, ../src/post_comments.sass */
+.form-row .comments, .form-row #comments {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 6, ../src/post_comments.sass */
+.form-row .comments .comment, .form-row #comments .comment {
+  background: #CAF2AF;
+  border-bottom: 1px dashed grey;
+  list-style: none;
+  padding: 5px;
+}
+/* line 11, ../src/post_comments.sass */
+.form-row .comments .comment a, .form-row #comments .comment a {
+  color: #F25757;
+}
+/* line 14, ../src/post_comments.sass */
+.form-row .comments .comment div p, .form-row #comments .comment div p {
+  margin: 0;
+  padding: 0;
+}
+/* line 17, ../src/post_comments.sass */
+.form-row .comments .blamed, .form-row #comments .blamed {
+  background: #F25757;
+}
+/* line 21, ../src/post_comments.sass */
+.form-row .comments .blamed div p a, .form-row #comments .blamed div p a {
+  color: #CAF2AF;
+}

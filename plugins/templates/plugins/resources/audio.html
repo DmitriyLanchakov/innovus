@@ -1,0 +1,20 @@
+<div class="forum_audio">
+  <h2>{{ object.title }}</h2>
+  {% for r in resources %}
+    <div class="item">
+      <div class="video">
+        <object width="276" height="100">
+          <param name="allowScriptAccess" value="always" />
+          <param name="wmode" value="transparent" />
+          <param name="movie" value="/media/static/flash/player.swf" />
+          <param name="flashvars" value="comment={{ r.title }}&amp;st=/media/static/css/audio-ru.txt&amp;file={{ r.file.url }}" />
+          <embed src="/media/static/flash/player.swf" type="application/x-shockwave-flash" allowscriptaccess="always" wmode="transparent"
+            flashvars="comment={{ r.title }}&amp;st=/media/static/css/audio-ru.txt&amp;file={{ r.file.url }}" width="276" height="100"></embed>
+        </object>
+      </div>
+      <div class="description">
+        <p>{{ r.description|safe|striptags }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

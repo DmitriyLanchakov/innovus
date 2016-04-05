@@ -1,0 +1,16 @@
+<div>{{ errors }}</div>
+<script type="text/javascript">
+(function(){
+    var ex = window.top.ErrorHandler();
+    /* Errors */       
+    {% for error in errors %}
+        ex.addMessage('{{ error.field }}', '{{ error.errors }}');
+    {% endfor %}
+    
+    /* Fire the result */
+    {% if created %}ex.setCreated(true);{% endif %}    
+    {% if success %}ex.setSuccess(true);{% endif %}
+    ex.setObjectId({{ object_id }});
+    ex.fire();
+})();
+</script>

@@ -1,0 +1,2 @@
+{% load i18n thumbnail %}
+<img src="{% if profile.photo %}{% thumbnail profile.photo 180x240 crop %}{% else %}{% thumbnail "static/img/template_photo.png" 180x240 crop %}{% endif %}" alt="{{ profile.first_name }} {{ profile.last_name }}" />

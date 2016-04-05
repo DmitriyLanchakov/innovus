@@ -1,0 +1,8 @@
+{% spaceless %}
+    {% load i18n %}
+    {% if object.publisher_public %}
+        <img src="/media/admin/img/admin/icon-yes.gif" width="10" height="10" alt="{% trans "Not published" %}" />
+    {% else %}
+        <img src="/media/admin/img/admin/icon-no.gif" width="10" height="10" alt="{% trans "Published" %}" />
+    {% endif %}
+{% endspaceless %}

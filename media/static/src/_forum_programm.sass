@@ -1,0 +1,88 @@
+#programm_day_one .day h1
+  background: transparent url("../img/programm_day_one_bg.png") no-repeat left top
+#programm_day_two .day h1
+  background: transparent url("../img/programm_day_two_bg.png") no-repeat left top
+#programm_day_three .day h1
+  background: transparent url("../img/programm_day_three_bg.png") no-repeat left top
+
+#content
+  .program_print_version
+    float: right
+    color: #004d9f
+    font-size: 18px
+    line-height: 40px
+
+#programm_day_one,
+#programm_day_two,
+#programm_day_three,
+#programm_day_one_satellites,
+#programm_day_two_satellites,
+#programm_day_three_satellites
+  .day
+    margin: 20px 2% 10px
+    h1
+      color: #004d9f
+      font-size: 28px
+      padding: 5px 0 10px 75px
+      margin-bottom: 15px
+    ul
+      li
+        +clearfix
+        padding: 15px 0 15px 75px
+        &.brown
+          .right .title,
+          .right .title a
+            color: #cca721
+        &.red
+          .right .title,
+          .right .title a
+            color: #f13039
+        &.red
+          .right .title,
+          .right .title a
+            color: #f13039
+        &.green
+          .right .title,
+          .right .title a
+            color: #b2ca00
+        &.black
+          .right .title,
+          .right .title a
+            color: #000
+        &.blue
+          background-color: #ebf7fd
+          margin: 3px 0
+          .right .title,
+          .right .title a
+            color: #008dae
+        .left
+          float: left
+          width: 250px
+          +georgia_font_stack
+          margin-right: 20px
+          .time
+            font-size: 22px
+          .place
+            color: #7f7f7f
+            font-size: 14px
+            font-style: italic
+        .right
+          padding: 0 20px 0 270px
+          .title
+            font-size: 20px
+            line-height: 28px
+          .speaker
+            +georgia_font_stack
+            color: #7f7f7f
+            font-size: 16px
+            font-style: italic
+            margin-top: 5px
+            ul li
+              overflow: visible
+              list-style: circle
+              margin-left: 15px
+              padding: 0
+
+#programm_day_three .day h1
+  padding: 12px 0 12px 75px
+

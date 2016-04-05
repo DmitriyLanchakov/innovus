@@ -1,0 +1,37 @@
+{% extends "admin/claims/base_claims.html" %}
+{% load i18n pagination_tags %}
+{% block extrastyle %}<link rel="stylesheet" type="text/css" href="{{ CSS_URL }}4admin.css" />{% endblock %}
+{% block content %}
+
+<div id="container" class="cabinet_view">
+  <div class="wrapper_cabinet">
+    <p><a href="{% url manage_list_events %}">Назад</a></p>
+    <h1>{{ event.title }}</h1>
+    <a class="print_version" href="{% url manage_event_print id=event.id %}">версия для печати</a>
+    <h2>Найдено: {{ claims.count }}</h2>
+
+      {% autopaginate claims 30 %}
+        <table>
+          <tr>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "Organization" %}</th>
+            <th>Тип заявки</th>
+            <th>{% trans "State of claim" %}</th>
+            <th>{% trans "Incoming" %}</th>
+            <th>{% trans "Outcoming" %}</th>
+            <th>{% trans "Hotel" %}</th>
+          </tr>
+          {% for ce in claims %}
+             {% with ce.claim as  d%}
+               {% include "admin/claims/list_item.html" %}
+             {% endwith %}
+          {% endfor %}
+        </table>
+        {% paginate %}
+
+
+  </div>
+</div>
+
+{% endblock %}
+

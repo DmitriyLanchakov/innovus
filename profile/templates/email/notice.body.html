@@ -1,0 +1,20 @@
+Поступила новая заявка на участие в форуме:
+
+Ф. И. О. участника: {{ claim.last_name }} {{ claim.first_name }} {{ claim.middle_name }}
+{% if claim.email %}Электронная почта: {{ claim.email }}{% endif %}
+{% if claim.phone %}Контактный телефон: {% endif %}
+
+{% if profile.is_take_part == 2 or profile.is_take_part == 3 %}
+{{ claim.last_name }} {{ claim.first_name }} {{ claim.middle_name }} будет выступать контактным лицом делегации.
+{% endif %}
+{% if profile.is_take_part == 4 %}
+Контактное лицо участника форума - {{ claim.delegation_manager }}
+{% endif %}
+
+
+
+---
+С уважением,
+Организационный комитет
+XIV Томский инновационный форум INNOVUS
+

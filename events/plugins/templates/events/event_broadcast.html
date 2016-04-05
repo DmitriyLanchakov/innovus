@@ -1,0 +1,64 @@
+{% load events_tags pytils_numeral pytils_typo %}
+{% if show %}
+<div id="broadcast_container" class="container">
+  <div id="broadcast">
+      <h1>{% trans "Video broadcast" %}</h1>
+    <div class="line">
+      <div class="player">
+        <object width="663" height="410">
+          <param name="allowFullScreen" value="true" />
+          <param name="allowScriptAccess" value="always" />
+          <param name="wmode" value="transparent" />
+          <param name="movie" value="{{ MEDIA_URL }}static/flash/player.swf" />
+          <param name="flashvars" value="st={{ CSS_URL }}video-with-playlist.txt&amp;pl={{ CSS_URL }}playlist-broadcast.txt" />
+          <embed src="{{ MEDIA_URL }}static/flash/player.swf"
+                 type="application/x-shockwave-flash"
+                 allowscriptaccess="always"
+                 allowfullscreen="true"
+                 wmode="transparent"
+                 flashvars="st={{ CSS_URL }}video-with-playlist.txt&amp;pl={{ CSS_URL }}playlist-broadcast.txt"
+                 width="663"
+                 height="410"></embed>
+        </object>
+      </div>
+      <div class="current_events">
+          <h2>{% trans "Broadcasting events" %}</h2>
+          <ul>
+        {% for event in events %}
+            <li>
+            <div class="name">
+                {% if event.page %}
+                    <a href="{{ event.page.get_absolute_url }}">{{ event.name|safe }}</a>
+                {% else %}
+                    {{ event.name|safe }}
+                {% endif %}
+              </div>
+              {% if event.moderators.persons.count %}
+              <div class="moderators">
+                {% if event.leader_name %}
+                    {{ event.moderators.persons.count|choose_plural:event.leader_name }}:
+                {% else %}
+                    {{ event.moderators.persons.count|choose_plural:_('Moderator, Moderators, Moderators') }}:
+                {% endif %}
+                {% if event.moderators.persons.count > 1 %}
+                  <ul>
+                  {% for person in event.moderators.persons.all %}
+                    <li>
+                    {{ person.name|typografy|safe }}, {{ person.position|typografy|striptags|safe }}
+                    </li>
+                  {% endfor %}
+                  </ul>
+                {% else %}
+                  {% for person in event.moderators.persons.all %}
+                    {{ person.name|typografy|safe }}, {{ person.position|typografy|striptags|safe }}
+                  {% endfor %}
+                  {% endif %}
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

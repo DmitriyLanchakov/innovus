@@ -1,0 +1,13 @@
+{% load cache cms_tags i18n %}
+<div class="video">
+    <h3>{{ item.title|safe }}</h3>
+    <object id="videoplayer59" width="512" height="410">
+	    <param name="allowFullScreen" value="true" />
+	    <param name="allowScriptAccess" value="always" />
+	    <param name="wmode" value="transparent" />
+	    <param name="movie" value="/media/static/flash/player.swf" />
+	    <param name="flashvars" value="comment={{ item.title }}&amp;st=/media/static/css/video-ru-full.txt&amp;file={{ item.file.url }}" />
+	    <embed src="/media/static/flash/player.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" flashvars="comment={{ item.title }}&amp;st=/media/static/css/video-ru-full.txt&amp;file={{ item.file.url }}" width="512" height="410"></embed>
+    </object>
+    <span class="description">{{ item.description|safe }}</span>
+</div>

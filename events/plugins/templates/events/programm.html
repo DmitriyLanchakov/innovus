@@ -1,0 +1,83 @@
+{% load pytils_dt pytils_numeral pytils_typo cms_tags %}
+{% get_current_language as lang %}
+<div id="content_container" class="container">
+  <div id="content">
+    <div class="additional_margin">
+      <a class="program_print_version" href="#">{% trans "Print version" %}</a>
+      <h1>{% page_attribute page_title %}</h1>
+    </div>
+  </div>
+</div>
+{% for day, events in events_set %}
+    {% if programm_type == 0 %}
+  <div id="programm_day_{% cycle 'one' 'two' 'three' %}_container" class="container">
+      <div id="programm_day_{% cycle 'one' 'two' 'three' %}">
+      <div class="day">
+          <h1>
+              {% trans "Day" %} {% cycle _('first') _('second') _('third') %} &mdash;
+              {% if lang == 'ru' %}
+                {{ day|ru_strftime:"%d %B %Yг. (%A)" }}
+              {% else %}
+                {{ day|date:"F j, Y (l)" }}
+            {% endif %}
+        </h1>
+    {% else %}
+        <div id="programm_day_{% cycle 'one' 'two' 'three' %}_satellites_container" class="container">
+            <div id="programm_day_{% cycle 'one' 'two' 'three' %}_satellites">
+            <div class="day">
+              <h1>
+                  {% if lang == 'ru' %}
+                    {{ day|ru_strftime:"%d %B %Yг. (%A)" }}
+                  {% else %}
+                    {{ day|date:"F j, Y (l)" }}
+                  {% endif %}
+              </h1>
+    {% endif %}
+        <ul>
+            {% for event in events %}
+          <li class="{{ event.event.title_color }}">
+            <div class="left">
+              <p class="time">{{ event.event.starts_on|date:"H:i" }}&mdash;{{ event.event.ends_on|date:"H:i" }}</p>
+              <p class="place">{{ event.place|typografy|safe }}</p>
+            </div>
+            <div class="right">
+              <p class="title">
+              {% if event.cms_page %}
+                <a href="{{ event.cms_page.get_absolute_url }}">
+                  {{ event.name|typografy|safe }}
+                </a>
+              {% else %}
+                {{ event.name|typografy|safe }}
+              {% endif %}
+              </p>
+              {% if event.moderators.persons.count %}
+              <div class="speaker">
+                {% if event.leader_name %}
+                    {{ event.moderators.persons.count|choose_plural:event.leader_name }}:
+                {% else %}
+                    {{ event.moderators.persons.count|choose_plural:_('Moderator, Moderators, Moderators') }}:
+                {% endif %}
+                {% if event.moderators.persons.count > 1 %}
+                  <ul>
+                  {% for person in event.moderators.persons.all %}
+                    <li>
+                    {{ person.name|typografy|safe }}, {{ person.position|typografy|striptags|safe }}
+                    </li>
+                  {% endfor %}
+                  </ul>
+                {% else %}
+                  {% for person in event.moderators.persons.all %}
+                    {{ person.name|typografy|safe }}, {{ person.position|typografy|striptags|safe }}
+                  {% endfor %}
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+          </li>
+            {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+

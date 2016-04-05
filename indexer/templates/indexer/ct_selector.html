@@ -1,0 +1,25 @@
+{% load indexer_tags %}
+{% if model_ct %}
+<h3>{% trans "Similar materials" %}</h3>
+{% endif %}
+<ul class="likeness_items">
+{% for ct, count in facets %}
+      <li>
+        {% if ct == selected or count == 0 %}
+          {{ ct|humanize_ct }}
+        {% else %}
+          {% if tag %}
+            <a href="{% url tags_list_ct ct=ct|point_to_underscore tag=tag %}">{{ ct|humanize_ct }}</a>
+          {% endif %}
+          {% if search_query %}
+            <a href="{% url haystack_search_ct ct=ct|point_to_underscore %}?q={{ search_query|iriencode }}">{{ ct|humanize_ct }}</a>
+          {% endif %}
+          {% if model_ct %}
+            <a href="{% url similar_materials ct=model_ct|point_to_underscore id=model_id similar_type=ct|point_to_underscore %}">{{ ct|humanize_ct }}</a>
+          {% endif %}
+        {% endif %}
+        [{{ count }}]
+      </li>
+{% endfor %}
+</ul>
+

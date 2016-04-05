@@ -1,0 +1,42 @@
+{% extends "admin/claims/base_claims.html" %}
+{% block extrastyle %}<link rel="stylesheet" type="text/css" href="{{ CSS_URL }}4admin.css" />{% endblock %}
+{% block content %}
+
+  <div id="container" class="cabinet_view">
+
+    <div class="claims_by_countries">
+
+      <a class="claims_list" href="{% url manage_claim_list %}">список заявок</a>
+
+      <h2>Статистика заявок по странам</h2>
+
+      {% for country in countries %}
+        <h3>{{ country.title }}</h3>
+        <table>
+          <tr>
+            <th class="left">Отрасль</th>
+            <th>Ожидается оплата</th>
+            <th>Принято</th>
+          </tr>
+          <tbody>
+            {% for industry in country.industries %}
+            <tr>
+              <td class="left">{{ industry.title }}</td>
+              <td>{{ industry.waiting_paiment }}</th>
+              <td>{{ industry.approved }}</th>
+            </tr>
+            {% endfor %}
+            <tr>
+              <th>Итого:</td>
+              <th>{{ country.waiting_paiment }}</th>
+              <th>{{ country.approved }}</th>
+            </tr>
+          </tbody>
+        </table>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+{% endblock %}

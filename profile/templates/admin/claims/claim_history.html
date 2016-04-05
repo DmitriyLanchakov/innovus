@@ -1,0 +1,33 @@
+{% extends "one-column-inner.html" %}
+
+{% load i18n select_locale_tags pagination_tags %}
+
+{% block content_inner %}
+
+<h1>История изменений</h1>
+
+<div class="history">
+
+  <p><a href="../">{% trans "Back" %}</a></p>
+
+  {% autopaginate changes 20 %}
+  <table>
+    <tr class="{% cycle 'row1' 'row2' %}">
+      <th>Когда</th>
+      <th>Поле</th>
+      <th>Было</th>
+      <th>Стало</th>
+    </tr>
+    {% for c in changes %}
+      <tr class="{% cycle 'row1' 'row2' %}">
+        <td>{{ c.timestamp|date:"d.m.Y, H:i" }}</td>
+        <td>{% localize_verbose_name c.field_name %}</td>
+        <td>{{ c.value_before }}</td>
+        <td>{{ c.value_after }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% paginate %}
+</div>
+{% endblock content_inner %}
+

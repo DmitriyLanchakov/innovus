@@ -1,0 +1,25 @@
+{% extends "one-column.html" %}
+{% block content %}
+<div id="content">
+  <div class="additional_margin">
+      <div class="claim_show">
+          {% if user.get_profile == claim %}
+            <h1>{% trans "You are going to cancel the claim. Are you sure?" %}</h1>
+          {% else %}
+            <h1>{% trans "You are going to cancel the claim for" %} {{ claim }}. {% trans "Are you sure?" %}</h1>
+          {% endif %}
+      <form method="post" action=".">
+        {% csrf_token %}
+        <ul class="actions">
+            <li>
+              <input type="submit" value="{% trans "Yes, I'm sure" %}" class="submit" />
+            </li>
+            <li>
+              <a href="{% url profile_view %}">{% trans "Cancel" %}</a>
+            </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load i18n %}
+<ul class="personal_info">
+  <li>
+    <span class="label">{% trans "Last name" %}:</span>
+    <span class="value">{{ claim.last_name }}</span>
+  </li>
+  <li>
+    <span class="label">{% trans "First name" %}:</span>
+    <span class="value">{{ claim.first_name }}</span>
+  </li>
+  {% if claim.middle_name %}
+  <li>
+    <span class="label">{% trans "Middle name" %}:</span>
+    <span class="value">{{ claim.middle_name }}</span>
+  </li>
+  {% endif %}
+  <li>
+    <span class="label">{% trans "Gender" %}:</span>
+    <span class="value">{{ claim.get_gender_display }}</span>
+  </li>
+  <li>
+    <span class="label">{% trans "Date joined" %}:</span>
+    <span class="value">{{ claim.creation_date|date:"DATE_FORMAT" }}</span>
+  </li>
+  <li>
+    <span class="label">{% trans "Country" %}:</span>
+    <span class="value">{{ claim.country }}</span>
+  </li>
+  {% if claim.region %}
+  <li>
+    <span class="label">{% trans "Region" %}:</span>
+    <span class="value">{{ claim.region }}</span>
+  </li>
+  {% endif %}
+  {% if claim.city %}
+  <li>
+    <span class="label">{% trans "City" %}:</span>
+    <span class="value">{{ claim.city }}</span>
+  </li>
+  {% endif  %}
+  <li>
+    <span class="label">{% trans "Citizenship" %}:</span>
+    <span class="value">{{ claim.citizenship }}</span>
+  </li>
+</ul>
+

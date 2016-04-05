@@ -1,0 +1,10 @@
+{% load media_tags thumbnail i18n %}
+{% make_gallery for object as gallery %}
+  <ul class="gallery">
+    {% for pic in gallery %}
+      <li class="lightbox">
+        <p><a href="{% thumbnail pic.file 240x320 %}" title="{{ pic.title }}"><img src="{% thumbnail pic.file 90x120 %}" alt="{{ pic.title }}" /></a></p>
+        <p><a href="{{ pic.file }}">{% trans "Save original" %}</a></p>
+      </li>
+    {% endfor %}
+  </ul>

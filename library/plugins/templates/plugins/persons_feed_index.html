@@ -1,0 +1,56 @@
+{% load cms_tags thumbnail pytils_dt %}
+<div id="persons_container" class="container">
+  <div id="persons">
+    <div class="spikers">
+      <h1><a href="{% page_id_url 'speakers' %}">{% trans "Speakers" %}</a></h1>
+      <ul>
+        {% for position in speakers %}
+        <li>
+          <p class="name">{{ position.person.name }}</p>
+          <p class="post">{{ position.person.position|safe|striptags }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="other"><a href="{% page_id_url 'speakers' %}">{% trans "Other speakers" %}</a></p>
+    </div>
+    <div class="interviews">
+      <h1>
+        <a href="{% page_id_url 'interviews' %}">{% trans "Interview" %}</a>
+        <a class="rss" href="{% url persons_rss %}">RSS {% trans "Interview" %}</a>
+      </h1>
+      <ul>
+        {% for position in interviews %}
+        <li class="{% cycle 'odd' 'even' %}">
+          <div class="photo">
+            {% thumbnail position.person.photo "100" as thumb %}
+              <img src="{{ thumb.url }}" alt="{{ position.person.name }}" width="{{ thumb.width }}" height="{{ thumb.height }}" />
+            {% endthumbnail %}
+          </div>
+          <div class="description">
+            <h1>{% if position.person.content %}<a href="{{ position.person.get_absolute_url }}">{{ position.person.name }}</a>{% else %}{{ position.person.name }}{% endif %}</h1>
+            <p class="post">{{ position.person.position|safe|striptags }}</p>
+            {% if position.person.announce %}
+              <p class="thesis">
+                <a href="{{ position.person.get_absolute_url }}">
+                  {{ position.person.announce|safe|striptags|truncatewords:10 }}
+                </a>
+              </p>
+            {% endif %}
+            <p class="date">
+              {% if LANGUAGE_CODE == 'ru' %}
+                {{ position.person.created_at|ru_strftime_inflected:"%d %B %Y" }}
+              {% else %}
+                {{ position.post.created_at|date:"F d, Y" }}
+              {% endif %}
+            </p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="other">
+        <a href="{% page_id_url 'interviews' %}">{% trans "more" %}</a>
+      </p>
+    </div>
+  </div>
+</div>
+

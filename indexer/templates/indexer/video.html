@@ -1,0 +1,15 @@
+{% load cache thumbnail %}
+<li>
+    <p>
+      <a href="{{ video.file.url }}">
+      {% thumbnail video.snapshot "200x150" crop="center" as thumb %}
+      <img src="{{ thumb.url }}"
+           alt="{{ video.title }}"
+           height="{{ thumb.height }}"
+           width="{{ thumb.width }}" />
+      {% endthumbnail %}
+      </a>
+    </p>
+    <p><a href="{{ video.file.url }}">{{ video.title }}</a></p>
+</li>
+

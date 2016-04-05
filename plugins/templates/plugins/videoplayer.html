@@ -1,0 +1,8 @@
+<object width="{{ width }}" height="{{ height }}">
+    <param name="allowFullScreen" value="true" />
+    <param name="allowScriptAccess" value="always" />
+    <param name="wmode" value="transparent" />
+    <param name="movie" value="{{ player_src|safe }}" />
+    <param name="flashvars" value="comment={{ title }}&amp;st={{ settings_src }}&amp;file={{ file }}" />
+    <embed src="{{ player_src|safe }}" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" flashvars="comment={{ title }}&amp;st={{ settings_src }}&amp;file={{ file }}" width="{{ width }}" height="{{ height }}"></embed>
+</object>

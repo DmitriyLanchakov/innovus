@@ -1,0 +1,116 @@
+#search
+  padding-top: 10px
+  .search_form
+    form
+      position: relative
+      padding: 0 2% 0 370px
+      .search_wrapper input
+        +arial_font_stack
+        width: 98.7%
+        border: 1px solid #d5dcdd
+        padding: 5px
+      .search_input_label
+        display: none
+        position: absolute
+        top: 5px
+        left: 377px
+        +arial_font_stack
+        color: #7f7f7f
+      .search_submit
+        position: absolute
+        top: 5px
+        right: 2.5%
+
+#content
+  .search_form
+    border-top: 1px dashed #ccc
+    border-bottom: 1px dashed #ccc
+    margin-bottom: 15px
+    padding-top: 15px
+    #id_q
+      width: 50%
+      +arial_font_stack
+      border: 1px solid #888
+      padding: 5px
+    .submit
+      +arial_font_stack
+      background-color: #ddd
+      border-left: 1px solid #999
+      border-top: 1px solid #999
+      border-right: 1px solid #555
+      border-bottom: 1px solid #555
+      padding: 4px 10px
+      margin-left: 5px
+  .search_results
+    li
+      +clearfix
+      list-style: none
+      margin: 0 0 15px 0
+      h2
+        +georgia_font_stack
+        margin-bottom: 10px
+        a
+          color: #004d9f
+      p
+        margin-bottom: 0
+    .interviews
+      .photo
+        width: 104px
+        float: left
+        img
+          border: 1px solid #888
+          padding: 1px
+      .info
+        +clearfix
+        margin-left: 120px
+        .post
+          +georgia_font_stack
+          font-size: 14px
+          font-style: italic
+          margin-bottom: 10px
+    .news
+      .image
+        width: 154px
+        float: left
+        margin-right: 20px
+        img
+          border: 1px solid #888
+          padding: 1px
+      .description
+        +clearfix
+        .date
+          color: #333
+          font-size: 14px
+          font-style: italic
+          font-weight: normal
+          margin-bottom: 10px
+    .audio
+      div
+        float: left
+        margin-right: 20px
+      p
+        +clearfix
+    .pictures
+      li
+        float: left
+        margin-right: 20px
+        img
+          border: 1px solid #888
+          padding: 1px
+    .video
+      li
+        float: left
+        width: 204px
+        text-align: center
+        margin-right: 20px
+        img
+          border: 1px solid #888
+          padding: 1px
+
+  .right_column
+    .likeness_items
+      font-size: 14px
+      li
+        list-style: none
+        margin: 0 0 10px 0
+

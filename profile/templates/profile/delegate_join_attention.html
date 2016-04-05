@@ -1,0 +1,17 @@
+{% extends "one-column-inner.html" %}
+{% load i18n %}
+
+{% block content_inner %}
+  <div id="container" class="cabinet_view">
+    <div class="information">
+      {% blocktrans %}
+       <p>При регистрации участников только Вам будет доступно управление всеми заявками на участие в форуме, которые Вы оформили. В случае необходимости по вопросам, связанным с этими заявками Организационный комитет форума будет связываться с Вами.</p>
+      {% endblocktrans %}
+      <div class="submit">
+        <a href="{% url add_delegate %}">Согласен</a>
+        <a href="{% url profile_view %}">Отмена</a>
+      </div>
+    </div>
+  </div>
+{% endblock content_inner %}
+

@@ -1,0 +1,44 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}print.css" />
+  <title>Список заявок версия для бейджа | Томский инновационный форум</title>
+</head>
+<body>
+
+<div id="container" class="claim_list">
+{% if filter_set %}
+  <h3>Набор фильтров:</h3>
+  <ul>
+  {% for key,value in filter_set.items %}
+    <li>{{ key|capfirst }} - {{ value }}</li>
+  {% endfor %}
+  </ul>
+{% endif %}
+  <h3>Найдено: {{ claims.count }}</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>{% trans "Name" %}</th>
+        <th>{% trans "Organization" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in claims %}
+      <tr>
+        <td>
+          <p class="name">{{ d.last_name }} {{ d.first_name }} {{ d.middle_name }}</p>
+        </td>
+        <td>
+          <p>{% if d.organization %}{{ d.organization }}{% endif %}{% if d.position %}, {{ d.position }}{% endif %}</p>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
+

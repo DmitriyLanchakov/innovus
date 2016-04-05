@@ -1,0 +1,17 @@
+{% load cache menu_tags page_class %}
+{% if children %}
+        <ul class="extra-navigation">
+            {% for child in children %}
+             {% if child.visible %}
+            <li class="fake {% if forloop.first %}{% endif %}{% if forloop.last %}{% endif %}{% if child.selected %}selected{% endif %} {% if child.ancestor %}{% endif %}{% if child.sibling %}{% endif %}{% if child.descendant %}{% endif %}">
+                {% if child.selected and not person %}
+                <h3>{{ child.get_menu_title }}</h3>
+                {% else %}
+                <a href="{{ child.get_absolute_url }}" title="{% get_title_by_pk child.id %}">{{ child.get_menu_title }}</a>
+                {% endif %}
+            </li>
+    {% endif %}
+{% endfor %}
+        </ul>
+{% endif %}
+

@@ -1,0 +1,36 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}print.css" />
+  <title>Список заявок версия для печати | Томский инновационный форум 2010</title>
+</head>
+<body>
+
+<div id="container" class="cabinet_view">
+  <div class="wrapper_cabinet">
+    <h1>{{ event.title }}</h1>
+    <h2>Найдено: {{ claims.count }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>{% trans "Name" %}</th>
+          <th>{% trans "Organization" %}</th>
+          <th>Тип заявки</th>
+          <th>{% trans "State of claim" %}</th>
+          <th>{% trans "Incoming" %}</th>
+          <th>{% trans "Outcoming" %}</th>
+          <th>{% trans "Hotel" %}</th>
+        </tr>
+      </thead>
+      {% for ce in claims %}
+         {% with ce.claim as  d%}
+           {% include "admin/claims/list_item.html" %}
+         {% endwith %}
+      {% endfor %}
+    </table>
+  </div>
+</div>
+</body>
+</html>

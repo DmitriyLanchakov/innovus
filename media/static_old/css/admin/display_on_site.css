@@ -1,0 +1,49 @@
+/* line 5, ../src/display_on_site.sass */
+.js .display .public_from div .datetime, .js .display .public_till div .datetime {
+  float: left;
+}
+/* line 7, ../src/display_on_site.sass */
+.js .display .public_from div input, .js .display .public_till div input {
+  float: left !important;
+  width: 76px;
+}
+
+/* line 13, ../src/display_on_site.sass */
+.display .public_from div label, .display .public_till div label {
+  float: none;
+}
+/* line 15, ../src/display_on_site.sass */
+.display .public_from div .datetime, .display .public_till div .datetime {
+  float: none !important;
+  margin: 0;
+  padding: 0;
+}
+/* line 19, ../src/display_on_site.sass */
+.display .public_from div .date_span, .display .public_from div .time_span, .display .public_till div .date_span, .display .public_till div .time_span {
+  font: bold 12px Arial;
+  color: #666;
+  line-height: 24px;
+  width: 50px !important;
+}
+/* line 24, ../src/display_on_site.sass */
+.display .public_from div input, .display .public_till div input {
+  margin-left: 10px;
+  float: none !important;
+  height: 12px;
+  width: auto;
+}
+/* line 30, ../src/display_on_site.sass */
+.display .public_from div #calendarlink0, .display .public_from div #calendarlink1, .display .public_till div #calendarlink0, .display .public_till div #calendarlink1 {
+  display: none;
+}
+/* line 32, ../src/display_on_site.sass */
+.display .public_from div .ui-datepicker-trigger, .display .public_till div .ui-datepicker-trigger {
+  position: relative;
+  left: -17px;
+}
+/* line 35, ../src/display_on_site.sass */
+.display .public_from div span, .display .public_till div span {
+  margin: 0;
+  float: left;
+  height: 24px;
+}

@@ -1,0 +1,37 @@
+{% load cache pytils_dt pytils_numeral pytils_typo thumbnail %}
+{% if placeholder == 'column' %}
+  <div class="date">
+    {{ event.event.starts_on|ru_strftime:"%d %B %Yг. (%A)" }}
+  </div>
+  <div class="time">
+    {{ event.event.starts_on|date:"H:i" }} &mdash; {{ event.event.ends_on|date:"H:i" }}
+  </div>
+  <div class="place">
+    {{ event.place|typografy|safe }}
+  </div>
+  <div class="moderators">
+    {% if event.moderators.persons.count %}
+    <p class="block_name">
+        {% if event.leader_name %}
+            {{ event.moderators.persons.count|choose_plural:event.leader_name }}:
+        {% else %}
+            {{ event.moderators.persons.count|choose_plural:_('Moderator, Moderators, Moderators') }}:
+        {% endif %}
+    </p>
+      {% for container in moderators %}
+        <div class="moderator">
+          {% thumbnail container.person.photo "100" as thumb %}
+            <img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ person.name }}"/>
+          {% endthumbnail %}
+          <p class="name">{{ container.person.name|safe }}</p>
+          <p class="post">{{ container.person.position|striptags|safe }}{% if not forloop.last %},{% endif %}</p>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endif %}
+{% if placeholder == 'content' %}
+    <div class="title">{{ event.name|typografy|safe }}</div>
+    {{ broadcast }}
+{% endif %}
+

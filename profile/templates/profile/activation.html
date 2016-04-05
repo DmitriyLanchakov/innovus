@@ -1,0 +1,29 @@
+{% extends "one-column-inner.html" %}
+{% load i18n %}
+{% block content_inner %}
+  {% if user.is_authenticated %}
+    <h1>{% trans "Profile" %} &laquo;{{ user }}&laquo; {% trans "was successfully activated" %}.</h1>
+    <p>{% blocktrans %}управление заявкой доступно в личном кабинете{% endblocktrans %}</p>
+    <p><a href="{% url profile_view %}">{% trans "Перейти в личный кабинет" %}</a></p>
+  {% else %}
+    <h1>{% trans "Profile activation" %}{% if fail %} {% trans "failed" %}{% endif %}.</h1>
+    {% if fail %}
+      {% url profile_activation as activation_url %}
+        <p>{{ fail }}</p>
+        <p>
+        {% blocktrans %}
+          Пожалуйста, <a href="{{ activation_url }}" title="Активация профиля">попробуйте еще раз</a> или свяжитесь с администрацией сайта.
+        {% endblocktrans %}
+        </p>
+    {% else %}
+      {% blocktrans %}
+      <p>Notification letter with approvement link was sent to the email address, which was specified by you during the claim registration process. If you didn't recive a letter during the past 24 hours, please, proceed to the registration again or contact the call center by the phone number <strong>8-800-444-65-59</strong> (free service).</p>
+      {% endblocktrans %}
+      <form method="get" action="{% url profile_activation %}" class="activation_form">
+        <p><input type="text" value="" name="code" class="code" /></p>
+        <p><input type="submit" value="{% trans "Activate" %}" class="submit" /></p>
+      </form>
+    {% endif %}
+  {% endif %}
+{% endblock content_inner %}
+

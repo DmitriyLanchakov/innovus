@@ -1,0 +1,75 @@
+#main_menu
+  +clearfix
+  padding-bottom: 20px
+  .chapters
+    float: left
+    width: 310px
+    padding: 0 0 0 2%
+    li
+      font-size: 14px
+      margin-bottom: 5px
+      a
+        color: #fff
+        display: block
+        background: #a8a8a8 url("../img/main_menu_items_bg.png") no-repeat 280px 0
+        padding: 1px 0 2px 75px
+        &.forum:hover
+          background-color: #5cace1
+          background-position: 280px -26px
+        &.inotomsk:hover
+          background-color: #fcca00
+          background-position: 280px -52px
+        &.documents:hover
+          background-color: #b2ca00
+          background-position: 280px -78px
+        &.news:hover
+          background-color: #e50004
+          background-position: 280px -104px
+      &.selected
+        font-size: 20px
+        a
+          background-repeat: no-repeat
+          background-image: url("../img/main_menu_selected_bg.png")
+          padding: 8px 0 10px 75px
+        .forum,
+        .forum:hover
+          background-color: #5cace1
+          background-position: 292px 0
+        .inotomsk,
+        .inotomsk:hover
+          background-color: #fcca00
+          background-position: 292px -50px
+        .documents,
+        .documents:hover
+          background-color: #b2ca00
+          background-position: 292px -100px
+        .news,
+        .news:hover
+          background-color: #e50004
+          background-position: 292px -150px
+  .submenu,
+  .submenu_admin
+    margin: 10px 0 0 370px
+    .subchapter
+      float: left
+      width: 23%
+      margin-right: 1.2%
+      h1
+        font-size: 20px
+        margin-bottom: 10px
+        a
+          color: #004d9f
+        &.selected a
+          color: #5cace1
+          text-decoration: none
+      li
+        +tahoma_font_stack
+        margin-bottom: 5px
+        a
+          color: #97979c
+        &.selected a
+          color: #5cace1
+          text-decoration: none
+  .submenu_admin
+    clear: left
+

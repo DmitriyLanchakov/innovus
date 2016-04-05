@@ -1,0 +1,104 @@
+{% load thumbnail multimedia_tags %}
+<h2>{% trans "Similar materials" %}</h2>
+{% for ct, ct_items in response %}
+  {% if ct == 'periodics_post' and ct_items.count %}
+    <div class="publications">
+      <h3>{% trans "Publications" %}</h3>
+      {% with ct_items.0 as post %}
+        {% include 'partials/periodics/post_li_column_content.html' %}
+      {% endwith %}
+      {% if ct_items.count > 1 %}
+        <span class="more">
+          <a href="{% url similar_materials ct=model_ct id=model_id similar_type=ct  %}">
+            {% trans "All" %} {{ ct_items.count }} &rarr;
+          </a>
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if ct == 'history_video' and ct_items.count %}
+    {% with ct_items.0 as video %}
+      <div class="videos">
+        <h3>{% trans "Video" %}</h3>
+        <span class="title">{{ video.title|safe }}</span>
+        <div>
+          {% videoplayer video.file.url 276x221 video.title "{{ CSS_URL }}video-ru-mini.txt" %}
+        </div>
+        {% if ct_items.count > 1 %}
+          <span class="more"><a href="{% url similar_materials ct=model_ct id=model_id similar_type=ct %}">{% trans "All" %} {{ ct_items.count }} &rarr;</a></span>
+        {% endif %}
+      </div>
+    {% endwith %}
+  {% endif %}
+    {% if ct == 'persons_person' and ct_items.count %}
+        <div class="interviews">
+            <h3>{% trans "Interview" %}</h3>
+            {% with ct_items.0 as person %}
+                <div class="person_info">
+                    <a href="{{ person.get_absolute_url }}" class="photo">
+                        {% thumbnail person.photo "100x140" as thumb %}
+                        <img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ person.name|safe }}" />
+                        {% endthumbnail %}
+                    </a>
+                    <a href="{{ person.get_absolute_url }}" class="person_name">{{ person.name|safe }}</a>
+                    <span class="position">{{ person.position|safe|striptags }}</span>
+                </div>
+                <span class="announce">{{ person.announce|safe|striptags|truncatewords_html:10 }}</span>
+            {% endwith %}
+            {% if ct_items.count > 1 %}
+                <span class="more"><a href="{% url similar_materials ct=model_ct id=model_id similar_type=ct %}">{% trans "All" %} {{ ct_items.count }} &rarr;</a></span>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if ct == 'history_document' and ct_items.count %}
+        {% with ct_items.0 as document %}
+            <div class="documents">
+                <h3>{% trans "Documents" %}</h3>
+                <ul>
+                    {% include 'partials/resources/document_li_column.html' %}
+                </ul>
+                {% if ct_items.count > 1 %}
+                <span class="more"><a href="{% url similar_materials ct=model_ct id=model_id similar_type=ct %}">{% trans "All" %} {{ ct_items.count }} &rarr;</a></span>
+                {% endif %}
+            </div>
+        {% endwith %}
+    {% endif %}
+    {% if ct == 'history_audio' and ct_items.count %}
+        {% with ct_items.0 as audio %}
+            <div class="audios">
+                <h3>{% trans "Audio" %}</h3>
+                <span class="title">{{ audio.title|safe }}</span>
+                    <div>
+                      <object id="videoplayer59" width="285" height="100">
+                          <param name="allowFullScreen" value="true" />
+                          <param name="allowScriptAccess" value="always" />
+                          <param name="wmode" value="transparent" />
+                          <param name="movie" value="{{ MEDIA_URL }}static/flash/player.swf" />
+                          <param name="flashvars" value="&st={{ CSS_URL }}audio-ru.txt&amp;file={{ audio.file.url }}" />
+                          <embed src="{{ MEDIA_URL }}static/flash/player.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" wmode="transparent" flashvars="st=/media/static/css/audio-ru.txt&amp;file={{ audio.file.url }}" width="285" height="100">
+                          </embed>
+                      </object>
+                    </div>
+                {% if ct_items.count > 1 %}
+                    <span class="more"><a href="{% url similar_materials ct=model_ct id=model_id similar_type=ct %}">{% trans "All" %} {{ ct_items.count }} &rarr;</a></span>
+                {% endif %}
+                    </div>
+        {% endwith %}
+    {% endif %}
+    {% if ct == 'history_picture' and ct_items.count %}
+        {% with ct_items.0 as image %}
+            <div class="images">
+                <h3>{% trans "Images" %}</h3>
+                <ul class="forum_images">
+                {% include 'partials/resources/image_li.html' %}
+                </ul>
+                {% if ct_items.count > 1 %}
+                    <span class="more"><a href="{% url similar_materials ct=model_ct id=model_id similar_type=ct %}">{% trans "All" %} {{ ct_items.count }} &rarr;</a></span>
+                {% endif %}
+             </div>
+        {% endwith %}
+    {% endif %}
+{% empty %}
+    <p class="none_material">{% trans "Similar materials not found" %}</p>
+{% endfor %}
+

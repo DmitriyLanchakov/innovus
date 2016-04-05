@@ -1,0 +1,12 @@
+{% extends "one-column-inner.html" %}
+{% load i18n %}
+
+{% block content_inner %}
+  <h1>{% trans "Your claim is accepted for further consideration"%}</h1>
+  <p>
+    {% url profile_activation as activation_url %}
+    {% blocktrans %}
+    На указанный при регистрации адрес электронной почты отправлена ссылка для активации вашего профиля на сайте INNOVUS.
+    {% endblocktrans %}
+  </p>
+{% endblock content_inner %}    

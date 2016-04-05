@@ -1,0 +1,20 @@
+{% load i18n splitlist %}
+
+<div class="photo-albums">
+    <table>
+	
+        {% for row in gallery.photos.all|splitlist:3 %}
+		<tr>
+			{% for photo in row %}
+				<td>
+					<div class="photo-thumbnail">
+						<a class="lightbox" href="{{ photo.get_display_url }}" title="{% if photo.is_shown %}{% if photo.caption %}{{ photo.caption }}{% else %}{{ photo.title }}{% endif %}{% endif %}" rel="lightbox"><img src="{{ photo.get_large_thumbnail_url }}" alt="{% if photo.is_shown %}{{ photo.title }}{% endif %}" /></a>
+						<a class="photo-save" target="_blank" href="{{ photo.image.url }}" alt="{% trans "Original Photo" %}" title="{% trans "Original photo" %}">{% trans "Original photo" %}</a>
+					</div>
+				</td>
+			{% endfor %}
+		</tr>
+        {% endfor %}
+
+    </table>
+</div>

@@ -1,0 +1,20 @@
+<div id="broadcast">
+  <h1>{% trans "Video broadcast" %}</h1>
+  <div class="player">
+    <object width="663" height="410">
+      <param name="allowFullScreen" value="true" />
+      <param name="allowScriptAccess" value="always" />
+      <param name="wmode" value="transparent" />
+      <param name="movie" value="{{ MEDIA_URL }}static/flash/player.swf" />
+      <param name="flashvars" value="st={{ CSS_URL }}video-with-playlist.txt&amp;file={{ event.event.videostream }}" />
+      <embed src="{{ MEDIA_URL }}static/flash/player.swf"
+             type="application/x-shockwave-flash"
+             allowscriptaccess="always"
+             allowfullscreen="true"
+             wmode="transparent"
+             flashvars="st={{ CSS_URL }}video-with-playlist.txt&amp;file={{ event.event.videostream }}"
+             width="663"
+             height="410"></embed>
+    </object>
+  </div>
+</div>

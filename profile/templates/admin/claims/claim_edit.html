@@ -1,0 +1,116 @@
+{% extends "one-column-inner.html" %}
+
+{% block content_inner %}
+<div class="registration">
+  <h1>Изменить заявку</h1>
+
+  <form method="post" action=".">
+    {% csrf_token %}
+
+    <h2>{% trans "Participant information" %}</h2>
+
+    <div class="personal_info">
+      <h3>{% trans "Personal info" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_personal.html' %}
+      </div>
+      <div class="second_col">
+        {% include 'profile/includes/fields_geo.html' %}
+      </div>
+    </div>
+
+    <div class="firm_information">
+    <h3>{% trans "Organization info" %}</h3>
+      <div class="first_col">
+        {% include 'profile/includes/fields_organization.html' %}
+      </div>
+    </div>
+
+    <div class="contacts">
+      <h3>{% trans "Contacts" %}</h3>
+      {% include 'profile/includes/fields_contacts.html' %}
+    </div>
+
+    <div id="second_chapter">
+      <h2>{% trans "Arrival/departure info" %}</h2>
+      {% include "profile/includes/fields_travel.html" %}
+    </div>
+
+    <div class="hotel">
+        <h2>{% trans "Hotel booking" %}</h2>
+        {% include "profile/includes/fields_hotel.html" %}
+    </div>
+
+    <div class="auth_info">
+      <h2>Информация об учетной записи и участии в форуме</h2>
+      <div class="first_col">
+        {% if claim_form.email.errors %}
+          <div class="error">
+            <p class="label">{{ claim_form.email.label_tag }}</p>
+            <p class="input">{{ claim_form.email }}</p>
+            <div class="error_mess">{{claim_form.email.errors}}</div>
+          </div>
+        {% else %}
+          <p class="label">{{ claim_form.email.label_tag }}</p>
+          <p class="input">{{ claim_form.email }}</p>
+        {% endif %}
+
+        {% if claim_form.password.errors %}
+          <div class="error">
+            <p class="label">{{ claim_form.password.label_tag }}</p>
+            <p class="input">{{ claim_form.password }}</p>
+            <div class="error_mess">{{claim_form.password.errors}}</div>
+          </div>
+        {% else %}
+          <p class="label">{{ claim_form.password.label_tag }}</p>
+          <p class="input">{{ claim_form.password }}</p>
+        {% endif %}
+
+        {% if claim_form.confirm.errors %}
+          <div class="error">
+            <p class="label">{{ claim_form.confirm.label_tag }}</p>
+            <p class="input">{{ claim_form.confirm }}</p>
+            <div class="error_mess">{{claim_form.confirm.errors}}</div>
+          </div>
+        {% else %}
+          <p class="label">{{ claim_form.confirm.label_tag }}</p>
+          <p class="input">{{ claim_form.confirm }}</p>
+        {% endif %}
+      </div>
+
+      <div class="second_col">
+        {% if claim_form.is_take_part.errors %}
+          <div class="error">
+            <p class="label"><label for="id_is_take_part">Личное участие в Форуме?</label></p>
+            <p class="input">{{ claim_form.is_take_part }}</p>
+            <div class="error_mess">{{claim_form.is_take_part.errors}}</div>
+        </div>
+        {% else %}
+          <p class="label"><label for="id_is_take_part">Личное участие в Форуме</label></p>
+          <p class="input">{{ claim_form.is_take_part }}</p>
+        {% endif %}
+
+
+        {% if claim_form.claim_type.errors %}
+          <div class="error">
+            <p class="label"><label for="id_claim_type">Тип участника</label></p>
+            <p class="input">{{ claim_form.claim_type }}</p>
+            <div class="error_mess">{{claim_form.claim_type.errors}}</div>
+          </div>
+        {% else %}
+          <p class="label"><label for="id_claim_type">Тип участника</label></p>
+          <p class="input">{{ claim_form.claim_type }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="{% trans "Save" %}" />
+      <a href="{% url manage_claim_show id=delegate.id %}">{% trans "Cancel" %}</a>
+    </div>
+
+  </form>
+</div>
+{% include "profile/includes/geo.html" %}
+{% endblock content_inner%}
+

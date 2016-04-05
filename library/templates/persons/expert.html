@@ -1,0 +1,44 @@
+{% extends "two-columns-right.html" %}
+{% load thumbnail url_tags pytils_typo %}
+{% block main_content %}
+    {% include "persons/partials/show.html" %}
+{% endblock main_content %}
+{% block column_content %}
+<script type="text/javascript" src="/media/static/js/lib/jquery.scrollable.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+  $(function() {
+    $("div.right_column_persons").scrollable({
+      visible: 10,
+      interval: 30,
+      speed: 500
+    });
+  });
+//]]>
+</script>
+<div class="right_column_persons">
+  <ul>
+    {% for p in persons %}
+      {% if person != p%}
+        <li id="person_{{ p.id }}">
+          <div class="person_photo">
+            <a href="{{ p.get_absolute_url }}">
+              {% thumbnail p.photo "100" as thumb %}
+                <img src="{{ thumb.url }}"
+                     alt="{{ p.name }}"
+                     width="{{ thumb.width }}"
+                     height="{{ thumb.height }}" />
+              {% endthumbnail %}
+            </a>
+          </div>
+          <div class="person_info">
+            <p class="person_name"><a href="{{ p.get_absolute_url }}" class="person_name">{{ p.name }}</a></p>
+            <p class="person_title">{{ p.position|safe|striptags }}</p>
+          </div>
+        </li>
+      {% endif%}
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+

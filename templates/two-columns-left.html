@@ -1,0 +1,23 @@
+{% extends "one-column.html" %}
+{% load cache cms_tags menu_tags i18n page_class %}
+{% block content %}
+  <div id="content_container" class="container">
+    <div id="content" class="with_left_column">
+      {% block history_menu %}
+      {% endblock %}
+      <div class="additional_margin">
+        <div class="left_column">
+          {% block column_content %}
+            {% placeholder column %}
+          {% endblock %}
+        </div>
+        <div class="right_column">
+          {% block main_content %}
+            {% placeholder content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

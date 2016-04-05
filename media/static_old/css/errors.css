@@ -1,0 +1,7 @@
+html body { background-color: white; color: black; }
+html body #error { width: 700px; margin: 120px auto 0 auto; background: white url("../img/logo.png") no-repeat top center; padding-top: 155px; }
+html body #error p { text-align: center; margin-bottom: 15px; }
+html body #error a { border-bottom: 1px dotted #0073a8; color: #0073a8; text-decoration: none; }
+html body #error a:hover { border-bottom: none; }
+html body #error .name { font-size: 20px; }
+html body #error .text { color: #880000; font-size: 18px; }

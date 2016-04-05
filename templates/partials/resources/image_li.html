@@ -1,0 +1,15 @@
+{% load thumbnail %}
+<li>
+    <a href="{{ image.file.url }}" target="_blank" rel="gallery_{{ object.id }}">
+        {% thumbnail image.file "150" upscale="False" as thumb %}
+        <img src="{{ thumb.url }}"
+             alt="{{ image.title }}"
+             width="{{ thumb.width }}"
+             height="{{ thumb.height }}"/>
+        {% endthumbnail %}
+    </a>
+    <div id="description_{{ image.id }}" class="hidden">
+      {{ image.title|safe }}
+    </div>
+</li>
+

@@ -1,0 +1,163 @@
+//Стили для формы заполнения заявки
+
+=reset_submit
+  .submit
+    text-align: center
+    width: 250px
+    margin: 40px auto 0
+    input
+      width: 35%
+      display: inline
+      height: 25px
+      line-height: 25px
+      padding: 0
+      margin: 2px
+
+body
+  #container.join,
+  #container_claim_edit.claim_edit,
+  #container_delegate.join
+    background-color: #fdfdf9
+    border-top: 1px solid #b8c4d4
+    font-family: Verdana, sans-serif
+    padding: 25px 5%
+    width: 90%
+    .error
+      background-color: #fed2d9
+      label, span
+        color: #e3867e !important
+      input, textarea, select
+        border: 1px solid #e3867e !important
+    .error_mess
+      display: block
+      position: relative
+      height: 0
+      margin: 0
+      width: 90%
+      ul
+        overflow: hidden
+        height: 0
+        li
+          display: block !important
+          font-size: 12px
+          left: 140px
+          position: absolute
+          top: -18px
+    .error_mess_b
+      margin: 0
+      ul
+        li
+          font-size: 12px
+    h1
+      margin-top: 0
+    form
+      overflow: hidden
+      width: 100%
+      h2
+        font-size: 14px
+        margin: 20px 0 5px 10px
+      h3
+        font-size: 12px
+        margin: 10px 0px 5px 20px
+      .first_col
+        float: left
+        width: 50%
+      .second_col
+        float: left
+        width: 50%
+      span
+        color: black
+        font-size: 10px
+        margin: 8px 0 5px 10%
+        label
+          margin-left: 0
+      label
+        color: black
+        font-family: Verdana, sans-serif
+        font-size: 11px
+        margin: 8px 0 5px 10%
+      input
+        border: 1px solid #cad0d2
+        display: block
+        font-size: 12px
+        line-height: 14px
+        height: 18px
+        margin: 2px auto
+        padding: 0 2px 2px
+        width: 80%
+      select
+        border: 1px solid #cad0d2
+        display: block
+        height: 22px
+        margin: 2px auto
+        width: 80%
+      input, select
+        background-color: #f2f8e1
+      p
+        color: #979797
+        margin: 5px 10%
+      div
+        overflow: hidden
+        &.personal_info,
+        &.firm_information,
+        &.contacts,
+        &.account,
+        &.hotel
+          padding-bottom: 20px
+          margin-bottom: 20px
+          border-bottom: 1px solid #dedede
+        ul
+          li
+            list-style: none
+            margin: 0
+            padding-left: 10%
+            label
+              overflow: hidden
+              margin-left: 0
+              input
+                float: left
+                width: 20px
+                margin-right: 5px
+      .submit
+        text-align: center
+        width: 130px
+        margin: 40px auto 0
+        input
+          height: 25px
+          line-height: 25px
+          padding: 0 0 6px 0
+      #id_phone
+        background-image: url("../img/i_telephone.png")
+      #id_fax
+        background-image: url("../img/i_telephone_fax.png")
+      #id_address
+        background-image: url("../img/i_address.png")
+      #id_skype
+        background-image: url("../img/i_skype.png")
+      #id_site
+        background-image: url("../img/i_http.png")
+      #id_phone_extra
+        background-image: url("../img/i_telephone.png")
+      #id_icq
+        background-image: url("../img/i_icq.png")
+      #id_twitter
+        background-image: url("../img/i_twitter.png")
+      #id_blog
+        background-image: url("../img/i_blogger.png")
+      #id_email
+        background-image: url("../img/i_email.png")
+      #id_password, #id_confirm
+        background-image: url("../img/i_pass.png")
+      #id_phone, #id_fax, #id_address, #id_skype, #id_phone_extra, #id_icq, #id_twitter, #id_blog, #id_site, #id_email, #id_password, #id_confirm
+        background-color: #f2f8e1
+        background-repeat: no-repeat
+        background-position: 3px center
+        padding-left: 24px
+        width: 75%
+  #container_claim_edit.claim_edit,
+  #container_delegate.join
+    border-top: none
+    padding-top: 0
+    +reset_submit
+    form
+      +reset_submit

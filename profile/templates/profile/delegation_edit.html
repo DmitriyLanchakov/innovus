@@ -1,0 +1,9 @@
+{% extends "one-column.html" %}
+{% load i18n %}
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="{% trans "Edit" %}" />
+    </form>
+{% endblock %}

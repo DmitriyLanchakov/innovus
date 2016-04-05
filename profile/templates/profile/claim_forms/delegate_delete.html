@@ -1,0 +1,14 @@
+{% extends "one-column.html" %}
+{% load i18n %}
+{% block content %}
+    <div id="container" class="join">
+      <form method="post" action=".">
+        {% csrf_token %}
+        <h2>{% trans "You are supposed to delete a delegate. Are you sure?" %}</h2>
+        <div class="submit">
+          <input type="submit" value="{% trans "Yes, I'm sure" %}" />
+        </div>
+      </form>
+    </div>
+{% endblock %}
+

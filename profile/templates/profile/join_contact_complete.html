@@ -1,0 +1,14 @@
+{% extends "one-column.html" %}{% load i18n %}
+{% block content %}
+  <div id="container" class="join_complete">
+    <h1>{% trans "Your claim is accepted for further consideration"%}</h1>
+    <p>
+      {% trans "You have sent a claim of participation in XIV Tomsk innovative forum INNOVUS" %}.
+      <br/>
+      {% blocktrans %}
+Вы оформили заявку на регистрацию контактного лица для регистрации делегации участников XIV Томского инновационного форума INNOVUS. На указанный Вами адрес электронной почты выслано уведомление со ссылкой для активации учетной записи. После активации учетной записи Вы сможете добавлять участников форума, использую личный кабинет сайта форума.
+{% endblocktrans %}
+    </p>
+  </div>
+{% endblock %}
+
